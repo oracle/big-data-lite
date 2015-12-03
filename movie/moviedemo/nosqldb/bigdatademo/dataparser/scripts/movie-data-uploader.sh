@@ -1,0 +1,1 @@
+java -cp lib/kvclient-1.2.123.jar:lib/json-lib-2.4-jdk15.jar:lib/commons-lang-2.4.jar:lib/gwt-dev-2.1.0.jar:lib/ezmorph-1.0.2.jar:deploy/bigdatademo.jar oracle.demo.oow.bd.loader.imdb.MovieUploader demo

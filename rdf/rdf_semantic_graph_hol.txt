@@ -1,0 +1,2094 @@
+﻿/*
+
+This script is designed to be used with Oracle Big Data Lite Virtual Machine, 
+which can be downloaded from the following link.
+
+http://www.oracle.com/technetwork/database/bigdata-appliance/oracle-bigdatalite-2104726.html.
+
+This script is organized into a series of exercises that illustrate how to configure and use Oracle Spatial and Graph - RDF Semantic Graph release 12.1.0.2.0. The exercises create a sample RDF dataset based on HR data that is pre-loaded in the SCOTT schema. The exercises are designed to be used with SQL*PLus or SQL Developer.
+
+For more information about Oracle Spatial and Graph - RDF Semantic Graph, please refer to the user guide: 
+http://docs.oracle.com/database/121/RDFRM/toc.htm
+
+The overall list of exercises is shown below.
+
+Part 1: Installation and SQL Interface
+
+  Exercise 1-1: Enable support for RDF Semantic Graph
+  Exercise 1-2: Create a semantic network
+  Exercise 1-3: Configure semantic network indexes
+  Exercise 1-4: Create a semantic model and load data
+  Exercise 1-5: Perform SPARQL queries with SEM_MATCH
+  Exercise 1-6: Full-text search
+  Exercise 1-7: OGC GeoSPARQL spatial queries
+  Exercise 1-8: Federated SPARQL queries
+  Exercise 1-9: Entailments and virtual models
+  Exercise 1-10: Create an RDF View model using direct mapping and query the data; Also, materialize the data into a staging table and bulk load into an RDF semantic model and query
+  Exercise 1-11: Create an RDF View model using R2RML mapping and query the mapped virtual data using SPARQL
+
+Part 2: Support for Apache Jena
+
+  Exercise 2-1: Start and configure the WebLogic Server
+  Exercise 2-2: Create the Required Data Source Using WebLogic Server
+  Exercise 2-3: Executing SPARQL Queries using Joseki SPARQL Endpoint
+  Exercise 2-4: Configuring the Joseki SPARQL Endpoint
+  Exercise 2-5: Executing SPARQL Updates using Joseki SPARQL Endpoint
+  Exercise 2-6: Executing SPARQL Queries using Fuseki SPARQL Endpoint
+  Exercise 2-7: Configuring the Fuseki SPARQL Endpoint
+  Exercise 2-8: Executing SPARQL Updates using Fuseki SPARQL Endpoint
+  Exercise 2-9: SPARQL Gateway Installation and Configuration
+  Exercise 2-10: Navigation and Browsing using SPARQL Gateway
+  Exercise 2-11: Manage XSLT and SPARQL Queries stored directly in a SPARQL Gateway application file
+  Exercise 2-12: Manage XSLT and SPARQL Queries using a file system directory
+  Exercise 2-13: Manage XSLT and SPARQL Queries using Oracle Database
+
+*/
+
+--************************ Part 1: Installation and SQL Interface ************************--
+
+--////////////////// Exercise 1-1: Enable support for RDF Semantic Graph \\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to enable support for RDF Semantic Graph in a multi-tenant environment.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Appendix A Enabling, Downgrading, or Removing RDF Semantic Graph Support
+http://docs.oracle.com/database/121/RDFRM/sem_enable.htm#RDFRM118
+
+The first step is to determine if RDF Semantic Graph is already enabled. This can be determined by checking the MDSYS.RDF_PARAMETER table.
+*/
+conn / as sysdba;
+alter session set container = orcl;
+select * from mdsys.rdf_parameter;
+
+/*
+If this table contains the following row, then RDF Semantic Graph is already enabled.
+
+MDSYS  SEM_VERSION  12.1.0.2.0 VALID
+
+If this table does not exist, then RDF Semantic Graph must be enabled. In a multi-tenant environment, RDF Semantic Graph is enabled by running catsem.sql using catcon.pl from the command line. The command below can be used.
+
+$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catcon.pl -u SYS -d $ORACLE_HOME/md/admin -b /tmp/catsem_output catsem.sql
+
+After catcon.pl completes, you can verify the install by checking MDSYS.RDF_PARAMETER
+*/
+
+--////////////////////// Exercise 1-2: Create a semantic network \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to create and configure a semantic network. Creating a semantic network creates system tables to store RDF data in the MDSYS schema.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Chapter 1: RDF Semantic Graph Overview
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM100
+
+The first step is to determine if a semantic network already exists. This can be determined by querying the MDSYS.RDF_MODEL$ view, which contains metadata about semantic models stored in the semantic network.
+*/
+conn / as sysdba;
+alter session set container = orcl;
+select * from mdsys.rdf_model$;
+
+/*
+If this view does not exist, then there is no semantic network and one needs to be created using the steps below.
+*/
+conn / as sysdba;
+alter session set container = orcl;
+
+-- create a tablespace for the semantic network
+create tablespace RDFTBS datafile '/u01/app/oracle/product/12.1.0.2/dbhome_1/rdftbs.dat' size 10M reuse AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED segment space management auto;
+
+-- create the semantic network using the tablespace we created 
+-- exec sem_apis.create_sem_network('RDFTBS');
+
+-- ensure that GeoRaster is enabled for proper DDL trigger support
+exec mdsys.enableGeoRaster;
+
+-- check the RDF_MODEL$ view
+select * from mdsys.rdf_model$;
+
+--/////////////////// Exercise 1-3: Configure semantic network indexes \\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to configure semantic network indexes (multi-column B+ tree indexes) for general purpose querying.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.8: Using Semantic Network Indexes
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM99905
+
+By default, two indexes are created: a mandatory PCSGM unique index and a PSCGM index. This indexing scheme works very well when SPARQL triple patterns have constants in the predicate position, but this scheme may enounter performance problems if variables appear in the predicate position.
+
+For a more general scheme, a three-index combination of PCSGM, SPCGM and CPSGM works well.
+
+The steps below show how to go from the default two-index setup to this three-index setup.
+*/
+
+-- step1: connect as a DBA
+conn / as sysdba;
+alter session set container = orcl;
+
+-- step2: check existing semantic network indexes
+select distinct index_code, status
+from mdsys.sem_network_index_info;
+
+-- step3: drop PSCGM index
+exec sem_apis.drop_sem_index('PSCGM');
+
+-- step4: add SPCGM index
+exec sem_apis.add_sem_index('SPCGM');
+
+-- step5: rebuild SPCGM for each model and entailment
+declare
+  type ctype is ref cursor;
+  c ctype;
+  mName varchar2(30);
+  idxCode varchar2(30) := 'SPCGM';
+begin
+
+  open c for 'select model_name from mdsys.rdf_model$ where model_id > 0';
+  loop
+  begin fetch c into mName;
+  exit when c%NOTFOUND;
+    execute immediate
+     'begin
+        sem_apis.alter_sem_index_on_model('''||mName||''','''||idxCode||''',''REBUILD'', parallel=>2);
+      end;';
+  end;
+  end loop;
+  close c;
+
+  open c for 'select index_name from mdsys.rdf_rules_index_info';
+  loop
+  begin fetch c into mName;
+  exit when c%NOTFOUND;
+    execute immediate
+     'begin
+        sem_apis.alter_sem_index_on_entailment('''||mName||''','''||idxCode||''',''REBUILD'', parallel=>2);
+      end;';
+  end;
+  end loop;
+  close c;
+
+end;
+/
+
+-- step6: add CPSGM index
+exec sem_apis.add_sem_index('CSPGM');
+
+-- step7: rebuild CPSGM for each model and entailment
+declare
+  type ctype is ref cursor;
+  c ctype;
+  mName varchar2(30);
+  idxCode varchar2(30) := 'CSPGM';
+begin
+
+  open c for 'select model_name from mdsys.rdf_model$ where model_id > 0';
+  loop
+  begin fetch c into mName;
+  exit when c%NOTFOUND;
+    execute immediate
+     'begin
+        sem_apis.alter_sem_index_on_model('''||mName||''','''||idxCode||''',''REBUILD'', parallel=>2);
+      end;';
+  end;
+  end loop;
+  close c;
+
+  open c for 'select index_name from mdsys.rdf_rules_index_info';
+  loop
+  begin fetch c into mName;
+  exit when c%NOTFOUND;
+    execute immediate
+     'begin
+        sem_apis.alter_sem_index_on_entailment('''||mName||''','''||idxCode||''',''REBUILD'', parallel=>2);
+      end;';
+  end;
+  end loop;
+  close c;
+
+end;
+/
+
+-- step8: check status of semantic network indexes
+select distinct index_code, status
+from mdsys.sem_network_index_info;
+
+--/////////////////// Exercise 1-4: Create a semantic model and load data \\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to create a semantic model and load RDF data with incremental SQL insert statements. In this exercise, we are loading an RDF version of the HR data stored in the SCOTT schema.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.5 Semantic Data Types, Constructors, and Methods.
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM586
+
+The steps below perform the model creation and data loading
+*/
+
+-- step1: unlock SCOTT account
+conn / as sysdba;
+alter session set container = orcl;
+alter user scott identified by tiger account unlock;
+
+
+-- step2: create an application table with triple column in the scott schema
+conn scott/tiger@orcl;
+create table scott_hr_atab(tri sdo_rdf_triple_s);
+
+-- step3: create a semantic model associated with scott_hr_atab
+exec sem_apis.create_sem_model('scott_hr_data','scott_hr_atab','tri');
+
+-- step4: insert RDF quads into the scott_hr_data semantic model using
+--        the following sdo_rdf_triple_s constructor
+--        sdo_rdf_triple_s('model:named_graph','subject','predicate','object')
+--
+--        Note that an sdo_rdf_triple_s('model','subject','predicate','object')
+--        constructor can be used for plain triple data (i.e. no named graphs).
+
+-------------------------------  emp graph  -----------------------------------
+
+-- <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Employee>'));
+commit;
+
+-- <http://scott-hr.org#empno> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#empno>','"7369"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#empno>','"7499"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#empno>','"7521"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#empno>','"7566"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#empno>','"7654"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#empno>','"7698"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#empno>','"7782"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#empno>','"7788"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#empno>','"7839"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#empno>','"7844"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#empno>','"7876"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#empno>','"7900"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#empno>','"7902"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#empno>','"7934"^^xsd:decimal'));
+commit;
+
+-- <http://scott-hr.org#ename> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#ename>','"SMITH"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#ename>','"ALLEN"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#ename>','"WARD"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#ename>','"JONES"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#ename>','"MARTIN"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#ename>','"BLAKE"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#ename>','"CLARK"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#ename>','"SCOTT"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#ename>','"KING"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#ename>','"TURNER"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#ename>','"ADAMS"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#ename>','"JAMES"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#ename>','"FORD"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#ename>','"MILLER"'));
+commit;
+
+-- <http://scott-hr.org#job> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#job>','<http://scott-hr.org/job/CLERK>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#job>','<http://scott-hr.org/job/SALESMAN>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#job>','<http://scott-hr.org/job/SALESMAN>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#job>','<http://scott-hr.org/job/MANAGER>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#job>','<http://scott-hr.org/job/SALESMAN>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#job>','<http://scott-hr.org/job/MANAGER>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#job>','<http://scott-hr.org/job/MANAGER>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#job>','<http://scott-hr.org/job/ANALYST>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#job>','<http://scott-hr.org/job/PRESIDENT>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#job>','<http://scott-hr.org/job/SALESMAN>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#job>','<http://scott-hr.org/job/CLERK>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#job>','<http://scott-hr.org/job/CLERK>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#job>','<http://scott-hr.org/job/ANALYST>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#job>','<http://scott-hr.org/job/CLERK>'));
+commit;
+
+-- <http://scott-hr.org#hasManager> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7902>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7698>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7698>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7839>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7698>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7839>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7839>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7566>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7698>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7788>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7698>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7566>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#hasManager>','<http://scott-hr.org/emp/7782>'));
+commit;
+
+-- <http://scott-hr.org#hiredate> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#hiredate>','"1980-12-17"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#hiredate>','"1981-02-20"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#hiredate>','"1981-02-22"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#hiredate>','"1981-04-02"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#hiredate>','"1981-09-28"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#hiredate>','"1981-05-01"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#hiredate>','"1981-06-09"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#hiredate>','"1987-04-19"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#hiredate>','"1981-11-17"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#hiredate>','"1981-09-08"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#hiredate>','"1987-05-23"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#hiredate>','"1981-12-03"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#hiredate>','"1981-12-03"^^xsd:date'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#hiredate>','"1982-01-23"^^xsd:date'));
+commit;
+
+-- <http://scott-hr.org#sal> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#sal>','"800"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#sal>','"1600"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#sal>','"1250"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#sal>','"2975"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#sal>','"1250"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#sal>','"2850"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#sal>','"2450"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#sal>','"3000"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#sal>','"5000"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#sal>','"1500"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#sal>','"1100"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#sal>','"950"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#sal>','"3000"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#sal>','"1300"^^xsd:decimal'));
+commit;
+
+-- <http://scott-hr.org#comm> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#comm>','"300"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#comm>','"500"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#comm>','"1400"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#comm>','"0"^^xsd:decimal'));
+commit;
+
+-- <http://scott-hr.org#dept> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7369>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/20>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7499>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7521>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7566>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/20>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7654>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7698>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7782>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/10>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7788>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/20>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7839>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/10>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7844>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7876>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/20>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7900>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/30>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7902>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/20>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/emp>','<http://scott-hr.org/emp/7934>','<http://scott-hr.org#dept>','<http://scott-hr.org/dept/10>'));
+commit;
+
+-------------------------------  dept graph  -----------------------------------
+
+-- <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/10>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Department>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/20>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Department>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/30>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Department>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/40>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://scott-hr.org/graph/Department>'));
+commit;
+
+-- <http://scott-hr.org#deptno> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/10>','<http://scott-hr.org#deptno>','"10"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/20>','<http://scott-hr.org#deptno>','"20"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/30>','<http://scott-hr.org#deptno>','"30"^^xsd:decimal'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/40>','<http://scott-hr.org#deptno>','"40"^^xsd:decimal'));
+commit;
+
+-- <http://scott-hr.org#dname> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/10>','<http://scott-hr.org#dname>','"ACCOUNTING"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/20>','<http://scott-hr.org#dname>','"RESEARCH"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/30>','<http://scott-hr.org#dname>','"SALES"'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/40>','<http://scott-hr.org#dname>','"OPERATIONS"'));
+commit;
+
+-- <http://scott-hr.org#loc> property
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/10>','<http://scott-hr.org#loc>','<http://scott-hr.org/loc/NEW_YORK>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/20>','<http://scott-hr.org#loc>','<http://scott-hr.org/loc/DALLAS>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/30>','<http://scott-hr.org#loc>','<http://scott-hr.org/loc/CHICAGO>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/dept/40>','<http://scott-hr.org#loc>','<http://scott-hr.org/loc/BOSTON>'));
+commit;
+
+-- Department locations using OGC GeoSPARQL vocabulary
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/loc/NEW_YORK>','<http://www.opengis.net/ont/geosparql#asWKT>','"Point (-74.005897521973 40.712699890137)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/loc/DALLAS>',  '<http://www.opengis.net/ont/geosparql#asWKT>','"Point (-96.796669006348 32.775833129883)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/loc/CHICAGO>', '<http://www.opengis.net/ont/geosparql#asWKT>','"Point (-87.684722900391 41.836944580078)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>'));
+insert into scott_hr_atab(tri) values(sdo_rdf_triple_s('scott_hr_data:<http://scott-hr.org/graph/dept>','<http://scott-hr.org/loc/BOSTON>',  '<http://www.opengis.net/ont/geosparql#asWKT>','"Point (-71.063613891602 42.358055114746)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>'));
+commit;
+
+-- step5: gather statistics on the semantic network
+conn / as sysdba;
+alter session set container = orcl;
+
+exec sem_perf.gather_stats(degree=>2);
+
+
+--/////////////////// Exercise 1-5: Perform SPARQL queries with SEM_MATCH \\\\\\\\\\\\\\\\\\\\\--
+/*
+Oracle Spatial and Graph - RDF Semantic Graph provides several query interfaces. These include a Java API and HTTP SPARQL endpoint provided through Support for Apache Jena and a SQL interface provided through the SEM_MATCH table function.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.6: Using the SEM_MATCH Table Function to Query Semantic Data
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM592
+
+This exercise illustrates some SQL SEM_MATCH queries against the scott_hr_data model loaded in the previous exercise.
+*/
+
+-- Connect as scott/tiger
+conn scott/tiger@orcl;
+
+-- Query 1: Select all quads from the model.
+--
+-- Note the use of PLUS_RDFT=VC in options argument
+-- to return fully-formed RDF terms
+select g$rdfterm, s$rdfterm, p$rdfterm, o$rdfterm
+from table(sem_match(
+'SELECT *
+ WHERE { 
+   graph ?g { ?s ?p ?o } 
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '))
+order by 1,2,3,4;
+
+-- Query 2: Select triples from the department named graph.
+--
+-- Note the use of SPARQL FROM NAMED clause to restrict the
+-- set of named graphs to the department graph.
+select g$rdfterm, s$rdfterm, p$rdfterm, o$rdfterm
+from table(sem_match(
+'PREFIX graph: <http://scott-hr.org/graph/>
+ SELECT *
+ FROM NAMED graph:dept
+ WHERE { 
+   graph ?g { ?s ?p ?o } 
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '))
+order by 1,2,3,4;
+
+-- Query 3: Check some employees' info.
+-- 
+-- Note the use of OPTIONAL so that we don't
+-- exclude an employee from the results if
+-- he or she is missing a commission value.
+select name$rdfterm, mgr$rdfterm, comm$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?name ?mgr ?comm
+ WHERE { 
+   ?s :empno      ?empno .
+   ?s :ename      ?name .
+   ?s :hasManager ?mgr .
+   OPTIONAL { ?s :comm ?comm }
+   FILTER(?empno IN (7369, 7499))
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '))
+order by 1;
+
+-- Query 4: Find employees with salary greater than 1000.
+select ename$rdfterm, sal$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?ename ?sal
+ WHERE { 
+   ?s :ename ?ename .
+   ?s :sal ?sal .
+   FILTER (?sal > 1000)
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 5: Find which employee has the highest salary.
+--
+-- Note the use of SPARQL 1.1 subquery and aggregation.
+select s$rdfterm, ename$rdfterm, sal$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?s ?ename ?sal
+ WHERE { 
+   ?s :ename ?ename .
+   ?s :sal ?sal .
+   { SELECT (MAX(?o) AS ?sal)
+     WHERE { 
+       ?s :sal ?o } }
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 6: Find how many people directly report to each manager.
+select mgr$rdfterm, cnt$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?mgr ?cnt
+ WHERE {
+   ?x :ename ?mgr
+   { SELECT ?x (count(?s) as ?cnt )
+     WHERE { 
+       ?s :hasManager ?x
+     }
+     GROUP by ?x }
+ } ORDER BY DESC(?cnt)',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 7: Find the number of direct and indirect reports for each manager.
+--
+-- Note the use of a SPARQL 1.1 property path + operator on the 
+-- :hasManager relation to traverse the full closure of :hasManager.
+select mgr$rdfterm, cnt$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?mgr ?cnt
+ WHERE {
+   ?x :ename ?mgr
+   { SELECT ?x (count(?s) as ?cnt )
+     WHERE { 
+       ?s :hasManager+ ?x
+     }
+     GROUP by ?x }
+ } ORDER BY DESC(?cnt)',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 8: Generate a list of all reports for each manger.
+--
+-- Note the use of SPARQL 1.1 GROUP_CONCAT aggregate.
+select mgr$rdfterm, cnt$rdfterm, elist$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?mgr ?cnt ?elist
+ WHERE {
+   ?x :ename ?mgr
+   { SELECT ?x (count(?s) as ?cnt ) (group_concat(str(?n)) as ?elist)
+     WHERE { 
+       ?s :hasManager+ ?x .
+       ?s :ename ?n
+     }
+     GROUP by ?x }
+ } ORDER BY DESC(?cnt)',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 9: Show the hierarchy of management relationships.
+--
+-- Note the use of SPARQL 1.1 property path sequence shortcut.
+select emp$rdfterm, mgr1$rdfterm, mgr2$rdfterm, mgr3$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ PREFIX graph: <http://scott-hr.org/graph/>
+ SELECT *
+ WHERE {
+   ?x :ename ?emp .
+   OPTIONAL { ?x :hasManager/:ename ?mgr1}
+   OPTIONAL { ?x :hasManager/:hasManager/:ename ?mgr2}
+   OPTIONAL { ?x :hasManager/:hasManager/:hasManager/:ename ?mgr3}
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '))
+order by 1,2,3,4;
+
+-- Query 10: Find all employees without a manager.
+--
+-- Note the use of SPARQL 1.1 NOT EXISTS.
+select emp$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?emp
+ WHERE {
+   ?x :ename ?emp .
+   FILTER (NOT EXISTS { ?x :hasManager ?mgr })
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+-- Query 11: Use SPARQL CONSTRUCT to build a graph using the foaf vocabulary
+select subj$rdfterm, pred$rdfterm, obj$rdfterm
+from table(sem_match(
+'PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+ PREFIX : <http://scott-hr.org#>
+ CONSTRUCT { ?e foaf:name ?n }
+ WHERE { ?e :ename ?n }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' '));
+
+-- Query 12: Use SPARQL DESCRIBE to return all triples about
+--           a particular employee
+select subj$rdfterm, pred$rdfterm, obj$rdfterm
+from table(sem_match(
+'DESCRIBE <http://scott-hr.org/emp/7521>',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' '));
+
+-- Query 13: Use SPARQL ASK to determine if at least one
+--           result can be found for a query
+SELECT ask$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ ASK
+ WHERE { 
+   ?s :ename ?ename .
+   ?s :sal ?sal .
+   FILTER (?sal < 500)
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+--///////////////////////// Exercise 1-6: Full-text search \\\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise uses the datatype indexing framework to create an Oracle Text index on all values in the semantic network. After creating an index, the  orardf:textContains SPARQL function can be used to execute full-text searches using Oracle Text search strings.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.6.10 Full-Text Search
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM185
+*/
+
+-- Create a text index
+conn / as sysdba;
+alter session set container=orcl;
+exec sem_apis.add_datatype_index('http://xmlns.oracle.com/rdf/text');
+
+-- Check datatype index metadata
+select datatype, index_name, status
+from mdsys.sem_dtype_index_info
+order by 1,2,3;
+
+-- gather statistics on RDF_VALUE$
+exec sem_perf.gather_stats(just_on_values_table=>true, degree=>2);
+
+-- Search text with orardf:textContains
+conn scott/tiger@orcl;
+
+-- Find employees whose name contains the substring "ar"
+select x$rdfterm, ename$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX graph: <http://scott-hr.org/graph/>
+ SELECT *
+ FROM graph:emp
+ WHERE {
+   ?x :ename ?ename 
+   FILTER(orardf:textContains(?ename,"%ar%")) 
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+--/////////////////////// Exercise 1-7: OGC GeoSPARQL spatial queries \\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise uses the datatype indexing framework to create an Oracle Spatial index on all GeoSPARQL geometry literals in the semantic network. After creating the spatial index, several spatial query functions can be used to execute spatial searches.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.6.11 Spatial Support
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM187
+*/
+
+-- Create a spatial index using the datatype index framework.
+conn / as sysdba;
+alter session set container=orcl;
+-- Note that we are using SRID 8307 (WGS84 Long Lat), which is the default
+-- specified by the OGC.
+exec sem_apis.add_datatype_index('http://www.opengis.net/ont/geosparql#wktLiteral', options=>'TOLERANCE=0.1 SRID=8307 DIMENSIONS=((LONGITUDE,-180,180)(LATITUDE,-90,90))');
+
+-- Check datatype index metadata
+select datatype, index_name, status
+from mdsys.sem_dtype_index_info
+order by 1,2,3;
+
+-- gather statistics on RDF_VALUE$
+exec sem_perf.gather_stats(just_on_values_table=>true, degree=>2);
+
+-- Perform GeoSPARQL queries
+conn scott/tiger@orcl;
+
+-- Find the distance in KM between each department location.
+select dept1, loc1, dept2, loc2, dist_km
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX graph: <http://scott-hr.org/graph/>
+ PREFIX uom: <http://xmlns.oracle.com/rdf/geo/uom/>
+ SELECT ?dept1 ?loc1 ?dept2 ?loc2 (ogcf:distance(?geom1,?geom2, uom:KM) as ?dist_km)
+ FROM graph:dept
+ WHERE {
+   ?x1   :dname ?dept1 .
+   ?x1   :loc   ?loc1 .
+   ?loc1 ogc:asWKT ?geom1 .   
+   ?x2   :dname ?dept2 .
+   ?x2   :loc   ?loc2 .
+   ?loc2 ogc:asWKT ?geom2 .
+   FILTER(!sameTerm(?x1,?x2)) 
+ }',
+sem_models('scott_hr_data'),
+null,null,null))
+order by 1,2,3,4;
+
+-- Find employees who work within a spatial search window.
+select name$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ PREFIX uom: <http://xmlns.oracle.com/rdf/geo/uom/>
+ SELECT ?name
+ WHERE {
+   ?emp :dept/:loc/ogc:asWKT ?geom1 .   
+   ?emp :ename ?name .
+   FILTER(ogcf:sfWithin(?geom1,"POLYGON((-74.5 41.0, -74.5 40.0, -73.5 40.0, -73.5 41.0, -74.5 41.0))"^^ogc:wktLiteral)) 
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+' PLUS_RDFT=VC '));
+
+--/////////////////////// Exercise 1-8: Federated SPARQL queries \\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+SEM_MATCH supports the SPARQL 1.1 SERVICE keyword, which allows you to execute portions of a SPARQL query against a stardard-compliant SPARQL endpoint and combine the result with other parts of the SPARQL query. This is a powerful feature that allows federated queries over local RDF data and other (possibly remote) RDF data.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 1.6.8 Graph Patterns: Support for SPARQL 1.1 Federated Query
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM768
+
+The steps below illustrate how to grant appropriate privileges to scott and use the SERVICE keyword to access a remote DBPedia SPARQL endpoint.
+*/
+
+-- Grant necessary privileges for federated queries to scott
+conn / as sysdba;
+alter session set container=orcl;
+
+-- Grant execute on SPARQL_SERVICE
+grant execute on mdsys.sparql_service to scott;
+
+-- Check SCOTT ACL privileges
+SELECT host, lower_port, upper_port, acl, aclid,
+       DECODE(
+         DBMS_NETWORK_ACL_ADMIN.CHECK_PRIVILEGE_ACLID(aclid, 'SCOTT', 'connect'),
+         1, 'GRANTED', 0, 'DENIED', null) privilege
+FROM dba_network_acls;
+
+-- Add new privileges
+BEGIN
+  DBMS_NETWORK_ACL_ADMIN.ADD_PRIVILEGE(acl       => 'NETWORK_ACL_DD7C57F0D3BE0871E04325AAE80A17A8',
+                                       principal => 'SCOTT',
+                                       is_grant  => true,
+                                       privilege => 'connect');
+
+  DBMS_NETWORK_ACL_ADMIN.ASSIGN_ACL(acl  => 'NETWORK_ACL_DD7C57F0D3BE0871E04325AAE80A17A8',
+                                    host => '*');   
+END;
+/
+
+-- Check SCOTT ACL privileges again
+SELECT host, lower_port, upper_port, acl, aclid,
+       DECODE(
+         DBMS_NETWORK_ACL_ADMIN.CHECK_PRIVILEGE_ACLID(aclid, 'SCOTT', 'connect'),
+         1, 'GRANTED', 0, 'DENIED', null) privilege
+FROM dba_network_acls;
+
+-- Perform federated query against dbpedia endpoint
+conn scott/tiger@orcl;
+
+-- Find label and timezone for New York City
+select tz$rdfterm, label$rdfterm
+from table(sem_match(
+'SELECT ?tz ?label
+ WHERE {
+   SERVICE <http://dbpedia.org/sparql>{ 
+     <http://dbpedia.org/resource/New_York_City> <http://dbpedia.org/property/timezone> ?tz .
+     <http://dbpedia.org/resource/New_York_City> rdfs:label ?label .
+     FILTER ( lang(?label) = "en" )
+   }
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,' PLUS_RDFT=VC SERVICE_PROXY=www-proxy.us.oracle.com:80 ')); -- set/unset proxy if necessary
+
+--/////////////////////// Exercise 1-9: Entailments and Virtual Models \\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+Oracle Spatial and Graph has extensive support for RDFS and OWL entailment, which uses logical reasoning to infer new relationships in RDF graphs based on a set of axioms defined in an ontology.
+
+For more information, see the following sections in the RDF Semantic Graph user's guide:
+Chapter 2: OWL Concepts
+http://docs.oracle.com/database/121/RDFRM/owl_concepts.htm#RDFRM200
+and
+Section 1.3.8 Virtual Models
+http://docs.oracle.com/database/121/RDFRM/sdo_rdf_concepts.htm#RDFRM99894
+
+In this example, we create a simple OWL2 RL ontology and corresponding entailment, and then we perform a series of queries that show the newly inferred relationships.
+
+In addition, virtual models are used to combine multiple models and entailments into a single view to simplify query specification.
+*/
+
+-- step1: create an ontology in a separate semantic model
+conn scott/tiger@orcl;
+create table scott_hr_ont_atab(tri sdo_rdf_triple_s);
+exec sem_apis.create_sem_model('scott_hr_ont','scott_hr_ont_atab','tri');
+
+-- step2: insert OWL axioms into the ontology
+
+-- hasManager is a transitive property
+insert into scott_hr_ont_atab(tri) values(sdo_rdf_triple_s('scott_hr_ont','<http://scott-hr.org#hasManager>','<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>','<http://www.w3.org/2002/07/owl#TransitiveProperty>'));
+-- managerOf is the inverse of hasManager
+insert into scott_hr_ont_atab(tri) values(sdo_rdf_triple_s('scott_hr_ont','<http://scott-hr.org#hasManager>','<http://www.w3.org/2002/07/owl#inverseOf>','<http://scott-hr.org#managerOf>'));
+-- position and job are equivalent properties
+insert into scott_hr_ont_atab(tri) values(sdo_rdf_triple_s('scott_hr_ont','<http://scott-hr.org#position>','<http://www.w3.org/2002/07/owl#equivalentProperty>','<http://scott-hr.org#job>'));
+commit;
+
+-- step3: create an entailment using the OWL2RL rulebase
+exec sem_apis.create_entailment('scott_hr_ent',sem_models('scott_hr_data','scott_hr_ont'), sem_rulebases('OWL2RL'));
+
+-- step4: create a virtual model to simplify query specification
+exec sem_apis.create_virtual_model('scott_hr_data_vm',sem_models('scott_hr_data','scott_hr_ont'), sem_rulebases('OWL2RL'));
+
+-- step5: execute queries against the original model (asserted data) and 
+--        the virtual model containing entailed triples (asserted + inferred data)
+
+-- Query against the original model
+select emp$rdfterm, mgr$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :hasManager ?y .
+   ?x :ename ?emp    .
+   ?y :ename ?mgr
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+-- Query against model and entailment
+select emp$rdfterm, mgr$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :hasManager ?y .
+   ?x :ename ?emp    .
+   ?y :ename ?mgr
+ }',
+sem_models('scott_hr_data_vm'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+-- Query against the original model
+select emp$rdfterm, mgr$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :managerOf ?y .
+   ?x :ename ?mgr   .
+   ?y :ename ?emp
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+-- Query against model and entailment
+select emp$rdfterm, mgr$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :managerOf ?y .
+   ?x :ename ?mgr   .
+   ?y :ename ?emp
+ }',
+sem_models('scott_hr_data_vm'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+-- Query against the original model
+select emp$rdfterm, pos$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :position ?pos .
+   ?x :ename    ?emp .
+ }',
+sem_models('scott_hr_data'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+-- Query against model and entailment
+select emp$rdfterm, pos$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org#>
+ SELECT *
+ WHERE {
+   ?x :position ?pos .
+   ?x :ename    ?emp .
+ }',
+sem_models('scott_hr_data_vm'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2;
+
+--/////////////////// Exercise 1-10: Create an RDF View model and query the data; Also, materialize the data into a staging table and bulk load into an RDF semantic model and query \\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to create an RDF View model and query the data. 
+It also shows how to materialize the (virtual) RDF data prvided by the RDF View into a staging table, use bulk load to load the materialized triples into an RDF semantic model  and query.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Chapter 10. RDF Views: Relational Data as RDF.
+http://docs.oracle.com/database/121/RDFRM/sem_relational_views.htm#RDFRM555
+
+The steps below perform the RDF View creation, query it, and materialize the RDF triples into a staging table, bulk load the materialized triples into an RDF semantic model  and query.
+*/
+
+-- Step1: connect as SCOTT
+conn scott/tiger@orcl;
+
+-- Step2: create an RDF View using Direct Mapping on tables EMP and DEPT
+BEGIN
+  sem_apis.create_rdfview_model(
+    model_name => 'EMP_DEPT_VIEW'
+  , tables => SYS.ODCIVarchar2List('EMP', 'DEPT')
+  , prefix => 'http://scott-hr.org/'
+  );
+END;
+/
+
+-- Step3: query the RDF View using SPARQL to find all the distinct properties
+select p$rdfterm
+from table(sem_match(
+'SELECT DISTINCT ?p
+ WHERE {
+   ?x ?p ?y .
+ }',
+sem_models('EMP_DEPT_VIEW'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+-- Step4: query the RDF View using SPARQL to find all the triples
+select x$rdfterm, p$rdfterm, y$rdfterm
+from table(sem_match(
+'SELECT *
+ WHERE {
+   ?x ?p ?y .
+ }',
+sem_models('EMP_DEPT_VIEW'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2,3;
+
+-- Step5: query the RDF View using SPARQL to find all names of all the departments
+select y$rdfterm
+from table(sem_match(
+'PREFIX : <http://scott-hr.org/SCOTT.DEPT#> 
+ SELECT *
+ WHERE {
+   ?x :DNAME ?y .
+ }',
+sem_models('EMP_DEPT_VIEW'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+-- Step6: query the RDF View using SPARQL to find for each employee the name and location of their department
+select ename$rdfterm, dname$rdfterm, loc$rdfterm
+from table(sem_match(
+'PREFIX e: <http://scott-hr.org/SCOTT.EMP#> 
+ PREFIX d: <http://scott-hr.org/SCOTT.DEPT#> 
+ SELECT *
+ WHERE {
+   ?emp rdf:type <http://scott-hr.org/SCOTT.EMP> .
+   ?emp e:ENAME ?ename .
+   ?emp e:DEPTNO ?dno .
+   ?dept rdf:type <http://scott-hr.org/SCOTT.DEPT> .
+   ?dept d:DEPTNO ?dno .
+   ?dept d:DNAME ?dname .
+   ?dept d:LOC ?loc .
+ }',
+sem_models('EMP_DEPT_VIEW'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+-- Step7: Materialize all the (virtual) triples generated by the Direct Mapping into a staging table
+CREATE TABLE RDFTAB (
+                     RDF$STC_sub varchar2(4000) not null,
+                     RDF$STC_pred varchar2(4000) not null,
+                     RDF$STC_obj varchar2(4000) not null
+);
+
+grant INSERT on RDFTAB to MDSYS;
+
+BEGIN
+  sem_apis.export_rdfview_model(
+    model_name => 'EMP_DEPT_VIEW',
+    rdf_table_owner => 'SCOTT',
+    rdf_table_name => 'RDFTAB'
+  );
+END;
+/
+
+-- Step8: bulk load the materialized RDF triples from the staging table into a newly created RDF semantic model
+create table atab (triple sdo_rdf_triple_s);
+BEGIN
+sem_apis.create_sem_model('EMP_DEPT_MODEL','atab','triple');
+END;
+/
+grant INSERT on atab to MDSYS;
+grant SELECT on RDFTAB to MDSYS;
+
+BEGIN
+sem_apis.bulk_load_from_staging_table(
+  model_name => 'EMP_DEPT_MODEL'
+, table_owner => 'SCOTT'
+, table_name => 'RDFTAB'
+, flags => ' PARSE '
+);
+END;
+/
+
+-- Step9: pose the same query as in Step6 above, but do it against the RDF model populated above with materialized RDF triples from the RDF View
+select ename$rdfterm, dname$rdfterm, loc$rdfterm
+from table(sem_match(
+'PREFIX e: <http://scott-hr.org/SCOTT.EMP#> 
+ PREFIX d: <http://scott-hr.org/SCOTT.DEPT#> 
+ SELECT *
+ WHERE {
+   ?emp rdf:type <http://scott-hr.org/SCOTT.EMP> .
+   ?emp e:ENAME ?ename .
+   ?emp e:DEPTNO ?dno .
+   ?dept rdf:type <http://scott-hr.org/SCOTT.DEPT> .
+   ?dept d:DEPTNO ?dno .
+   ?dept d:DNAME ?dname .
+   ?dept d:LOC ?loc .
+ }',
+sem_models('EMP_DEPT_MODEL'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+--/////////////////// Exercise 1-11: Create an RDF View model using R2rml MAPPING and query the mapped virtual data using SPARQL  \\\\\\\\\\\\\\\\\\\\\--
+/*
+This exercise shows how to create an RDF View model using R2RML mapping and query the data. 
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Chapter 10. RDF Views: Relational Data as RDF.
+http://docs.oracle.com/database/121/RDFRM/sem_relational_views.htm#RDFRM555
+
+The steps below perform the RDF View creation using R2RML mapping and query the data.
+*/
+
+-- Step1: connect as SCOTT
+conn scott/tiger@orcl;
+
+-- Step1: create and populate staging table with the R2RML mapping triples from the hr_r2rml.nt file (uses load.ctl control file for SQL*Loader)
+CREATE TABLE r2rml_table (
+                     RDF$STC_sub varchar2(4000) not null,
+                     RDF$STC_pred varchar2(4000) not null,
+                     RDF$STC_obj varchar2(4000) not null
+);
+
+host sqlldr scott/tiger control='load.ctl' data='hr_r2rml.nt' direct=true
+
+-- Step2: create RDF View using the R2RML mapping
+BEGIN
+sem_apis.create_rdfview_model(
+  model_name => 'EMP_DEPT_VIEW_CUSTOM'
+, tables => NULL
+, prefix => NULL
+, R2RML_TABLE_OWNER => 'SCOTT'
+, R2RML_TABLE_NAME => 'R2RML_TABLE'
+);
+END;
+/
+
+-- Step3: Query
+
+-- query the RDF View using SPARQL to find all the distinct properties
+select p$rdfterm
+from table(sem_match(
+'SELECT DISTINCT ?p
+ WHERE {
+   ?x ?p ?y .
+ }',
+sem_models('EMP_DEPT_VIEW_CUSTOM'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+-- query the RDF View using SPARQL to find all the triples
+select x$rdfterm, p$rdfterm, y$rdfterm
+from table(sem_match(
+'SELECT *
+ WHERE {
+   ?x ?p ?y .
+ }',
+sem_models('EMP_DEPT_VIEW_CUSTOM'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1,2,3;
+
+-- query the RDF View using SPARQL to find for each employee the name and location of their department
+select ename$rdfterm, dname$rdfterm, loc$rdfterm
+from table(sem_match(
+'PREFIX hr: <http://scott-hr.org/> 
+ PREFIX e: <http://scott-hr.org/emp/> 
+ PREFIX d: <http://scott-hr.org/dept/> 
+ SELECT *
+ WHERE {
+   ?emp rdf:type hr:Employee .
+   ?emp e:name ?ename .
+   ?emp e:refDept ?dept .
+   ?dept d:name ?dname .
+   ?dept d:location ?loc .
+ }',
+sem_models('EMP_DEPT_VIEW_CUSTOM'),
+null,null,null,null,
+'PLUS_RDFT=VC ALLOW_DUP=T'))
+order by 1;
+
+--////////////////////////////////////// Cleanup (optional) \\\\\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+conn scott/tiger@orcl;
+
+-- drop RDF View related models and tables
+exec sem_apis.drop_rdfview_model('EMP_DEPT_VIEW');
+exec sem_apis.drop_sem_model('EMP_DEPT_MODEL');
+exec sem_apis.drop_rdfview_model('EMP_DEPT_VIEW_CUSTOM');
+drop table r2rml_table;
+drop table atab;
+drop table RDFTAB;
+
+exec sem_apis.drop_rdf_model('scott_hr_data');
+drop table scott_hr_atab;
+
+exec sem_apis.drop_rdf_model('scott_hr_ont');
+drop table scott_hr_ont_atab;
+
+
+conn / as sysdba;
+alter session set container=orcl;
+exec sem_apis.drop_rdf_network();
+*/
+
+
+--////////////////////// RDF Semantic Graph Support for Apache Jena \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+RDF Semantic Graph support for Apache Jena provides a Java-based interface to Oracle Spatial and Graph RDF Semantic Graph by implementing the well-known Jena Graph, Model, and DatasetGraph APIs. Apache Jena is an open source framework for building Semantic Web and Linked Data applications. Additionally Support for Apache Jena includes tools to configure a SPARQL endpoint using Apache Joseki and Apache Fuseki. 
+
+To use the support for Apache Jena, the first step is to ensure that you have the package installed under /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/. The package should include the following files and directories:
+
+1. cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/
+2. ls
+examples		javadoc		META-INF		server		web
+fuseki    		joseki		protege_plugin  sparqlgateway
+jar 			joseki_web_app  README  		sparqlgateway_web_app
+
+If the package is not installed already, download RDF Semantic Graph support for Apache Jena from OTN at http://www.oracle.com/technetwork/database-options/spatialandgraph/. Click the "Downloads" tab, and then under Licensed Software, click RDF Semantic Graph. In the next page, go over "Oracle Database Support for Apache Jena and Fuseki, and Protégé Desktop", and  click on "Download Oracle Database Support for Apache Jena and Fuseki, and Protégé Desktop". Accept the license agreement, and download the zip (oracle_support_12.1.0.1_for_apache_jena_2.11.1_fuseki_1.0.1_protege_4.3.zip or a newer release kit). You may need to update the proxy configuration in the Big Data Lite VM in order to download the file.
+
+Unzip the downloaded zip into the rdf directory on /u01/app/oracle/product/12.1.0.2/dbhome_1/ by executing the following steps.
+1. cd /u01/app/oracle/product/12.1.0.2/dbhome_1/
+2. If the directory rdf/ does not exists, create the directory
+   mkdir rdf
+   cd rdf
+3. cp /tmp/<insert_the_complete_zip_filename_here> .
+4. unzip <insert_the_complete_zip_filename_here> 
+5. ls
+examples  javadoc META-INFserver web
+fuseki    joseki  protege_plugin  sparqlgateway
+jar joseki_web_app  README  sparqlgateway_web_app
+
+
+
+The support for Apache Jena includes a set of Java examples using the Java APIs. Each example is self-contained: it typically creates a model, creates triples, and performs a query that may involve inference, displays the result, and drops the model.
+
+
+To run a query, you must do the following:
+
+1. Go to the examples directory on the Support for Apache Jena:
+    cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/examples
+
+2. Compile the Java source file of the example to run:
+
+   javac -classpath ./:../jar/'*' Test<ID>.java
+
+3. Execute the example by passing the required parameters:
+   java -classpath ./:../jar/'*' Test<ID> jdbc:oracle:thin:@localhost:1521:orcl scott tiger M1
+
+
+For example, the result for the execution of Test.java similar to:
+
+[oracle@bigdatalite examples]$ java -classpath ./:../jar/'*' Test jdbc:oracle:thin:@localhost:1521:orcl scott tiger M1
+log4j:WARN No appenders could be found for logger (oracle.spatial.rdf.client.jena.Oracle).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+---------------------------------------------------------
+| f                         | k                         |
+=========================================================
+| <http://example.com/John> | <http://example.com/Mary> |
+---------------------------------------------------------
+
+Further details on the examples and their expected output can be found in Section 7.16: Example Queries Using RDF Semantic Graph Support for Apache Jena (https://docs.oracle.com/database/121/RDFRM/sem_jena.htm#RDFRM272)
+
+*/
+
+--*************************** Part 2: Support for Apache Jena ****************************--
+
+--///////////////////////// RDF Semantic Graph SPARQL Endpoints \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+Oracle Spatial and Graph - RDF Semantic Graph supports Apache Jena Joseki, an open source SPARQL endpoint that supports the SPARQL protocol and SPARQL queries. Setting up the SPARQL endpoint using RDF Semantic Graph involves creating and deploying a Web Application Archive (WAR) file into a J2EE container, like WebLogic server. Additionally, the SPARQL endpoint requires a J2EE data source to connect to the semantic network in Oracle Database.
+
+Additionally, RDF Semantic Graph supports Apache Fuseki, an open source SPARQL endpoint including a Server that provides REST-style SPARQL HTTP Update, SPARQL Query and SPARQL Update using the SPARQL protocol over HTTP. 
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 7.2: Setting Up the SPARQL Service
+http://docs.oracle.com/database/121/RDFRM/sem_jena.htm#RDFRM236
+
+*/
+
+--////////////////////// Exercise 2-1: Start and configure the WebLogic Server \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise illustrates how to start WebLogic Server, a J2EE container used to deploy the Web Application Archive for RDF Semantic Graph Joseki SPARQL endpoint.
+
+The steps to start the WebLogic Server are the following:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is checked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will start the service. Starting WebLogic may take some time, depending on the configuration of your VM.
+
+To verify that the Web Server is up and running, use a Web browser and connect to the following URL:
+
+http://localhost:7001/console
+
+This webpage contains the admin console to manage all the deployments, data sources, and services used by WebLogic Server.
+
+For a better performance on query execution for long queries, we recommend to modify the JVM Garbage collection and Heap Size for the AdminServer used in WebLogic Server. To modify these parameters, follow these steps:
+
+1. In a terminal, go to the WebLogic DOMAIN_HOME/bin:
+	cd /u01/Middleware/user_projects/domains/movieplex_domain/bin
+2. Edit the setDomainEnv.sh file, and below the description of the USER_MEM_ARGS variable, add a new line to set the heap size destinated to WebLogic based on the available memory. This variable overrides the standard memory arguments passed to Java, i.e set the Heap to 2g. 
+   USER_MEM_ARGS="-Xms2g -Xmx2g"
+3. Edit setDomainEnv.sh file, create a GC_SETTINGS below the USER_MEM_ARGS variable. This variable describe the GC configuration settings that will be used by the WebLogic Server.
+   GC_SETTINGS="-XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseTLAB -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:CMSIncrementalDutyCycle=10 -XX:MaxTenuringThreshold=0 -XX:SurvivorRatio=256 -XX:CMSInitiatingOccupancyFraction=60 -XX:+DisableExplicitGC"
+4. Modify the JAVA_OPTIONS variable to include this variable, so they are taken into account when starting the Server.
+   #JAVA_OPTIONS="${JAVA_OPTIONS} ${JAVA_PROPERTIES}"
+   JAVA_OPTIONS="${GC_SETTINGS} ${JAVA_OPTIONS} ${JAVA_PROPERTIES}"
+
+Note that you need to check the memory and JVM settings in the Big Data Lite VM as those changes may affect the performance and correct execution of the WebLogic Server. Those changes may cause problems when stopping or starting the WebLogic server due to a memory overflow.
+
+You can also set up the query option STRICT_DEFAULT=false, so we can allow the default graph to include triples in named graphs for all the services handled by the WebLogic Server. This is done  by setting the JVM variable -Doracle.spatial.rdf.client.jena.strictDefaultOn=false in the $JAVA_OPTIONS used by the WebLogic Server. To set up this variable:
+
+1. Edit setDomainEnv.sh file, create a JENA_SUPPORT_SETTINGS below the USER_MEM_ARGS variable:
+   JENA_SUPPORT_SETTINGS=" -Doracle.spatial.rdf.client.jena.strictDefaultOn=false "
+2. Modify the JAVA_OPTIONS variable to include this variable. This variable will include the JVM variable:
+   JAVA_OPTIONS="${JENA_SUPPORT_SETTINGS} ${GC_SETTINGS} ${JAVA_OPTIONS} ${JAVA_PROPERTIES}"
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+To verify that the new settings are used, open a terminal and execute the following command:
+ps -efa |grep weblogic
+
+This command will print something similar to:
+
+root     11026 10953 78 14:02 pts/0    00:00:31 /u01/Middleware/oracle_common/jdk/bin/java -server -Xms2g -Xmx2g -Dweblogic.Name=AdminServer -Doracle.spatial.rdf.client.jena.strictDefaultOn=false -Djava.security.policy=/u01/Middleware/wlserver/server/lib/weblogic.policy -XX:MaxPermSize=128m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseTLAB -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:CMSIncrementalDutyCycle=10 -XX:MaxTenuringThreshold=0 -XX:SurvivorRatio=256 -XX:CMSInitiatingOccupancyFraction=60 -XX:+DisableExplicitGC -Xverify:none -Djava.endorsed.dirs=/u01/Middleware/oracle_common/jdk/jre/lib/endorsed:/u01/Middleware/wlserver/../oracle_common/modules/endorsed -da -Dwls.home=/u01/Middleware/wlserver/server -Dweblogic.home=/u01/Middleware/wlserver/server -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true weblogic.Server
+
+You should see the modified settings in the details of the process.
+
+
+*/
+
+
+--////////////////////// Exercise 2-2: Create the Required Data Source Using WebLogic Server \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise illustrates how to configure the Data Source required by the Joseki SPARQL endpoint to connect to the semantic network in Oracle Database using a WebLogic Server.
+
+To verify that the required J2EE data source is configured using WebLogic Server, the first step is to login to the admin console http://localhost:7001/console. Note that the credentials required to login to the admin console can be located in the StartHere.html page.
+
+Then, you need to navigate over the "Domain Structure" panel on the left side of the console, expand the "Services" option, and click on "Data Sources".
+
+If the data source is correctly configured, you may see a data source named OracleSemDS as specified in the SPARQL endpoint configuration file. After clicking over this data source, you may see all the details of the underlying database like the URL, driver, user and password. 
+
+If the data source is not defined, you need to go over the slide menu "New", select "Generic Data Source" and enter the following values:
+Name: OracleSemDS
+JNDI Name: OracleSemDS
+Database Type: Oracle
+
+Click "Next" and enter the following values:
+Database Driver: Oracle's Driver (Thin) For Instance connections; Versions: Any
+
+Next, you will see the transaction options that will be used for this data source. The default settings are good enough, so you can click "Next". In the Connection Properties panel, enter the appropriate values for the Database Name, Host Name, Port, Database User Name (schema that contains semantic data), Password fields.
+Database name: orcl
+Host name: 127.0.0.1
+Port: 1521
+User name: scott
+Password: tiger
+
+Click "Next". You will see the details of the Database connection. We suggest to click on "Test Configuration" to validate WebLogic Server can connect to the database, and later click "Next" again.
+
+After clicking "Next", you may have to select the target server or servers to which you want to deploy this OracleSemDS data source. Verify that the checkbox for server "AdminServer" is checked and click "Finish". You should see a message that all changes have been activated and no restart is necessary.
+
+
+*/
+
+--////////////////////// Exercise 2-3: Executing SPARQL Queries using Joseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to connect to the Joseki HTTP SPARQL endpoint provided through Support for Apache Jena, deployed into Oracle WebLogic Server. 
+ 
+The first step is to ensure that the WebLogic Server and the SPARQL endpoint are up and running. Using a Web browser, connect to the following URL:
+
+http://localhost:7001/joseki
+
+If the service is up and running, you will see a webpage titled "Oracle SPARQL Endpoint using Joseki". The SPARQL Service endpoint will execute the queries over the default graph and named graphs in the model M_NAMED_GRAPHS, owned by the schema specified in the J2EE data source with JNDI name OracleSemDS.  
+
+In the main area, it includes a textbox where you can submit a query. To test that the service connects to the model M_NAMED_GRAPHS, type the SPARQL query and click Submit Query:
+
+SELECT *
+WHERE 
+  { ?s ?p ?o }
+LIMIT 10
+
+The resulting page will include a table with 10 triples from the model or a blank page if there are no triples in the model.
+
+If the service is not up, then you must deploy the joseki.war included on RDF Semantic Graph by executing the following steps (as root):
+
+cd /u01/Middleware/user_projects/domains/movieplex_domain/autodeploy
+cp -rf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/joseki_web_app/joseki.war ./
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+*/
+
+
+--////////////////////// Exercise 2-4: Configuring the Joseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+By default, the Joseki SPARQL Service endpoint assumes that the queries are to be executed against a semantic model with a pre-set name, owned by the schema specified in the J2EE data source with JNDI name OracleSemDS. If the model does not exist in the network, it will be automatically created, along with the necessary application table and index.
+
+This exercise illustrates how to configure the Joseki SPARQL endpoint deployed on a WebLogic Server using the scott_hr_data model loaded in the previous exercises.
+
+To configure the SPARQL endpoint, we need first to modify the joseki-config.ttl and re-deploy the modified web service. This can be done by executing the following steps:
+
+cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/joseki_web_app
+jar xf joseki.war WEB-INF/classes/joseki-config.ttl
+
+Modify the configuration in Oracle Dataset (described below) to use "scott_hr_data" model by replacing the oracle:allGraphs predicate with the oracle:defaultModel using the following values:
+
+oracle:defaultModel [ oracle:firstModel "scott_hr_data" ] .
+
+The result dataset configuration should be similar to this one:
+
+#
+## Datasets
+#
+[] ja:loadClass "oracle.spatial.rdf.client.jena.assembler.OracleAssemblerVocab" .
+oracle:Dataset rdfs:subClassOf ja:RDFDataset .
+<#oracle> rdf:type oracle:Dataset;
+    joseki:poolSize     2 ; ## Number of concurrent connections allowed to this dataset.
+    oracle:connection
+    [ a oracle:OracleConnection ;
+oracle:dataSourceName "OracleSemDS"
+    ];
+#oracle:allGraphs [ oracle:firstModel "M_NAMED_GRAPHS" ] .
+oracle:defaultModel [ oracle:firstModel "scott_hr_data" ] .
+
+If you want to connect to scott_hr_data_vm virtual model, then you just need to replace the oracle:defaultModel with the following values:
+
+oracle:allGraphs [ oracle:virtualModelName "scott_hr_data_vm" ] .
+
+Update the war application file by executing: 
+jar uf joseki.war WEB-INF/classes/joseki-config.ttl 
+
+Re-deploy the SPARQL endpoint on the WebLogic Server by executing the following commands in a terminal:
+
+1. cd /u01/Middleware/user_projects/domains/movieplex_domain/autodeploy
+2. cp -rf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/joseki_web_app/joseki.war .
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+After restarting WebLogic, you can connect to http://localhost:7001/joseki and submit one of the queries from the previous exercises as the following:
+
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+#Check some employees' info.
+ PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?name ?mgr ?comm
+ WHERE { 
+   ?s :empno?empno .
+   ?s :ename?name .
+   ?s :hasManager ?mgr .
+   OPTIONAL { ?s :comm ?comm }
+   FILTER(?empno IN (7369, 7499))
+ }
+
+Note that in the previous query, we are using a ORACLE_SEM_FS_NS prefix. This prefix handles the additional query options passed to a SEM_MATCH query. In this case, we set the query option STRICT_DEFAULT to false, so we can allow the default graph to include triples in named graphs. Further information on additional query options can be found in Section 7.7.4 Additional Query Options https://docs.oracle.com/database/121/RDFRM/sem_jena.htm#RDFRM252.
+
+You can also set up the query option STRICT_DEFAULT by setting the JVM variable -Doracle.spatial.rdf.client.jena.strictDefaultOn=false in the $JAVA_OPTIONS used by the WebLogic Server. To set up this variable, you need to execute the following steps:
+
+1. In a terminal, go to the WebLogic DOMAIN_HOME/bin:
+	cd /u01/Middleware/user_projects/domains/movieplex_domain/bin
+2. Edit setDomainEnv.sh file, create a JENA_SUPPORT_SETTINGS and modify the JAVA_OPTIONS variable to include this variable. This variable will include the JVM variable:
+	JENA_SUPPORT_SETTINGS=" -Doracle.spatial.rdf.client.jena.strictDefaultOn=false "
+	JAVA_OPTIONS="${JENA_SUPPORT_SETTINGS} ${GC_SETTINGS} ${JAVA_OPTIONS} ${JAVA_PROPERTIES}"
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+To verify that the new settings are used, open a terminal and execute the following command:
+ps -efa |grep weblogic
+
+This command will print something similar to:
+
+root     11026 10953 78 14:02 pts/0    00:00:31 /u01/Middleware/oracle_common/jdk/bin/java -server -Xms2g -Xmx2g -Dweblogic.Name=AdminServer -Doracle.spatial.rdf.client.jena.strictDefaultOn=false -Djava.security.policy=/u01/Middleware/wlserver/server/lib/weblogic.policy -XX:MaxPermSize=128m -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UseTLAB -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:CMSIncrementalDutyCycle=10 -XX:MaxTenuringThreshold=0 -XX:SurvivorRatio=256 -XX:CMSInitiatingOccupancyFraction=60 -XX:+DisableExplicitGC -Xverify:none -Djava.endorsed.dirs=/u01/Middleware/oracle_common/jdk/jre/lib/endorsed:/u01/Middleware/wlserver/../oracle_common/modules/endorsed -da -Dwls.home=/u01/Middleware/wlserver/server -Dweblogic.home=/u01/Middleware/wlserver/server -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true weblogic.Server
+
+*/
+
+--////////////////////// Exercise 2-5: Executing SPARQL Updates using Joseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to connect to the Joseki HTTP SPARQL endpoint provided through Support for Apache Jena, deployed into Oracle WebLogic Server and execute an SPARQL Update operation.
+
+The first step is to ensure that the WebLogic Server and the SPARQL endpoint are up and running, and the update service is enabled. Using a Web browser, connect to the following URL:
+
+http://localhost:7001/joseki/update.html
+
+If the service is up and running, you will see a webpage titled "Oracle SPARQL Update Service Endpoint using Joseki". The SPARQL Service endpoint will execute the SPARQL Update instructions queries over the default graph or named graphs in the model specified in the joseki-config.ttl used in the WAR application file.
+
+In the main area, it includes a textbox where you can submit a SPARQL update instruction. 
+To test the update service, type the following SPARQL update instruction and click on "Perform SPARQL Update"
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+INSERT DATA
+{ 
+  <http://exampleJoseki/book1> dc:title "Harry Potter and the Order of the Phoenix" ;
+                               dc:creator "J.K. Rowling" .
+}
+
+After this operation is executed, you will be redirected to blank page. This means that the operation was correctly executed and two triples describing the book "Harry Potter and the Order of the Phoenix" were added to the default graph from the model specified in the config-oracle.ttl (or the configuration file used to start Fuseki). 
+
+To validate that the data is already there, return to the "SPARQL Query" page at http://localhost:7001/joseki, type the following query and click Submit Query:
+
+SELECT *
+WHERE 
+  { <http://exampleJoseki/book1> ?p ?o }
+LIMIT 10
+
+The resulting page will include a table with the two triples we just added. The output should be similar as this one:
+
+
+-------------------------------------------------------------------------------------------
+| p                                         | o                                           |
+===========================================================================================
+| <http://purl.org/dc/elements/1.1/title>   | "Harry Potter and the Order of the Phoenix" |
+| <http://purl.org/dc/elements/1.1/creator> | "J.K. Rowling"                              |
+-------------------------------------------------------------------------------------------
+
+*/
+
+
+
+
+--////////////////////// Exercise 2-6: Executing SPARQL Queries using Fuseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to connect to the HTTP SPARQL endpoint provided through Support for Apache Jena using Fuseki Server.
+ 
+The first step is to ensure that the Fuseki Server and the SPARQL endpoint are up and running and configured to use RDF Semantic Graph. Using a Web browser, connect to the following URL:
+
+http://localhost:3030
+
+If the Fuseki service is up and running, you will see a webpage titled Fuseki. If the service is not up, then you must start the Fuseki Server by doing the following steps:
+
+1. Go to Fuseki Home:
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/
+2. Start the Fuseki Server using the "config-oracle.ttl" configuration file. This file includes all the information of the model(s), database connection, and services to use to connect to the RDF Semantic Graph:
+   export FUSEKI_CONF=./config-oracle.ttl
+   ./fuseki start
+   
+   The execution of this command will print out the details of the Process ID for the Fuseki server, as well as the location of the log:
+
+   [oracle@bigdatalite fuseki]$ ./fuseki start
+   Starting Fuseki: Redirecting Fuseki stderr/stdout to /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/log/stderrout.log
+   STARTED Fuseki <date>
+   PID=<pid>
+
+To verify the Fuseki Server is connecting to RDF Semantic Graph, click on "Control Panel" and you will see a menu with all the configured Datasets. This list should include "/oracle" Dataset.
+
+If the dataset is correctly configured, go to "/oracle" and click "Select". You will see a webpage titled "Fuseki Query". Similar to Joseki endpoint, it will include a textbox where you can submit a query. To test that the service connects to the model M_NAMED_GRAPHS, type the SPARQL query and click Submit Query:
+
+SELECT *
+WHERE 
+  { ?s ?p ?o }
+LIMIT 10
+
+The resulting page will include a table with 10 triples from the model or a blank page if there are no triples in the model. In the default configuration, the SPARQL Service endpoint will execute the queries over the default graph and named graphs in the model M_NAMED_GRAPHS, owned by the schema specified in the config-oracle.ttl used by the Fuseki Server.  
+
+
+*/
+
+
+--////////////////////// Exercise 2-7: Configuring the Fuseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+By default, the Fuseki SPARQL Service endpoint assumes that the queries are to be executed against a semantic model with a pre-set name, owned by the schema specified in the config-oracle.ttl. If the model does not exist in the network, it will be automatically created, along with the necessary application table and index.
+
+This exercise illustrates how to configure the Fuseki SPARQL endpoint using the scott_hr_data model loaded in the previous exercises.
+
+To configure the SPARQL endpoint, we need first to create a new config-oracle.ttl and re-start the Fuseki Server. This can be done by executing the following steps:
+
+cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/
+cp ./config-oracle.ttl ./config-oracle-scott-hr-data.ttl
+
+Modify the configuration in Oracle Dataset (described below) to use "scott_hr_data" model by removing the oracle:allGraphs predicate with the oracle:defaultModel using the following values:
+
+oracle:defaultModel [ oracle:firstModel "scott_hr_data" ] .
+
+The result dataset configuration should be similar to this one:
+
+[] ja:loadClass "oracle.spatial.rdf.client.jena.assembler.OracleAssemblerVocab" .
+oracle:Dataset  rdfs:subClassOf  ja:RDFDataset .
+
+<#oracle> rdf:type oracle:Dataset;
+    oracle:connection
+    [ a oracle:OracleConnection ;
+oracle:jdbcURL "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=orcl)))";
+oracle:User "scott" ;
+oracle:Password "tiger"
+    ];
+oracle:defaultModel [ oracle:firstModel "scott_hr_data" ] .
+#oracle:allGraphs [ oracle:firstModel "TEST_MODEL" ] .
+
+To connect to scott_hr_data_vm virtual model, you just need to add a oracle:allGraphs instead of oracle:defaultModel using the following values:
+
+oracle:allGraphs [ oracle:virtualModelName "scott_hr_data_vm" ] .
+
+The database connection information can be customized, if necessary by editing the config-oracle.ttl oracle:jdbcURL, oracle:User, and oracle:Password settings.
+
+Start the Fuseki Server using "config-oracle-scott-hr-data.ttl" by doing the following steps:
+
+1. Go to Fuseki Home:
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/
+2. Start the Fuseki Server using the "config-oracle-scott-hr-data.ttl" configuration file. This file includes all the information of the model(s), database connection, and services to use to connect to the RDF Semantic Graph:
+   export FUSEKI_CONF=./config-oracle-scott-hr-data.ttl
+   ./fuseki start
+   
+   The execution of this command will print out the details of the Process ID for the Fuseki server, as well as the location of the log:
+
+   [oracle@bigdatalite fuseki]$ ./fuseki start
+   Starting Fuseki: Redirecting Fuseki stderr/stdout to /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/log/stderrout.log
+   STARTED Fuseki <date>
+   PID=<pid>
+
+
+After starting the Fuseki Server, you can connect to http://localhost:3030, go to "Control Panel" and select "/oracle" Dataset. Then, you can submit one of the queries from the previous exercises as the following:
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+#Check some employees' info.
+ PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?name ?mgr ?comm
+ WHERE { 
+   ?s :empno?empno .
+   ?s :ename?name .
+   ?s :hasManager ?mgr .
+   OPTIONAL { ?s :comm ?comm }
+   FILTER(?empno IN (7369, 7499))
+ }
+
+Note that in the previous query, we are using a ORACLE_SEM_FS_NS prefix. This prefix handles the additional query options passed to a SEM_MATCH query. In this case, we set the query option STRICT_DEFAULT to false, so we can allow the default graph to include triples in named graphs. Further information on additional query options can be found in Section 7.7.4 Additional Query Options https://docs.oracle.com/database/121/RDFRM/sem_jena.htm#RDFRM252.
+
+You can also set up the query option STRICT_DEFAULT by setting the JVM variable -Doracle.spatial.rdf.client.jena.strictDefaultOn=false in the instruction to run he Fuseki Server. To set up this variable, you need to execute the following steps:
+
+1. In a terminal, go to the Fuseki Server home:
+	cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/
+2. Stop the Fuseki Server:
+        ./fuseki stop
+   
+   This will print out a message "Stopping Fuseki: OK"
+
+2. Edit fuseki file, create a JENA_SUPPORT_SETTINGS and modify the JAVA_OPTIONS variable to include this variable. This variable will include the JVM variable:
+	JENA_SUPPORT_SETTINGS=" -Doracle.spatial.rdf.client.jena.strictDefaultOn=false "
+	JAVA_OPTIONS="${JENA_SUPPORT_SETTINGS} ${JAVA_OPTIONS}"
+
+3. Start the Fuseki Server using the "config-oracle-scott-hr-data.ttl" configuration file. This file includes all the information of the model(s), database connection, and services to use to connect to the RDF Semantic Graph:
+   export FUSEKI_CONF=./config-oracle-scott-hr-data.ttl
+   ./fuseki start
+   
+   [oracle@bigdatalite fuseki]$ ./fuseki start
+   Starting Fuseki: Redirecting Fuseki stderr/stdout to /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/log/stderrout.log
+   STARTED Fuseki <date>
+   PID=<pid>
+
+
+To verify that the new settings are used, open a terminal and execute the following command:
+ps -efa |grep fuseki
+
+This command will print something similar to:
+
+oracle   30569     1 17 09:05 pts/1    00:00:02 /usr/bin/java -Doracle.spatial.rdf.client.jena.strictDefaultOn=false -jar /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/fuseki/fuseki-server.jar --config=./config-oracle.ttl
+
+*/
+
+
+--////////////////////// Exercise 2-8: Executing SPARQL Updates using Fuseki SPARQL Endpoint \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to connect to the HTTP SPARQL endpoint provided through Support for Apache Jena using Fuseki Server and execute an SPARQL Update operation.
+ 
+The first step is to ensure that the Fuseki Server and the SPARQL endpoint are up and running and configured to use RDF Semantic Graph. Using a Web browser, connect to the following URL:
+
+http://localhost:3030
+
+If the Fuseki service is up and running, you will see a webpage titled Fuseki. To verify the Fuseki Server is connecting to RDF Semantic Graph, click on "Control Panel" and you will see a menu with all the configured Datasets. This list should include "/oracle" Dataset.
+
+If the dataset is correctly configured, go to "/oracle" and click "Select". You will see a webpage titled "Fuseki Query". You will see three main panels. The top panel titled "SPARQL Query" includes an area to submit a query, The second panel titled "SPARQL Update" includes a text area to submit a SPARQL update instruction. Finally, the third panel titled "File upload" allows users to upload an RDF file and load it into the specified graph name. 
+
+To test the update service, go to the "SPARQL Update" panel, type the following SPARQL update instruction and click on "Perform Update"
+
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+INSERT DATA
+{ 
+  <http://example/book1> dc:title "Harry Potter and the Chamber of Secrets" ;
+                         dc:creator "J.K. Rowling" .
+}
+
+After this operation is executed, you will be redirected to a new webpage with the message "Sucess: Update succeeded". This means that the operation was correctly executed and two triples describing the book "Harry Potter and the Chamber of Secrets" were added to the default graph from the model specified in the config-oracle.ttl (or the configuration file used to start Fuseki). 
+
+To validate that the data is already there, return to the "Fuseky Query" page and in the "SPARQL Query" panel, type the following query and click Submit Query:
+
+SELECT *
+WHERE 
+  { <http://example/book1> ?p ?o }
+LIMIT 10
+
+The resulting page will include a table with the two triples we just added. The output should be similar as this one:
+
+-----------------------------------------------------------------------------------------
+| p                                         | o                                         |
+=========================================================================================
+| <http://purl.org/dc/elements/1.1/title>   | "Harry Potter and the Chamber of Secrets" |
+| <http://purl.org/dc/elements/1.1/creator> | "J.K. Rowling"                            |
+-----------------------------------------------------------------------------------------
+
+
+*/
+
+
+--////////////////////// SPARQL Gateway \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+RDF Semantic Graph SPARQL Gateway is a J2EE web application that is included with the Support for Apache Jena. It is designed to make semantic data (RDF/OWL/SKOS) easily available to applications that operate on relational and XML data, including Oracle Business Intelligence Enterprise Edition (OBIEE).
+
+SPARQL Gateway manages SPARQL queries and XSLT operations, executes SPARQL queries against any arbitrary standard-compliant SPARQL endpoints, and performs necessary XSL transformations before passing the response back to applications. Applications can then consume semantic data as if it is coming from an existing data source.
+
+Additionally, SPARQL Gateway provides a SPARQL Browser presents the results of SPARQL queries can be retrieved in batches using pagination, and provides a friendly interface to easily navigate over a resource and their associated triples.
+
+For more information, see the following section in the RDF Semantic Graph user's guide:
+Section 7.17: SPARQL Gateway and Semantic Data
+https://docs.oracle.com/database/121/RDFRM/sem_jena.htm#RDFRM484
+
+*/
+
+--////////////////////// Exercise 2-9: SPARQL Gateway Installation and Configuration \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to connect to the SPARQL Gateway provided through Support for Apache Jena, deployed into Oracle WebLogic Server. 
+ 
+The first step is to ensure that the WebLogic Server and the SPARQL Gateway are up and running. Using a Web browser, connect to the following URL:
+
+http://localhost:7001/sparqlgateway
+
+If the service is up and running, you will see a webpage titled "SPARQL Gateway". The main page will include a text box where you can specify the URL of the SPARQL endpoint (i.e. RDF Semantic Graph Joseki SPARQL Endpoint) and an area to type in a SPARQL Query. To test that the service connects to the Joseki SPARQL Endpoint we previously configured, type the following parameters and click "Submit Query":
+
+SPARQL Endpoint: http://localhost:7001/joseki/oracle
+
+SPARQL SELECT Query Body:
+
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+SELECT *
+WHERE 
+  { ?s ?p ?o }
+LIMIT 10
+
+The resulting page will include an XML with 10 triples from the model scott_hr_data we configured in the Joseki SPARQL endpoint. These triples will be formatted based on the default XSLT transformation set in the SPARQL Gateway (default.xslt). A snippet of the result can be similar to:
+
+<test>
+  ...
+  <row>
+   <s>http://scott-hr.org/emp/7369</s>
+   <p>http://scott-hr.org#empno</p>
+   <o>7369</o>
+  </row>
+  ...
+</test>
+
+If the service is not up, then you must deploy the sparqlgateway.war included on RDF Semantic Graph by executing the following steps  (as root):
+
+cd /u01/Middleware/user_projects/domains/movieplex_domain/autodeploy
+cp -rf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app/sparqlgateway.war ./
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+If you want SPARQL Gateway to communicate with SPARQL endpoints on the Internet, you probably need to use the following JVM settings on the WebLogic Server (for details on how to set up these variables, refer to Exercise 2-1):
+
+-Dhttp.proxyHost=<your_proxy_host>
+-Dhttp.proxyPort=<your_proxy_port>
+-Dhttp.nonProxyHosts=127.0.0.1|<hostname_1_for_sparql_endpoint_inside_firewall>|<hostname_2_for_sparql_endpoint_inside_firewall>|
+
+
+*/
+
+--////////////////////// Exercise 2-10: Navigation and Browsing using SPARQL Gateway \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+This exercise shows how to navigate and browse over the semantic data retrieved from a SPARQL endpoint. This feature works with both RDF Semantic Graph Fuseki and Joseki SPARQL endpoints.
+
+Using a Web browser, connect to the following URL:
+
+http://localhost:7001/sparqlgateway/browse.jsp
+
+You will see a webpage titled "SPARQL Gateway". The main page will include a text box where you can specify the URL of the SPARQL endpoint (i.e. RDF Semantic Graph Joseki SPARQL Endpoint), and an area to type in a SPARQL Query. If you click on "Show advanced options", a new panel with options to set the timeout and a "best effort" can be selected. The timeout (in milliseconds) specifies the time to wait of a query response. If the best effort option is also checked, a best-effort policy will be used, so the user can receive a partial set of results if the timeout has been reached and the query was not completed.
+ 
+Type the following parameters and click "Submit Query":
+
+SPARQL Endpoint: http://localhost:7001/joseki/oracle
+
+SPARQL SELECT Query Body:
+
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+SELECT *
+WHERE 
+  { ?s ?p ?o }
+LIMIT 1000
+
+The resulting page will include a paginated table displaying at most 50 rows per page. Each result may include URIs clickable to allow easy navigation over resources. Additionally if you hold over the cursor over a shortened URI, you will see a tooltip with the full URI (e.g. http://purl.org.dc/elements/1.1/title being displayed as the tool tip for dc:title).
+
+Note that navigation using the model scott_hr_data requires to use PREFIX ORACLE_SEM_FS_NS: <http://oracle.com/semtech#STRICT_DEFAULT=F>, so we can navigate over the default graph including triples from named graphs. If the JVM variable -Doracle.spatial.rdf.client.jena.strictDefaultOn=false is used in WebLogic Server settings, this prefix is no longer necessary.
+
+*/
+
+
+--////////////////////// Exercise 2-11: Manage XSLT and SPARQL Queries stored directly in a SPARQL Gateway application file \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+RDF Semantic Graph SPARQL Gateway manages SPARQL queries and XSLT operations that can be executed over a given SPARQL endpoint. The SPARQL queries and XSLT transformation files can be stored in the SPARQL Gateway application itself, in a file system directory, or in an Oracle Database.
+
+This exercise shows how to store a SPARQL Query and XSLT transformation directly in the SPARQL Gateway application. 
+
+
+1. Go to the sparqlgateway_app directory on the support for Apache Jena :
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app
+
+2. Unpack the sparqlgateway.war file into a temporary directory
+   mkdir work_dir
+   cd work_dir
+   jar xvf ../sparqlgateway.war
+
+3. Create and edit scott_hr_dataq1.sparql file to include the following query:
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+#Check some employees' info.
+ PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?name ?mgr ?comm
+ WHERE { 
+   ?s :empno?empno .
+   ?s :ename?name .
+   ?s :hasManager ?mgr .
+   OPTIONAL { ?s :comm ?comm }
+   FILTER(?empno IN (7369, 7499))
+ }
+
+If you want to change the default SPARQL query shown when accessing the SPARQL Gateway, you should modify the qb1.sparql file.
+
+4. Copy the file default.xslt into a new file named scott_hr_data_1.xslt
+   cp default.xslt scott_hr_data_1.xslt
+
+5. Edit the XSLT transformation. A simple change can be to modify the open and closing tags for  "test" to "xsltFromWebApp": 
+<xsl:template name="vb-result">
+  <xsltFromWebApp>
+<xsl:for-each select="sr:results/sr:result">
+    <row>
+    <xsl:apply-templates select="."/>
+  </row>
+</xsl:for-each>
+  </xsltFromWebApp>
+</xsl:template>
+
+If you want to change the default XSLT transformation used when executing queries in SPARQL Gateway, you should modify the default.xslt file.
+
+6. Re-generate the SPARQL Gateway application file:
+  jar cvf ../sparqlgateway.war *
+
+7. Re-deploy the sparqlgateway.war (as root):
+
+cd /u01/Middleware/user_projects/domains/movieplex_domain/autodeploy
+cp -rf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app/sparqlgateway.war ./
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+To validate the changes, using a Web browser, connect to http://localhost:7001/sparqlgateway/sg?ee=http%3A%2F%2F127.0.0.1%3A7001%2Fjoseki%2Foracle&wq=scott_hr_dataq1.sparql&wx=scott_hr_data_1.xslt. The result output should be similar to:
+
+<xsltFromWebApp>
+  <row>
+   <name>SMITH</name>
+   <mgr>http://scott-hr.org/emp/7902</mgr>
+   <comm/>
+  </row>
+  <row>
+    <name>ALLEN</name>
+    <mgr>http://scott-hr.org/emp/7698</mgr>
+    <comm>300</comm>
+  </row>
+</xsltFromWebApp>
+
+*/
+
+
+--////////////////////// Exercise 2-12: Manage XSLT and SPARQL Queries using a file system directory \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+RDF Semantic Graph SPARQL Gateway can store SPARQL queries and XSLT operations in a file system directory accessible for the deployed SPARQL Gateway Web application. The file system directory used is specified in the web.xml of the sparqlgateway.war file. By tdefault, the directory is set to /tmp.
+
+This exercise shows how to store a SPARQL Query and XSLT transformation using a new file system directory. 
+
+
+1. Create a file system directory under the support for Apache Jena package where the new SPARQL query and XSLT files will be included
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/
+   mkdir scott_hr_files
+   cd scott_hr_files
+
+2. Create and edit scott_hr_dataq2.sparql file to include the following query:
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?ename ?sal
+ WHERE { 
+   ?s :ename ?ename .
+   ?s :sal ?sal .
+   FILTER (?sal > 1000)
+ }
+
+3. Extract the default.xslt from the sparqlgateway.war and copy it to the scott_hr_files directory with the name scott_hr_data_2.xslt
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/scott_hr_files
+   jar xvf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app/sparqlgateway.war default.xslt
+   mv default.xslt scott_hr_data_2.xslt
+
+4. Edit the XSLT transformation. A simple change can be to modify the open and closing tags for  "test" to "xsltFromFileSystemDir"
+<xsl:template name="vb-result">
+  <xsltFromFileSystemDir>
+<xsl:for-each select="sr:results/sr:result">
+    <row>
+    <xsl:apply-templates select="."/>
+  </row>
+</xsl:for-each>
+  </xsltFromFileSystemDir>
+</xsl:template>
+
+
+5. Extract the web.xml file from the sparqlgateway.war:
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app
+   jar xf sparqlgateway.war WEB-INF/web.xml
+
+6. Modify the <init-param> setting to point to scott_hr_files directory:
+<init-param>
+   <param-name>sparql_gateway_repository_filedir</param-name>
+   <param-value>/u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/scott_hr_files/</param-value>
+</init-param>
+
+
+6. Update the war application file by executing: 
+   cd /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app
+   jar uf sparqlgateway.war WEB-INF/web.xml
+
+7. Re-deploy the sparqlgateway.war (as root):
+
+cd /u01/Middleware/user_projects/domains/movieplex_domain/autodeploy
+cp -rf /u01/app/oracle/product/12.1.0.2/dbhome_1/rdf/sparqlgateway_web_app/sparqlgateway.war ./
+
+Restart the WebLogic Server by executing the following steps:
+
+1. Click the "Start/Stop Services" icon located on the Desktop. A terminal will pop up showing a list of Oracle Big Data Lite Services.
+2. Use up/down keys on your keyboard to scroll up/down to find the line "WebLogic-MovieDem" and make sure that line is unchecked (one can toggle the state by pressing Space key). 
+3. Hit enter (OK) and wait for the popped terminal to disappear. This step will stop the service. 
+4. Re-start the service by executing step (1) and (2). This time make sure that the "WebLogic-MovieDem" service is checked. 
+5. Hit enter (OK) and wait for the popped terminal to disappear. 
+
+
+To validate the changes, using a Web browser, connect to http://localhost:7001/sparqlgateway/sg?ee=http%3A%2F%2F127.0.0.1%3A7001%2Fjoseki%2Foracle&fq=scott_hr_dataq2.sparql&fx=scott_hr_data_2.xslt. The result output should be similar to:
+
+<xsltFromFileSystemDir>
+  ...
+  <row>
+    <ename>ALLEN</ename>
+    <sal>1600</sal>
+  </row>
+  ...
+</xsltFromFileSystemDir>
+
+*/
+
+--////////////////////// Exercise 2-13: Manage XSLT and SPARQL Queries using Oracle Database \\\\\\\\\\\\\\\\\\\\\\\\\\--
+/*
+
+RDF Semantic Graph SPARQL Gateway can store SPARQL queries and XSLT operations in an Oracle Database. This approach requires J2EE data source "OracleSGDS" to be defined previously using WebLogic Server. SPARQL Gateway retrieves a database connection from this data source to read the defined SPARQL queries (or XSLT) from the ORACLE_ORARDF_SG_QUERY (or ORACLE_ORARDF_SG_XSLT) using the integer ID provided.
+
+
+This exercise shows how to store a SPARQL Query and XSLT transformation using an Oracle Database.
+
+To verify that the required J2EE data source is configured using WebLogic Server, the first step is to login to the admin console http://localhost:7001/console. Then, you need to navigate over the "Domain Structure" panel on the left side of the console, expand the "Services" option, and click on "Data Sources".
+
+If the data source is correctly configured, you may see a data source named OracleSGDS as specified in the SPARQL endpoint configuration file. After clicking over this data source, you may see all the details of the underlying database like the URL, driver, user and password. 
+
+If the data source is not defined, you need to go over the slide menu "New", select "Generic Data Source" and enter the following values:
+Name: OracleSGDS
+JNDI Name: OracleSGDS
+Database Type: Oracle
+Database Driver: Oracle's Driver (Thin) For Instance connections; Versions: Any
+
+Next, you will see the transaction options that will be used for this data source. The default settings are good enough, so you can click "Next". In the Connection Properties panel, enter the appropriate values for the Database Name, Host Name, Port, Database User Name (schema that contains semantic data), Password fields.
+Database name: orcl
+Host name: 127.0.0.1
+Port: 1521
+User name: scott
+Password: tiger
+
+After clicking "Next", you may have to select the target server or servers to which you want to deploy this OracleSGDS data source and click Finish. You should see a message that all changes have been activated and no restart is necessary.
+
+
+After this, we need to validate that the group SparqlGatewayAdminGroup is already created in WebLogic Server. SPARQL queries and XSLTs are added using the SPARQL admin and XSLT admin located on http://localhost:7001/sparqlgateway/admin/sparql.jsp and http://localhost:7001/sparqlgateway/admin/xslt.jsp. Both services are protected by HTTP Basic authentication, only accessible to the SparqlGatewayAdminGroup. 
+
+To verify the group is configured using WebLogic Server, the first step is to login to the admin console http://localhost:7001/console. Then, you need to navigate over the "Domain Structure" panel on the left side of the console, and click on "Security Realms". You will see a Summary of the Security realms, you can click on the realm "myrealm".
+
+If the group is already created, when you go over the tab "User and Groups" and select the "Groups" tab you should see the SparqlGatewayAdminGroup. 
+
+If the group is not defined, you need to go over the slide button "New", and enter the following values:
+Name: SparqlGatewayAdminGroup
+Provider: DefaultAuthenticator
+
+Move to the "Users" tab and click on the "weblogic" user. You will see the settings for the user including attributes and groups. Make sure that the user is linked to the SparqlGatewayAdminGroup by clicking on the tab "Groups", click on the SparqlGatewayAdminGroup, and click "OK". Then, click on the right arrow button to add the group into the list of "Chosen" groups, and save.
+
+You can now login to http://localhost:7001/sparqlgateway/admin/sparql.jsp and login using the weblogic credentials. You will see a webpage titled "SPARQL Gateway Administrator" with an UI interface to add a new SPARQL query. You can type the following arguments and then click on "Save SPARQL"
+
+SPARQL ID: 1
+Descrition: Find how many people directly report to each manager
+SPARQL Body:
+
+PREFIX ORACLE_SEM_FS_NS:   <http://oracle.com/semtech#STRICT_DEFAULT=F>
+PREFIX : <http://scott-hr.org#>
+ PREFIX emp: <http://scott-hr.org/emp>
+ SELECT ?mgr ?cnt
+ WHERE {
+   ?x :ename ?mgr
+   { SELECT ?x (count(?s) as ?cnt )
+     WHERE { 
+       ?s :hasManager ?x
+     }
+     GROUP by ?x }
+ } ORDER BY DESC(?cnt)
+
+Click on "Save SPARQL Query". You will get a message "Changed persisted successfully!" and on the right panel you will notice a new row has been added with the description of the new SPARQL query.
+
+
+To add a new XSLT, login to  http://localhost:7001/sparqlgateway/admin/xslt.jsp using the weblogic credentials. You will see a webpage titled "SPARQL Gateway Administrator" with an UI interface to add a new XSLT. You will see that the data from the default.xslt is already loaded, so you can easily modify it to generate a new XSLT. First modify the XSLT ID, then a simple change can be to modify the open and closing tags for "test" to "company": 
+
+XSLT ID: 1
+Description: xsltFromDB
+XSLT Body:
+....
+<xsl:template name="vb-result">
+  <xsltFromDB>
+<xsl:for-each select="sr:results/sr:result">
+    <row>
+    <xsl:apply-templates select="."/>
+  </row>
+</xsl:for-each>
+  </xsltFromDB>
+</xsl:template>
+...
+
+Click on "Save XSLT". You will get a message "Changed persisted successfully!" and on the right panel you will notice a new row has been added with the description of the new XSLT.
+
+
+To validate the changes, using a Web browser, connect to http://localhost:7001/sparqlgateway/sg?ee=http%3A%2F%2F127.0.0.1%3A7001%2Fjoseki%2Foracle&dq=1&dx=1. The result output should be similar to:
+
+
+<xsltFromDB>
+  ...
+  <row>
+    <mgr>BLAKE</mgr>
+    <cnt>5</cnt>
+  </row>
+</xsltFromDB>
+
+*/
+

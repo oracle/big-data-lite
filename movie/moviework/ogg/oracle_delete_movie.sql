@@ -1,0 +1,4 @@
+DELETE FROM "MOVIEDEMO"."MOVIE" WHERE MOVIE_ID='1';
+commit;
+
+

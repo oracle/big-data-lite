@@ -1,0 +1,91 @@
+
+
+ LOG file opened at 11/22/13 15:48:15
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table MOVIE_FACT_HDFS_EXT_TAB
+  Record format DELIMITED, delimited by 
+
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    CUST_ID                         CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    MOVIE_ID                        CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    GENRE_ID                        CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_ID                         CHAR (76)
+      Date datatype DATE, date mask YYYY-MM-DD:HH24:MI:SS
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    RECOMMENDED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    ACTIVITY_ID                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    RATING                          CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+      NULL if (RATING = 5c4e)
+    SALES                           CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+      NULL if (SALES = 5c4e)
+
+
+ LOG file opened at 02/06/15 13:17:48
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table MOVIE_FACT_HDFS_EXT_TAB
+  Record format DELIMITED, delimited by 
+
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    CUST_ID                         CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    MOVIE_ID                        CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    GENRE_ID                        CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_ID                         CHAR (76)
+      Date datatype DATE, date mask YYYY-MM-DD:HH24:MI:SS
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    RECOMMENDED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    ACTIVITY_ID                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    RATING                          CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+      NULL if (RATING = 5c4e)
+    SALES                           CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+      NULL if (SALES = 5c4e)
+KUP-04004: error while reading file /home/oracle/movie/moviedemo/osch/osch-20130426090917-7679-2
+KUP-04017: OS message: Error 0
+KUP-04017: OS message: OSCH: Error processing URI hdfs://bigdatalite.localdomain:8020/user/hive/warehouse/moviedemo.db/movieapp_log_stage/000001_0
+File does not exist: /user/hive/ware
+KUP-04118: operation "pipe read", location "skudmir"

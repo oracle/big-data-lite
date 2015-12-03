@@ -1,0 +1,115 @@
+execute "drop table if exists activity"
+execute "drop table if exists cast"
+execute "drop table if exists crew"
+execute "drop table if exists customer.customerGenreMovie"
+execute "drop table if exists customer.customerGenres"
+execute "drop table if exists genre"
+execute "drop table if exists movie.CastCrew"
+execute "drop table if exists movie"
+
+
+execute "create table movie( \
+id integer, \
+original_title String,\
+overview String,\
+poster_path String,\
+release_date String,\
+vote_count integer,\
+runtime integer,\
+popularity double,\
+genres ARRAY(RECORD( cid String,id integer,name String )),\
+PRIMARY KEY (id) )"
+
+execute "drop index if exists genreIndex on movie"
+execute "create index genreIndex on movie(genres.id)"
+execute "create index movieNameIndex on movie (original_title)"
+
+
+execute "create table genre ( \
+cid string,\
+id integer,\
+name String,\
+primary key(cid,id))"
+execute "create index genreNameIndex on genre(name)"
+
+
+execute " create table customer(\
+id integer,\
+name String,\
+email String,\
+username String,\
+password String,\
+primary key (id))"
+execute "create index userNameIdx on Customer(username)"
+
+execute "create table customer.customerGenres(\
+cid integer,\
+genres ARRAY(RECORD(id integer,	name String,score integer )),\
+PRIMARY KEY(cid))"
+
+execute " create table customer.customerGenreMovie( \
+genreId Integer, \
+movieId Integer, \
+PRIMARY KEY (genreId,movieId))" 
+
+
+
+execute "create table cast(\
+id integer,\
+name String,\
+movies ARRAY(\
+RECORD(\
+id integer,\
+character String,\
+order integer)),\
+PRIMARY KEY(id))"
+
+execute "create table crew(\
+id integer,\
+name String,\
+job String,\
+movies ARRAY(\
+RECORD(\
+id integer)),\
+PRIMARY KEY(id))"
+
+
+execute "create table movie.CastCrew(\
+mid integer,\
+cast ARRAY(\
+	RECORD(\
+		id integer,\
+		name String,\
+		movies ARRAY(\
+			RECORD(\
+				id integer,\
+				character String,\
+				order integer))\
+			)),\
+crew ARRAY(\
+	RECORD(\
+		id integer,\
+		name String,\
+		job String,\
+		movies ARRAY(\
+			RECORD(\
+				id integer))\
+			)),\
+		PRIMARY KEY(mid))"
+
+
+
+execute "create table activity(\
+tableId String,\
+custId integer,\
+movieId integer,\
+genreId integer,\
+activity integer,\
+recommended String,\
+time String,\
+rating integer,\
+price double,\
+position integer,\
+primary key (shard(tableId,custId),movieId))"
+
+execute "create index customerWatchListIndex on activity(tableId,time)"

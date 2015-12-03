@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<locationFile>
+    <header>
+        <version>1.0</version>
+        <fileName>osch-20151201022702-3552-1</fileName>
+        <createDate>2015-12-01T14:27:02</createDate>
+        <publishDate>2015-12-01T02:27:02</publishDate>
+        <productName>Oracle SQL Connector for HDFS Release 3.4.0 - Production</productName>
+        <productVersion>3.4.0</productVersion>
+        <hiveTableName>moviedemo.movieapp_log_stage_1</hiveTableName>
+    </header>
+    <uri_list>
+        <uri_list_item size="269627" compressionCodec="">hdfs://bigdatalite.localdomain:8020/user/hive/warehouse/moviedemo.db/movieapp_log_stage_1/000000_0</uri_list_item>
+    </uri_list>
+</locationFile>

@@ -1,0 +1,46 @@
+
+
+ LOG file opened at 01/21/14 15:45:03
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table NOSQL_GENRE_MOVIE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    GENREID                         CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    MOVIEID                         CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+KUP-04095: preprocessor command /home/oracle/movie/moviedemo/nosqldb/exttab/bin/nosql_stream encountered error "Exception in thread "main" java.lang.NoClassDefFoundError: oracle/kv/impl/param/ParameterMap
+	at oracle.kv.impl.param.LoadParameters$ConfigHandler.startElement(LoadParameters.java:322)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1362)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2770)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+	at oracle.kv.impl.param.LoadParameters.load(LoadParameters.java:254)
+	at oracle.kv.impl.param.LoadParameters.getParametersByType(LoadParameters.java:107)
+	at oracle.kv.exttab.Preproc.loadParams(Preproc.java:186)
+	at oracle.kv.exttab.Preproc.run(Preproc.java:142)
+	at oracle.kv.exttab.Preproc.main(Preproc.java:127)
+Caused by: java.lang.ClassNotFoundException: oracle.kv.impl.param.ParameterMap
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	... 16 more
+"

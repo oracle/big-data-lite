@@ -1,0 +1,12 @@
+
+
+create table IF NOT EXISTS session_stats
+(
+	STATE_PROVINCE_ID	INT,	
+	STATE_PROVINCE	STRING,	
+	COUNTRY	STRING,	
+	max_session	BIGINT,	
+	min_session	BIGINT,	
+	avg_session	BIGINT	
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\;';

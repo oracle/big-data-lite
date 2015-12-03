@@ -1,0 +1,14 @@
+<div class="row-fluid">  
+  <div class="row-fluid">
+    <div class="span1">
+      <img src="http://cf2.imgobject.com/t/p/w92/{{poster_path_s}}" name="movie-poster-{{id}}">
+    </div>
+    <div class="span11">
+       <font size="3"><b>{{movie_title_en}}</b></font>&nbsp; ({{year}})
+       <br>{{movie_summary_en}}
+       <br><font color="#585858">Box Office:&nbsp; {{box_office}}&nbsp;&nbsp; MoviePlex Popularity:&nbsp; {{movieplex_popularity}}</font>
+       <br>
+     </div>
+  </div>
+  <br>  
+</div>

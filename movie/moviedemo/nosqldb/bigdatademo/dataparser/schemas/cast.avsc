@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "Cast",
+  "namespace" : "oracle.avro",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "movies",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "CastMovie",
+        "fields" : [ {
+          "name" : "id",
+          "type" : "int",
+          "default" : 0
+        }, {
+	  "name" : "order",
+          "type" : "int",
+          "default" : 0
+        }, {
+          "name" : "character",
+          "type" : "string",
+          "default" : ""
+        } ]
+      }
+    },
+    "default" : [ ]
+  } ]
+}

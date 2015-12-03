@@ -1,0 +1,31 @@
+
+
+ LOG file opened at 11/22/13 15:49:18
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table NOSQL_MOVIE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    MOVIEID                         CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    TITLE                           CHAR (512)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    YEAR                            CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    POPULARITY                      CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    VOTE                            CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    DESCRIPTION                     CHAR (3072)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader

@@ -1,0 +1,272 @@
+;;; 
+Export: Release 12.1.0.2.0 - Production on Tue Jun 9 16:12:08 2015
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+Starting "SYSTEM"."SYS_EXPORT_SCHEMA_01":  system/********@orcl directory=ODI_PUMP_DIR schemas=dev_odi_repo dumpfile=dev_odi_repo.dmp 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 32.31 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+Processing object type SCHEMA_EXPORT/STATISTICS/MARKER
+. . exported "DEV_ODI_REPO"."SNP_TXT_HEADER"             1011. KB     652 rows
+. . exported "DEV_ODI_REPO"."SNP_TRT"                    975.6 KB     141 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_COMP_TYPE"          586.0 KB      23 rows
+. . exported "DEV_ODI_REPO"."SNP_CONV_DT"                1.889 MB   37997 rows
+. . exported "DEV_ODI_REPO"."SNP_MTXT"                   726.1 KB    3671 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_EXPR"               252.1 KB     184 rows
+. . exported "DEV_ODI_REPO"."SNP_LINE_TRT"               125.1 KB     313 rows
+. . exported "DEV_ODI_REPO"."SNP_SESSION"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_TASK_LOG"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CONNECT"                31.49 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_SB_STEP"                19.75 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_STEP_LOG"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_ATTR"               54.08 KB     281 rows
+. . exported "DEV_ODI_REPO"."SNP_LE_TECHNO"              208.6 KB    2344 rows
+. . exported "DEV_ODI_REPO"."SNP_MAPPING"                15.84 KB       9 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_COMP"               19.63 KB      38 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_PROP"               121.2 KB     615 rows
+. . exported "DEV_ODI_REPO"."SNP_SB_TASK"                24.67 KB       4 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_STEP"              19.78 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_TASK"              26.00 KB       4 rows
+. . exported "DEV_ODI_REPO"."SNP_FIELD"                  194.0 KB    1290 rows
+. . exported "DEV_ODI_REPO"."SNP_LANG_ELT"               159.8 KB    1282 rows
+. . exported "DEV_ODI_REPO"."SNP_AGENT"                      0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DEPLOY_SPEC"            13.71 KB      11 rows
+. . exported "DEV_ODI_REPO"."SNP_DT"                     139.0 KB     884 rows
+. . exported "DEV_ODI_REPO"."SNP_EXEC_UNIT"              17.75 KB      24 rows
+. . exported "DEV_ODI_REPO"."SNP_EXEC_UNIT_GRP"          12.53 KB      24 rows
+. . exported "DEV_ODI_REPO"."SNP_FF_VALUEM"              7.929 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_FLEX_FIELD"             18.66 KB      42 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_CONN"               15.57 KB      30 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_CP"                 21.67 KB      80 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_REF"                108.6 KB     431 rows
+. . exported "DEV_ODI_REPO"."SNP_PARAM_SESS"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_PHY_NODE"               26.15 KB      67 rows
+. . exported "DEV_ODI_REPO"."SNP_PROF_METH"              123.3 KB    1181 rows
+. . exported "DEV_ODI_REPO"."SNP_PSCHEMA"                31.35 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_COL"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_TABLE"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SB"                     14.38 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_REPORT"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SEQ_SB"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_STEP_REPORT"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR_SB"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_COL"                    79.97 KB     381 rows
+. . exported "DEV_ODI_REPO"."SNP_FIELD_LOOKUP"           64.92 KB     568 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_PROP_DEF"           69.03 KB     200 rows
+. . exported "DEV_ODI_REPO"."SNP_METHOD"                 82.28 KB     525 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJ_TRACE"              83.35 KB     618 rows
+. . exported "DEV_ODI_REPO"."SNP_ACTION"                 15.22 KB      57 rows
+. . exported "DEV_ODI_REPO"."SNP_ALLOC_AGENT"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CONNECT_PROP"           7.875 KB      22 rows
+. . exported "DEV_ODI_REPO"."SNP_CONTEXT"                10.46 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_ENTITY"                 30.88 KB     102 rows
+. . exported "DEV_ODI_REPO"."SNP_ENT_ID"                 7.648 KB      34 rows
+. . exported "DEV_ODI_REPO"."SNP_FOLDER"                 11.54 KB       2 rows
+. . exported "DEV_ODI_REPO"."SNP_GRP_ACTION"             10.69 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_GRP_STATE"              12.56 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_ID"                     7.976 KB      43 rows
+. . exported "DEV_ODI_REPO"."SNP_IMPORT_REP"             6.515 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_INDEX_TYPE"             17.45 KB      66 rows
+. . exported "DEV_ODI_REPO"."SNP_JOIN"                   16.85 KB       4 rows
+. . exported "DEV_ODI_REPO"."SNP_JOIN_COL"               10.42 KB       4 rows
+. . exported "DEV_ODI_REPO"."SNP_KEY"                    13.02 KB      12 rows
+. . exported "DEV_ODI_REPO"."SNP_KEY_COL"                10.28 KB      13 rows
+. . exported "DEV_ODI_REPO"."SNP_LAGENT"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LANG"                   12.10 KB       8 rows
+. . exported "DEV_ODI_REPO"."SNP_LANG_TECHNO"            12.86 KB      54 rows
+. . exported "DEV_ODI_REPO"."SNP_LINE_ACTION"            19.99 KB      77 rows
+. . exported "DEV_ODI_REPO"."SNP_LINE_TRT_UE"            29.42 KB     450 rows
+. . exported "DEV_ODI_REPO"."SNP_LINK"                   25.46 KB     220 rows
+. . exported "DEV_ODI_REPO"."SNP_LOC_REP"                19.88 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_LOC_REPW"               14.12 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_LSCHEMA"                11.46 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_ATTR_INFO"          12.46 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_CP_ROLE"            17.85 KB      44 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_EXPR_REF"           24.75 KB     128 rows
+. . exported "DEV_ODI_REPO"."SNP_MODEL"                  23.92 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_MODULE"                 7.328 KB       5 rows
+. . exported "DEV_ODI_REPO"."SNP_M_IMPORT_REP"           6.515 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJECT"                 25.08 KB     103 rows
+. . exported "DEV_ODI_REPO"."SNP_PACKAGE"                14.25 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_PHY_EXPR"               20.35 KB     129 rows
+. . exported "DEV_ODI_REPO"."SNP_PROFILE"                9.843 KB      12 rows
+. . exported "DEV_ODI_REPO"."SNP_PROJECT"                10.92 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_PSCHEMA_CONT"           9.585 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_PWD_POLICY"             7.398 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_PWD_RULE"               7.562 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_REM_REP"                9.617 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_JOIN"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_JOIN_COL"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_KEY"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_KEY_COL"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN"                   17.92 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_SESSION_DBG"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_STATE2"                 14.29 KB      18 rows
+. . exported "DEV_ODI_REPO"."SNP_STEP"                   35.04 KB      10 rows
+. . exported "DEV_ODI_REPO"."SNP_SUB_LANG"               13.62 KB      51 rows
+. . exported "DEV_ODI_REPO"."SNP_SUB_MODEL"              12.08 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_TABLE"                  29.81 KB      45 rows
+. . exported "DEV_ODI_REPO"."SNP_TECHNO"                 64.73 KB      60 rows
+. . exported "DEV_ODI_REPO"."SNP_UFUNC"                  11.44 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_UFUNC_IMPL"             6.648 KB       3 rows
+. . exported "DEV_ODI_REPO"."SNP_UFUNC_TECHNO"            6.25 KB       5 rows
+. . exported "DEV_ODI_REPO"."SNP_USER"                   12.35 KB       2 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_EXIT"              40.90 KB     242 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_EXIT_GROUP"        7.156 KB       4 rows
+. . exported "DEV_ODI_REPO"."SNP_USR_PREFERENCE"         6.476 KB       1 rows
+. . exported "DEV_ODI_REPO"."SNP_AGENT_PROP"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_AGENT_PROP_LST"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CEC_LP"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CEC_SCEN"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_COND"                       0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CUBE"                       0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CUBE_KEY_PART_USE"          0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CUBE_MEASURE"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_CUBE_USES_DIM"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DATA"                       0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DATASOURCE"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DATA_SET"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DEPLOYMENT_LOG"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIAGRAM"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIAG_PARAM"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIMENSION"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIMENSION_MOD"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_HIER"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_HIER_MEM"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_LEVEL"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_LEVEL_ATTR"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_NATKEY_MEM"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_PAR_REF"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_REF_MEM"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DIM_SKIP_LEVEL"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_DT_BRP"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_ENT_PRINCIPAL"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_ESS"                        0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_EXP_TXT"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_EXP_TXT_HEADER"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_FF_VALUEE"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_FF_VALUEW"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_HIST_VERSION"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_HOST"                       0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_HOST_MOD"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_INDIRECT_MREF"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_INST_OBJ"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LB_AGENT"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LICENSE"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LINK_COORD"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LINK_DIAG"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LOAD_PLAN"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LOCK"                       0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LOCKED_OBJECT"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LOOKUP"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LOOKUP_VALUE"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_EC_VAR_LOG"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_EXC_LOG"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_RUN"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_STEP"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_STEP_LOG"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_STEP_VAR"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_TXT_LOG"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_VAR"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LPI_VAR_LOG"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LP_INST"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LP_STEP"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LP_STEP_VAR"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_LP_VAR"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_DATA_TYPE"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MAP_REF_PP"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MC_CONSTRAINT"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MERGE"                      0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MERGE_OBJECT"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MERGE_OBJECT_W"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MISSING_REF"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MODEL_EXTRACT"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MODEL_REPLICAT"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MOD_FOLDER"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MORIG_TXT"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_MTXT_PART"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJECT_ID"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJECT_ID_COL"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJ_DIAG"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_OBJ_STATE"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_OPEN_TOOL"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_ORIG_TXT"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_PARAM_LPI_RUN"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_PARTITION"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_PLAN_AGENT"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP"                        0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP_CLAUSE"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP_COL"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP_CONSTRAINT"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP_CONTEXT"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_POP_MAPPING"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_COL_FFV"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_COND"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_COND_FFV"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_FOR_TABLE"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_JOIN_FFV"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_KEY_FFV"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_MODEL_FFV"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_PARTITION"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_SUB_MODEL"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_REV_TABLE_FFV"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_ROLE_ENT_PRP"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_RT_BRP"                     0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_BRP"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_FOLDER"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SCEN_TXT"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SCHEDULE_EXEC"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SEQUENCE"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SEQ_DATA"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SEQ_SCEN"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SEQ_SESS"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_FOLDER"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_STEP"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_STEP_LV"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_TASK"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_TASK_LS"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SESS_TXT_LOG"               0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SOLUTION"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SOL_ELT"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SOURCE_TAB"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_SRC_SET"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_STATE"                      0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_TASK_TXT"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_TXT"                        0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_TXT_CROSSR"                 0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_UE_ORIG"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_UE_USED"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_CONNECTED"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_METH"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_OBJ_METH"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_PREF"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_USER_PROF"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_U_O_M_REP"                  0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR"                        0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR_DATA"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR_PLAN_AGENT"             0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR_SCEN"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VAR_SESS"                   0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VCS_VERSION"                0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VCS_VERSION_W"              0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_VERSION"                    0 KB       0 rows
+. . exported "DEV_ODI_REPO"."SNP_WS_POLICY"                  0 KB       0 rows
+Master table "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_SCHEMA_01 is:
+  /home/oracle/movie/moviework/odi/dev_odi_repo.dmp
+Job "SYSTEM"."SYS_EXPORT_SCHEMA_01" successfully completed at Tue Jun 9 16:13:45 2015 elapsed 0 00:01:33

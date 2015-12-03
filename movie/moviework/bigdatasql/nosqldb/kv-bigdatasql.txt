@@ -1,0 +1,49 @@
+kv->EXEC "CREATE TABLE user_movie( \
+         custid INTEGER, \
+         sno INTEGER, \
+         genreid INTEGER,\
+         movieid INTEGER,\
+         PRIMARY KEY (SHARD(custid), sno, genreid, movieid))"
+
+
+kv->PUT TABLE -name USER_MOVIE  -file user_movie.json
+Inserted 15000 rows in user_movie table
+
+
+
+hive->CREATE EXTERNAL TABLE IF NOT EXISTS user_movie(
+                 custid INT,
+                 sno INT,
+                 genreId INT,
+                 movieId INT)
+          STORED BY 'oracle.kv.hadoop.hive.table.TableStorageHandler'
+          TBLPROPERTIES  ( "oracle.kv.kvstore"="kvstore",
+                           "oracle.kv.hosts"="localhost:5000",
+                           "oracle.kv.hadoop.hosts"="localhost",
+                           "oracle.kv.tableName"="user_movie");
+
+hive->CREATE EXTERNAL TABLE IF NOT EXISTS moviework.recommendation(
+                 custid INT,
+                 sno INT,
+                 genreId INT,
+                 movieId INT)
+          STORED BY 'oracle.kv.hadoop.hive.table.TableStorageHandler'
+          TBLPROPERTIES  ( "oracle.kv.kvstore"="kvstore",
+                           "oracle.kv.hosts"="localhost:5000",
+                           "oracle.kv.hadoop.hosts"="localhost",
+                           "oracle.kv.tableName"="user_movie");
+
+SQL>CREATE TABLE recommendation(
+                 custid NUMBER,
+                 sno NUMBER,
+                 genreid NUMBER,
+                 movieid NUMBER
+         )
+                 ORGANIZATION EXTERNAL
+         (
+                 TYPE ORACLE_HIVE
+                 DEFAULT DIRECTORY Dir1
+                 ACCESS PARAMETERS  (
+                     com.oracle.bigdata.tablename=default.user_movie
+                 )
+         ) ;

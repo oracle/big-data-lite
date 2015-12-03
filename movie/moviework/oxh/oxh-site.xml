@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>movieapp.log</name>
+        <value>/user/oracle/moviework/applog/movieapp_3months.log.gz</value>
+    </property>
+
+    <property>
+        <name>oracle.hadoop.xquery.solr.loader.collection</name>
+        <value>moviedemo</value>
+    </property>
+
+    <property>
+        <name>oracle.hadoop.xquery.solr.loader.go-live</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>oracle.hadoop.xquery.solr.loader.zk-host</name>
+        <value>127.0.0.1:2181/solr</value>
+    </property>
+
+    <property>
+        <name>oracle.hadoop.xquery.solr.mr.home</name>
+        <value>/usr/lib/solr/contrib/mr/</value>
+    </property>
+
+    <property>
+        <name>oracle.kv.hosts</name>
+        <value>localhost:5000</value>
+    </property>
+
+    <property>
+        <name>oracle.kv.kvstore</name>
+        <value>kvstore</value>
+    </property>
+</configuration>

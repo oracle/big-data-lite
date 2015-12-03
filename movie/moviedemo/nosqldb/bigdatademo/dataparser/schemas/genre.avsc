@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "Genre",
+  "namespace" : "oracle.avro",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "int",
+    "default" : 0
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "default" : ""
+  } ]
+}

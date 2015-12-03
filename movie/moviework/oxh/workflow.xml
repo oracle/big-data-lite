@@ -1,0 +1,59 @@
+
+<workflow-app name="OXH_Solr_Demo" xmlns="uri:oozie:workflow:0.4">
+    <start to="Delete_Docs"/>
+    <action name="Delete_Docs">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/usr/bin/solrctl</exec>
+              <argument>collection</argument>
+              <argument>--deletedocs</argument>
+              <argument>moviedemo</argument>
+        </shell>
+        <ok to="oxh_demo"/>
+        <error to="kill"/>
+    </action>
+    <action name="oxh_demo">
+                <oxh xmlns="oxh:oozie-action:v1">
+		<job-tracker>${jobTracker}</job-tracker>
+		<name-node>${nameNode}</name-node>
+		<!--
+		  The configuration can be used to parameterize the query.
+		-->
+		<configuration>
+		   <property>
+			<name>movieapp.log</name>
+			<value>/user/oracle/moviework/applog/movieapp_3months.log.gz</value>
+		    </property>
+		    <property>
+			<name>oracle.hadoop.xquery.solr.loader.collection</name>
+			<value>moviedemo</value>
+		    </property>
+		    <property>
+			<name>oracle.hadoop.xquery.solr.loader.go-live</name>
+			<value>true</value>
+		    </property>
+		    <property>
+			<name>oracle.hadoop.xquery.solr.loader.zk-host</name>
+			<value>127.0.0.1:2181/solr</value>
+		    </property>
+		   <property>
+			<name>oracle.kv.hosts</name>
+			<value>localhost:5000</value>
+		    </property>
+		    <property>
+			<name>oracle.kv.kvstore</name>
+			<value>kvstore</value>
+		    </property>
+		  </configuration>
+			<script>moviedemo.xq</script>
+		  <output clean="true">${nameNode}/tmp/oxh-oracle/output</output>
+	 </oxh>
+        <ok to="end"/>
+        <error to="kill"/>
+    </action>
+    <kill name="kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

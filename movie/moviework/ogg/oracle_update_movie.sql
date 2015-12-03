@@ -1,0 +1,5 @@
+UPDATE "MOVIEDEMO"."MOVIE" SET BUDGET=BUDGET+'10000' where MOVIE_ID='1';
+commit;
+
+
+

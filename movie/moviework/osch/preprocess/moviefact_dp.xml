@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+ <configuration>
+
+    <property>
+      <name>oracle.hadoop.exttab.tableName</name>
+      <value>MOVIE_FACT_EXT_TAB_DP</value> 
+    </property> 
+
+    <property>
+      <name>oracle.hadoop.exttab.sourceType</name>
+      <value>datapump</value> 
+    </property> 
+
+   <property> 
+      <name>oracle.hadoop.exttab.dataPaths</name>
+      <value>/user/oracle/moviework/data_dp/oraloader-0000*.dat</value>
+    </property>   
+
+    <property>
+      <name>oracle.hadoop.connection.url</name>
+      <value>jdbc:oracle:thin:@localhost:1521:orcl</value> 
+    </property> 
+
+    <property>
+      <name>oracle.hadoop.connection.user</name>
+      <value>MOVIEDEMO</value> 
+    </property>      
+
+    <property>
+      <name>oracle.hadoop.exttab.defaultDirectory</name>
+      <value>MOVIEWORKSHOP_DIR</value> 
+    </property>   
+
+</configuration>

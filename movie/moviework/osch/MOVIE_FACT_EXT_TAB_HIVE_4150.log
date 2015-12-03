@@ -1,0 +1,45 @@
+
+
+ LOG file opened at 12/01/15 14:27:28
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table MOVIE_FACT_EXT_TAB_HIVE
+  Record format DELIMITED, delimited by 0A
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    CUSTID                          CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (CUSTID = 5C4E)
+    MOVIEID                         CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (MOVIEID = 5C4E)
+    GENREID                         CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (GENREID = 5C4E)
+    TIME                            CHAR (4000)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (TIME = 5C4E)
+    RECOMMENDED                     CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (RECOMMENDED = 5C4E)
+    ACTIVITY                        CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (ACTIVITY = 5C4E)
+    RATING                          CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (RATING = 5C4E)
+    SALES                           CHAR (255)
+      Terminated by "01"
+      Trim whitespace same as SQL Loader
+      NULL if (SALES = 5C4E)

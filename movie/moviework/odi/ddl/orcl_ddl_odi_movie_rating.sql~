@@ -1,0 +1,7 @@
+create table MOVIEDEMO.ODI_MOVIE_RATING 
+(
+	"movie_id"	NUMBER(11)		NULL,	
+	"title"	VARCHAR2(250)		NULL,	
+	"year"	NUMBER(11)		NULL,	
+	"avg_rating"	NUMBER(11)		NULL 
+)

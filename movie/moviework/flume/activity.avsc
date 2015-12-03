@@ -1,0 +1,42 @@
+{
+  "type" : "record",
+  "name" : "Activity",
+  "namespace" : "oracle.avro",
+  "fields" : [ {
+    "name" : "custId",
+    "type" : ["null","int"],
+    "default" : null
+  }, {
+    "name" : "movieId",
+    "type" : ["null","int"],
+    "default" : null
+  }, {
+    "name" : "activity",
+    "type" : ["null","int"],
+    "default" : null
+  }, {
+    "name" : "genreId",
+    "type" : ["null","int"],
+    "default" : null
+  }, {
+    "name" : "recommended",
+    "type" : ["null","string"],
+    "default" : null
+  }, {
+    "name" : "time",
+    "type" : ["null","string"],
+    "default" : null
+  }, {
+    "name" : "rating",
+    "type" : ["null","int"],
+    "default" : null
+  }, {
+    "name" : "price",
+    "type" : ["null","double"],
+    "default" : null
+  }, {
+    "name" : "position",
+    "type" : ["null","int"],
+    "default" : null
+  } ]
+}

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#
+# See the file LICENSE for redistribution information.
+#
+# Copyright (c) 2010, 2012 Oracle and/or its affiliates.  All rights reserved.
+#
+# Fill in site-appropriate values for PATH, KVHOME, and CLASSPATH
+# This script will be executed by the Oracle Database server.
+# If you are using user-specified Formatters, by sure to include their home
+# in the CLASSPATH.
+#
+export PATH=$PATH:/usr/java/latest/bin
+export KVHOME=/u01/nosql/kv-2.1.8
+export DEMOHOME=/home/oracle/movie/moviedemo/nosqldb/bigdatademo/dataparser
+export CLASSPATH=$KVHOME/lib/*:$DEMOHOME/lib/*:$DEMOHOME/deploy/*
+java oracle.kv.exttab.Preproc $*

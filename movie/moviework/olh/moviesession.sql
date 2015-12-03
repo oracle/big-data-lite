@@ -1,0 +1,27 @@
+SET ECHO ON
+
+-- drop table if leftover from previous labs
+DROP TABLE MOVIE_SESSIONS_TAB;
+
+CREATE TABLE MOVIE_SESSIONS_TAB
+(
+      "SESSION_ID" NUMBER,
+      "TIME_ID" DATE,
+      "CUST_ID"             NUMBER,
+      "DURATION_SESSION"    NUMBER,
+      "NUM_RATED"           NUMBER,
+      "DURATION_RATED"      NUMBER,
+      "NUM_COMPLETED"       NUMBER,
+      "DURATION_COMPLETED"  NUMBER,
+      "TIME_TO_FIRST_START" NUMBER,
+      "NUM_STARTED"         NUMBER,
+      "NUM_BROWSED"         NUMBER,
+      "DURATION_BROWSED"    NUMBER,
+      "NUM_LISTED"          NUMBER,
+      "DURATION_LISTED"     NUMBER,
+      "NUM_INCOMPLETE"      NUMBER,
+      "NUM_SEARCHED"        NUMBER
+)
+PARTITION BY HASH(CUST_ID);
+
+SET ECHO OFF

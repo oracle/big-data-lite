@@ -1,0 +1,24 @@
+
+
+ LOG file opened at 12/04/14 13:40:43
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table NOSQL_GENRE_MOVIE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    GENREID                         CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    MOVIEID                         CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+KUP-04004: error while reading file /home/oracle/movie/moviedemo/nosqldb/exttab/loc/genmov.dat
+KUP-04017: OS message: Error 0
+KUP-04017: OS message: Error: Could not find or load main class oracle.kv.exttab.Preproc
+
+KUP-04118: operation "pipe read", location "skudmir"

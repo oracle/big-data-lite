@@ -1,0 +1,136 @@
+
+
+ LOG file opened at 11/22/13 15:49:40
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table SESSIONS_HDFS_EXT_TAB
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    SESSION_ID                      CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_ID                         CHAR (76)
+      Date datatype DATE, date mask YYYY-MM-DD:HH24:MI:SS
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    CUST_ID                         CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_SESSION                CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_RATED                       CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_RATED                  CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_COMPLETED                   CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_COMPLETED              CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_TO_FIRST_START             CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_STARTED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_BROWSED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_BROWSED                CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_LISTED                      CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_LISTED                 CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_INCOMPLETE                  CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_SEARCHED                    CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+
+Date Cache Statistics for table SESSIONS_HDFS_EXT_TAB
+  Date conversion cache disabled due to overflow (default size: 1000)
+
+
+
+ LOG file opened at 02/06/15 13:18:21
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table SESSIONS_HDFS_EXT_TAB
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    SESSION_ID                      CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_ID                         CHAR (76)
+      Date datatype DATE, date mask YYYY-MM-DD:HH24:MI:SS
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    CUST_ID                         CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_SESSION                CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_RATED                       CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_RATED                  CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_COMPLETED                   CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_COMPLETED              CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    TIME_TO_FIRST_START             CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_STARTED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_BROWSED                     CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_BROWSED                CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_LISTED                      CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    DURATION_LISTED                 CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_INCOMPLETE                  CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+    NUM_SEARCHED                    CHAR (255)
+      Terminated by "09"
+      Trim whitespace same as SQL Loader
+
+Date Cache Statistics for table SESSIONS_HDFS_EXT_TAB
+  Date conversion cache disabled due to overflow (default size: 1000)
+

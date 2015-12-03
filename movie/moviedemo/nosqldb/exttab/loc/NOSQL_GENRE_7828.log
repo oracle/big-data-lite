@@ -1,0 +1,19 @@
+
+
+ LOG file opened at 12/27/13 09:41:15
+
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.
+
+Field Definitions for table NOSQL_GENRE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    ID                              CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    NAME                            CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader

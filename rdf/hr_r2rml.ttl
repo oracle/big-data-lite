@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix hr: <http://scott-hr.org/>.
+@prefix emp: <http://scott-hr.org/emp/>.
+@prefix dept: <http://scott-hr.org/dept/>.
+# DEPT table =============================================================================================
+hr:TMap_DEPT
+  rr:logicalTable [ rr:tableName "DEPT" ] ;
+  rr:subjectMap [ rr:template "http://scott-hr.org/dept{DEPTNO}" ;
+                  rr:class hr:Department ] ;
+  rr:predicateObjectMap [ rr:predicate dept:deptNum ; rr:objectMap [ rr:column "DEPTNO" ] ] ;
+  rr:predicateObjectMap [ rr:predicate dept:name ; rr:objectMap [ rr:column "DNAME" ] ] ;
+  rr:predicateObjectMap [ rr:predicate dept:location ; rr:objectMap [ rr:column "LOC" ] ] .
+# EMP table =============================================================================================
+hr:TMap_EMP
+  rr:logicalTable [ rr:tableName "EMP" ] ;
+  rr:subjectMap [ rr:template "http://scott-hr.org/emp-{EMPNO}" ;
+                  rr:class hr:Employee ] ;
+  rr:predicateObjectMap [ rr:predicate emp:name ; rr:objectMap [ rr:column "ENAME" ] ] ;
+  rr:predicateObjectMap [ rr:predicate emp:deptNum ; rr:objectMap [ rr:column "DEPTNO" ] ] ;
+  rr:predicateObjectMap [ rr:predicate emp:refDept ; 
+             rr:objectMap [ rr:parentTriplesMap hr:TMap_DEPT ; 
+                            rr:joinCondition [ rr:child "DEPTNO" ; rr:parent "DEPTNO" ] ] ] ;
+  rr:predicateObjectMap [ rr:predicate emp:refMgr ; 
+             rr:objectMap [ rr:parentTriplesMap hr:TMap_EMP ; 
+                            rr:joinCondition [ rr:child "MGR" ; rr:parent "EMPNO" ] ] ] .

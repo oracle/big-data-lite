@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+ <configuration>
+
+    <property>
+      <name>oracle.hadoop.exttab.tableName</name>
+      <value>MOVIE_FACT_EXT_TAB_HIVE</value> 
+    </property> 
+
+   <property> 
+      <name>oracle.hadoop.exttab.sourceType</name>
+      <value>hive</value> 
+    </property>   
+
+   <property> 
+      <name>oracle.hadoop.exttab.hive.tableName</name>
+      <value>movieapp_log_stage_1</value> 
+    </property>   
+
+   <property> 
+      <name>oracle.hadoop.exttab.hive.databaseName</name>
+      <value>moviedemo</value> 
+    </property>   
+
+    <property>
+      <name>oracle.hadoop.connection.url</name>
+      <value>jdbc:oracle:thin:@localhost:1521:orcl</value> 
+    </property> 
+
+    <property>
+      <name>oracle.hadoop.connection.user</name>
+      <value>MOVIEDEMO</value> 
+    </property>      
+
+    <property>
+      <name>oracle.hadoop.exttab.defaultDirectory</name>
+      <value>MOVIEWORKSHOP_DIR</value> 
+    </property>      
+
+</configuration>

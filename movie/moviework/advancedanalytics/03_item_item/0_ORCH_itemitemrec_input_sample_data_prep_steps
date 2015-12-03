@@ -1,0 +1,35 @@
+1. use sqoop to move data into DB (table MOVIE_TEMP). This acrip assumes the 
+   umrinput data file is located at: /user/oracle/moviedemo/advancedanalytics/data/umrinput/umrinput
+
+sqoop eval  --connect jdbc:oracle:thin:@localhost:1521:orcl --username MOVIEWORK --password oracle --query "create table MOVIE_TEMP (userid NUMBER,movieid NUMBER,rating NUMBER)" 
+
+
+sqoop export --connect jdbc:oracle:thin:@localhost:1521:orcl  --username MOVIEWORK --password oracle --table MOVIE_TEMP --export-dir /user/oracle/moviedemo/advancedanalytics/data/umrinput/umrinput
+
+2. start R and load ORE and ORCH packages
+
+3. Connect DB using ORE to the schema where MOVIE_TEMP was loaded:
+
+ ore.connect(user="MOVIEWORK", sid="orcl", host="localhost", password="oracle", 
+             port=1521, all=TRUE)
+
+4. filter out a data subset from the original data:
+
+ m_samp <- MOVIE_TEMP[MOVIE_TEMP$MOVIEID < 200,]
+
+5. connect ORCH  to RDBMS:
+
+orch.connect(host="localhost", user="moviework", 
+             passwd="oracle", sid="orcl", secure=F)
+
+6. push the sample data into: /user/oracle/moviework/aa/data/umrinput_sample
+
+dfs.id <- hdfs.push(dfs.name="/user/oracle/moviework/aa/data/umrinput_sample", 
+                    x=m_samp, split.by="MOVIEID")
+
+7. format input data to make it usable by item-item similarity calculation
+
+hdfs.formatinput(dfs.id, createmeta=TRUE)
+
+
+#### /user/oracle/moviework/aa/data/umrinput_sample is ready to be used by movieMovieSimilarity() demo ###

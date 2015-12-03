@@ -1,0 +1,1 @@
+/home/oracle/movie/moviework/reset/reset_mapreduce.sh

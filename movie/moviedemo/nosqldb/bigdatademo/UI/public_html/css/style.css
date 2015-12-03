@@ -1,0 +1,601 @@
+.space{margin: 60px 0px;
+}
+
+/* -------------------------------------------- */
+/* -------------------- MSJ -------------------	*/
+/* -------------------------------------------- */
+
+.info, .success, .warning, .error, .validation {text-align: center; border: 1px solid;	margin: 5px 0px; padding:5px 5px 5px 5px;font-weight: bolder;font-family:Arial, Helvetica, sans-serif; font-size:13px;background-repeat: no-repeat;background-position: 10px center;}
+.info {color: #00529B;background-color: #BDE5F8;background-image: url('../images/info.png');}
+.success {color: #4F8A10;background-color: #DFF2BF;background-image:url('../images/success.png');}
+.warning {color: #9F6000;background-color: #FEEFB3;background-image: url('../images/warning.png');}
+.error {color: #D8000C;background-color: #FFBABA;background-image: url('../images/error.png');}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Lucida Grande",Arial,sans-serif;
+  font-size: 12px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #EBEBEB;
+}
+
+#main, .search{ margin: 0 auto; width: 975px;}
+
+#main {min-height: 550px;}
+
+.search {height: 50px; background-color: #1B1F23;}
+
+#searchForm input, #searchForm select, #searchForm .dd {margin-top: 15px; margin-left: 15px; float: left; width: 150px;}
+
+#searchForm input[type='submit'] {width: auto !important; background-color: White; padding: 4px 8px; border: none; font-weight: bolder;
+border-radius: 25px; -moz-border-radius: 25px; -webkit-border-radius: 25px; margin-top: 14px;margin-left: 30px;}
+
+#searchForm input[type='submit']:hover {background-color: #C3C3C3;}
+
+#searchForm .dd {color: Black !important;}
+
+#searchForm .dd .ddTitle {background-color: transparent !important;}
+
+.header, .footer{  margin: 0 auto; width: 975px;}
+
+.header {position: relative; height: 100px;}
+
+.footer{margin-top: 100px;}
+
+.header .customerInformation{font-size: 18px; color: Black; margin: 0px 10px 10px 0;position: absolute;top: 70px;right: 5px;width: 300px; text-align: right;}
+
+#basedMood {position: relative;}
+#getMoviesMood {position: absolute;right: 25px; top: 10px;}
+
+#movie-content .slidebox .arrow.rig {margin-left: 565px}
+#movie-content .slidebox .arrow span {margin-left: -5px}
+#movie-content .slidebox {width: 620px;}
+#movie-content .slidebox .box {margin: 0px auto 0; width: 535px; height: 140px;}
+#movie-content .slidebox .box img {height: 120px; width: 94px;}
+#movie-content .slidebox .boxes a .img {height: 130px;}
+#movie-content .item-box {width: 110px;}
+#movie-content .slidebox .boxes a .tit2 {width: 90px;}
+#movie-content .slidebox .arrow {margin-top: 0px;}
+
+.wbox.dark { background: 0; box-shadow: none;}
+
+.wbox {
+  overflow: hidden;
+  -webkit-box-shadow:  rgba(0, 0, 0, 0.3) 0 1px 3px;
+  box-shadow:  rgba(0, 0, 0, 0.3) 0 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background: white;
+}
+
+.titbar {
+  padding: 0 20px;
+  line-height: 46px;
+  text-shadow: 0 1px 0  black;
+  overflow: hidden;
+}
+
+.bot .tabs, .tabs, .titbar {
+  height: 40px;
+  /*background-color: #303030;
+  background-image: -moz-linear-gradient(#313131,#1D1D1D);
+  background-image: -webkit-gradient(linear,0% 0,0% 100%,from(#313131),to(#1D1D1D));
+  background-image: -webkit-linear-gradient(#313131,#1D1D1D);
+  background-image: -o-linear-gradient(#313131,#1D1D1D);
+  border-top: 1px solid #3D3D3D;*/
+  background: url(../images/header.gif) 0 -50px repeat-x;
+  color: #303033;
+  border-bottom: 1px solid #ABABAB;
+  text-shadow: 0px 1px 0 white;
+}
+
+.titbar .tit {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  float: left;
+  height: 46px;
+  max-width: 580px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.titbar .titMain {
+  text-align: center;
+  max-width: 925px !important;
+  float: none !important;
+}
+
+#slidebox, .slidebox {
+  width: 975px;
+  overflow: hidden;
+  background: -o-linear-gradient( black, #1B1F23);
+  background: -moz-linear-gradient( black, #1B1F23);
+  background: -webkit-gradient(linear,0% 0,0% 100%,from( black),to( #1B1F23));
+  background: -webkit-linear-gradient( black, #1B1F23);
+  background: -o-linear-gradient( black, #1B1F23);
+}
+}
+
+#slidebox .box, .slidebox .box {
+  width: 782px;
+  border: 0;
+  margin: 25px auto 0;
+}
+
+#slidebox .box .in, .slidebox .box .in {
+  width: 782px;
+  margin: 12px auto;
+  overflow: hidden;
+  height: 216px;
+}
+
+element.style {
+  width: 782px;
+  height: 216px;
+}
+
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+  outline: 0;
+}
+
+.rightpane {
+  position: absolute;
+  height: 162px;
+  z-index: 200;
+  margin-left: 660px;
+}
+
+.leftpane {
+position: absolute;
+  height: 162px;
+  width: 122px;
+  z-index: 200;
+  display: none;
+}
+
+.jspPane {
+  position: absolute;
+  outline: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/*AROOWS */
+#slidebox .arrow, .slidebox .arrow {
+  position: absolute;
+  display: block;
+  height: 160px;
+  width: 94px;
+  margin-top: 28px;
+}
+
+#slidebox .arrow.lef, .slidebox .arrow.lef {
+  margin-left: 0;
+}
+
+#slidebox .arrow.lef:hover span, .slidebox .arrow.lef:hover span {
+background-position: 0 -50px;
+}
+
+#slidebox .arrow.rig:hover span, .slidebox .arrow.rig:hover span {
+background-position: -50px -50px;
+}
+
+a {
+  color: #3273AD;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#slidebox .arrow, .slidebox .arrow {
+  position: absolute;
+  display: block;
+  height: 160px;
+  width: 94px;
+  margin-top: 28px;
+}
+
+#slidebox .arrow span, .slidebox .arrow span {
+  position: absolute;
+  margin: 55px 22px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/slidebox_arrows.png);
+}
+
+#slidebox .arrow.rig, .slidebox .arrow.rig {
+  margin-left: 880px;
+}
+
+#slidebox .arrow.rig span, .slidebox .arrow.rig span {
+  background-position: -50px 0;
+}
+
+#slidebox .arrow span, .slidebox .arrow span {
+  position: absolute;
+  margin: 55px 22px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/slidebox_arrows.png);
+}
+
+
+#slidebox .boxes a, .slidebox .boxes a {
+  text-decoration: none;
+}
+
+#slidebox .boxes a, .slidebox .boxes a {
+  float: left;
+  display: block;
+  width: 122px;
+  margin-right: 10px;
+}
+
+#slidebox .boxes a .img, .slidebox .boxes a .img {
+  height: 184px;
+  display: block;
+}
+
+#slidebox .boxes a img, .slidebox .boxes a img {
+  height: 160px;
+  width: 120px;
+  display: block;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#slidebox .boxes a .tit, .slidebox .boxes a .tit {
+  color: #999;
+  margin-top: -20px;
+}
+
+#slidebox .boxes a .tit, .slidebox .boxes a .tit, #slidebox .boxes a .tit2, .slidebox .boxes a .tit2 {
+  font-size: 10px;
+  font-weight: bold;
+  color:  #666;
+  width: 112px;
+  line-height: 18px;
+  padding: 0 4px;
+  position: absolute;
+  margin-top: -28px;
+  text-shadow: 0 1px 0 black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tit3 {
+  font-size: 16px;
+  color:  rgb(50,50,50);
+  line-height: 18px;
+  margin-top: -28px;
+  overflow: hidden;
+  
+  position:absolute;
+  top:110px;
+  left:10px;
+  display:inline-block;
+  width:100px;
+  height:60px;
+  white-space:normal;
+  text-align:center;
+}
+
+
+.item-box{
+  height:190px;
+	width:150px;
+}
+
+.item-box:hover a span.tit2 {color: white !important;font-weight: bolder;}
+
+.information {
+  color: Black !important;
+  width: 620px;
+}
+
+#cluetip .rightInfoPanel {width: 300px !important;}
+
+.information .title {background-color: #575154; padding: 10px; width: 600px; text-align: center; color: white; font-weight: bold;}
+
+.ui-cluetip-header, .ui-cluetip-content {padding: 0px !important; border: 5px solid black;}
+
+.cluetip-close {float: right; width: 50px; height: 50px; margin-top: -20px; position: relative;}
+
+.cluetip-close a {float: right; width: 50px; height: 50px; position: relative; z-index: 9000;}
+
+.cluetip-default {background-color: whiteSmoke !important;}
+
+.videoContainer { position: relative;}
+
+.videoContainer a {
+   position: absolute;
+   display: block;
+   background: url(../images/play.png) transparent no-repeat ;
+   height: 130px;
+   width: 130px;
+   top: 75px;
+   left: 10px;
+}
+
+.playButton2 {
+  position: relative;
+   display: block;
+   height: 70px !important;
+   width: 70px !important;
+   top: -117px;
+   left: 20px;
+   z-index: 800;
+}
+
+.information .movieTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.information .movieRelease { font-size: 18px; font-weight: normal; }
+
+.leftInfoPanel {
+  float: left;
+  width: 210px;
+  min-height: 330px;
+  text-align: center;
+}
+
+.leftInfoPanel img {
+  margin-left: -11px;
+}
+
+.leftInfoPanel div {
+  margin-left: 25px;
+}
+
+.rightInfoPanel {
+    float: right;
+    width: 410px;
+}
+
+.rightInfoPanel label {
+  color: #9C9585;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* STARS */
+.star-rating {margin-left: 4px !important;}
+
+
+/* END STARS */
+
+/* START AJAX LOADING */
+
+#loading{
+  margin: 24px 0px 0px 8px;
+  position: absolute;
+  z-index: 999999999;
+  display: none;
+}
+
+#logo{
+  text-align: center;
+  margin-right: 50px;
+}
+
+#logoText{
+  color: red;
+  font-size: 3.3em;
+  font-weight: bolder;
+  top: 43px;
+  position: absolute;
+  width: 360px;
+  left: 333px;
+}
+
+
+/* END AJAX LOADING */
+
+/* POP-UP */
+#mask, #mask-information {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+
+
+/* You can customize to your needs  */
+.movie, .movie-information{
+	display:none;
+	background: #333;
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	box-shadow: 0px 0px 20px #999; /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+        -moz-border-radius: 3px; /* Firefox */
+        -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+.movie{z-index: 99998;}
+
+.movie {padding: 10px; 	}
+
+.movie-information{z-index: 99997;background-color: #E2E2E2;}
+
+#closeMovie, #closeInformation {
+  float: right;
+  cursor: pointer;
+  margin: 0px 0px 0px 0px;
+}
+/* END POP-UP */
+/* LOGIN */
+
+#content .login-popup{
+	background: #333;
+	padding: 30px; 	
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999; /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+        -moz-border-radius: 3px; /* Firefox */
+        -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+#content fieldset { 
+	border:none; 
+}
+
+#content form.signin .textbox label { 
+	display:block; 
+	padding-bottom:7px; 
+}
+
+#content form.signin .textbox span { 
+	display:block;
+}
+
+#content form.signin p, #content form.signin span { 
+	color:#999; 
+	font-size:14px; 
+	line-height:20px;
+} 
+
+#content form.signin .textbox input { 
+	background:#666666; 
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff; 
+        border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:10px 10px 10px;
+	width:200px;
+}
+
+#content form.signin input:-moz-placeholder { color:#bbb; text-shadow:0 0 2px #000; }
+#content form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #000;  }
+
+#content .button { 
+	background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+	border-color:#000; 
+	border-width:1px;
+        border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	display:inline-block;
+	padding:10px 10px 10px;
+	margin-top:15px;
+	font:12px; 
+	width:222px;
+}
+#content .button:hover { background:#ddd; }
+/* END LOGIN */
+
+/* METER */
+.meter { 
+	height: 6px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 3px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+	display: block;
+	height: 100%;
+	   -webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	       -moz-border-radius-topright: 8px;
+	    -moz-border-radius-bottomright: 8px;
+	           border-top-right-radius: 8px;
+	        border-bottom-right-radius: 8px;
+	    -webkit-border-top-left-radius: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	        -moz-border-radius-topleft: 20px;
+	     -moz-border-radius-bottomleft: 20px;
+	            border-top-left-radius: 20px;
+	         border-bottom-left-radius: 20px;
+	background-color: rgb(43,194,83);
+	background-image: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0, rgb(43,194,83)),
+	  color-stop(1, rgb(84,240,84))
+	 );
+	background-image: -webkit-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -moz-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -ms-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -o-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	-webkit-box-shadow: 
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	-moz-box-shadow: 
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	position: relative;
+	overflow: hidden;
+}
+
+.star-rating-control {z-index: 999;}

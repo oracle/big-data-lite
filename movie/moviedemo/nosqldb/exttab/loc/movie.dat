@@ -1,0 +1,17 @@
+<config version="1">
+  <component name="publish" type="params" validate="true">
+    <property name="oracle.kv.exttab.connection.url" value="jdbc:oracle:thin:/@//localhost:1521/orcl" type="STRING"/>
+    <property name="oracle.kv.exttab.tableName" value="nosql_movie" type="STRING"/>
+    <property name="oracle.kv.exttab.connection.user" value="moviedemo" type="STRING"/>
+  </component>
+  <component name="nosql_stream" type="params" validate="true">
+    <property name="oracle.kv.hosts" value="localhost:5000" type="STRING"/>
+    <property name="oracle.kv.exttab.totalExternalTableFiles" value="1" type="INT"/>
+    <property name="oracle.kv.batchSize" value="100" type="INT"/>
+    <property name="oracle.kv.exttab.externalTableFileNumber" value="0" type="INT"/>
+    <property name="oracle.kv.formatterClass" value="oracle.demo.oow.bd.exttab.MovieFormatter" type="STRING"/>
+    <property name="oracle.kv.parentKey" value="/MV" type="STRING"/>
+    <property name="oracle.kv.depth" value="PARENT_AND_DESCENDANTS" type="STRING"/>
+    <property name="oracle.kv.kvstore" value="kvstore" type="STRING"/>
+  </component>
+</config>

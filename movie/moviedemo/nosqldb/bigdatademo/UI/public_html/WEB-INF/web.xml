@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+  <filter>
+    <filter-name>IsUserLogued</filter-name>
+    <filter-class>oracle.demo.oow.bd.ui.IsUserLogued</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>IsUserLogued</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>logIn</servlet-name>
+    <servlet-class>oracle.demo.oow.bd.ui.logIn</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>oracle.demo.oow.bd.ui.logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logIn</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+</web-app>

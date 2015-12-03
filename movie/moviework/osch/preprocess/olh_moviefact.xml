@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+<!--                          Input settings                             -->
+
+ <property>
+   <name>mapreduce.inputformat.class</name>
+   <value>oracle.hadoop.loader.lib.input.DelimitedTextInputFormat</value>
+ </property>
+
+ <property>
+   <name>mapred.input.dir</name>
+       <value>/user/oracle/moviework/data/*</value> 
+ </property>
+
+ <property>
+   <name>oracle.hadoop.loader.input.fieldTerminator</name>
+   <value>\u0009</value>
+ </property>
+
+
+<!--                          Output settings                             -->
+ <property>
+   <name>mapreduce.outputformat.class</name>
+   <value>oracle.hadoop.loader.lib.output.DataPumpOutputFormat</value>
+ </property>
+
+ <property>
+   <name>oracle.hadoop.loader.defaultDateFormat</name>
+   <value>yyyy-MM-dd:HH:mm:ss</value>
+ </property>
+
+ <property>
+   <name>mapred.output.dir</name>
+   <value>/user/oracle/moviework/data_dp</value>
+ </property>
+
+ <property>
+   <name>oracle.hadoop.loader.enableSorting</name>
+   <value>true</value>
+ </property>
+
+ <property>
+   <name>oracle.hadoop.loader.logBadRecords</name>
+   <value>true</value>
+ </property>
+
+<!--                          Table information                           -->
+ <property>
+   <name>oracle.hadoop.loader.loaderMapFile</name>
+   <value>file:///home/oracle/movie/moviework/osch/preprocess/loaderMap_olh.xml </value>
+ </property>    
+
+<!--                          Connection information                      -->
+
+<property>
+  <name>oracle.hadoop.loader.connection.url</name>
+  <value>jdbc:oracle:thin:@${HOST}:${TCPPORT}/${SERVICE_NAME}</value>
+</property>
+
+<property>
+   <name>TCPPORT</name>
+   <value>1521</value>
+</property>
+
+<property> 
+   <name>HOST</name>
+   <value>bigdatalite.localdomain</value>
+</property> 
+
+<property>
+ <name>SERVICE_NAME</name>
+ <value>orcl</value>
+</property>
+
+<property>
+    <name>oracle.hadoop.loader.connection.user</name>
+    <value>MOVIEDEMO</value>
+</property>
+
+<property>
+    <name>oracle.hadoop.loader.connection.password</name>
+    <value>welcome1</value>        
+    <description> Having the password in cleartext is NOT RECOMMENDED.  Use Oracle Wallet instead. </description>
+</property>
+
+</configuration>
+
