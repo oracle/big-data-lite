@@ -13,3 +13,5 @@ Use the samples to learn about Oracle's big data platform.  In addition to gener
  - Oracle Table Access for Hadoop and Spark
  - Oracle GoldenGate
 ... and more :)
+
+See the Start Here document on the Big Data Lite desktop for more info on how to use the system.
