@@ -1,1 +1,1 @@
-echo post_script done
+echo "Post script complete."
