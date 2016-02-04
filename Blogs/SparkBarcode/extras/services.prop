@@ -1,0 +1,32 @@
+# role,service-name or start/stop script,description,script type [0=hadoop,1=other]
+# custom scripts must take following args:  start|stop|status
+ORCL,dbora,Oracle Database 12c,1
+Zookeeper,zookeeper-server,zookeeper,0
+HDFS,hadoop-hdfs-namenode,namenode,0
+HDFS,hadoop-hdfs-secondarynamenode,secondarynamenode,0
+HDFS,hadoop-httpfs,hadoop-httpfs,0
+HDFS,hadoop-hdfs-datanode,datanode,0
+HBase,hbase-master,master,0
+HBase,hbase-regionserver,regionserver,0
+HBase,hbase-thrift,thrift,0
+Hive,hive-metastore,metastore,0
+Hive,hive-server2,hive-server2,0
+Hue,hue,Hue,0
+Impala,impala-server,impala-server,0
+Impala,impala-catalog,catalog,0
+Impala,impala-state-store,state-store,0
+NoSQL,nosql,Oracle NoSQL Database,1
+Oozie,oozie,oozie,0
+ORDS-Apex,ords,Oracle Rest Data Service-Apex,1
+Solr,solr-server,solr-server,0
+Sqoop2,sqoop2-server,sqoop2-server,0
+WebLogic-MovieDemo,weblogic-movie,WebLogic-MovieDemo,1
+YARN,hadoop-yarn-resourcemanager,resourcemanager,0
+YARN,hadoop-yarn-nodemanager,nodemanager,0
+YARN,hadoop-mapreduce-historyserver,history-server,0
+YARN,spark-history-server,spark-history,0
+BigDataDiscovery,dgraph,dgraph,0
+BigDataDiscovery,hdfs-agent,hdfs-agent,0
+BigDataDiscovery,bddServer,bddServer,0
+ClouderaManager,cloudera-scm-server,Cloudera Manager Server,1
+ClouderaManager,cloudera-scm-agent,Cloudera Manager Agent,1
