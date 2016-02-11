@@ -1,0 +1,60 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Thu Feb 11 12:37:48 2016
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   EmployeeData.ctl
+Data File:      EmployeeData.csv
+  File processing option string: "str '
+'"
+  Bad File:     EmployeeData.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table EMPLOYEEDATA, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+EMP_ID                              FIRST 40000   ,  O(") CHARACTER            
+                                                      O(")
+FIRST_NAME                           NEXT 40000   ,  O(") CHARACTER            
+                                                      O(")
+LAST_NAME                            NEXT 40000   ,  O(") CHARACTER            
+                                                      O(")
+JOB_TITLE                            NEXT 40000   ,  O(") CHARACTER            
+                                                      O(")
+SALARY                               NEXT 40000   ,  O(") CHARACTER            
+                                                      O(")
+
+value used for ROWS parameter changed from 64 to 1
+
+Table EMPLOYEEDATA:
+  1000 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 200010 bytes(1 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:          1000
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Thu Feb 11 12:37:48 2016
+Run ended on Thu Feb 11 12:37:59 2016
+
+Elapsed time was:     00:00:10.97
+CPU time was:         00:00:00.31
