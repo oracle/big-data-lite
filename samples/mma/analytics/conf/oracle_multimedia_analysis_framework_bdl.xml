@@ -53,7 +53,7 @@
 </property>
 <property>
 <name>oracle.ord.hadoop.recognizer.labelnamefile</name>
-<value>/home/oracle/src/samples/mma/facetrain/faces/bigdata/dirmap.txt</value>
+<value>/home/oracle/src/samples/mma/analytics/dirmap.txt</value>
 </property>
 <property>
 <name>oracle.ord.hadoop.recognizer.cascadeclassifier.scalefactor</name>
@@ -80,3 +80,4 @@
 <value>100.0 </value>
 </property>
 </configuration>
+
