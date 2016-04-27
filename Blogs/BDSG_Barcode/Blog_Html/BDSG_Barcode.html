@@ -1,0 +1,538 @@
+<h1>BLOG: Using Oracle Big Data Spatial and Graph and Oracle Big Data Lite VM for Multimedia Analytics (Facial Detection, Optical Character Recognition, and QR/Barcode Detection)</h1>
+
+David Bayard, Oracle Big Data Pursuit Team<br>
+April 2016<br><br>
+
+
+<h2>Multimedia Analytics with Oracle Big Data Spatial and Graph</h2>
+In this blog, we will explore how to use and extend the new Multimedia Analytics (MMA) framework that ships with the Oracle Big Data Spatial and Graph (BDSG) product.  We will show how we can leverage the BDSG Multimedia Analytics framework to help us do things like facial recognition, optical character recognition, and barcode/QR detection.<br><br>
+Note: This blog build upon some of the work in our previous blog about doing Barcode and QR Detection with the Big Data Lite VM.  You might benefit from reading the previous blog before continuing.  The previous blog is available here: <a href="https://blogs.oracle.com/datawarehousing/entry/using_spark_scala_and_oracle">https://blogs.oracle.com/datawarehousing/entry/using_spark_scala_and_oracle</a><br><br>
+<br><br>
+<h2>Getting Started with Oracle Big Data Spatial and Graph on the Oracle Big Data Lite VM:</h2>
+This demonstration uses the <b>Oracle Big Data Lite VM version 4.4</b>, which is available here: <a href="http://www.oracle.com/technetwork/database/bigdata-appliance/oracle-bigdatalite-2104726.html">http://www.oracle.com/technetwork/database/bigdata-appliance/oracle-bigdatalite-2104726.html</a> .  Version 4.4 of the VM includes CDH 5.5 and Oracle Big Data Spatial and Graph version 1.1.2.  You may not be familiar with Oracle Big Data Spatial and Graph; if so, you can find more information at <a href="http://docs.oracle.com/cd/E69290_01/doc.44/e67958/toc.htm">http://docs.oracle.com/cd/E69290_01/doc.44/e67958/toc.htm</a> .  This blog will focus on the multimedia analytics framework, which is Chapter 6 in the previous link.<br><br>
+Obviously, your first step is to download the Oracle Big Data Lite VM (version 4.4 or higher).  Once you have the Big Data Lite VM downloaded, imported, and running, then click on the <b>“Refresh Samples”</b> icon on the VM desktop to refresh the samples.  At this point, you should find the files needed for this blog under your <b>/home/oracle/src/Blogs/BDSG_Barcode</b> directory.  <br><br>
+<img border=0 width=110 height=130 id="Picture 2"
+src="image001.jpg"><br>
+[Note: If you want to get access to the files referenced in
+this blog outside of the Oracle Big Data LiteVM, you can find them here: <a
+href="https://github.com/oracle/BigDataLite/tree/master/Blogs/BDSG_Barcode">https://github.com/oracle/BigDataLite/tree/master/Blogs/BDSG_Barcode</a>
+]<br><br>
+Now, run <b>setup.sh</b><br><br>
+<img border=0 width=624 height=433
+src="image002.jpg"><br><br>
+The setup.sh script will configure the Big Data Lite VM for
+this blog by first getting the java libraries needed by ZXing (which is an
+open-source Barcode/QR detection library).  Then it will proceed to setup Tesseract,
+which is a C++ open source library for Optical Character Recognition.  Next, we
+grab the Tess4J java libraries that make it easy to call Tesseract from java. 
+Finally, we copy a couple of sample videos into HDFS.  Review the setup.sh
+script if you are curious about the specific details and commands.
+<br><br>
+
+<h2>Running the basic sample from BDSG Multimedia Analytics</h2>
+
+Now that we have click on Refresh Samples and run setup.sh,
+our first activity will be to run a Facial Detection sample that ships with Oracle
+Big Data Spatial and Graph’s Multimedia Analytics feature.  We will try to
+identify the faces from this video (which is pretty funny, so check it out with
+the sound on): <a
+href="https://www.youtube.com/watch?v=Qz8bRyf1374&amp;list=PL0DF9A83456FF4351&amp;index=3">https://www.youtube.com/watch?v=Qz8bRyf1374&amp;list=PL0DF9A83456FF4351&amp;index=3</a><br><br>
+
+You can learn more about the Facial Detection sample here: <a
+href="http://docs.oracle.com/cd/E69290_01/doc.44/e67958/GUID-4B15F058-BCE7-4A3C-A6B8-163DB2D4368B.htm#GUID-3C6B70D7-8AE9-4580-AE1C-7F8F15093F3E">http://docs.oracle.com/cd/E69290_01/doc.44/e67958/GUID-4B15F058-BCE7-4A3C-A6B8-163DB2D4368B.htm#GUID-3C6B70D7-8AE9-4580-AE1C-7F8F15093F3E</a><br><br>
+
+The facial detection sample leverages the open source OpenCV
+libraries.  You can read more about OpenCV’s functionality for facial
+recognition here: <a
+href="http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html">http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html</a><br><br>
+
+For this sample, the Big Data Lite VM has already been
+trained to detect the faces of 4 different individuals (you can re-run the
+training with the /home/oracle/src/samples/mma/facetrain/trainface_bdl.sh script
+if you are interested).  The set of training images is located at /u01/oracle-spatial-graph/multimedia/example/facetrain/faces/bigdata
+. Below are the training images for individual #4.<br><br>
+
+<img border=0 width=624 height=299
+src="image003.jpg"><br><br>
+
+
+For this blog, let’s invoke the multimedia analytics
+framework to do facial detection using our trained facial data against our
+sample video (which is stored locally on the VM at /u01/oracle-spatial-graph/multimedia/example/video/bigdata.mp4
+).  To do so, <br><br>
+
+<b>$ cd /home/oracle/src/samples/mma/analytics</b><br>
+<b>$ hadoop fs -rm -R voutput_image </b><br>
+<b>$ ./runjob_bdl.sh</b><br><br>
+
+<img border=0 width=624 height=170 id="Picture 1"
+src="image004.jpg"><br><br>
+
+Notice that a map-reduce job is started.  The multimedia
+analytics framework provides an extensible map-reduce job that we can customize
+to do various kinds of image analytics.<br><br>
+
+When the map-reduce job finishes, we can run the script <b>playimage_bdl.sh</b>
+(located at /home/oracle/src/samples/mma/analytics ) to see what faces it
+detected.<br><br>
+
+<img border=0 width=624 height=347 id="Picture 4"
+src="image005.jpg"><br><br>
+
+When done, close the image window and type ctrl-c in the
+terminal window to get back to the terminal prompt.<br><br><br>
+
+<h2>Building a simple custom OrdFrameProcessor for the framework</h2>
+
+Now that we’ve seen a working example, let’s look at what it
+will take to build our own.  As we noted above, the multimedia analytics
+framework provides an out-of-the-box map-reduce program to extend.  The main
+way you will extend the framework is by writing your own implementation of the OrdFrameProcessor
+class (Read more about extending the framework here: <a
+href="http://docs.oracle.com/cd/E69290_01/doc.44/e67958/GUID-4B15F058-BCE7-4A3C-A6B8-163DB2D4368B.htm#BDSPA-GUID-090BD058-396D-41F8-814E-D407DF0941F6">http://docs.oracle.com/cd/E69290_01/doc.44/e67958/GUID-4B15F058-BCE7-4A3C-A6B8-163DB2D4368B.htm#BDSPA-GUID-090BD058-396D-41F8-814E-D407DF0941F6</a>
+and here: <a
+href="http://docs.oracle.com/cd/E69290_01/doc.44/e66533/oracle/ord/hadoop/mapreduce/OrdFrameProcessor.html">http://docs.oracle.com/cd/E69290_01/doc.44/e66533/oracle/ord/hadoop/mapreduce/OrdFrameProcessor.html</a>
+).  <br><br>
+
+Our first OrdFrameProcessor will be very basic; it will
+simply take the individual images passed in to it and pass them along.  In
+essence, this example will leverage the framework to convert a video into a
+series of images.<br><br>
+
+Before continuing, let’s run this simple example by
+executing the <b>run_video2image.sh</b> script in the /home/oracle/src/Blogs/BDSG_Barcode
+directory.<br><br>
+
+<img border=0 width=624 height=144 id="Picture 7"
+src="image006.jpg"><br><br>
+
+When the framework’s map-reduce job completes, enter Y to
+view the results…<br><br>
+
+<img border=0 width=624 height=483 id="Picture 10"
+src="image007.jpg"><br><br>
+
+This will launch a script (save_images.sh) that will save
+the output images (which by default were written to set of SequenceFiles on
+HDFS) to the local linux file system.<br><br>
+
+Then it will launch the linux “xdg-open” utility to let you
+browse the individual image files.  Use the Next and Previous arrows to
+navigate amongst the images.  NOTE: the first image will be black because the
+video starts out with a black image; simply click the Next arrow to see the
+images as expected.<br><br>
+
+<img border=0 width=623 height=371 id="Picture 13"
+src="image008.jpg"><br><br>
+
+&nbsp;<br><br>
+
+Let’s look at the code:<br><br>
+
+<pre>
+import oracle.ord.hadoop.mapreduce.OrdFrameProcessor;
+import oracle.ord.hadoop.mapreduce.OrdImageWritable;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.io.Text;
+
+import java.awt.image.BufferedImage;
+
+
+public class VideoToImage
+        extends OrdFrameProcessor<Text, OrdImageWritable, Text, OrdImageWritable> {
+
+    private Text m_frame_key_text = null;
+    private Text m_frame_value_text = null;
+    private OrdImageWritable m_frame_image = null;
+
+
+    public VideoToImage(Configuration conf) {
+        super(conf);
+    }
+
+
+    /**
+ *    Implement the processFrame method to process the key-value pair, an image,
+ *    in the mapper of a MapReduce job. 
+    */
+    @Override
+    public void processFrame(Text key, OrdImageWritable value) {
+
+        if (m_frame_key_text == null ||m_frame_value_text == null || m_frame_image == null) {
+            m_frame_image = new OrdImageWritable();
+            m_frame_key_text = new Text();
+            m_frame_value_text = new Text();
+        }
+        m_frame_key_text.set(key);
+
+//this is where we do our custom code.
+//In this example, do a simple identity map.  Take the image and return it.
+
+        BufferedImage bi = value.getImage();
+
+        m_frame_image.setImage(bi);
+    }
+
+    /**
+     * Implement the getKey method to return the key after processing an image 
+     * in the mapper.
+     */
+    @Override
+    public Text getKey() {
+        return m_frame_key_text;
+    }
+
+    /**
+     * Implement the getValue method to return the value after processing an
+     * image in the mapper.
+     */
+    @Override
+    public OrdImageWritable getValue() {
+        return m_frame_image;
+    }
+}
+</pre>
+<br><br>
+Notice that the class extends OrdFrameProcessor.  And notice
+that we defined the types of the Keys and Values that are passed in and out of
+the class.  In this example, the input and output keys are both Text while the
+input and output values are both OrdImageWriteable.<br><br>
+
+Also notice the implementation of the processFrame method. 
+This method reads the value being passed in (which is an OrdImageWriteable that
+can be converted to a regular java BufferedImage via
+OrdImageWriteable.getImage).  Then it stores the BufferedImage as an
+OrdImageWriteable (via OrdImageWriteable.setImage).  Essentially, this code
+demonstrates how to convert from BufferedImage to OrdImageWriteable and back.<br><br>
+
+Beyond writing our OrdFrameProcessor, we also need to setup
+a configuration file that tells the framework’s map-reduce job about our custom
+code.  Here is what the  configuration file looks like:<br><br>
+
+&nbsp;<br><br>
+<pre>
+&lt;?xml
+version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+&nbsp;
+&lt;!--Framework properties --&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.numofsplits&lt;/name&gt;
+&lt;value&gt;2&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.frameinterval&lt;/name&gt;
+&lt;value&gt;3&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.inputtype&lt;/name&gt;
+&lt;value&gt;video&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.outputtypes&lt;/name&gt;
+&lt;value&gt;image&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.ordframegrabber&lt;/name&gt;
+&lt;value&gt;oracle.ord.hadoop.decoder.OrdJcodecFrameGrabber&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.ordframeprocessor&lt;/name&gt;
+&lt;value&gt;VideoToImage&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.ordframeprocessor.k2&lt;/name&gt;
+&lt;value&gt;org.apache.hadoop.io.Text&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.ordframeprocessor.v2&lt;/name&gt;
+&lt;value&gt;oracle.ord.hadoop.mapreduce.OrdImageWritable&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</pre>
+<br><br>
+Notice that in the configuration file, we specify our custom
+class (VideoToImage) to use for the OrdFrameProcessor and we inform the
+framework of the Types to use for the output key and value.<br><br>
+
+Finally, let’s look at the command that runs it (this is a
+command inside the run_video2image.sh script):<br><br>
+<pre>
+hadoop jar ${MMA_HOME}/lib/ordhadoop-multimedia-analytics.jar -libjars ${CUR_DIR_NAME}/Video2Image/VideoToImage.class -conf ${CUR_DIR_NAME}/Video2Image/video2image.xml bdsg_mma_input bdsg_mma_output
+</pre>
+<br><br>
+Notice that in the command line, we’ve told the framework
+map-reduce job where to find the configuration file, as well as what hdfs
+directories to use for input and output.<br><br>
+
+&nbsp;<br><br>
+
+<h2>Building and Running the OrdFaceDetectionSample</h2>
+
+Now that we have gotten a very simple example built and
+running, we will look again at the Face Detection sample that we ran
+previously.  You can find the code in the OrdFaceDetection directory (/home/oracle/src/Blogs/BDSG_Barcode/OrdFaceDetection
+). <br><br>
+
+Let’s first compile and run this example:<br><br>
+
+<b>$ cd /home/oracle/src/Blogs/BDSG_Barcode</b><br><br>
+
+<b> $ run_sample.sh</b><br><br>
+
+<img border=0 width=624 height=128 id="Picture 16"
+src="image009.jpg"><br><br>
+
+When asked type Y to view the image output.  Notice how the
+faces are detected in most scenes, especially when they are fully facing
+forward.<br><br>
+
+<img border=0 width=624 height=379 id="Picture 19"
+src="image010.jpg"><br><br>
+
+Now, explore the java source (/home/oracle/src/Blogs/BDSG_Barcode/OrdFaceDetection/OrdFaceDetectionSample.java),
+configuration file (/home/oracle/src/Blogs/BDSG_Barcode/OrdFaceDetection/sample.xml),
+and the hadoop jar command (/home/oracle/src/Blogs/BDSG_Barcode/run_sample.sh)
+to see how this example was built.<br><br>
+
+&nbsp;<br><br>
+
+<h2>QR Detection (ZXing) with Big Data Spatial and Graph:</h2>
+
+Our next example will build on some of the work done in our
+previous blog post, located here:  <a
+href="https://blogs.oracle.com/datawarehousing/entry/using_spark_scala_and_oracle">https://blogs.oracle.com/datawarehousing/entry/using_spark_scala_and_oracle</a><br><br>
+
+Specifically, we will re-use the BarcodeProcessor.java from
+the previous blog.<br><br>
+
+Run the <b>run_QRImage.sh</b> script to see it in action
+against a video QR.mov that we’ve provided.<br><br>
+
+<img border=0 width=624 height=131 id="Picture 22"
+src="image011.jpg"><br><br>
+
+<img border=0 width=624 height=370 id="Picture 25"
+src="image012.jpg"><br><br>
+
+If we look at the java source code (/home/oracle/src/Blogs/BDSG_Barcode/QR/QRImage.java)
+for our OrdFrameProcessor, we will see this code in the processFrame() method
+showing how we are calling our BarcodeProcessor class and how we are drawing
+the results on the output image:<br><br>
+
+&nbsp;<br><br>
+<pre>
+        BufferedImage bi = value.getImage();
+        String barcodeString ="";
+
+        try {
+          barcodeString = BarcodeProcessor.processImage(bi);
+          System.out.println("Testing. "+barcodeString);
+        } catch (Exception e) {
+          System.out.println("Key:"+key+"  exception: "+e);
+          barcodeString = "Exception:"+e;
+        }
+
+        m_frame_value_text.set(barcodeString);
+
+        int width = bi.getWidth();
+        int height = bi.getHeight();
+
+        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = bufferedImage.createGraphics();
+
+        g2d.drawImage(bi, 0, 0, null);
+        g2d.setPaint(Color.blue);
+        g2d.setFont(new Font("Serif", Font.BOLD, 36));
+        FontMetrics fm = g2d.getFontMetrics();
+        int y = fm.getHeight();
+
+        for (String line : barcodeString.split(" ---- ")) {
+          int x = width - fm.stringWidth(line) - 5;
+          g2d.drawString(line, x, y += fm.getHeight());
+        }
+        g2d.dispose();
+
+        m_frame_image.setImage(bufferedImage);
+...
+</pre>
+<br><br>
+To learn more about QR/Barcode detection and the open source
+ZXing library, refer to our previously mentioned blog.<br><br>
+
+&nbsp;<br><br>
+
+<h2>Optical Character Recognition (Tesseract) with Big Data Lite VM:</h2>
+
+Our next example will use the open source Tesseract library
+to do Optical Character Recognition (OCR).  Read about Tesseract here: <a
+href="https://github.com/tesseract-ocr/tesseract">https://github.com/tesseract-ocr/tesseract</a>
+<br><br>
+
+One of your first challenges to working with Tesseract will
+be installing it.  We’ve taken care of installing it for you in the setup.sh
+script you ran earlier, but let’s discuss what setup.sh did.  Tesseract is a
+C++ program.  One way to install it is by downloading the source and building
+it.  For purposes of this blog, we decided to look for an already compiled
+version of Tesseract.  Given that the Big Data Lite VM runs Oracle Linux (which
+uses rpms/yum like RedHat), we want to find an rpm-based version of Tesseract. 
+We were able to find this at the EPEL yum repository. EPEL stands for “Extra
+Packages for Enterprise Linux” (you can find out more about EPEL here: <a
+href="https://fedoraproject.org/wiki/EPEL/FAQ">https://fedoraproject.org/wiki/EPEL/FAQ</a>
+).  Our setup.sh script first configures our Big Data Lite VM to know about
+EPEL, then it uses yum to install and download Tesseract and its dependencies. 
+Tesseract also needs training data to recognize images as characters, so we
+download some pre-built training data via EPEL as well.<br><br>
+
+Now that Tesseract is installed in your Big Data Lite VM,
+feel free to test it out on the command line.  Simply run “<b>tesseract -help</b>”.
+<br><br>
+
+As discussed above, Tesseract is a C++ open source project. 
+However, much of the hadoop ecosystem is more tailored towards working with java. 
+There are a couple of approaches to bridge Tesseract to java, such as Tess4J
+and the java-cpp-presets project.  This blog/demonstration shows the Tess4J
+approach, although we’ve used the java-cpp-presets approach in other situations
+and don’t judge one better than the other.  For more on Tess4J, see <a
+href="http://tess4j.sourceforge.net/">http://tess4j.sourceforge.net/</a> .  The
+setup.sh script downloaded the jar files needed by Tess4J and its dependencies.<br><br>
+
+ <br><br>
+
+
+<h2>Using Tesseract with Big Data Spatial and Graph:</h2>
+
+Now that we’ve discussed how Tesseract and Tess4J were
+setup, let’s look at an example of Tesseract in a custom OrdFrameProcessor.  Run
+the script “<b>run_tessImage.sh</b>” to run against a sample video OCR.mov that
+we’ve provided.<br><br>
+
+<img border=0 width=624 height=198 id="Picture 28"
+src="image013.jpg"><br><br>
+
+<img border=0 width=624 height=384 id="Picture 31"
+src="image014.jpg"><br><br>
+
+You should see that the Tesseract did a fairly good job at
+identifying the characters in the frames that were grabbed from the sample
+video.<br><br>
+
+Let’s look at parts of the code (/home/oracle/src/Blogs/BDSG_Barcode/TessImage/TessImage.java)
+of our custom OrdFrameProcessor:<br><br>
+<pre>
+    public TessImage(Configuration conf) {
+        super(conf);
+        instance = Tesseract.getInstance();
+        instance.setDatapath("/usr/share/tesseract");
+        instance.setLanguage("eng");
+        instance.setPageSegMode(3);
+
+    }
+
+…
+        String ocrString ="";
+
+        try {
+          ocrString = instance.doOCR(bi);
+          System.out.println("Key:"+key+"  OCR:"+ocrString);
+        } catch (Exception e) {
+          System.out.println("Key:"+key+"  exception: "+e);
+          ocrString = "Exception:"+e;
+        }
+…
+</pre>
+&nbsp;<br><br>
+
+Key things to highlight in the code are the necessary
+Tesseract setup commands in the class constructor and the call to the Tesseract
+api (instance.doOCR) in the processFrame() method.<br><br>
+
+&nbsp;<br><br>
+
+<h2>Outputting Text Information from the framework</h2>
+
+So far, all of our OrdFrameProcessor examples have generated
+image (OrdImageWriteable) output.  Our final example will show how to generate
+text output.<br><br>
+
+Run the script <b>run_tessText.sh</b><br><br>
+
+<img border=0 width=624 height=158 id="Picture 34"
+src="image015.jpg"><br><br>
+
+<img border=0 width=624 height=280 id="Picture 37"
+src="image016.jpg"><br><br>
+
+As seen above, this example saves its output as textual
+data, not images.<br><br>
+
+To see how this worked, notice the changes in the xml
+configuration file (/home/oracle/src/Blogs/BDSG_Barcode/TessText/tess.xml) as
+well as the Tess.java (/home/oracle/src/Blogs/BDSG_Barcode/TessText/Tess.java)
+class.<br><br>
+<pre>
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.outputtypes&lt;/name&gt;
+&lt;value&gt;csv&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;oracle.ord.hadoop.ordframeprocessor.v2&lt;/name&gt;
+&lt;value&gt;org.apache.hadoop.io.Text&lt;/value&gt;
+&lt;/property&gt;
+
+public class Tess
+        extends OrdFrameProcessor<Text, OrdImageWritable, Text, Text> {
+
+    …
+public Text getValue() {
+        return m_frame_value_text;
+    }
+</pre>
+&nbsp;<br><br>
+
+&nbsp;<br><br>
+
+<h2>Moving Beyond:</h2>
+
+Hopefully, this was a good start for your journey into Big
+Data Spatial and Graph’s Multimedia Analytics Framework.  Here are some
+possible future paths you could take:<br><br>
+
+<ul>
+ <li>You could make test the above code out with your own
+     movies.  For instance, I used my iPhone to record some videos, copied them
+     onto my laptop, and then copied them into my Big Data Lite VM. </li>
+ <li>You could get your own set of facial photos and train the
+     Facial Detection example to work with your own videos.</li>
+ <li>You could explore other possibilities for custom
+     OrdFrameProcessor, using other features of the OpenCV or other open source
+     libraries.</li>
+</ul>
+
+&nbsp;<br><br>
+
+<b>NOTE</b>: If you want to play around with the source
+files and make modifications, you should probably copy the BDSG_Barcode
+directory tree into a new directory outside of /home/oracle/src.  This is
+because the “Refresh Samples” utility will wipe-out the /home/oracle/src directory
+every time it runs.  <br><br>
+
+ <br><br>
+
+<h2>Conclusion:</h2>
+
+This blog has shown you how work with and extend the
+Multimedia Analytics framework that is part of Oracle Big Data Spatial and
+Graph.  We have explored how the Facial Recognition example works and built new
+examples to do Barcode/QR detection and Optical Character Recognition.<br><br>
+
+Hopefully, this has made you more comfortable with working
+with tools like the Oracle Big Data Lite VM, Oracle Big Data Spatial and Graph,
+OpenCV, ZXing, Tesseract, Tess4j, and EPEL.  Enjoy.<br><br>
+
+&nbsp;<br><br>
+
+<h2>About the Author: </h2>
+
+David Bayard is a member of the Big Data Pursuit team for
+Oracle North America Sales.<br><br>
