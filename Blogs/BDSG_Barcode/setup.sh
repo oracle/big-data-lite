@@ -84,6 +84,8 @@ echo Setup Tess4j
 echo Setup HDFS sample files
 ./x_setup_hdfs.sh
 
+echo Setup opencv libraries for use by mapreduce
+sudo cp /u01/oracle-spatial-graph/multimedia/opencv_3.1.0/lib/libopencv* /usr/lib/hadoop/lib/native/
 
 echo " "
 echo setup.sh Script Complete.

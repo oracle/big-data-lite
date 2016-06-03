@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+<!-- Framework properties -->
+
+<property>
+<name>oracle.ord.hadoop.numofsplits</name>
+<value>6</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.frameinterval</name>
+<value>1</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.inputtype</name>
+<value>video</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.outputtypes</name>
+<value>image</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.ordframegrabber</name>
+<value>oracle.ord.hadoop.decoder.OrdJcodecFrameGrabber</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.ordframeprocessor</name>
+<value>oracle.ord.hadoop.mapreduce.OrdOpenCVFaceRecognizerMulti</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.ordframeprocessor.k2</name>
+<value>org.apache.hadoop.io.Text</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.ordframeprocessor.v2</name>
+<value>oracle.ord.hadoop.mapreduce.OrdImageWritable</value>
+</property>
+
+<!-- Properties for OpenCV face recognition -->
+
+<property>
+<name>oracle.ord.hadoop.basedir</name>
+<value>/opt/oracle/oracle-spatial-graph/multimedia/example/facetrain</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.classifier</name>
+<value>${oracle.ord.hadoop.basedir}/config/haarcascade_frontalface_alt2.xml</value> 
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.modelfile</name>
+<value>/home/oracle/src/samples/mma/facetrain/ordfacemodel_bigdata.dat</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.labelnamefile</name>
+<value>/home/oracle/src/samples/mma/analytics/dirmap.txt</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.scalefactor</name>
+<value>1.1</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.minneighbor</name>
+<value>1</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.flags</name>
+<value> CASCADE_SCALE_IMAGE | CASCADE_DO_ROUGH_SEARCH</value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.minsize</name>
+<value> (100, 100) </value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.maxsize</name>
+<value> (500, 500) </value>
+</property>
+<property>
+<name>oracle.ord.hadoop.recognizer.cascadeclassifier.maxconfidence</name>
+<value>100.0 </value>
+</property>
+</configuration>
+

@@ -1,0 +1,76 @@
+
+1) Studio Control Panel Data Source Setup
+Create database Connection
+moviedemo
+jdbc:oracle:thin:@localhost:1521:orcl
+moviedemo/welcome1
+hint: start dbora...
+
+
+Create data source
+media_demo_movie_genre
+select * from genre;
+
+media_demo_movie
+select 8 from movie;
+
+media_customer_segment????
+
+###skipped this since the customer ID was coming though masked.
+media_demo_customer
+select * from customer;
+
+Once the data sets are defined use Studio Add Data sets wizard to add the two data sets within BDD.
+
+2) ingest Movie Log and CustomerEnriched via cli
+
+create new hdfs folder and copy files
+hadoop fs -mkdir mediademo
+hadoop fs -mkdir mediademo/media_movielog
+hadoop fs -put media_movielog.txt mediademo/media_movielog
+
+hadoop fs -mkdir mediademo/media_customer
+hadoop fs -put media_customer.txt mediademo/media_customer
+
+Create hive tables using .ddl files.
+media_customer.ddl
+media_movielog.ddl
+
+
+cd /u01/bdd/v1.2.0/BDD/dataprocessing/edp_cli
+./data_processing_CLI -t media_demo_customer
+./data_processing_CLI -t media_demo_movielog
+
+3) upload media_3rd_party_activity via Studio
+Upload 
+/home/oracle/movie/moviedemo/bigdatadiscovery
+media_3rdparty_activity.txt
+
+un select files has headers and type in field names from .ddl file:
+cust_id
+in_market
+predictors
+demographics
+
+also name files with media_demo prefix
+
+
+4) Create project and add data sets
+add customer
+3rdparty
+movielog
+genre
+
+5)
+trasnfor and enrich data
+use shaping to add genre name to movie log
+??do we need the genre table in the project?
+
+apply below blakc list to existing attribute
+//movielog:  Blacklist key phrases from plotsummary
+def blacklist = ['film','nbsp','ref'];
+plot_summary_key_phrases.removeAll (blacklist as Object[]);
+return plot_summary_key_phrases
+
+
+

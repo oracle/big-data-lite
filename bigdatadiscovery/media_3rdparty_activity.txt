@@ -1,0 +1,4848 @@
+1161115	Auto	Travel	Household Income
+1168350	Retail	Retail	Household Income
+1161269	Auto	Auto	Gender
+1161657	Travel	Retail	Household Income
+1161937	Auto	Travel	Household Income
+1162618	Retail	Auto	Age
+1162875	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1163016	Retail	Retail	Age
+1163934	Retail	Auto	Gender
+1164015	Retail	Auto	Age
+1164063	Real Estate	Travel	Household Income
+1164077	Retail	Auto	Household Income
+1164404	Auto	Travel	Gender
+1164448	Auto	Retail	Household Income
+1015343	Retail	Travel	Household Income
+1015416	Other Vehicles	Travel	Household Income
+1015611	Auto	Retail	Gender
+1015716	Consumer Packaged Goods (CPG) Education	Auto	Age
+1015901	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1016076	Travel	Travel	Gender
+1016103	Auto	Auto	Gender
+1016220	Auto	Travel	Age
+1016319	Consumer Packaged Goods (CPG) Education	Auto	Age
+1016375	Travel	Auto	Gender
+1016725	Auto	Auto	Age
+1016766	Retail	Retail	Household Income
+1016849	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1019909	Financial Products & Services Services	Auto	Household Income
+1017132	Financial Products & Services Services	Travel	Gender
+1018654	Retail	Auto	Household Income
+1019019	Financial Products & Services Services	Travel	Age
+1019604	Retail	Auto	Age
+1019889	Auto	Retail	Age
+1019942	Auto	Auto	Gender
+1019975	Auto	Auto	Household Income
+1020140	Retail	Travel	Household Income
+1020151	Real Estate	Travel	Age
+1015259	Travel	Auto	Age
+1067480	Auto	Auto	Age
+1067591	Retail	Travel	Age
+1067648	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1067879	Real Estate	Retail	Age
+1068024	Auto	Travel	Age
+1068882	Auto	Travel	Age
+1068954	Other Vehicles	Travel	Household Income
+1069126	Consumer Packaged Goods (CPG) Education	Auto	Age
+1085117	Real Estate	Travel	Gender
+1085166	Auto	Travel	Household Income
+1085227	Travel	Auto	Age
+1085415	Auto	Travel	Household Income
+1085725	Other Vehicles	Retail	Age
+1086079	Real Estate	Retail	Household Income
+1086326	Financial Products & Services Services	Auto	Household Income
+1086373	Other Vehicles	Travel	Household Income
+1086490	Auto	Auto	Gender
+1086716	Retail	Travel	Age
+1086719	Retail	Auto	Gender
+1086730	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1087356	Retail	Travel	Age
+1087435	Real Estate	Travel	Age
+1087670	Auto	Auto	Age
+1088363	Travel	Travel	Household Income
+1088484	Travel	Auto	Age
+1088583	Retail	Auto	Household Income
+1065217	Auto	Retail	Age
+1066304	Travel	Retail	Household Income
+1066970	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1067283	Financial Products & Services Services	Auto	Household Income
+1067456	Real Estate	Travel	Age
+1124763	Other Vehicles	Auto	Household Income
+1124852	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1124891	Retail	Travel	Age
+1076016	Travel	Travel	Household Income
+1076082	Auto	Auto	Gender
+1076109	Auto	Travel	Age
+1076128	Auto	Auto	Age
+1137905	Travel	Travel	Gender
+1137997	Travel	Travel	Gender
+1138030	Travel	Auto	Household Income
+1138188	Other Vehicles	Travel	Household Income
+1138496	Auto	Retail	Household Income
+1138546	Auto	Travel	Age
+1138684	Auto	Retail	Household Income
+1138883	Other Vehicles	Travel	Age
+1138965	Other Vehicles	Auto	Household Income
+1139501	Financial Products & Services Services	Auto	Age
+1139696	Retail	Travel	Household Income
+1124936	Travel	Travel	Age
+1125075	Consumer Packaged Goods (CPG) Education	Retail	Age
+1125107	Other Vehicles	Auto	Gender
+1125231	Auto	Travel	Household Income
+1125355	Travel	Auto	Household Income
+1126337	Retail	Travel	Age
+1126933	Travel	Retail	Gender
+1127554	Other Vehicles	Auto	Age
+1127661	Real Estate	Auto	Household Income
+1127690	Financial Products & Services Services	Retail	Household Income
+1128114	Retail	Auto	Gender
+1128134	Financial Products & Services Services	Auto	Age
+1128196	Travel	Auto	Age
+1128281	Retail	Retail	Household Income
+1128292	Other Vehicles	Retail	Age
+1128625	Auto	Auto	Gender
+1128859	Financial Products & Services Services	Auto	Household Income
+1129013	Financial Products & Services Services	Retail	Age
+1129033	Auto	Travel	Household Income
+1129095	Travel	Auto	Age
+1124702	Auto	Auto	Gender
+1129439	Auto	Travel	Household Income
+1129467	Auto	Retail	Gender
+1129484	Real Estate	Travel	Gender
+1130116	Retail	Travel	Household Income
+1130509	Real Estate	Retail	Household Income
+1160112	Travel	Auto	Household Income
+1159398	Retail	Auto	Gender
+1159537	Other Vehicles	Auto	Age
+1159811	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1069279	Other Vehicles	Travel	Household Income
+1069293	Retail	Travel	Age
+1069724	Retail	Travel	Age
+1069892	Auto	Auto	Age
+1070340	Travel	Auto	Household Income
+1070014	Other Vehicles	Auto	Household Income
+1070437	Travel	Travel	Household Income
+1070931	Auto	Travel	Age
+1071072	Retail	Travel	Gender
+1071495	Other Vehicles	Auto	Household Income
+1071534	Retail	Retail	Age
+1071694	Financial Products & Services Services	Retail	Age
+1072064	Real Estate	Travel	Gender
+1072494	Auto	Travel	Age
+1072620	Financial Products & Services Services	Auto	Age
+1130512	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1130879	Financial Products & Services Services	Retail	Household Income
+1130936	Retail	Auto	Gender
+1130952	Retail	Travel	Household Income
+1131336	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1131482	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1131782	Real Estate	Auto	Age
+1131870	Auto	Auto	Gender
+1131976	Auto	Travel	Household Income
+1132056	Auto	Retail	Household Income
+1132608	Auto	Auto	Household Income
+1132913	Financial Products & Services Services	Auto	Age
+1133157	Travel	Travel	Household Income
+1160076	Financial Products & Services Services	Auto	Gender
+1160126	Consumer Packaged Goods (CPG) Education	Travel	Age
+1160756	Retail	Retail	Gender
+1160799	Travel	Travel	Age
+1160859	Consumer Packaged Goods (CPG) Education	Auto	Age
+1160996	Travel	Retail	Household Income
+1171447	Other Vehicles	Auto	Age
+1171668	Auto	Auto	Age
+1171696	Real Estate	Travel	Age
+1172862	Other Vehicles	Travel	Age
+1168760	Real Estate	Travel	Household Income
+1171835	Other Vehicles	Auto	Gender
+1171886	Retail	Travel	Household Income
+1024961	Retail	Auto	Gender
+1025491	Auto	Retail	Household Income
+1025637	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1026225	Auto	Auto	Gender
+1026354	Other Vehicles	Travel	Age
+1026448	Retail	Travel	Age
+1026504	Auto	Auto	Gender
+1026606	Auto	Travel	Age
+1027495	Travel	Retail	Gender
+1027523	Auto	Auto	Household Income
+1028428	Retail	Travel	Age
+1027554	Auto	Retail	Gender
+1027785	Auto	Travel	Household Income
+1027831	Retail	Travel	Household Income
+1027873	Auto	Retail	Gender
+1028189	Other Vehicles	Auto	Age
+1030294	Retail	Auto	Age
+1028339	Other Vehicles	Travel	Household Income
+1028429	Retail	Auto	Household Income
+1028679	Auto	Auto	Age
+1028829	Auto	Travel	Household Income
+1028871	Other Vehicles	Travel	Household Income
+1167017	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1167054	Other Vehicles	Travel	Age
+1167105	Travel	Retail	Household Income
+1167257	Retail	Auto	Household Income
+1168239	Financial Products & Services Services	Travel	Age
+1167294	Retail	Travel	Age
+1167345	Retail	Auto	Gender
+1167575	Other Vehicles	Travel	Household Income
+1167793	Retail	Retail	Age
+1168086	Other Vehicles	Travel	Age
+1168131	Auto	Travel	Gender
+1020256	Real Estate	Travel	Age
+1020383	Auto	Retail	Household Income
+1021019	Travel	Auto	Household Income
+1021079	Retail	Retail	Household Income
+1021173	Retail	Auto	Age
+1021684	Retail	Travel	Household Income
+1023089	Auto	Travel	Household Income
+1022176	Financial Products & Services Services	Travel	Age
+1022382	Real Estate	Travel	Age
+1022436	Consumer Packaged Goods (CPG) Education	Travel	Age
+1022573	Auto	Travel	Household Income
+1022837	Auto	Auto	Age
+1023009	Real Estate	Retail	Age
+1023280	Retail	Travel	Gender
+1023351	Retail	Travel	Gender
+1023370	Financial Products & Services Services	Travel	Age
+1023833	Auto	Travel	Household Income
+1023956	Consumer Packaged Goods (CPG) Education	Travel	Age
+1024059	Consumer Packaged Goods (CPG) Education	Auto	Age
+1024060	Travel	Auto	Age
+1024214	Travel	Retail	Age
+1024273	Auto	Auto	Household Income
+1024438	Auto	Auto	Gender
+1072651	Other Vehicles	Auto	Age
+1072659	Other Vehicles	Travel	Age
+1072675	Other Vehicles	Auto	Age
+1072800	Real Estate	Auto	Household Income
+1072893	Financial Products & Services Services	Travel	Household Income
+1073121	Retail	Travel	Gender
+1073232	Financial Products & Services Services	Auto	Age
+1073258	Other Vehicles	Travel	Household Income
+1073647	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1073842	Travel	Travel	Household Income
+1073980	Auto	Retail	Gender
+1074455	Auto	Travel	Household Income
+1074835	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1081188	Retail	Retail	Age
+1075055	Travel	Travel	Household Income
+1075085	Auto	Auto	Household Income
+1075278	Other Vehicles	Travel	Age
+1075414	Retail	Retail	Household Income
+1075705	Auto	Travel	Age
+1085119	Auto	Travel	Age
+1085450	Other Vehicles	Auto	Age
+1085660	Financial Products & Services Services	Travel	Age
+1126945	Auto	Travel	Gender
+1127973	Real Estate	Travel	Age
+1128056	Auto	Travel	Gender
+1129253	Auto	Travel	Age
+1128139	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1128210	Other Vehicles	Retail	Gender
+1128351	Retail	Retail	Gender
+1128365	Retail	Travel	Gender
+1128385	Auto	Travel	Age
+1128613	Real Estate	Auto	Household Income
+1128664	Travel	Auto	Age
+1128718	Real Estate	Auto	Household Income
+1128967	Real Estate	Auto	Gender
+1129083	Financial Products & Services Services	Auto	Gender
+1129236	Retail	Travel	Household Income
+1129727	Auto	Auto	Gender
+1129738	Auto	Travel	Gender
+1130597	Financial Products & Services Services	Travel	Household Income
+1130788	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1131399	Financial Products & Services Services	Travel	Age
+1134637	Retail	Travel	Age
+1130979	Travel	Travel	Household Income
+1131015	Other Vehicles	Auto	Age
+1131199	Other Vehicles	Auto	Household Income
+1132494	Retail	Auto	Age
+1132596	Retail	Retail	Gender
+1177813	Financial Products & Services Services	Travel	Age
+1191262	Financial Products & Services Services	Retail	Age
+1191532	Financial Products & Services Services	Travel	Age
+1191543	Financial Products & Services Services	Travel	Age
+1192207	Financial Products & Services Services	Auto	Gender
+1192351	Auto	Retail	Household Income
+1192508	Retail	Retail	Gender
+1192870	Travel	Retail	Gender
+1193137	Real Estate	Travel	Age
+1193180	Retail	Travel	Age
+1029386	Retail	Auto	Gender
+1076686	Real Estate	Auto	Age
+1076847	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1076887	Retail	Auto	Age
+1077024	Consumer Packaged Goods (CPG) Education	Retail	Age
+1077158	Auto	Retail	Household Income
+1077225	Financial Products & Services Services	Auto	Age
+1077522	Auto	Travel	Household Income
+1078023	Other Vehicles	Retail	Age
+1077718	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1077880	Consumer Packaged Goods (CPG) Education	Travel	Age
+1078011	Auto	Retail	Household Income
+1078092	Auto	Travel	Age
+1078195	Retail	Travel	Household Income
+1078281	Financial Products & Services Services	Travel	Household Income
+1078299	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1078514	Retail	Auto	Household Income
+1078670	Retail	Auto	Gender
+1078678	Consumer Packaged Goods (CPG) Education	Travel	Age
+1080061	Consumer Packaged Goods (CPG) Education	Travel	Age
+1078812	Retail	Auto	Household Income
+1079045	Real Estate	Auto	Age
+1079149	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1079309	Other Vehicles	Travel	Gender
+1079480	Travel	Auto	Gender
+1142717	Retail	Auto	Household Income
+1142793	Auto	Auto	Age
+1143095	Auto	Travel	Age
+1143750	Real Estate	Travel	Household Income
+1143756	Financial Products & Services Services	Travel	Household Income
+1144306	Auto	Travel	Age
+1144344	Financial Products & Services Services	Travel	Household Income
+1133759	Travel	Auto	Age
+1134482	Travel	Travel	Age
+1134574	Retail	Travel	Household Income
+1134906	Real Estate	Travel	Gender
+1135369	Travel	Travel	Age
+1136380	Retail	Auto	Household Income
+1136464	Consumer Packaged Goods (CPG) Education	Auto	Age
+1136674	Financial Products & Services Services	Travel	Gender
+1136766	Real Estate	Auto	Gender
+1137025	Retail	Retail	Age
+1137454	Retail	Auto	Household Income
+1137511	Auto	Retail	Gender
+1137710	Retail	Auto	Age
+1164612	Consumer Packaged Goods (CPG) Education	Auto	Age
+1164819	Consumer Packaged Goods (CPG) Education	Auto	Age
+1165328	Other Vehicles	Retail	Age
+1164890	Retail	Retail	Household Income
+1164921	Other Vehicles	Auto	Household Income
+1165080	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1165487	Real Estate	Travel	Age
+1165680	Financial Products & Services Services	Auto	Gender
+1165762	Consumer Packaged Goods (CPG) Education	Travel	Age
+1165851	Real Estate	Travel	Gender
+1166113	Financial Products & Services Services	Travel	Gender
+1166251	Real Estate	Travel	Household Income
+1166408	Financial Products & Services Services	Retail	Gender
+1166451	Auto	Retail	Age
+1166870	Travel	Auto	Age
+1139767	Auto	Auto	Household Income
+1139856	Other Vehicles	Auto	Gender
+1140030	Travel	Travel	Gender
+1140445	Real Estate	Retail	Age
+1140893	Retail	Auto	Gender
+1140934	Retail	Retail	Household Income
+1140948	Consumer Packaged Goods (CPG) Education	Auto	Age
+1141177	Real Estate	Auto	Household Income
+1141317	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1141540	Other Vehicles	Retail	Gender
+1141648	Retail	Auto	Household Income
+1141688	Auto	Auto	Age
+1142261	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1144396	Retail	Auto	Age
+1144428	Retail	Auto	Gender
+1144504	Retail	Auto	Household Income
+1144673	Real Estate	Travel	Age
+1144680	Financial Products & Services Services	Retail	Household Income
+1144894	Consumer Packaged Goods (CPG) Education	Auto	Age
+1144982	Auto	Travel	Gender
+1145356	Retail	Auto	Age
+1145528	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1145654	Auto	Travel	Age
+1146016	Retail	Auto	Household Income
+1146492	Retail	Auto	Household Income
+1146582	Other Vehicles	Retail	Household Income
+1146827	Real Estate	Travel	Household Income
+1147350	Retail	Retail	Age
+1147954	Real Estate	Travel	Age
+1148421	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1148623	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1186433	Other Vehicles	Auto	Age
+1186725	Auto	Travel	Household Income
+1187645	Financial Products & Services Services	Travel	Age
+1188416	Other Vehicles	Retail	Household Income
+1188708	Other Vehicles	Retail	Gender
+1189635	Financial Products & Services Services	Retail	Gender
+1189800	Retail	Retail	Gender
+1189977	Real Estate	Retail	Gender
+1190379	Other Vehicles	Travel	Age
+1142411	Other Vehicles	Retail	Age
+1142530	Auto	Auto	Age
+1171399	Auto	Auto	Household Income
+1168959	Auto	Travel	Household Income
+1168961	Retail	Retail	Household Income
+1169157	Retail	Auto	Age
+1169180	Other Vehicles	Travel	Gender
+1169225	Retail	Retail	Gender
+1169688	Other Vehicles	Travel	Household Income
+1169881	Financial Products & Services Services	Retail	Gender
+1170481	Retail	Travel	Household Income
+1170804	Auto	Travel	Household Income
+1170897	Other Vehicles	Auto	Gender
+1170909	Retail	Auto	Household Income
+1170911	Auto	Travel	Household Income
+1171144	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1171159	Other Vehicles	Travel	Household Income
+1172340	Auto	Travel	Age
+1171161	Retail	Retail	Household Income
+1171431	Auto	Auto	Age
+1174138	Auto	Auto	Age
+1040498	Travel	Auto	Household Income
+1041675	Other Vehicles	Travel	Household Income
+1044745	Auto	Auto	Age
+1045001	Other Vehicles	Travel	Age
+1045446	Auto	Travel	Household Income
+1045529	Other Vehicles	Retail	Age
+1045800	Retail	Travel	Household Income
+1046370	Travel	Auto	Age
+1046706	Retail	Retail	Age
+1046861	Travel	Travel	Household Income
+1047144	Real Estate	Travel	Household Income
+1082580	Auto	Retail	Household Income
+1084180	Retail	Auto	Household Income
+1082668	Auto	Auto	Age
+1082669	Consumer Packaged Goods (CPG) Education	Travel	Age
+1082764	Auto	Auto	Age
+1083711	Real Estate	Retail	Age
+1082900	Auto	Auto	Gender
+1083130	Travel	Travel	Age
+1083298	Auto	Travel	Gender
+1084267	Consumer Packaged Goods (CPG) Education	Travel	Age
+1084738	Real Estate	Auto	Gender
+1085645	Travel	Retail	Household Income
+1084293	Auto	Travel	Age
+1084297	Other Vehicles	Retail	Age
+1084372	Travel	Auto	Age
+1084619	Retail	Auto	Age
+1084651	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1084829	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1084845	Retail	Auto	Household Income
+1133810	Real Estate	Travel	Gender
+1134131	Real Estate	Travel	Gender
+1134350	Retail	Retail	Household Income
+1134397	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1134460	Other Vehicles	Retail	Household Income
+1134664	Financial Products & Services Services	Auto	Household Income
+1134728	Financial Products & Services Services	Auto	Gender
+1135307	Financial Products & Services Services	Retail	Household Income
+1134817	Retail	Travel	Household Income
+1135051	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1135437	Retail	Travel	Age
+1135445	Auto	Travel	Household Income
+1135508	Financial Products & Services Services	Travel	Household Income
+1135575	Financial Products & Services Services	Travel	Household Income
+1135683	Travel	Travel	Age
+1135723	Auto	Travel	Gender
+1136072	Travel	Auto	Gender
+1136113	Other Vehicles	Auto	Gender
+1136913	Travel	Retail	Age
+1137285	Retail	Travel	Household Income
+1195434	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1195541	Auto	Travel	Age
+1195607	Travel	Retail	Age
+1195779	Financial Products & Services Services	Travel	Gender
+1195934	Travel	Travel	Age
+1196397	Other Vehicles	Auto	Age
+1196596	Financial Products & Services Services	Travel	Age
+1196701	Retail	Auto	Gender
+1196768	Retail	Auto	Household Income
+1140305	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1140455	Auto	Travel	Gender
+1140732	Auto	Auto	Gender
+1141046	Other Vehicles	Travel	Gender
+1142656	Auto	Auto	Household Income
+1141159	Financial Products & Services Services	Travel	Gender
+1141283	Financial Products & Services Services	Auto	Household Income
+1141462	Auto	Auto	Household Income
+1137918	Other Vehicles	Auto	Household Income
+1000083	Real Estate	Travel	Age
+1000104	Real Estate	Travel	Age
+1000419	Retail	Auto	Age
+1001164	Real Estate	Auto	Household Income
+1001416	Auto	Travel	Household Income
+1001423	Retail	Retail	Gender
+1001439	Other Vehicles	Auto	Age
+1001585	Other Vehicles	Travel	Age
+1001640	Retail	Travel	Gender
+1001800	Auto	Auto	Gender
+1001989	Retail	Auto	Age
+1002341	Auto	Auto	Household Income
+1002465	Real Estate	Auto	Gender
+1002646	Retail	Travel	Household Income
+1002969	Travel	Travel	Household Income
+1003074	Real Estate	Travel	Age
+1003380	Other Vehicles	Travel	Gender
+1197381	Auto	Retail	Age
+1197874	Auto	Travel	Age
+1198189	Retail	Auto	Age
+1198302	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1198357	Auto	Retail	Age
+1193229	Auto	Travel	Age
+1193775	Other Vehicles	Travel	Age
+1193891	Retail	Travel	Age
+1194084	Financial Products & Services Services	Auto	Age
+1194285	Auto	Travel	Household Income
+1029479	Retail	Auto	Household Income
+1029953	Retail	Retail	Gender
+1030303	Consumer Packaged Goods (CPG) Education	Travel	Age
+1030327	Auto	Travel	Household Income
+1030720	Travel	Travel	Gender
+1030893	Consumer Packaged Goods (CPG) Education	Auto	Age
+1031429	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1031479	Real Estate	Travel	Age
+1031514	Consumer Packaged Goods (CPG) Education	Travel	Age
+1031895	Travel	Travel	Household Income
+1032724	Retail	Auto	Age
+1033124	Retail	Auto	Age
+1033577	Retail	Retail	Household Income
+1033665	Auto	Travel	Age
+1033972	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1034138	Consumer Packaged Goods (CPG) Education	Auto	Age
+1034389	Other Vehicles	Travel	Gender
+1034432	Financial Products & Services Services	Retail	Household Income
+1034578	Retail	Auto	Household Income
+1034584	Auto	Travel	Age
+1034809	Auto	Travel	Age
+1034933	Travel	Retail	Age
+1035042	Real Estate	Auto	Age
+1035590	Financial Products & Services Services	Retail	Gender
+1035731	Financial Products & Services Services	Auto	Household Income
+1079825	Travel	Travel	Household Income
+1079864	Retail	Auto	Household Income
+1080284	Retail	Travel	Age
+1080345	Other Vehicles	Travel	Gender
+1080382	Real Estate	Auto	Age
+1080513	Travel	Auto	Age
+1080557	Other Vehicles	Auto	Household Income
+1080634	Retail	Retail	Age
+1081065	Retail	Auto	Age
+1081160	Retail	Travel	Age
+1082132	Other Vehicles	Retail	Age
+1081380	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1081500	Financial Products & Services Services	Travel	Age
+1081512	Travel	Auto	Gender
+1081537	Auto	Retail	Household Income
+1081648	Financial Products & Services Services	Auto	Age
+1081715	Auto	Retail	Household Income
+1081925	Travel	Travel	Gender
+1081992	Retail	Travel	Gender
+1082069	Auto	Travel	Age
+1082185	Real Estate	Travel	Household Income
+1082469	Travel	Auto	Household Income
+1082522	Retail	Auto	Age
+1149174	Other Vehicles	Travel	Age
+1149467	Auto	Auto	Age
+1149562	Other Vehicles	Auto	Gender
+1149613	Auto	Travel	Gender
+1149683	Real Estate	Retail	Household Income
+1150176	Travel	Travel	Household Income
+1150555	Auto	Retail	Gender
+1150753	Auto	Travel	Household Income
+1150771	Consumer Packaged Goods (CPG) Education	Travel	Age
+1150844	Retail	Travel	Household Income
+1150887	Auto	Travel	Age
+1151097	Auto	Travel	Household Income
+1151598	Financial Products & Services Services	Travel	Gender
+1151633	Other Vehicles	Auto	Age
+1151872	Financial Products & Services Services	Travel	Household Income
+1152067	Auto	Travel	Household Income
+1124066	Auto	Auto	Age
+1127967	Other Vehicles	Auto	Household Income
+1124213	Retail	Retail	Age
+1125193	Retail	Travel	Household Income
+1125486	Auto	Travel	Age
+1125789	Other Vehicles	Travel	Age
+1125923	Other Vehicles	Travel	Household Income
+1126002	Auto	Travel	Age
+1126174	Auto	Retail	Household Income
+1126230	Real Estate	Retail	Household Income
+1126252	Retail	Travel	Age
+1171976	Auto	Travel	Gender
+1172402	Retail	Travel	Age
+1172712	Retail	Auto	Household Income
+1172714	Travel	Auto	Gender
+1172934	Travel	Auto	Household Income
+1173466	Financial Products & Services Services	Retail	Gender
+1173690	Other Vehicles	Travel	Age
+1173711	Retail	Auto	Household Income
+1174204	Real Estate	Travel	Age
+1174370	Real Estate	Travel	Household Income
+1174877	Retail	Auto	Household Income
+1174724	Financial Products & Services Services	Travel	Gender
+1174990	Travel	Retail	Gender
+1175276	Other Vehicles	Travel	Household Income
+1175353	Retail	Auto	Age
+1175746	Auto	Auto	Gender
+1176095	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1176596	Auto	Travel	Gender
+1177760	Real Estate	Auto	Age
+1176696	Real Estate	Travel	Household Income
+1176938	Auto	Travel	Age
+1177296	Financial Products & Services Services	Travel	Household Income
+1177895	Retail	Travel	Age
+1177304	Financial Products & Services Services	Retail	Age
+1177680	Other Vehicles	Travel	Gender
+1177699	Other Vehicles	Auto	Age
+1036284	Real Estate	Retail	Age
+1036559	Consumer Packaged Goods (CPG) Education	Retail	Age
+1036737	Real Estate	Auto	Gender
+1037011	Real Estate	Auto	Age
+1037012	Retail	Auto	Age
+1037624	Real Estate	Travel	Gender
+1038131	Financial Products & Services Services	Travel	Household Income
+1038307	Auto	Travel	Household Income
+1038948	Retail	Auto	Age
+1039402	Travel	Retail	Age
+1039885	Auto	Travel	Age
+1040066	Auto	Retail	Age
+1040192	Retail	Retail	Age
+1040225	Travel	Auto	Gender
+1139190	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1138046	Financial Products & Services Services	Auto	Age
+1138106	Auto	Auto	Age
+1138165	Financial Products & Services Services	Auto	Household Income
+1138719	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1139271	Travel	Travel	Gender
+1138832	Retail	Retail	Gender
+1139151	Retail	Retail	Age
+1139312	Financial Products & Services Services	Travel	Household Income
+1139507	Auto	Travel	Household Income
+1139791	Auto	Travel	Age
+1139792	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1139798	Real Estate	Travel	Household Income
+1139890	Auto	Auto	Gender
+1140047	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1140198	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1177933	Real Estate	Travel	Gender
+1178755	Retail	Retail	Age
+1178803	Financial Products & Services Services	Retail	Household Income
+1179231	Other Vehicles	Retail	Age
+1179555	Travel	Auto	Household Income
+1180372	Other Vehicles	Auto	Household Income
+1180385	Consumer Packaged Goods (CPG) Education	Travel	Age
+1180405	Auto	Retail	Age
+1180633	Auto	Auto	Gender
+1180951	Travel	Travel	Age
+1181510	Consumer Packaged Goods (CPG) Education	Auto	Age
+1181945	Consumer Packaged Goods (CPG) Education	Travel	Age
+1182192	Other Vehicles	Travel	Gender
+1182415	Auto	Auto	Age
+1133153	Auto	Retail	Gender
+1133325	Retail	Retail	Age
+1133333	Financial Products & Services Services	Travel	Gender
+1133377	Other Vehicles	Retail	Household Income
+1133501	Auto	Retail	Age
+1133740	Auto	Auto	Age
+1147437	Retail	Travel	Household Income
+1147618	Auto	Auto	Age
+1147731	Auto	Auto	Household Income
+1147763	Auto	Retail	Gender
+1147802	Auto	Auto	Age
+1147828	Real Estate	Travel	Age
+1148018	Financial Products & Services Services	Travel	Gender
+1148148	Consumer Packaged Goods (CPG) Education	Travel	Age
+1148269	Travel	Travel	Household Income
+1149160	Travel	Retail	Age
+1149394	Real Estate	Retail	Age
+1150042	Other Vehicles	Auto	Age
+1150116	Auto	Auto	Household Income
+1014102	Real Estate	Retail	Gender
+1014378	Retail	Travel	Age
+1014750	Real Estate	Travel	Gender
+1014807	Travel	Travel	Household Income
+1014852	Retail	Auto	Gender
+1015026	Financial Products & Services Services	Auto	Age
+1015115	Retail	Travel	Household Income
+1015148	Retail	Auto	Household Income
+1015245	Real Estate	Travel	Gender
+1015396	Travel	Travel	Gender
+1015510	Auto	Auto	Gender
+1015567	Retail	Auto	Gender
+1015686	Retail	Travel	Age
+1004030	Financial Products & Services Services	Travel	Age
+1004046	Auto	Retail	Age
+1004537	Travel	Travel	Age
+1004875	Retail	Travel	Age
+1006503	Retail	Retail	Gender
+1006555	Retail	Travel	Household Income
+1034477	Auto	Auto	Age
+1034622	Retail	Travel	Household Income
+1035297	Financial Products & Services Services	Auto	Age
+1035312	Auto	Retail	Age
+1035691	Other Vehicles	Travel	Age
+1035899	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1036191	Travel	Retail	Age
+1036240	Auto	Auto	Age
+1036297	Other Vehicles	Travel	Household Income
+1036457	Auto	Travel	Age
+1036815	Auto	Travel	Age
+1036828	Financial Products & Services Services	Auto	Household Income
+1036928	Consumer Packaged Goods (CPG) Education	Travel	Age
+1037062	Real Estate	Auto	Household Income
+1037068	Auto	Auto	Household Income
+1037080	Other Vehicles	Travel	Age
+1037763	Real Estate	Retail	Household Income
+1038007	Auto	Retail	Gender
+1038194	Real Estate	Auto	Age
+1038379	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1038393	Real Estate	Travel	Age
+1038404	Other Vehicles	Travel	Household Income
+1038563	Retail	Auto	Gender
+1039298	Travel	Auto	Age
+1095178	Real Estate	Auto	Household Income
+1095307	Auto	Travel	Gender
+1095952	Travel	Retail	Age
+1095989	Real Estate	Travel	Age
+1096869	Retail	Retail	Household Income
+1096940	Financial Products & Services Services	Auto	Age
+1097065	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1098114	Financial Products & Services Services	Auto	Age
+1098356	Auto	Travel	Age
+1098368	Retail	Travel	Age
+1099157	Retail	Auto	Household Income
+1099269	Financial Products & Services Services	Travel	Household Income
+1099582	Other Vehicles	Auto	Household Income
+1099790	Consumer Packaged Goods (CPG) Education	Retail	Age
+1100085	Auto	Retail	Gender
+1100294	Retail	Retail	Gender
+1100604	Auto	Auto	Household Income
+1100697	Other Vehicles	Retail	Age
+1100803	Financial Products & Services Services	Auto	Household Income
+1101093	Auto	Travel	Household Income
+1101293	Retail	Retail	Age
+1101524	Other Vehicles	Travel	Age
+1101801	Travel	Auto	Gender
+1101884	Financial Products & Services Services	Auto	Age
+1141785	Travel	Auto	Household Income
+1142919	Travel	Retail	Age
+1141946	Auto	Travel	Age
+1145283	Real Estate	Travel	Household Income
+1182473	Auto	Retail	Gender
+1183530	Real Estate	Travel	Age
+1183789	Auto	Travel	Household Income
+1183820	Consumer Packaged Goods (CPG) Education	Travel	Age
+1184587	Retail	Retail	Gender
+1184655	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1185079	Travel	Travel	Gender
+1185564	Auto	Travel	Age
+1185628	Financial Products & Services Services	Retail	Age
+1186226	Travel	Travel	Household Income
+1048214	Retail	Travel	Age
+1048343	Travel	Retail	Gender
+1048417	Retail	Auto	Age
+1048836	Financial Products & Services Services	Auto	Household Income
+1049218	Travel	Auto	Age
+1053372	Real Estate	Auto	Household Income
+1053478	Travel	Travel	Household Income
+1053778	Retail	Auto	Age
+1054062	Auto	Retail	Household Income
+1054579	Retail	Auto	Household Income
+1055037	Consumer Packaged Goods (CPG) Education	Auto	Age
+1055147	Auto	Retail	Age
+1055362	Retail	Auto	Household Income
+1055503	Auto	Travel	Age
+1056085	Financial Products & Services Services	Travel	Household Income
+1056232	Retail	Travel	Gender
+1058427	Consumer Packaged Goods (CPG) Education	Retail	Age
+1058706	Retail	Travel	Age
+1059229	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1059259	Retail	Auto	Household Income
+1059725	Consumer Packaged Goods (CPG) Education	Retail	Age
+1060348	Other Vehicles	Travel	Household Income
+1060657	Retail	Travel	Age
+1060775	Travel	Travel	Gender
+1085963	Travel	Travel	Household Income
+1085964	Real Estate	Travel	Gender
+1085986	Travel	Auto	Age
+1085987	Consumer Packaged Goods (CPG) Education	Auto	Age
+1086122	Real Estate	Auto	Age
+1086397	Auto	Auto	Age
+1086663	Financial Products & Services Services	Travel	Household Income
+1087571	Retail	Travel	Household Income
+1086779	Auto	Auto	Age
+1086875	Travel	Travel	Household Income
+1087607	Retail	Auto	Gender
+1087891	Retail	Travel	Household Income
+1087926	Travel	Travel	Age
+1087977	Other Vehicles	Retail	Household Income
+1088156	Auto	Travel	Age
+1088271	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1088273	Travel	Auto	Household Income
+1088280	Real Estate	Auto	Household Income
+1088501	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1088518	Financial Products & Services Services	Retail	Gender
+1088551	Auto	Auto	Gender
+1089160	Auto	Travel	Age
+1089303	Financial Products & Services Services	Travel	Gender
+1089490	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1200824	Retail	Retail	Gender
+1200901	Retail	Travel	Gender
+1200997	Retail	Retail	Age
+1201316	Real Estate	Auto	Age
+1201455	Real Estate	Retail	Household Income
+1201932	Auto	Travel	Age
+1202116	Auto	Travel	Age
+1202480	Financial Products & Services Services	Travel	Age
+1202881	Auto	Travel	Household Income
+1194687	Other Vehicles	Auto	Household Income
+1206943	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1212764	Retail	Travel	Age
+1060816	Auto	Auto	Age
+1061370	Real Estate	Auto	Gender
+1061400	Financial Products & Services Services	Travel	Household Income
+1061471	Retail	Travel	Age
+1061576	Travel	Auto	Household Income
+1061853	Auto	Auto	Age
+1063155	Auto	Auto	Age
+1063989	Consumer Packaged Goods (CPG) Education	Travel	Age
+1064327	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1064529	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1065049	Financial Products & Services Services	Travel	Age
+1031782	Auto	Travel	Gender
+1032193	Real Estate	Travel	Age
+1032200	Real Estate	Travel	Household Income
+1032241	Consumer Packaged Goods (CPG) Education	Auto	Age
+1032521	Other Vehicles	Retail	Household Income
+1032855	Travel	Travel	Household Income
+1032923	Auto	Retail	Gender
+1033173	Financial Products & Services Services	Retail	Household Income
+1033559	Auto	Auto	Gender
+1033647	Travel	Auto	Age
+1033840	Real Estate	Retail	Gender
+1034378	Financial Products & Services Services	Auto	Gender
+1089516	Financial Products & Services Services	Travel	Household Income
+1089829	Other Vehicles	Auto	Household Income
+1089867	Real Estate	Retail	Age
+1089964	Travel	Travel	Household Income
+1090239	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1090713	Retail	Retail	Household Income
+1091566	Retail	Auto	Household Income
+1091618	Retail	Travel	Age
+1091809	Financial Products & Services Services	Auto	Household Income
+1091884	Retail	Travel	Household Income
+1091926	Auto	Retail	Age
+1092376	Auto	Auto	Gender
+1092737	Retail	Auto	Age
+1092967	Auto	Auto	Age
+1093292	Other Vehicles	Auto	Gender
+1093326	Financial Products & Services Services	Travel	Age
+1093444	Other Vehicles	Auto	Age
+1093562	Financial Products & Services Services	Auto	Household Income
+1093650	Retail	Travel	Household Income
+1093680	Financial Products & Services Services	Travel	Age
+1093713	Other Vehicles	Auto	Age
+1094263	Financial Products & Services Services	Travel	Age
+1094886	Auto	Travel	Household Income
+1095159	Real Estate	Retail	Gender
+1137937	Travel	Auto	Household Income
+1021445	Real Estate	Auto	Household Income
+1021692	Retail	Auto	Household Income
+1021878	Financial Products & Services Services	Auto	Age
+1022000	Retail	Auto	Age
+1022288	Other Vehicles	Travel	Household Income
+1022338	Retail	Retail	Household Income
+1022388	Retail	Auto	Age
+1022502	Retail	Travel	Age
+1022583	Retail	Auto	Gender
+1022848	Travel	Retail	Gender
+1025655	Financial Products & Services Services	Travel	Household Income
+1026039	Auto	Travel	Age
+1026331	Financial Products & Services Services	Travel	Household Income
+1026369	Other Vehicles	Retail	Household Income
+1026686	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1026792	Travel	Auto	Age
+1027053	Travel	Travel	Age
+1027141	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1027250	Retail	Auto	Household Income
+1027321	Auto	Retail	Age
+1027407	Other Vehicles	Auto	Age
+1027738	Retail	Travel	Household Income
+1027743	Retail	Auto	Gender
+1027777	Retail	Auto	Household Income
+1028115	Real Estate	Auto	Age
+1028510	Financial Products & Services Services	Retail	Age
+1028687	Real Estate	Auto	Age
+1029044	Auto	Auto	Gender
+1029197	Other Vehicles	Retail	Household Income
+1055380	Other Vehicles	Travel	Household Income
+1055822	Auto	Auto	Household Income
+1055828	Real Estate	Travel	Gender
+1056106	Retail	Auto	Age
+1056193	Other Vehicles	Travel	Age
+1056235	Auto	Travel	Household Income
+1057372	Retail	Auto	Age
+1023407	Travel	Travel	Age
+1023930	Auto	Travel	Age
+1050200	Retail	Retail	Household Income
+1050214	Financial Products & Services Services	Auto	Household Income
+1050789	Real Estate	Auto	Household Income
+1052368	Retail	Auto	Household Income
+1052532	Auto	Auto	Age
+1052636	Financial Products & Services Services	Retail	Age
+1052678	Travel	Travel	Household Income
+1052819	Retail	Retail	Gender
+1052985	Consumer Packaged Goods (CPG) Education	Retail	Age
+1053296	Retail	Auto	Age
+1053529	Other Vehicles	Travel	Age
+1053793	Retail	Auto	Age
+1053995	Retail	Retail	Household Income
+1054013	Consumer Packaged Goods (CPG) Education	Travel	Age
+1054503	Other Vehicles	Travel	Household Income
+1056987	Retail	Retail	Gender
+1054167	Travel	Auto	Age
+1054214	Retail	Travel	Household Income
+1054258	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1054332	Retail	Travel	Household Income
+1054466	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1054563	Auto	Retail	Gender
+1055315	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1092617	Auto	Auto	Age
+1091789	Other Vehicles	Travel	Gender
+1091862	Other Vehicles	Auto	Age
+1091953	Auto	Travel	Gender
+1092009	Auto	Auto	Age
+1092115	Other Vehicles	Travel	Gender
+1092612	Retail	Auto	Age
+1092245	Auto	Travel	Household Income
+1092274	Consumer Packaged Goods (CPG) Education	Auto	Age
+1092566	Real Estate	Travel	Age
+1093130	Auto	Travel	Age
+1093773	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1093957	Real Estate	Travel	Household Income
+1094328	Auto	Travel	Age
+1094393	Consumer Packaged Goods (CPG) Education	Travel	Age
+1094413	Financial Products & Services Services	Travel	Household Income
+1094751	Retail	Travel	Household Income
+1094903	Real Estate	Travel	Age
+1095148	Auto	Retail	Age
+1095231	Auto	Auto	Age
+1095294	Auto	Travel	Age
+1095347	Consumer Packaged Goods (CPG) Education	Travel	Age
+1095718	Auto	Auto	Age
+1096123	Auto	Travel	Age
+1159985	Retail	Travel	Age
+1142504	Other Vehicles	Auto	Age
+1142718	Consumer Packaged Goods (CPG) Education	Retail	Age
+1143109	Auto	Travel	Gender
+1143687	Travel	Retail	Age
+1144833	Financial Products & Services Services	Travel	Age
+1143173	Real Estate	Travel	Age
+1143726	Other Vehicles	Travel	Age
+1143746	Financial Products & Services Services	Auto	Household Income
+1143896	Travel	Auto	Household Income
+1143966	Real Estate	Auto	Gender
+1144542	Auto	Travel	Household Income
+1149046	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1143971	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1144051	Auto	Auto	Gender
+1144104	Travel	Auto	Household Income
+1144147	Retail	Auto	Age
+1144537	Retail	Travel	Age
+1144779	Other Vehicles	Travel	Age
+1145161	Auto	Auto	Gender
+1145272	Other Vehicles	Auto	Gender
+1145381	Auto	Travel	Household Income
+1006609	Auto	Travel	Age
+1006621	Retail	Auto	Age
+1006851	Retail	Travel	Household Income
+1007002	Retail	Travel	Household Income
+1007127	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1007149	Auto	Retail	Age
+1007320	Retail	Auto	Household Income
+1007371	Other Vehicles	Auto	Household Income
+1008814	Auto	Retail	Age
+1009051	Travel	Auto	Age
+1009386	Travel	Auto	Age
+1009442	Real Estate	Auto	Age
+1009946	Auto	Auto	Age
+1010093	Retail	Retail	Household Income
+1010979	Auto	Auto	Age
+1011133	Financial Products & Services Services	Travel	Household Income
+1012368	Auto	Travel	Age
+1012526	Travel	Auto	Household Income
+1012927	Travel	Travel	Gender
+1013333	Other Vehicles	Auto	Age
+1013489	Financial Products & Services Services	Travel	Household Income
+1013567	Retail	Auto	Age
+1013844	Financial Products & Services Services	Travel	Age
+1040144	Retail	Auto	Age
+1040148	Financial Products & Services Services	Travel	Age
+1040493	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1040573	Real Estate	Retail	Age
+1041026	Travel	Travel	Age
+1040647	Financial Products & Services Services	Auto	Age
+1040783	Real Estate	Auto	Age
+1040916	Retail	Retail	Gender
+1040954	Retail	Travel	Gender
+1041269	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1041536	Travel	Travel	Household Income
+1041817	Real Estate	Travel	Age
+1042642	Retail	Travel	Household Income
+1042728	Other Vehicles	Retail	Household Income
+1047600	Financial Products & Services Services	Travel	Gender
+1045136	Other Vehicles	Auto	Age
+1050217	Real Estate	Retail	Gender
+1045144	Financial Products & Services Services	Auto	Gender
+1045267	Financial Products & Services Services	Auto	Age
+1045341	Other Vehicles	Auto	Age
+1050425	Other Vehicles	Travel	Age
+1039577	Retail	Auto	Gender
+1102038	Retail	Auto	Household Income
+1102089	Retail	Auto	Household Income
+1102372	Auto	Auto	Household Income
+1102670	Real Estate	Travel	Household Income
+1103142	Travel	Travel	Household Income
+1103162	Auto	Travel	Gender
+1103214	Travel	Auto	Gender
+1103264	Travel	Auto	Household Income
+1103454	Auto	Auto	Household Income
+1103856	Retail	Travel	Gender
+1103976	Financial Products & Services Services	Retail	Household Income
+1104295	Other Vehicles	Auto	Age
+1104424	Other Vehicles	Auto	Gender
+1104879	Auto	Travel	Age
+1104976	Real Estate	Travel	Household Income
+1105078	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1105114	Real Estate	Retail	Household Income
+1107067	Auto	Travel	Household Income
+1107530	Retail	Travel	Age
+1107726	Retail	Travel	Household Income
+1108776	Auto	Retail	Gender
+1109289	Auto	Travel	Gender
+1109433	Financial Products & Services Services	Travel	Age
+1110274	Financial Products & Services Services	Auto	Age
+1111065	Auto	Travel	Household Income
+1145501	Auto	Travel	Age
+1145593	Travel	Travel	Age
+1145700	Auto	Retail	Household Income
+1145737	Auto	Travel	Age
+1146010	Travel	Auto	Age
+1146076	Travel	Travel	Household Income
+1146143	Auto	Retail	Age
+1146939	Real Estate	Retail	Household Income
+1147037	Auto	Auto	Gender
+1147106	Auto	Auto	Household Income
+1147238	Retail	Retail	Age
+1147432	Consumer Packaged Goods (CPG) Education	Retail	Age
+1155624	Financial Products & Services Services	Travel	Age
+1155836	Financial Products & Services Services	Auto	Household Income
+1155875	Retail	Auto	Gender
+1156280	Auto	Travel	Gender
+1156298	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1018430	Travel	Travel	Gender
+1018436	Auto	Retail	Gender
+1018494	Auto	Travel	Age
+1018642	Retail	Auto	Age
+1019151	Auto	Auto	Gender
+1020570	Financial Products & Services Services	Travel	Gender
+1020653	Retail	Auto	Age
+1020881	Auto	Auto	Household Income
+1020966	Financial Products & Services Services	Auto	Gender
+1021046	Travel	Auto	Household Income
+1021215	Retail	Travel	Gender
+1048842	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1048995	Financial Products & Services Services	Travel	Gender
+1049058	Other Vehicles	Retail	Household Income
+1049235	Other Vehicles	Auto	Household Income
+1049446	Other Vehicles	Travel	Household Income
+1114312	Other Vehicles	Retail	Age
+1114780	Auto	Auto	Age
+1115607	Retail	Auto	Gender
+1117300	Real Estate	Travel	Gender
+1118955	Financial Products & Services Services	Auto	Age
+1120215	Real Estate	Auto	Household Income
+1120873	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1122215	Retail	Retail	Gender
+1122714	Financial Products & Services Services	Travel	Household Income
+1123710	Retail	Auto	Age
+1123811	Auto	Retail	Household Income
+1123915	Real Estate	Auto	Household Income
+1088702	Travel	Auto	Gender
+1089311	Retail	Auto	Age
+1089404	Real Estate	Auto	Age
+1089425	Travel	Auto	Household Income
+1089553	Travel	Auto	Age
+1089703	Auto	Auto	Age
+1089742	Consumer Packaged Goods (CPG) Education	Travel	Age
+1089815	Financial Products & Services Services	Auto	Age
+1090372	Consumer Packaged Goods (CPG) Education	Auto	Age
+1090643	Other Vehicles	Retail	Gender
+1090647	Retail	Travel	Household Income
+1090979	Auto	Travel	Age
+1091091	Auto	Travel	Household Income
+1091619	Auto	Retail	Age
+1061810	Retail	Auto	Household Income
+1062226	Financial Products & Services Services	Travel	Gender
+1062693	Retail	Auto	Household Income
+1062761	Other Vehicles	Travel	Household Income
+1096178	Real Estate	Auto	Age
+1120371	Retail	Auto	Age
+1096407	Retail	Auto	Gender
+1096498	Retail	Auto	Age
+1096659	Retail	Travel	Age
+1096693	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1096862	Auto	Travel	Age
+1096927	Consumer Packaged Goods (CPG) Education	Travel	Age
+1097157	Real Estate	Travel	Gender
+1097260	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1097340	Auto	Auto	Age
+1097509	Financial Products & Services Services	Auto	Gender
+1097588	Retail	Auto	Age
+1101480	Auto	Auto	Gender
+1097655	Travel	Auto	Household Income
+1097772	Auto	Auto	Gender
+1097969	Auto	Travel	Household Income
+1098992	Auto	Auto	Age
+1098774	Other Vehicles	Auto	Gender
+1099035	Auto	Auto	Age
+1099831	Consumer Packaged Goods (CPG) Education	Travel	Age
+1100054	Financial Products & Services Services	Auto	Age
+1101126	Auto	Travel	Age
+1096158	Real Estate	Travel	Age
+1162929	Other Vehicles	Auto	Age
+1162954	Financial Products & Services Services	Travel	Household Income
+1163347	Auto	Retail	Gender
+1163740	Auto	Travel	Household Income
+1163821	Retail	Travel	Age
+1164112	Retail	Travel	Household Income
+1164648	Retail	Retail	Household Income
+1165964	Travel	Travel	Household Income
+1166057	Retail	Travel	Age
+1166450	Retail	Travel	Gender
+1166698	Consumer Packaged Goods (CPG) Education	Travel	Age
+1166790	Retail	Travel	Gender
+1166816	Auto	Travel	Age
+1166953	Auto	Travel	Household Income
+1167071	Consumer Packaged Goods (CPG) Education	Auto	Age
+1167449	Retail	Auto	Age
+1167646	Real Estate	Travel	Age
+1167957	Retail	Travel	Household Income
+1168067	Other Vehicles	Retail	Age
+1168294	Auto	Travel	Household Income
+1168339	Financial Products & Services Services	Auto	Age
+1168537	Travel	Auto	Age
+1169156	Financial Products & Services Services	Travel	Gender
+1169339	Auto	Auto	Age
+1169635	Financial Products & Services Services	Auto	Gender
+1169820	Retail	Travel	Age
+1170199	Real Estate	Auto	Age
+1029436	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1029580	Consumer Packaged Goods (CPG) Education	Travel	Age
+1029678	Auto	Travel	Age
+1029782	Auto	Retail	Household Income
+1030334	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1030461	Auto	Retail	Household Income
+1030545	Auto	Auto	Gender
+1030653	Auto	Auto	Gender
+1031012	Financial Products & Services Services	Travel	Age
+1031214	Auto	Auto	Age
+1031275	Auto	Travel	Age
+1000470	Retail	Travel	Age
+1000672	Retail	Auto	Household Income
+1000693	Auto	Auto	Gender
+1000928	Financial Products & Services Services	Retail	Household Income
+1001052	Consumer Packaged Goods (CPG) Education	Travel	Age
+1001353	Retail	Retail	Gender
+1001430	Financial Products & Services Services	Retail	Household Income
+1001460	Real Estate	Auto	Gender
+1001627	Retail	Retail	Household Income
+1002071	Travel	Retail	Household Income
+1002432	Financial Products & Services Services	Retail	Household Income
+1002558	Retail	Auto	Household Income
+1002672	Retail	Retail	Household Income
+1062963	Real Estate	Travel	Gender
+1063538	Retail	Travel	Age
+1063710	Financial Products & Services Services	Travel	Age
+1063752	Other Vehicles	Travel	Age
+1063960	Retail	Travel	Gender
+1064107	Retail	Travel	Household Income
+1064195	Retail	Travel	Household Income
+1064198	Auto	Retail	Household Income
+1064215	Other Vehicles	Auto	Age
+1064244	Travel	Auto	Age
+1064673	Retail	Auto	Household Income
+1091720	Other Vehicles	Auto	Gender
+1150211	Auto	Travel	Age
+1150304	Travel	Travel	Age
+1151322	Other Vehicles	Auto	Age
+1150914	Real Estate	Travel	Household Income
+1151814	Auto	Travel	Gender
+1151838	Retail	Auto	Household Income
+1153231	Real Estate	Auto	Household Income
+1153414	Financial Products & Services Services	Retail	Gender
+1153639	Travel	Travel	Gender
+1153693	Auto	Travel	Age
+1153987	Auto	Auto	Age
+1154066	Retail	Travel	Age
+1154561	Retail	Travel	Household Income
+1154570	Financial Products & Services Services	Retail	Household Income
+1154577	Retail	Travel	Household Income
+1154590	Retail	Travel	Age
+1155106	Travel	Travel	Household Income
+1155442	Consumer Packaged Goods (CPG) Education	Auto	Age
+1155613	Retail	Auto	Household Income
+1175351	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1175490	Other Vehicles	Auto	Age
+1175663	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1175694	Other Vehicles	Auto	Household Income
+1002916	Real Estate	Travel	Gender
+1003301	Retail	Auto	Gender
+1004071	Real Estate	Auto	Household Income
+1004839	Retail	Travel	Gender
+1005069	Auto	Travel	Age
+1006017	Auto	Auto	Age
+1006216	Financial Products & Services Services	Retail	Age
+1006358	Real Estate	Auto	Age
+1006620	Other Vehicles	Auto	Age
+1007123	Auto	Auto	Household Income
+1006770	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1007215	Auto	Auto	Household Income
+1006818	Real Estate	Travel	Age
+1010070	Auto	Travel	Household Income
+1007262	Auto	Retail	Household Income
+1007288	Other Vehicles	Travel	Gender
+1007411	Other Vehicles	Travel	Gender
+1007488	Auto	Retail	Household Income
+1008621	Retail	Auto	Age
+1008974	Financial Products & Services Services	Travel	Age
+1009266	Retail	Travel	Age
+1009777	Travel	Travel	Household Income
+1009906	Auto	Auto	Age
+1057794	Other Vehicles	Auto	Household Income
+1061019	Auto	Travel	Age
+1057972	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1060469	Travel	Travel	Household Income
+1060848	Retail	Travel	Gender
+1061354	Retail	Auto	Household Income
+1062786	Real Estate	Travel	Age
+1061534	Real Estate	Auto	Household Income
+1061620	Auto	Travel	Household Income
+1061668	Consumer Packaged Goods (CPG) Education	Auto	Age
+1061768	Financial Products & Services Services	Auto	Gender
+1061781	Financial Products & Services Services	Retail	Gender
+1156799	Auto	Auto	Household Income
+1156868	Financial Products & Services Services	Travel	Household Income
+1157255	Financial Products & Services Services	Auto	Age
+1157946	Real Estate	Travel	Age
+1158323	Travel	Travel	Household Income
+1158473	Other Vehicles	Auto	Household Income
+1158523	Other Vehicles	Travel	Household Income
+1159301	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1159439	Retail	Travel	Age
+1159857	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1159945	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1160316	Auto	Retail	Gender
+1160342	Retail	Auto	Age
+1160376	Auto	Retail	Household Income
+1160421	Auto	Auto	Gender
+1160443	Travel	Auto	Age
+1160801	Consumer Packaged Goods (CPG) Education	Auto	Age
+1161010	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1161736	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1161758	Retail	Retail	Age
+1161861	Real Estate	Auto	Age
+1162246	Financial Products & Services Services	Auto	Household Income
+1159967	Retail	Travel	Household Income
+1162516	Auto	Retail	Gender
+1162790	Retail	Auto	Gender
+1024056	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1024758	Other Vehicles	Travel	Household Income
+1024969	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1025523	Retail	Auto	Household Income
+1016124	Real Estate	Travel	Household Income
+1016178	Auto	Travel	Age
+1016329	Retail	Travel	Age
+1016353	Retail	Auto	Household Income
+1016462	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1016927	Other Vehicles	Auto	Household Income
+1017127	Financial Products & Services Services	Travel	Age
+1017306	Travel	Retail	Household Income
+1017417	Real Estate	Auto	Age
+1017421	Auto	Auto	Age
+1018219	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1045994	Retail	Travel	Gender
+1046030	Other Vehicles	Auto	Gender
+1049089	Other Vehicles	Retail	Household Income
+1046116	Retail	Retail	Gender
+1046245	Financial Products & Services Services	Travel	Gender
+1046529	Financial Products & Services Services	Travel	Gender
+1046915	Real Estate	Retail	Age
+1047082	Auto	Travel	Household Income
+1047346	Retail	Travel	Gender
+1047628	Retail	Auto	Gender
+1047659	Retail	Travel	Household Income
+1047761	Consumer Packaged Goods (CPG) Education	Travel	Age
+1047765	Auto	Travel	Gender
+1047813	Auto	Auto	Household Income
+1048008	Travel	Retail	Age
+1048154	Retail	Travel	Gender
+1048168	Travel	Travel	Gender
+1048425	Real Estate	Auto	Gender
+1083111	Consumer Packaged Goods (CPG) Education	Auto	Age
+1083502	Auto	Auto	Household Income
+1083526	Auto	Travel	Household Income
+1083944	Consumer Packaged Goods (CPG) Education	Auto	Age
+1084056	Auto	Travel	Age
+1084238	Real Estate	Auto	Age
+1084373	Auto	Retail	Household Income
+1084394	Real Estate	Travel	Gender
+1112234	Real Estate	Auto	Household Income
+1112339	Retail	Travel	Age
+1112923	Travel	Travel	Age
+1114188	Auto	Retail	Age
+1114201	Other Vehicles	Auto	Age
+1114719	Auto	Retail	Age
+1115146	Auto	Travel	Age
+1116533	Other Vehicles	Travel	Gender
+1117211	Travel	Auto	Gender
+1117648	Auto	Auto	Household Income
+1117857	Auto	Travel	Age
+1118291	Travel	Retail	Age
+1118307	Consumer Packaged Goods (CPG) Education	Auto	Age
+1118802	Other Vehicles	Auto	Household Income
+1119002	Financial Products & Services Services	Travel	Household Income
+1120443	Real Estate	Auto	Household Income
+1120624	Financial Products & Services Services	Travel	Gender
+1120699	Travel	Auto	Age
+1121891	Other Vehicles	Auto	Gender
+1120716	Travel	Travel	Household Income
+1120741	Real Estate	Retail	Age
+1120948	Auto	Retail	Gender
+1122975	Retail	Retail	Age
+1123439	Retail	Retail	Household Income
+1123702	Retail	Auto	Gender
+1124178	Auto	Travel	Age
+1124477	Consumer Packaged Goods (CPG) Education	Travel	Age
+1155382	Travel	Auto	Age
+1155849	Other Vehicles	Auto	Household Income
+1156182	Retail	Auto	Gender
+1156704	Financial Products & Services Services	Travel	Household Income
+1156326	Real Estate	Travel	Household Income
+1156418	Travel	Travel	Household Income
+1156496	Auto	Travel	Gender
+1156706	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1156900	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1157260	Financial Products & Services Services	Retail	Household Income
+1157297	Travel	Travel	Household Income
+1157500	Financial Products & Services Services	Auto	Household Income
+1157698	Real Estate	Auto	Age
+1157788	Financial Products & Services Services	Travel	Household Income
+1158008	Consumer Packaged Goods (CPG) Education	Auto	Age
+1158150	Auto	Travel	Age
+1158439	Real Estate	Retail	Household Income
+1158610	Financial Products & Services Services	Travel	Age
+1158664	Auto	Travel	Age
+1158674	Auto	Auto	Household Income
+1158762	Financial Products & Services Services	Auto	Household Income
+1158771	Consumer Packaged Goods (CPG) Education	Travel	Age
+1159084	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1302877	Retail	Auto	Age
+1303647	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1304146	Financial Products & Services Services	Auto	Age
+1304828	Auto	Travel	Household Income
+1304942	Travel	Travel	Household Income
+1304959	Auto	Auto	Household Income
+1305087	Auto	Travel	Age
+1305548	Real Estate	Auto	Age
+1305613	Consumer Packaged Goods (CPG) Education	Travel	Age
+1307249	Consumer Packaged Goods (CPG) Education	Retail	Age
+1309434	Auto	Retail	Age
+1306604	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1307015	Auto	Auto	Household Income
+1307115	Consumer Packaged Goods (CPG) Education	Retail	Age
+1307194	Travel	Auto	Gender
+1307401	Travel	Travel	Household Income
+1307825	Travel	Auto	Age
+1307911	Real Estate	Travel	Age
+1308025	Other Vehicles	Retail	Age
+1009928	Retail	Auto	Household Income
+1010160	Other Vehicles	Auto	Age
+1071531	Travel	Travel	Age
+1071600	Real Estate	Travel	Gender
+1071688	Other Vehicles	Auto	Household Income
+1071767	Other Vehicles	Retail	Gender
+1072086	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1072087	Other Vehicles	Auto	Household Income
+1072191	Other Vehicles	Auto	Household Income
+1072407	Travel	Auto	Age
+1073228	Other Vehicles	Travel	Household Income
+1073698	Auto	Travel	Gender
+1074059	Travel	Auto	Age
+1074215	Retail	Retail	Gender
+1074459	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1074678	Travel	Retail	Gender
+1064674	Retail	Auto	Age
+1064834	Travel	Auto	Age
+1065216	Auto	Travel	Household Income
+1065248	Retail	Travel	Age
+1065380	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1065664	Real Estate	Auto	Age
+1066763	Auto	Retail	Household Income
+1068984	Auto	Retail	Household Income
+1070185	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1070227	Financial Products & Services Services	Auto	Household Income
+1070246	Retail	Travel	Age
+1070435	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1070475	Other Vehicles	Auto	Gender
+1070723	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1100371	Travel	Travel	Household Income
+1100404	Auto	Retail	Household Income
+1100591	Retail	Travel	Age
+1101643	Real Estate	Auto	Age
+1100637	Auto	Travel	Gender
+1101197	Auto	Travel	Age
+1101231	Retail	Travel	Household Income
+1100713	Auto	Auto	Gender
+1101037	Real Estate	Auto	Household Income
+1101205	Other Vehicles	Travel	Age
+1101484	Other Vehicles	Auto	Gender
+1102080	Financial Products & Services Services	Travel	Household Income
+1102364	Other Vehicles	Auto	Age
+1102394	Travel	Travel	Household Income
+1102408	Auto	Travel	Gender
+1102439	Retail	Travel	Gender
+1103526	Retail	Travel	Household Income
+1102976	Other Vehicles	Auto	Age
+1103083	Retail	Retail	Household Income
+1103356	Consumer Packaged Goods (CPG) Education	Travel	Age
+1103484	Retail	Travel	Household Income
+1103557	Other Vehicles	Auto	Household Income
+1103590	Real Estate	Auto	Age
+1103715	Auto	Auto	Household Income
+1103834	Auto	Retail	Household Income
+1170286	Travel	Travel	Age
+1170600	Auto	Auto	Age
+1171423	Auto	Auto	Household Income
+1171923	Auto	Travel	Household Income
+1172368	Retail	Auto	Age
+1172418	Travel	Auto	Age
+1172527	Real Estate	Auto	Gender
+1172624	Auto	Travel	Household Income
+1172764	Auto	Auto	Household Income
+1173127	Real Estate	Auto	Household Income
+1173196	Consumer Packaged Goods (CPG) Education	Travel	Age
+1173462	Real Estate	Auto	Gender
+1173665	Other Vehicles	Retail	Gender
+1174092	Real Estate	Auto	Age
+1174539	Financial Products & Services Services	Travel	Age
+1174590	Retail	Auto	Gender
+1174659	Real Estate	Retail	Age
+1174697	Retail	Auto	Age
+1174918	Real Estate	Auto	Age
+1174923	Auto	Travel	Household Income
+1174998	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1175117	Travel	Auto	Age
+1011261	Retail	Auto	Household Income
+1011777	Travel	Travel	Gender
+1011792	Real Estate	Auto	Household Income
+1011892	Other Vehicles	Travel	Household Income
+1012281	Travel	Auto	Household Income
+1012444	Retail	Travel	Age
+1012979	Financial Products & Services Services	Auto	Age
+1012723	Financial Products & Services Services	Auto	Age
+1012802	Financial Products & Services Services	Travel	Household Income
+1012953	Financial Products & Services Services	Travel	Age
+1013446	Other Vehicles	Retail	Household Income
+1013490	Auto	Travel	Household Income
+1013629	Auto	Auto	Household Income
+1014005	Travel	Travel	Household Income
+1014216	Retail	Auto	Age
+1014974	Auto	Retail	Household Income
+1015081	Auto	Travel	Gender
+1078355	Travel	Retail	Age
+1078536	Auto	Travel	Household Income
+1078919	Auto	Retail	Household Income
+1078938	Real Estate	Retail	Age
+1078969	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1080876	Consumer Packaged Goods (CPG) Education	Auto	Age
+1080901	Consumer Packaged Goods (CPG) Education	Auto	Age
+1080915	Auto	Travel	Gender
+1308061	Financial Products & Services Services	Retail	Household Income
+1308584	Travel	Retail	Household Income
+1308842	Retail	Auto	Age
+1309253	Travel	Travel	Age
+1419241	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1369524	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1370150	Retail	Retail	Age
+1371236	Auto	Auto	Household Income
+1371248	Real Estate	Travel	Age
+1371715	Financial Products & Services Services	Travel	Age
+1371959	Retail	Auto	Age
+1372279	Auto	Retail	Household Income
+1372395	Retail	Auto	Age
+1380256	Retail	Travel	Age
+1372442	Auto	Auto	Household Income
+1372669	Retail	Retail	Age
+1372813	Retail	Auto	Gender
+1372822	Auto	Travel	Age
+1372823	Retail	Travel	Household Income
+1372966	Retail	Travel	Gender
+1373501	Retail	Auto	Household Income
+1374018	Financial Products & Services Services	Travel	Age
+1374022	Real Estate	Travel	Household Income
+1375055	Financial Products & Services Services	Travel	Household Income
+1375216	Travel	Auto	Age
+1375722	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1375893	Consumer Packaged Goods (CPG) Education	Travel	Age
+1081252	Auto	Retail	Age
+1082044	Other Vehicles	Travel	Household Income
+1082202	Auto	Travel	Household Income
+1082628	Other Vehicles	Retail	Gender
+1082816	Auto	Travel	Household Income
+1082830	Auto	Auto	Household Income
+1082895	Auto	Travel	Household Income
+1010744	Auto	Auto	Age
+1010271	Other Vehicles	Retail	Age
+1010306	Travel	Retail	Gender
+1010663	Travel	Travel	Gender
+1228650	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1229207	Auto	Auto	Household Income
+1229258	Retail	Travel	Household Income
+1229369	Retail	Auto	Age
+1230136	Financial Products & Services Services	Retail	Age
+1231122	Consumer Packaged Goods (CPG) Education	Travel	Age
+1231802	Retail	Travel	Household Income
+1231828	Auto	Travel	Age
+1231836	Retail	Auto	Household Income
+1231872	Real Estate	Auto	Age
+1233473	Retail	Travel	Gender
+1231954	Retail	Travel	Household Income
+1232005	Auto	Auto	Gender
+1232078	Real Estate	Travel	Age
+1239960	Other Vehicles	Auto	Household Income
+1232120	Real Estate	Travel	Household Income
+1331945	Real Estate	Travel	Gender
+1332603	Retail	Travel	Gender
+1332972	Financial Products & Services Services	Auto	Age
+1333642	Retail	Travel	Household Income
+1333831	Other Vehicles	Retail	Household Income
+1334890	Consumer Packaged Goods (CPG) Education	Retail	Age
+1335067	Real Estate	Travel	Age
+1335272	Auto	Retail	Gender
+1335337	Financial Products & Services Services	Auto	Gender
+1336404	Real Estate	Travel	Household Income
+1379433	Auto	Auto	Household Income
+1379793	Retail	Retail	Age
+1379872	Auto	Retail	Age
+1380179	Retail	Travel	Gender
+1380625	Travel	Travel	Household Income
+1381420	Travel	Auto	Age
+1382434	Auto	Travel	Household Income
+1382462	Auto	Auto	Age
+1383392	Travel	Travel	Age
+1382635	Travel	Retail	Age
+1382640	Consumer Packaged Goods (CPG) Education	Auto	Age
+1382996	Auto	Travel	Age
+1382999	Auto	Retail	Household Income
+1383277	Auto	Auto	Gender
+1385209	Other Vehicles	Auto	Household Income
+1385329	Real Estate	Travel	Gender
+1385696	Real Estate	Travel	Age
+1386260	Retail	Travel	Household Income
+1386507	Travel	Auto	Age
+1263233	Travel	Retail	Household Income
+1263268	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1263273	Other Vehicles	Travel	Household Income
+1263521	Auto	Auto	Household Income
+1263708	Real Estate	Retail	Gender
+1263733	Other Vehicles	Travel	Household Income
+1263739	Other Vehicles	Travel	Age
+1264008	Retail	Retail	Age
+1265096	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1265318	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1265600	Retail	Auto	Age
+1265777	Travel	Auto	Age
+1266029	Retail	Auto	Household Income
+1266033	Travel	Auto	Age
+1266395	Travel	Auto	Household Income
+1221463	Real Estate	Auto	Household Income
+1221657	Other Vehicles	Auto	Household Income
+1221990	Auto	Auto	Household Income
+1222428	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1222470	Retail	Auto	Household Income
+1222501	Real Estate	Auto	Household Income
+1223157	Real Estate	Retail	Household Income
+1223185	Auto	Auto	Age
+1223785	Real Estate	Auto	Age
+1224212	Real Estate	Auto	Household Income
+1319745	Retail	Retail	Household Income
+1320421	Travel	Travel	Gender
+1320506	Travel	Retail	Household Income
+1322018	Auto	Auto	Age
+1322561	Auto	Travel	Household Income
+1322958	Auto	Travel	Gender
+1323126	Travel	Travel	Age
+1323468	Travel	Auto	Gender
+1323481	Financial Products & Services Services	Auto	Age
+1323724	Other Vehicles	Travel	Age
+1325211	Real Estate	Auto	Age
+1325330	Auto	Retail	Age
+1325679	Travel	Auto	Household Income
+1326190	Travel	Retail	Household Income
+1326405	Other Vehicles	Travel	Household Income
+1327278	Retail	Auto	Household Income
+1327726	Real Estate	Auto	Age
+1327769	Real Estate	Travel	Age
+1328086	Financial Products & Services Services	Travel	Age
+1328221	Auto	Auto	Age
+1328853	Consumer Packaged Goods (CPG) Education	Auto	Age
+1328949	Auto	Travel	Age
+1328961	Travel	Travel	Age
+1329590	Auto	Travel	Household Income
+1331252	Real Estate	Travel	Household Income
+1331644	Retail	Retail	Gender
+1386685	Retail	Auto	Age
+1386895	Consumer Packaged Goods (CPG) Education	Retail	Age
+1387191	Retail	Travel	Household Income
+1387599	Travel	Auto	Household Income
+1387806	Auto	Travel	Household Income
+1388516	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1389644	Auto	Auto	Age
+1389707	Other Vehicles	Auto	Gender
+1389782	Auto	Travel	Household Income
+1390156	Retail	Auto	Household Income
+1391224	Auto	Auto	Household Income
+1392490	Auto	Retail	Household Income
+1392965	Other Vehicles	Auto	Age
+1394129	Financial Products & Services Services	Auto	Household Income
+1394250	Real Estate	Travel	Household Income
+1394765	Auto	Travel	Age
+1395158	Financial Products & Services Services	Travel	Gender
+1395516	Financial Products & Services Services	Auto	Age
+1396046	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1396207	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1396231	Other Vehicles	Travel	Household Income
+1396567	Retail	Auto	Age
+1337658	Financial Products & Services Services	Auto	Gender
+1376240	Travel	Travel	Household Income
+1376717	Auto	Travel	Household Income
+1376752	Financial Products & Services Services	Travel	Household Income
+1253717	Real Estate	Travel	Household Income
+1253788	Retail	Auto	Gender
+1253933	Consumer Packaged Goods (CPG) Education	Auto	Age
+1253949	Retail	Travel	Household Income
+1254327	Travel	Travel	Age
+1254369	Retail	Travel	Age
+1254692	Retail	Retail	Age
+1255106	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1255462	Retail	Retail	Gender
+1255601	Other Vehicles	Retail	Age
+1256592	Other Vehicles	Auto	Household Income
+1256715	Consumer Packaged Goods (CPG) Education	Travel	Age
+1256766	Auto	Retail	Age
+1256779	Travel	Auto	Household Income
+1257538	Real Estate	Auto	Gender
+1258710	Auto	Retail	Household Income
+1259438	Auto	Auto	Household Income
+1261481	Real Estate	Retail	Gender
+1261671	Other Vehicles	Travel	Gender
+1262047	Other Vehicles	Retail	Age
+1262285	Retail	Travel	Age
+1262288	Retail	Retail	Age
+1262640	Other Vehicles	Travel	Household Income
+1262687	Travel	Auto	Age
+1263220	Other Vehicles	Auto	Age
+1309514	Retail	Retail	Household Income
+1310247	Financial Products & Services Services	Retail	Gender
+1310376	Real Estate	Auto	Household Income
+1311524	Financial Products & Services Services	Auto	Age
+1311768	Retail	Auto	Age
+1311789	Retail	Travel	Age
+1311828	Retail	Travel	Gender
+1311915	Consumer Packaged Goods (CPG) Education	Auto	Age
+1312555	Auto	Travel	Household Income
+1312694	Auto	Retail	Household Income
+1312818	Financial Products & Services Services	Retail	Household Income
+1313240	Financial Products & Services Services	Retail	Household Income
+1313244	Retail	Auto	Household Income
+1315738	Real Estate	Travel	Household Income
+1316045	Travel	Auto	Household Income
+1316449	Auto	Auto	Gender
+1317226	Real Estate	Travel	Age
+1317289	Retail	Travel	Household Income
+1317527	Financial Products & Services Services	Auto	Age
+1317876	Financial Products & Services Services	Retail	Age
+1318118	Auto	Retail	Gender
+1318274	Other Vehicles	Auto	Household Income
+1318564	Travel	Travel	Household Income
+1318764	Retail	Travel	Age
+1319574	Financial Products & Services Services	Auto	Gender
+1319607	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1392401	Other Vehicles	Auto	Household Income
+1376860	Auto	Travel	Gender
+1377017	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1377537	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1377644	Auto	Auto	Age
+1378523	Other Vehicles	Auto	Age
+1378915	Travel	Retail	Household Income
+1074743	Retail	Travel	Age
+1075119	Auto	Travel	Gender
+1075335	Retail	Retail	Household Income
+1076182	Other Vehicles	Auto	Age
+1076585	Real Estate	Auto	Age
+1076995	Auto	Travel	Household Income
+1077601	Retail	Auto	Household Income
+1077677	Auto	Travel	Gender
+1077849	Other Vehicles	Auto	Household Income
+1104067	Travel	Auto	Household Income
+1104193	Retail	Travel	Gender
+1104316	Auto	Travel	Gender
+1104442	Travel	Auto	Gender
+1104508	Other Vehicles	Auto	Gender
+1104620	Financial Products & Services Services	Travel	Household Income
+1104874	Retail	Auto	Household Income
+1104935	Consumer Packaged Goods (CPG) Education	Travel	Age
+1105085	Travel	Travel	Gender
+1105147	Auto	Auto	Household Income
+1109501	Retail	Auto	Age
+1105173	Retail	Travel	Age
+1105215	Other Vehicles	Travel	Gender
+1106264	Auto	Auto	Age
+1106774	Travel	Travel	Gender
+1107555	Other Vehicles	Auto	Household Income
+1107580	Financial Products & Services Services	Retail	Household Income
+1107687	Auto	Auto	Household Income
+1108638	Other Vehicles	Auto	Gender
+1108681	Travel	Retail	Household Income
+1108923	Retail	Retail	Age
+1109151	Auto	Travel	Household Income
+1109676	Auto	Auto	Household Income
+1109859	Retail	Retail	Household Income
+1110004	Retail	Auto	Age
+1110086	Real Estate	Retail	Household Income
+1176156	Auto	Auto	Household Income
+1176528	Retail	Travel	Household Income
+1176598	Retail	Retail	Household Income
+1176605	Real Estate	Retail	Household Income
+1177011	Other Vehicles	Auto	Age
+1177032	Consumer Packaged Goods (CPG) Education	Auto	Age
+1177406	Auto	Travel	Household Income
+1177450	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1178046	Auto	Retail	Age
+1152220	Financial Products & Services Services	Auto	Age
+1152301	Auto	Travel	Household Income
+1152868	Retail	Retail	Gender
+1153015	Real Estate	Travel	Age
+1153112	Retail	Travel	Household Income
+1153132	Real Estate	Retail	Age
+1153741	Travel	Travel	Household Income
+1154010	Financial Products & Services Services	Auto	Age
+1155609	Auto	Auto	Gender
+1154043	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1154085	Real Estate	Auto	Household Income
+1154116	Other Vehicles	Travel	Household Income
+1154840	Retail	Travel	Gender
+1155095	Auto	Auto	Gender
+1155353	Real Estate	Travel	Household Income
+1155365	Auto	Retail	Household Income
+1010220	Auto	Auto	Household Income
+1417149	Travel	Auto	Age
+1418328	Auto	Auto	Household Income
+1418736	Retail	Auto	Gender
+1419242	Financial Products & Services Services	Travel	Age
+1421473	Financial Products & Services Services	Travel	Age
+1421513	Auto	Travel	Age
+1421550	Retail	Auto	Gender
+1422207	Auto	Retail	Gender
+1422254	Real Estate	Auto	Age
+1422389	Financial Products & Services Services	Travel	Age
+1424974	Real Estate	Auto	Household Income
+1427240	Travel	Auto	Age
+1431169	Auto	Travel	Gender
+1432202	Auto	Retail	Gender
+1432549	Auto	Auto	Age
+1432769	Financial Products & Services Services	Auto	Gender
+1433083	Retail	Travel	Age
+1433562	Other Vehicles	Auto	Age
+1434071	Auto	Travel	Household Income
+1244330	Other Vehicles	Retail	Age
+1244367	Real Estate	Travel	Gender
+1244811	Real Estate	Travel	Age
+1244908	Retail	Auto	Household Income
+1245698	Auto	Travel	Age
+1246164	Real Estate	Auto	Gender
+1246766	Real Estate	Auto	Household Income
+1246847	Retail	Travel	Gender
+1247013	Auto	Travel	Household Income
+1337936	Consumer Packaged Goods (CPG) Education	Auto	Age
+1338166	Auto	Auto	Age
+1338246	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1338251	Auto	Auto	Household Income
+1339465	Retail	Travel	Household Income
+1340472	Other Vehicles	Auto	Age
+1340816	Other Vehicles	Travel	Household Income
+1342018	Retail	Travel	Household Income
+1342272	Retail	Travel	Household Income
+1343134	Consumer Packaged Goods (CPG) Education	Retail	Age
+1343866	Retail	Travel	Household Income
+1343994	Real Estate	Auto	Gender
+1344778	Auto	Retail	Age
+1345248	Consumer Packaged Goods (CPG) Education	Auto	Age
+1399910	Auto	Travel	Gender
+1400942	Other Vehicles	Auto	Household Income
+1400945	Retail	Travel	Age
+1401113	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1402055	Financial Products & Services Services	Retail	Age
+1419048	Real Estate	Auto	Age
+1402146	Real Estate	Travel	Household Income
+1402379	Real Estate	Auto	Gender
+1402959	Travel	Travel	Household Income
+1402639	Retail	Auto	Household Income
+1403479	Financial Products & Services Services	Travel	Age
+1403489	Retail	Auto	Gender
+1403508	Travel	Auto	Household Income
+1403696	Real Estate	Auto	Household Income
+1403896	Auto	Retail	Gender
+1404591	Financial Products & Services Services	Travel	Household Income
+1404707	Financial Products & Services Services	Auto	Household Income
+1404750	Consumer Packaged Goods (CPG) Education	Travel	Age
+1404805	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1410506	Real Estate	Retail	Age
+1405273	Financial Products & Services Services	Retail	Age
+1405821	Retail	Auto	Gender
+1405923	Other Vehicles	Retail	Gender
+1406143	Auto	Travel	Household Income
+1399170	Retail	Travel	Gender
+1237919	Other Vehicles	Auto	Household Income
+1232149	Consumer Packaged Goods (CPG) Education	Auto	Age
+1232172	Auto	Retail	Household Income
+1232305	Retail	Retail	Age
+1232442	Retail	Travel	Household Income
+1232804	Auto	Auto	Household Income
+1232841	Retail	Auto	Household Income
+1232913	Retail	Travel	Household Income
+1233421	Financial Products & Services Services	Retail	Age
+1234148	Travel	Travel	Gender
+1234182	Auto	Travel	Age
+1234411	Retail	Travel	Gender
+1234437	Retail	Auto	Household Income
+1234520	Retail	Retail	Household Income
+1234683	Travel	Travel	Household Income
+1234882	Retail	Retail	Gender
+1235645	Real Estate	Retail	Household Income
+1240175	Auto	Auto	Age
+1235830	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1235852	Travel	Travel	Household Income
+1236818	Real Estate	Auto	Age
+1237250	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1240204	Travel	Auto	Gender
+1237336	Financial Products & Services Services	Auto	Gender
+1237754	Auto	Retail	Age
+1346156	Consumer Packaged Goods (CPG) Education	Auto	Age
+1397534	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1397988	Retail	Retail	Household Income
+1398103	Financial Products & Services Services	Retail	Gender
+1224697	Real Estate	Travel	Gender
+1224943	Auto	Retail	Age
+1227134	Financial Products & Services Services	Travel	Age
+1227156	Travel	Travel	Household Income
+1228293	Auto	Auto	Gender
+1230140	Retail	Travel	Gender
+1227381	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1227714	Auto	Retail	Household Income
+1228330	Retail	Auto	Gender
+1352502	Travel	Auto	Household Income
+1352604	Real Estate	Auto	Household Income
+1352753	Other Vehicles	Travel	Household Income
+1352759	Real Estate	Auto	Age
+1352985	Auto	Travel	Household Income
+1406368	Auto	Retail	Age
+1406577	Auto	Retail	Household Income
+1406763	Auto	Travel	Age
+1406965	Retail	Retail	Household Income
+1407061	Travel	Travel	Age
+1407091	Retail	Auto	Age
+1407181	Travel	Auto	Gender
+1407364	Retail	Auto	Household Income
+1407591	Financial Products & Services Services	Auto	Age
+1408152	Financial Products & Services Services	Travel	Household Income
+1408178	Auto	Travel	Age
+1408370	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1409370	Financial Products & Services Services	Travel	Household Income
+1409851	Travel	Travel	Gender
+1409892	Other Vehicles	Travel	Age
+1409930	Retail	Travel	Age
+1409937	Consumer Packaged Goods (CPG) Education	Retail	Age
+1410141	Auto	Travel	Household Income
+1410463	Real Estate	Retail	Household Income
+1412698	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1412729	Other Vehicles	Travel	Household Income
+1413766	Auto	Auto	Household Income
+1413767	Retail	Travel	Household Income
+1247227	Auto	Travel	Gender
+1247257	Auto	Auto	Gender
+1247309	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1247340	Auto	Travel	Household Income
+1247649	Other Vehicles	Auto	Household Income
+1247795	Retail	Retail	Household Income
+1247818	Retail	Auto	Age
+1248340	Travel	Auto	Age
+1248490	Auto	Retail	Household Income
+1248623	Auto	Travel	Household Income
+1248771	Financial Products & Services Services	Travel	Household Income
+1248935	Auto	Travel	Age
+1249050	Real Estate	Auto	Age
+1249718	Travel	Auto	Gender
+1249935	Travel	Auto	Household Income
+1249965	Auto	Auto	Household Income
+1361143	Financial Products & Services Services	Auto	Age
+1361751	Auto	Travel	Household Income
+1361985	Retail	Travel	Household Income
+1362011	Auto	Retail	Household Income
+1362197	Consumer Packaged Goods (CPG) Education	Retail	Age
+1363545	Real Estate	Auto	Age
+1365430	Real Estate	Retail	Age
+1366208	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1366251	Real Estate	Auto	Age
+1366876	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1366994	Retail	Travel	Household Income
+1414296	Financial Products & Services Services	Travel	Age
+1238393	Auto	Auto	Household Income
+1238714	Financial Products & Services Services	Travel	Age
+1250542	Real Estate	Auto	Age
+1238882	Travel	Retail	Age
+1239172	Auto	Travel	Age
+1239225	Travel	Auto	Household Income
+1239464	Retail	Travel	Household Income
+1239898	Other Vehicles	Retail	Age
+1241224	Consumer Packaged Goods (CPG) Education	Auto	Age
+1241779	Retail	Auto	Gender
+1241903	Real Estate	Travel	Household Income
+1242240	Retail	Travel	Household Income
+1242567	Auto	Auto	Household Income
+1243034	Consumer Packaged Goods (CPG) Education	Travel	Age
+1247450	Auto	Travel	Age
+1243399	Auto	Travel	Household Income
+1250400	Retail	Auto	Age
+1251104	Travel	Auto	Gender
+1243425	Auto	Auto	Household Income
+1244074	Real Estate	Travel	Household Income
+1244080	Real Estate	Auto	Household Income
+1244085	Travel	Auto	Age
+1244160	Other Vehicles	Auto	Age
+1247911	Financial Products & Services Services	Travel	Age
+1353516	Consumer Packaged Goods (CPG) Education	Auto	Age
+1353772	Financial Products & Services Services	Travel	Age
+1354038	Retail	Travel	Age
+1354080	Real Estate	Auto	Age
+1354697	Retail	Retail	Household Income
+1355208	Retail	Travel	Gender
+1355239	Retail	Auto	Age
+1355439	Real Estate	Travel	Household Income
+1355531	Auto	Auto	Age
+1355603	Other Vehicles	Travel	Gender
+1355633	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1355729	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1356025	Auto	Travel	Household Income
+1356598	Other Vehicles	Travel	Gender
+1358408	Auto	Travel	Age
+1359681	Auto	Retail	Household Income
+1359684	Travel	Travel	Household Income
+1360186	Other Vehicles	Retail	Gender
+1360213	Auto	Travel	Household Income
+1360240	Financial Products & Services Services	Travel	Age
+1360477	Travel	Auto	Age
+1360868	Auto	Auto	Age
+1360978	Consumer Packaged Goods (CPG) Education	Retail	Age
+1361051	Financial Products & Services Services	Auto	Age
+1414658	Retail	Travel	Gender
+1414839	Consumer Packaged Goods (CPG) Education	Auto	Age
+1415018	Auto	Retail	Household Income
+1417816	Retail	Travel	Age
+1416481	Real Estate	Auto	Age
+1416663	Travel	Retail	Gender
+1416730	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1437038	Retail	Travel	Household Income
+1437719	Retail	Travel	Age
+1440455	Auto	Auto	Age
+1440598	Real Estate	Travel	Gender
+1441005	Real Estate	Travel	Household Income
+1441930	Retail	Retail	Household Income
+1444055	Auto	Travel	Household Income
+1444590	Retail	Travel	Household Income
+1445052	Retail	Travel	Age
+1445055	Auto	Auto	Age
+1445777	Other Vehicles	Auto	Gender
+1445805	Auto	Auto	Gender
+1445916	Real Estate	Auto	Household Income
+1446198	Retail	Travel	Age
+1446426	Retail	Auto	Household Income
+1446452	Consumer Packaged Goods (CPG) Education	Retail	Age
+1446850	Other Vehicles	Auto	Age
+1419600	Real Estate	Travel	Age
+1419602	Other Vehicles	Auto	Gender
+1419612	Travel	Retail	Household Income
+1419992	Auto	Auto	Gender
+1420053	Real Estate	Retail	Household Income
+1251173	Travel	Auto	Age
+1250058	Auto	Auto	Gender
+1250723	Auto	Travel	Household Income
+1250759	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1251904	Auto	Retail	Gender
+1252157	Retail	Travel	Household Income
+1252328	Retail	Retail	Household Income
+1252880	Financial Products & Services Services	Travel	Age
+1429064	Retail	Retail	Age
+1429156	Auto	Auto	Household Income
+1436243	Financial Products & Services Services	Travel	Household Income
+1429571	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1429963	Retail	Travel	Household Income
+1213026	Travel	Auto	Age
+1213145	Travel	Retail	Household Income
+1213914	Auto	Auto	Age
+1214586	Retail	Auto	Age
+1215317	Travel	Retail	Age
+1215668	Other Vehicles	Retail	Household Income
+1216606	Consumer Packaged Goods (CPG) Education	Travel	Age
+1216944	Auto	Travel	Gender
+1217322	Consumer Packaged Goods (CPG) Education	Auto	Age
+1217493	Real Estate	Auto	Age
+1217534	Financial Products & Services Services	Auto	Gender
+1217628	Financial Products & Services Services	Travel	Age
+1217632	Other Vehicles	Retail	Gender
+1218213	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1218484	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1219008	Retail	Travel	Gender
+1219021	Financial Products & Services Services	Travel	Household Income
+1219209	Other Vehicles	Travel	Age
+1219245	Other Vehicles	Auto	Age
+1219399	Travel	Retail	Age
+1219445	Retail	Retail	Household Income
+1220482	Travel	Travel	Household Income
+1220765	Retail	Travel	Gender
+1221338	Auto	Auto	Age
+1178265	Financial Products & Services Services	Travel	Age
+1178337	Financial Products & Services Services	Retail	Gender
+1264086	Retail	Travel	Gender
+1264225	Auto	Retail	Age
+1264297	Real Estate	Auto	Age
+1265117	Retail	Auto	Gender
+1265974	Real Estate	Travel	Age
+1266228	Retail	Auto	Gender
+1266245	Auto	Retail	Household Income
+1266289	Travel	Auto	Household Income
+1266347	Retail	Travel	Age
+1266531	Financial Products & Services Services	Travel	Age
+1267045	Auto	Retail	Age
+1267064	Travel	Auto	Household Income
+1267390	Retail	Travel	Household Income
+1267629	Financial Products & Services Services	Auto	Household Income
+1267656	Consumer Packaged Goods (CPG) Education	Travel	Age
+1268091	Auto	Travel	Age
+1268230	Auto	Travel	Age
+1268349	Retail	Retail	Household Income
+1268566	Consumer Packaged Goods (CPG) Education	Travel	Age
+1268647	Financial Products & Services Services	Auto	Household Income
+1268693	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1268750	Travel	Auto	Household Income
+1269633	Retail	Auto	Household Income
+1269849	Travel	Retail	Household Income
+1269872	Other Vehicles	Travel	Age
+1326029	Retail	Auto	Household Income
+1346086	Financial Products & Services Services	Retail	Household Income
+1340596	Auto	Auto	Age
+1340935	Consumer Packaged Goods (CPG) Education	Travel	Age
+1341708	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1343276	Retail	Auto	Household Income
+1343785	Travel	Auto	Gender
+1344278	Auto	Travel	Household Income
+1344285	Travel	Travel	Gender
+1347515	Real Estate	Travel	Age
+1345258	Financial Products & Services Services	Retail	Age
+1347204	Real Estate	Travel	Household Income
+1349144	Financial Products & Services Services	Travel	Household Income
+1349254	Real Estate	Retail	Gender
+1349671	Retail	Travel	Household Income
+1361771	Travel	Auto	Gender
+1350454	Travel	Retail	Age
+1444695	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1444999	Retail	Travel	Age
+1445485	Retail	Retail	Age
+1446008	Retail	Auto	Age
+1446505	Real Estate	Auto	Household Income
+1446522	Other Vehicles	Retail	Household Income
+1446693	Retail	Auto	Age
+1186505	Auto	Retail	Age
+1186992	Auto	Travel	Age
+1187248	Retail	Auto	Age
+1187749	Financial Products & Services Services	Travel	Gender
+1195442	Auto	Auto	Age
+1195467	Retail	Travel	Age
+1195570	Financial Products & Services Services	Auto	Gender
+1195745	Retail	Auto	Age
+1195786	Retail	Auto	Gender
+1196186	Other Vehicles	Retail	Household Income
+1253183	Financial Products & Services Services	Auto	Gender
+1253963	Retail	Travel	Age
+1255740	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1256277	Real Estate	Travel	Gender
+1256974	Other Vehicles	Auto	Age
+1257480	Travel	Travel	Age
+1257512	Real Estate	Auto	Age
+1257556	Consumer Packaged Goods (CPG) Education	Auto	Age
+1257985	Consumer Packaged Goods (CPG) Education	Auto	Age
+1258277	Financial Products & Services Services	Auto	Gender
+1258834	Retail	Retail	Household Income
+1260051	Financial Products & Services Services	Auto	Age
+1260120	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1262928	Auto	Travel	Age
+1260813	Real Estate	Retail	Gender
+1263077	Real Estate	Travel	Gender
+1263591	Financial Products & Services Services	Retail	Age
+1266291	Other Vehicles	Auto	Age
+1317653	Financial Products & Services Services	Auto	Gender
+1318431	Real Estate	Travel	Household Income
+1318932	Real Estate	Travel	Household Income
+1319192	Retail	Travel	Age
+1319622	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1319939	Real Estate	Auto	Household Income
+1319979	Consumer Packaged Goods (CPG) Education	Travel	Age
+1320182	Real Estate	Travel	Gender
+1320206	Auto	Auto	Household Income
+1320917	Auto	Retail	Gender
+1320923	Travel	Travel	Household Income
+1321537	Other Vehicles	Auto	Gender
+1321610	Consumer Packaged Goods (CPG) Education	Auto	Age
+1322028	Consumer Packaged Goods (CPG) Education	Retail	Age
+1322288	Auto	Travel	Age
+1322685	Travel	Auto	Gender
+1322712	Financial Products & Services Services	Auto	Household Income
+1322781	Auto	Travel	Age
+1323032	Retail	Auto	Household Income
+1323752	Real Estate	Auto	Age
+1324456	Auto	Travel	Household Income
+1324502	Real Estate	Travel	Household Income
+1324667	Financial Products & Services Services	Auto	Age
+1325380	Financial Products & Services Services	Travel	Household Income
+1325853	Retail	Travel	Age
+1420278	Other Vehicles	Retail	Age
+1420669	Real Estate	Auto	Household Income
+1421623	Auto	Retail	Age
+1422247	Retail	Travel	Gender
+1422329	Travel	Travel	Household Income
+1422976	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1423791	Travel	Retail	Age
+1424206	Financial Products & Services Services	Travel	Household Income
+1424523	Retail	Retail	Household Income
+1424618	Real Estate	Auto	Gender
+1426734	Auto	Travel	Household Income
+1427856	Travel	Auto	Gender
+1431705	Consumer Packaged Goods (CPG) Education	Retail	Age
+1432271	Auto	Retail	Household Income
+1428026	Travel	Auto	Gender
+1428064	Other Vehicles	Auto	Household Income
+1428155	Auto	Retail	Age
+1428670	Auto	Retail	Age
+1428821	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1346299	Auto	Travel	Household Income
+1347173	Auto	Travel	Age
+1347833	Travel	Retail	Gender
+1349092	Retail	Retail	Age
+1349140	Retail	Retail	Household Income
+1349265	Auto	Retail	Household Income
+1349497	Auto	Auto	Household Income
+1350184	Other Vehicles	Travel	Gender
+1350490	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1350814	Real Estate	Retail	Household Income
+1350821	Real Estate	Retail	Household Income
+1350983	Travel	Auto	Age
+1351097	Travel	Travel	Age
+1351134	Travel	Auto	Household Income
+1351777	Retail	Travel	Age
+1351873	Financial Products & Services Services	Travel	Age
+1351939	Auto	Auto	Household Income
+1351966	Consumer Packaged Goods (CPG) Education	Travel	Age
+1352412	Auto	Auto	Gender
+1326299	Consumer Packaged Goods (CPG) Education	Travel	Age
+1326459	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1327134	Auto	Auto	Household Income
+1327381	Auto	Retail	Age
+1329814	Auto	Travel	Gender
+1330376	Other Vehicles	Retail	Age
+1339670	Auto	Auto	Household Income
+1342470	Consumer Packaged Goods (CPG) Education	Auto	Age
+1330644	Real Estate	Auto	Age
+1331211	Financial Products & Services Services	Travel	Household Income
+1331318	Other Vehicles	Travel	Age
+1334121	Retail	Travel	Household Income
+1331608	Auto	Travel	Household Income
+1331645	Auto	Travel	Age
+1332367	Real Estate	Retail	Age
+1332435	Real Estate	Retail	Gender
+1332557	Retail	Auto	Age
+1333086	Real Estate	Travel	Age
+1334287	Travel	Retail	Household Income
+1334716	Consumer Packaged Goods (CPG) Education	Travel	Age
+1335256	Consumer Packaged Goods (CPG) Education	Auto	Age
+1335301	Financial Products & Services Services	Travel	Gender
+1353735	Consumer Packaged Goods (CPG) Education	Auto	Age
+1336265	Financial Products & Services Services	Auto	Household Income
+1336457	Retail	Travel	Age
+1431308	Real Estate	Auto	Age
+1431502	Financial Products & Services Services	Auto	Gender
+1367617	Other Vehicles	Travel	Household Income
+1367723	Travel	Retail	Household Income
+1368662	Retail	Travel	Gender
+1368963	Real Estate	Travel	Household Income
+1369514	Travel	Auto	Age
+1315101	Travel	Auto	Age
+1315108	Other Vehicles	Travel	Household Income
+1315616	Auto	Travel	Household Income
+1315778	Financial Products & Services Services	Auto	Household Income
+1316220	Retail	Retail	Household Income
+1316394	Financial Products & Services Services	Retail	Age
+1317486	Auto	Retail	Age
+1319393	Retail	Auto	Age
+1316932	Auto	Auto	Age
+1435973	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1436389	Other Vehicles	Auto	Age
+1442878	Real Estate	Travel	Household Income
+1442509	Real Estate	Auto	Age
+1444556	Other Vehicles	Auto	Household Income
+1178513	Auto	Retail	Household Income
+1178564	Travel	Travel	Household Income
+1178731	Retail	Retail	Household Income
+1178788	Financial Products & Services Services	Retail	Gender
+1179078	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1180601	Retail	Auto	Household Income
+1180700	Retail	Retail	Household Income
+1180710	Real Estate	Auto	Gender
+1180818	Travel	Auto	Gender
+1180876	Auto	Travel	Household Income
+1181343	Real Estate	Travel	Household Income
+1181648	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1182083	Auto	Travel	Gender
+1182665	Financial Products & Services Services	Auto	Household Income
+1182230	Retail	Travel	Age
+1182459	Retail	Retail	Age
+1182794	Retail	Auto	Gender
+1182941	Consumer Packaged Goods (CPG) Education	Travel	Age
+1183391	Auto	Travel	Age
+1183822	Retail	Travel	Household Income
+1184475	Auto	Travel	Gender
+1185126	Real Estate	Travel	Household Income
+1185972	Financial Products & Services Services	Retail	Age
+1186013	Retail	Travel	Household Income
+1186196	Financial Products & Services Services	Auto	Household Income
+1186490	Financial Products & Services Services	Retail	Household Income
+1270229	Travel	Travel	Household Income
+1270583	Real Estate	Auto	Gender
+1271231	Real Estate	Auto	Age
+1271521	Auto	Auto	Household Income
+1271840	Auto	Travel	Age
+1272856	Retail	Auto	Gender
+1273464	Travel	Travel	Age
+1273836	Other Vehicles	Auto	Age
+1275258	Retail	Auto	Household Income
+1278077	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1280195	Auto	Retail	Household Income
+1283503	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1283601	Financial Products & Services Services	Retail	Gender
+1284366	Auto	Travel	Household Income
+1284549	Real Estate	Retail	Age
+1284901	Auto	Retail	Age
+1286087	Auto	Auto	Age
+1286595	Auto	Auto	Household Income
+1287517	Auto	Retail	Age
+1288476	Auto	Auto	Age
+1288719	Auto	Retail	Household Income
+1290106	Retail	Travel	Age
+1290320	Other Vehicles	Auto	Age
+1290334	Auto	Auto	Age
+1337821	Auto	Auto	Household Income
+1338167	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1338363	Auto	Travel	Gender
+1338556	Other Vehicles	Auto	Age
+1338971	Financial Products & Services Services	Auto	Age
+1339102	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1339746	Retail	Travel	Age
+1339965	Auto	Travel	Age
+1339970	Financial Products & Services Services	Travel	Age
+1381950	Other Vehicles	Auto	Household Income
+1383111	Auto	Retail	Household Income
+1383113	Travel	Travel	Household Income
+1383542	Retail	Auto	Gender
+1383975	Auto	Auto	Gender
+1384840	Retail	Travel	Household Income
+1385758	Other Vehicles	Retail	Age
+1385907	Retail	Travel	Age
+1386265	Auto	Travel	Age
+1386871	Auto	Travel	Gender
+1387019	Travel	Auto	Age
+1387110	Auto	Retail	Age
+1388175	Financial Products & Services Services	Travel	Age
+1388276	Auto	Travel	Age
+1388483	Other Vehicles	Travel	Age
+1388701	Retail	Travel	Age
+1388826	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1390207	Auto	Travel	Age
+1390981	Other Vehicles	Travel	Age
+1392657	Other Vehicles	Auto	Household Income
+1394046	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1380526	Real Estate	Travel	Age
+1394525	Auto	Travel	Age
+1218852	Financial Products & Services Services	Auto	Household Income
+1219157	Auto	Travel	Household Income
+1220478	Auto	Auto	Age
+1220610	Auto	Travel	Household Income
+1301141	Retail	Retail	Age
+1196236	Retail	Travel	Age
+1196480	Auto	Travel	Gender
+1196594	Retail	Auto	Household Income
+1196605	Retail	Auto	Household Income
+1196693	Other Vehicles	Auto	Household Income
+1196965	Auto	Travel	Household Income
+1196984	Real Estate	Travel	Age
+1197640	Retail	Travel	Household Income
+1305030	Travel	Travel	Age
+1305100	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1305981	Real Estate	Auto	Household Income
+1306474	Other Vehicles	Auto	Household Income
+1306484	Consumer Packaged Goods (CPG) Education	Auto	Age
+1306496	Travel	Auto	Age
+1306835	Other Vehicles	Auto	Age
+1307180	Auto	Retail	Age
+1307205	Auto	Auto	Household Income
+1307574	Auto	Travel	Household Income
+1307596	Other Vehicles	Retail	Household Income
+1307713	Travel	Travel	Household Income
+1299832	Retail	Travel	Age
+1187512	Auto	Retail	Age
+1188371	Real Estate	Auto	Age
+1190156	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1191220	Real Estate	Auto	Household Income
+1190717	Retail	Auto	Household Income
+1190790	Real Estate	Retail	Age
+1190819	Real Estate	Auto	Gender
+1190820	Auto	Retail	Household Income
+1191077	Auto	Travel	Age
+1191279	Auto	Auto	Household Income
+1191423	Travel	Auto	Gender
+1191606	Auto	Travel	Age
+1191647	Auto	Auto	Age
+1191721	Auto	Travel	Gender
+1192202	Other Vehicles	Auto	Age
+1191957	Auto	Travel	Gender
+1191958	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1192484	Retail	Retail	Age
+1192594	Auto	Retail	Household Income
+1192741	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1290380	Financial Products & Services Services	Auto	Age
+1290477	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1290479	Retail	Travel	Household Income
+1290544	Other Vehicles	Travel	Gender
+1290743	Real Estate	Retail	Household Income
+1290850	Travel	Travel	Age
+1290876	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1291946	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1292349	Auto	Auto	Household Income
+1292847	Real Estate	Retail	Age
+1293074	Financial Products & Services Services	Auto	Household Income
+1293292	Retail	Retail	Household Income
+1293403	Auto	Auto	Household Income
+1294087	Auto	Retail	Gender
+1296207	Auto	Auto	Household Income
+1296637	Auto	Travel	Household Income
+1296961	Retail	Travel	Household Income
+1297202	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1297526	Other Vehicles	Auto	Age
+1297763	Real Estate	Retail	Gender
+1297982	Retail	Retail	Age
+1298488	Retail	Travel	Household Income
+1299025	Retail	Travel	Age
+1299210	Retail	Retail	Household Income
+1350707	Retail	Auto	Gender
+1350730	Other Vehicles	Retail	Household Income
+1351991	Retail	Travel	Age
+1353690	Auto	Travel	Age
+1352378	Auto	Retail	Age
+1353069	Retail	Travel	Household Income
+1353070	Financial Products & Services Services	Travel	Age
+1353998	Financial Products & Services Services	Travel	Age
+1354468	Financial Products & Services Services	Auto	Age
+1354488	Financial Products & Services Services	Travel	Household Income
+1354662	Auto	Travel	Household Income
+1354924	Real Estate	Auto	Age
+1356126	Real Estate	Retail	Gender
+1358092	Real Estate	Auto	Household Income
+1357038	Retail	Retail	Household Income
+1357596	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1358047	Auto	Retail	Age
+1358309	Auto	Auto	Age
+1358698	Real Estate	Travel	Gender
+1359307	Auto	Auto	Gender
+1359789	Travel	Travel	Household Income
+1359882	Retail	Auto	Household Income
+1360147	Auto	Retail	Household Income
+1360330	Other Vehicles	Travel	Age
+1360807	Other Vehicles	Travel	Household Income
+1361236	Other Vehicles	Travel	Age
+1193100	Auto	Auto	Age
+1193148	Travel	Auto	Gender
+1193282	Real Estate	Retail	Age
+1193461	Retail	Travel	Gender
+1193706	Retail	Travel	Age
+1194697	Travel	Travel	Household Income
+1193712	Real Estate	Retail	Age
+1193959	Consumer Packaged Goods (CPG) Education	Travel	Age
+1194141	Retail	Auto	Household Income
+1194427	Auto	Auto	Age
+1195101	Auto	Auto	Age
+1432366	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1433494	Auto	Auto	Gender
+1432542	Consumer Packaged Goods (CPG) Education	Travel	Age
+1433761	Auto	Auto	Age
+1433765	Real Estate	Travel	Age
+1436000	Travel	Travel	Household Income
+1436038	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1436055	Retail	Travel	Gender
+1436344	Consumer Packaged Goods (CPG) Education	Travel	Age
+1436753	Retail	Retail	Age
+1436835	Financial Products & Services Services	Travel	Age
+1436943	Retail	Travel	Age
+1437579	Other Vehicles	Auto	Age
+1445525	Other Vehicles	Travel	Household Income
+1438043	Other Vehicles	Travel	Household Income
+1438178	Other Vehicles	Travel	Gender
+1440104	Retail	Retail	Household Income
+1440947	Retail	Travel	Household Income
+1441125	Retail	Auto	Household Income
+1309122	Travel	Auto	Household Income
+1309807	Real Estate	Retail	Age
+1309929	Auto	Travel	Age
+1309941	Travel	Travel	Age
+1309944	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1309981	Financial Products & Services Services	Auto	Household Income
+1310515	Other Vehicles	Travel	Age
+1311748	Financial Products & Services Services	Auto	Gender
+1312124	Other Vehicles	Travel	Household Income
+1312212	Consumer Packaged Goods (CPG) Education	Travel	Age
+1312304	Other Vehicles	Travel	Household Income
+1312458	Auto	Travel	Age
+1312537	Real Estate	Travel	Age
+1312699	Retail	Retail	Household Income
+1312811	Auto	Travel	Age
+1312821	Retail	Travel	Age
+1313393	Real Estate	Retail	Age
+1313752	Financial Products & Services Services	Travel	Household Income
+1314045	Other Vehicles	Auto	Age
+1314811	Auto	Auto	Age
+1266675	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1266773	Auto	Auto	Age
+1267047	Retail	Auto	Age
+1368455	Auto	Auto	Age
+1368562	Other Vehicles	Travel	Household Income
+1368720	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1369442	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1369691	Real Estate	Auto	Household Income
+1369732	Auto	Auto	Age
+1370497	Retail	Auto	Age
+1370634	Auto	Travel	Age
+1271414	Other Vehicles	Travel	Age
+1271532	Real Estate	Travel	Household Income
+1271554	Other Vehicles	Retail	Household Income
+1271720	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1272060	Auto	Travel	Household Income
+1272143	Travel	Retail	Age
+1380633	Auto	Travel	Age
+1381375	Travel	Auto	Gender
+1381499	Consumer Packaged Goods (CPG) Education	Auto	Age
+1237086	Auto	Auto	Age
+1237218	Real Estate	Travel	Age
+1237401	Financial Products & Services Services	Retail	Household Income
+1237493	Auto	Travel	Household Income
+1237866	Auto	Auto	Household Income
+1237931	Other Vehicles	Auto	Age
+1237934	Financial Products & Services Services	Travel	Gender
+1238659	Retail	Travel	Age
+1238660	Real Estate	Travel	Household Income
+1239130	Financial Products & Services Services	Travel	Household Income
+1239868	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1239912	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1240159	Other Vehicles	Auto	Household Income
+1242812	Auto	Retail	Household Income
+1244128	Auto	Retail	Household Income
+1284017	Travel	Retail	Age
+1284377	Auto	Travel	Age
+1284612	Auto	Travel	Age
+1285259	Auto	Retail	Gender
+1285585	Retail	Travel	Household Income
+1285800	Real Estate	Auto	Age
+1285811	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1286720	Financial Products & Services Services	Travel	Household Income
+1286964	Retail	Travel	Household Income
+1287630	Travel	Retail	Gender
+1288768	Real Estate	Auto	Household Income
+1289251	Retail	Auto	Age
+1291391	Retail	Retail	Age
+1289395	Retail	Travel	Gender
+1300099	Retail	Travel	Household Income
+1301916	Retail	Auto	Age
+1302328	Real Estate	Auto	Household Income
+1302805	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1002411	Financial Products & Services Services	Travel	Age
+1007742	Auto	Retail	Gender
+1014239	Retail	Auto	Household Income
+1017653	Other Vehicles	Retail	Household Income
+1021920	Auto	Auto	Household Income
+1045440	Travel	Retail	Age
+1061754	Real Estate	Travel	Age
+1069741	Travel	Travel	Household Income
+1067352	Auto	Auto	Household Income
+1043924	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1038507	Retail	Travel	Age
+1113069	Auto	Travel	Age
+1093890	Travel	Auto	Household Income
+1110076	Other Vehicles	Auto	Age
+1103558	Real Estate	Travel	Gender
+1118997	Real Estate	Auto	Gender
+1083706	Auto	Auto	Gender
+1115374	Real Estate	Travel	Household Income
+1090859	Retail	Auto	Household Income
+1080391	Auto	Travel	Household Income
+1091362	Retail	Retail	Gender
+1119869	Financial Products & Services Services	Travel	Age
+1090950	Auto	Travel	Gender
+1291045	Retail	Auto	Household Income
+1291538	Financial Products & Services Services	Travel	Gender
+1293482	Auto	Retail	Gender
+1293615	Travel	Auto	Age
+1293957	Auto	Travel	Age
+1294340	Auto	Retail	Age
+1294463	Retail	Retail	Age
+1294532	Consumer Packaged Goods (CPG) Education	Travel	Age
+1294712	Real Estate	Retail	Age
+1294771	Travel	Retail	Household Income
+1294902	Travel	Travel	Household Income
+1408642	Real Estate	Travel	Age
+1408847	Financial Products & Services Services	Auto	Household Income
+1408855	Retail	Travel	Household Income
+1409243	Financial Products & Services Services	Travel	Household Income
+1409308	Travel	Auto	Household Income
+1409511	Financial Products & Services Services	Auto	Age
+1409597	Auto	Travel	Age
+1409887	Retail	Travel	Age
+1411055	Retail	Auto	Age
+1411576	Other Vehicles	Travel	Age
+1411805	Auto	Auto	Household Income
+1412245	Retail	Travel	Household Income
+1412282	Financial Products & Services Services	Auto	Household Income
+1412876	Auto	Travel	Age
+1413249	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1413588	Auto	Auto	Age
+1370750	Travel	Auto	Household Income
+1370822	Travel	Auto	Household Income
+1371749	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1372147	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1372460	Financial Products & Services Services	Travel	Age
+1373338	Auto	Travel	Household Income
+1373536	Retail	Auto	Age
+1373822	Financial Products & Services Services	Travel	Household Income
+1373862	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1374426	Auto	Auto	Gender
+1374578	Other Vehicles	Travel	Gender
+1375290	Other Vehicles	Auto	Age
+1375336	Travel	Auto	Gender
+1375762	Auto	Auto	Household Income
+1376131	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1376407	Other Vehicles	Auto	Age
+1377810	Retail	Auto	Age
+1379551	Travel	Auto	Gender
+1214134	Financial Products & Services Services	Auto	Household Income
+1214401	Auto	Retail	Age
+1214404	Real Estate	Travel	Household Income
+1214458	Auto	Retail	Household Income
+1214689	Other Vehicles	Retail	Household Income
+1214843	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1215373	Retail	Auto	Age
+1215643	Auto	Retail	Household Income
+1215676	Other Vehicles	Travel	Household Income
+1216094	Financial Products & Services Services	Travel	Household Income
+1216290	Financial Products & Services Services	Auto	Household Income
+1216993	Auto	Retail	Age
+1217060	Travel	Auto	Household Income
+1217405	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1217473	Other Vehicles	Auto	Gender
+1217555	Auto	Auto	Age
+1217572	Real Estate	Auto	Household Income
+1217587	Other Vehicles	Auto	Age
+1217639	Real Estate	Travel	Household Income
+1217672	Retail	Travel	Age
+1218281	Auto	Travel	Age
+1218285	Retail	Travel	Age
+1218423	Other Vehicles	Retail	Age
+1218796	Travel	Travel	Household Income
+1218846	Real Estate	Travel	Household Income
+1267663	Financial Products & Services Services	Travel	Household Income
+1267734	Retail	Retail	Gender
+1268615	Auto	Auto	Household Income
+1268253	Real Estate	Auto	Age
+1268715	Financial Products & Services Services	Retail	Age
+1268844	Real Estate	Auto	Age
+1269151	Other Vehicles	Travel	Age
+1270109	Auto	Travel	Age
+1269358	Retail	Auto	Household Income
+1269366	Retail	Travel	Household Income
+1269411	Real Estate	Travel	Household Income
+1269564	Retail	Travel	Gender
+1269729	Retail	Travel	Household Income
+1270090	Travel	Retail	Household Income
+1270093	Real Estate	Auto	Age
+1270702	Auto	Travel	Age
+1270741	Financial Products & Services Services	Retail	Gender
+1271394	Financial Products & Services Services	Auto	Household Income
+1301221	Auto	Travel	Gender
+1301235	Other Vehicles	Travel	Household Income
+1301273	Auto	Travel	Gender
+1301642	Retail	Travel	Age
+1302686	Auto	Travel	Household Income
+1303640	Travel	Auto	Age
+1303681	Retail	Retail	Gender
+1303830	Retail	Travel	Gender
+1303847	Real Estate	Travel	Household Income
+1304505	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1308152	Real Estate	Auto	Age
+1364397	Real Estate	Retail	Age
+1362093	Auto	Travel	Household Income
+1362251	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1363301	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1362615	Retail	Auto	Age
+1362629	Other Vehicles	Auto	Household Income
+1362681	Retail	Auto	Age
+1363274	Travel	Auto	Gender
+1363382	Financial Products & Services Services	Auto	Household Income
+1363764	Real Estate	Auto	Household Income
+1364152	Auto	Retail	Age
+1364724	Auto	Auto	Gender
+1365789	Retail	Auto	Age
+1366213	Other Vehicles	Auto	Age
+1366224	Real Estate	Auto	Age
+1366732	Auto	Auto	Household Income
+1366804	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1366822	Other Vehicles	Auto	Household Income
+1366934	Other Vehicles	Travel	Age
+1367202	Travel	Travel	Household Income
+1367455	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1367663	Other Vehicles	Retail	Household Income
+1367901	Real Estate	Retail	Household Income
+1367912	Real Estate	Auto	Age
+1368416	Other Vehicles	Retail	Household Income
+1197800	Real Estate	Travel	Household Income
+1198270	Auto	Auto	Household Income
+1201085	Auto	Travel	Gender
+1201318	Auto	Travel	Household Income
+1201604	Other Vehicles	Auto	Gender
+1201929	Consumer Packaged Goods (CPG) Education	Retail	Age
+1202113	Financial Products & Services Services	Auto	Household Income
+1202626	Auto	Retail	Age
+1203405	Auto	Auto	Gender
+1204340	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1204624	Retail	Travel	Gender
+1205567	Financial Products & Services Services	Travel	Household Income
+1208625	Retail	Travel	Age
+1209356	Other Vehicles	Travel	Household Income
+1209383	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1211364	Auto	Retail	Household Income
+1211921	Consumer Packaged Goods (CPG) Education	Auto	Age
+1212267	Financial Products & Services Services	Travel	Age
+1212431	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1212441	Other Vehicles	Retail	Age
+1213076	Financial Products & Services Services	Travel	Age
+1213723	Other Vehicles	Auto	Age
+1213844	Auto	Travel	Gender
+1214022	Auto	Travel	Age
+1308545	Travel	Auto	Age
+1309069	Travel	Auto	Household Income
+1407481	Auto	Travel	Household Income
+1407621	Auto	Auto	Gender
+1407923	Financial Products & Services Services	Retail	Age
+1408371	Financial Products & Services Services	Auto	Household Income
+1408461	Retail	Travel	Age
+1232178	Retail	Travel	Gender
+1232786	Auto	Travel	Household Income
+1233120	Auto	Auto	Household Income
+1233417	Auto	Travel	Household Income
+1234092	Retail	Auto	Age
+1234449	Retail	Auto	Household Income
+1234530	Auto	Retail	Household Income
+1234811	Travel	Auto	Household Income
+1235304	Other Vehicles	Auto	Household Income
+1235829	Other Vehicles	Retail	Age
+1236185	Auto	Auto	Gender
+1236364	Travel	Auto	Household Income
+1134653	Real Estate	Auto	Household Income
+1139996	Auto	Travel	Household Income
+1140819	Consumer Packaged Goods (CPG) Education	Travel	Age
+1151046	Real Estate	Auto	Age
+1156440	Retail	Travel	Gender
+1156987	Retail	Travel	Household Income
+1157585	Travel	Auto	Household Income
+1167260	Retail	Travel	Age
+1172646	Retail	Travel	Age
+1181161	Other Vehicles	Auto	Gender
+1187370	Other Vehicles	Auto	Age
+1200483	Retail	Auto	Household Income
+1222206	Financial Products & Services Services	Travel	Household Income
+1222433	Retail	Travel	Gender
+1236105	Travel	Travel	Gender
+1243888	Other Vehicles	Travel	Age
+1246158	Real Estate	Auto	Age
+1247220	Financial Products & Services Services	Travel	Age
+1287079	Auto	Auto	Age
+1302355	Financial Products & Services Services	Travel	Age
+1313278	Retail	Retail	Household Income
+1314978	Retail	Travel	Gender
+1335646	Auto	Travel	Age
+1341148	Auto	Retail	Household Income
+1365859	Consumer Packaged Goods (CPG) Education	Retail	Age
+1373721	Retail	Auto	Household Income
+1384178	Travel	Travel	Gender
+1096453	Other Vehicles	Travel	Household Income
+1158115	Financial Products & Services Services	Travel	Gender
+1155264	Financial Products & Services Services	Travel	Age
+1123409	Travel	Auto	Household Income
+1028176	Auto	Travel	Age
+1031383	Auto	Travel	Age
+1032258	Real Estate	Auto	Household Income
+1039085	Other Vehicles	Travel	Household Income
+1042349	Consumer Packaged Goods (CPG) Education	Travel	Age
+1062616	Financial Products & Services Services	Retail	Age
+1249663	Retail	Retail	Gender
+1314280	Auto	Auto	Age
+1396468	Auto	Travel	Household Income
+1020729	Auto	Travel	Household Income
+1011334	Retail	Auto	Household Income
+1015071	Auto	Auto	Household Income
+1021032	Other Vehicles	Retail	Household Income
+1018621	Retail	Travel	Age
+1034406	Financial Products & Services Services	Travel	Age
+1038377	Real Estate	Auto	Age
+1052703	Other Vehicles	Travel	Household Income
+1038262	Retail	Travel	Age
+1046533	Financial Products & Services Services	Retail	Household Income
+1052932	Auto	Retail	Household Income
+1061044	Other Vehicles	Travel	Household Income
+1072085	Other Vehicles	Travel	Age
+1067940	Retail	Auto	Gender
+1083556	Financial Products & Services Services	Travel	Gender
+1080469	Consumer Packaged Goods (CPG) Education	Auto	Age
+1080473	Retail	Auto	Household Income
+1092896	Auto	Retail	Age
+1096898	Auto	Travel	Household Income
+1094396	Retail	Retail	Gender
+1094438	Travel	Auto	Household Income
+1102185	Real Estate	Auto	Household Income
+1115127	Retail	Retail	Age
+1110599	Auto	Travel	Age
+1123692	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1125214	Retail	Auto	Age
+1124653	Retail	Travel	Gender
+1153523	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1152486	Retail	Travel	Age
+1147100	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1152028	Financial Products & Services Services	Travel	Household Income
+1160171	Retail	Travel	Gender
+1154968	Real Estate	Auto	Age
+1156945	Retail	Travel	Household Income
+1414034	Retail	Retail	Gender
+1414110	Real Estate	Auto	Age
+1415287	Auto	Auto	Household Income
+1415423	Auto	Travel	Age
+1416825	Retail	Retail	Household Income
+1417144	Auto	Retail	Age
+1417447	Auto	Travel	Gender
+1418569	Retail	Retail	Household Income
+1418770	Retail	Travel	Age
+1244520	Auto	Retail	Gender
+1245081	Travel	Retail	Household Income
+1246199	Retail	Auto	Household Income
+1246500	Other Vehicles	Auto	Age
+1246834	Travel	Travel	Household Income
+1247328	Financial Products & Services Services	Travel	Gender
+1247442	Auto	Travel	Gender
+1248852	Travel	Auto	Age
+1248940	Travel	Retail	Age
+1248990	Retail	Auto	Household Income
+1249014	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1249113	Auto	Travel	Age
+1249722	Auto	Auto	Age
+1249724	Financial Products & Services Services	Auto	Age
+1249900	Other Vehicles	Travel	Household Income
+1250306	Auto	Retail	Household Income
+1251385	Real Estate	Auto	Gender
+1251917	Consumer Packaged Goods (CPG) Education	Auto	Age
+1251996	Consumer Packaged Goods (CPG) Education	Auto	Age
+1252967	Travel	Auto	Age
+1253545	Other Vehicles	Travel	Household Income
+1253591	Retail	Travel	Household Income
+1253676	Travel	Travel	Age
+1244458	Retail	Auto	Gender
+1294969	Real Estate	Travel	Household Income
+1295186	Other Vehicles	Retail	Household Income
+1297355	Other Vehicles	Travel	Age
+1295258	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1295328	Financial Products & Services Services	Auto	Household Income
+1295459	Real Estate	Auto	Household Income
+1295713	Travel	Auto	Household Income
+1295956	Retail	Retail	Household Income
+1296786	Real Estate	Retail	Household Income
+1296998	Other Vehicles	Auto	Household Income
+1302851	Other Vehicles	Auto	Age
+1297191	Auto	Travel	Household Income
+1297978	Other Vehicles	Auto	Household Income
+1297998	Other Vehicles	Auto	Age
+1298588	Travel	Retail	Household Income
+1298762	Real Estate	Auto	Household Income
+1298768	Retail	Travel	Age
+1298778	Financial Products & Services Services	Travel	Gender
+1298882	Auto	Travel	Age
+1299655	Retail	Travel	Household Income
+1299680	Retail	Auto	Age
+1220615	Auto	Auto	Gender
+1220815	Auto	Travel	Gender
+1221428	Auto	Travel	Gender
+1221640	Auto	Auto	Age
+1221749	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1222390	Consumer Packaged Goods (CPG) Education	Travel	Age
+1224220	Financial Products & Services Services	Auto	Gender
+1225050	Auto	Auto	Age
+1225511	Auto	Auto	Age
+1225904	Auto	Travel	Gender
+1226089	Retail	Auto	Age
+1226332	Real Estate	Auto	Household Income
+1226363	Other Vehicles	Auto	Household Income
+1227158	Retail	Retail	Gender
+1228072	Other Vehicles	Auto	Gender
+1228784	Consumer Packaged Goods (CPG) Education	Travel	Age
+1228948	Auto	Retail	Household Income
+1228971	Auto	Retail	Age
+1230339	Retail	Auto	Household Income
+1231983	Retail	Auto	Household Income
+1272542	Travel	Travel	Age
+1282193	Travel	Travel	Household Income
+1272867	Real Estate	Auto	Household Income
+1272939	Consumer Packaged Goods (CPG) Education	Auto	Age
+1285411	Financial Products & Services Services	Auto	Household Income
+1273442	Real Estate	Auto	Age
+1274025	Retail	Auto	Age
+1274062	Auto	Travel	Age
+1274410	Auto	Auto	Age
+1274797	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1275886	Auto	Travel	Household Income
+1275987	Retail	Auto	Age
+1277239	Travel	Auto	Household Income
+1277421	Travel	Travel	Household Income
+1277757	Financial Products & Services Services	Auto	Household Income
+1278261	Auto	Auto	Age
+1278814	Retail	Auto	Age
+1278281	Auto	Auto	Age
+1278745	Auto	Auto	Age
+1279548	Retail	Travel	Age
+1279821	Retail	Auto	Household Income
+1281865	Auto	Auto	Household Income
+1281908	Financial Products & Services Services	Auto	Gender
+1282439	Auto	Travel	Household Income
+1283564	Consumer Packaged Goods (CPG) Education	Auto	Age
+1395154	Retail	Auto	Gender
+1395637	Travel	Auto	Household Income
+1396033	Retail	Auto	Household Income
+1396560	Financial Products & Services Services	Retail	Gender
+1397537	Retail	Auto	Age
+1398417	Retail	Auto	Household Income
+1398996	Other Vehicles	Travel	Household Income
+1399421	Financial Products & Services Services	Auto	Household Income
+1399835	Financial Products & Services Services	Auto	Gender
+1400111	Real Estate	Retail	Household Income
+1400472	Retail	Auto	Household Income
+1400921	Financial Products & Services Services	Travel	Age
+1401909	Travel	Travel	Household Income
+1401917	Auto	Retail	Household Income
+1402121	Auto	Travel	Household Income
+1402363	Travel	Auto	Age
+1402464	Real Estate	Travel	Age
+1402655	Other Vehicles	Travel	Age
+1402659	Other Vehicles	Travel	Household Income
+1404196	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1404762	Auto	Retail	Household Income
+1406488	Real Estate	Travel	Household Income
+1014919	Other Vehicles	Travel	Household Income
+1028562	Financial Products & Services Services	Travel	Household Income
+1025316	Travel	Auto	Age
+1009268	Retail	Travel	Household Income
+1028319	Auto	Travel	Age
+1432407	Auto	Auto	Household Income
+1433089	Financial Products & Services Services	Travel	Gender
+1434359	Auto	Auto	Household Income
+1434598	Real Estate	Auto	Age
+1434976	Retail	Auto	Age
+1435164	Retail	Auto	Gender
+1435475	Retail	Retail	Household Income
+1435554	Financial Products & Services Services	Travel	Household Income
+1435557	Auto	Auto	Age
+1436094	Financial Products & Services Services	Auto	Gender
+1436508	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1436660	Other Vehicles	Auto	Age
+1436944	Auto	Travel	Age
+1437433	Auto	Retail	Gender
+1438237	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1438331	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1438332	Financial Products & Services Services	Auto	Household Income
+1438437	Auto	Retail	Household Income
+1438667	Real Estate	Auto	Gender
+1438852	Financial Products & Services Services	Auto	Gender
+1439570	Auto	Travel	Household Income
+1439800	Other Vehicles	Travel	Household Income
+1440210	Real Estate	Travel	Age
+1440707	Retail	Retail	Household Income
+1441700	Retail	Travel	Age
+1441812	Financial Products & Services Services	Travel	Age
+1409438	Consumer Packaged Goods (CPG) Education	Auto	Age
+1409465	Consumer Packaged Goods (CPG) Education	Travel	Age
+1409640	Retail	Auto	Household Income
+1409723	Auto	Auto	Household Income
+1410009	Travel	Auto	Age
+1410480	Auto	Travel	Age
+1410524	Auto	Travel	Gender
+1410566	Other Vehicles	Auto	Household Income
+1411061	Retail	Auto	Age
+1411173	Real Estate	Auto	Household Income
+1411325	Other Vehicles	Travel	Household Income
+1411994	Financial Products & Services Services	Auto	Household Income
+1412973	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1413171	Auto	Retail	Age
+1413728	Other Vehicles	Auto	Household Income
+1414151	Retail	Travel	Household Income
+1415445	Retail	Travel	Age
+1415500	Other Vehicles	Retail	Household Income
+1415543	Financial Products & Services Services	Retail	Age
+1389904	Auto	Auto	Gender
+1025145	Auto	Retail	Age
+1068776	Other Vehicles	Travel	Gender
+1080745	Retail	Travel	Household Income
+1096660	Retail	Retail	Household Income
+1137508	Auto	Auto	Gender
+1224406	Financial Products & Services Services	Retail	Gender
+1360943	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1422421	Retail	Auto	Age
+1006458	Travel	Auto	Age
+1011658	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1035842	Travel	Auto	Household Income
+1053940	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1335369	Other Vehicles	Auto	Gender
+1421853	Retail	Auto	Age
+1387141	Auto	Retail	Age
+1387469	Travel	Auto	Household Income
+1388112	Consumer Packaged Goods (CPG) Education	Travel	Age
+1388251	Retail	Retail	Age
+1388538	Retail	Auto	Household Income
+1389485	Real Estate	Travel	Age
+1389752	Other Vehicles	Auto	Age
+1390155	Auto	Retail	Household Income
+1390426	Real Estate	Auto	Household Income
+1390451	Real Estate	Travel	Age
+1390693	Retail	Travel	Household Income
+1391034	Retail	Auto	Gender
+1391115	Real Estate	Travel	Age
+1391842	Retail	Travel	Gender
+1391899	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1392269	Auto	Travel	Age
+1392274	Financial Products & Services Services	Retail	Household Income
+1392365	Retail	Auto	Household Income
+1392421	Financial Products & Services Services	Travel	Gender
+1392629	Real Estate	Auto	Age
+1394072	Retail	Retail	Age
+1394244	Retail	Retail	Household Income
+1394511	Real Estate	Auto	Age
+1394837	Real Estate	Travel	Age
+1394876	Real Estate	Auto	Age
+1025545	Auto	Auto	Gender
+1130748	Auto	Retail	Age
+1161023	Auto	Auto	Gender
+1197702	Auto	Auto	Gender
+1396918	Other Vehicles	Travel	Age
+1191839	Auto	Auto	Gender
+1324508	Auto	Auto	Age
+1366241	Auto	Auto	Household Income
+1414300	Auto	Travel	Gender
+1436405	Consumer Packaged Goods (CPG) Education	Auto	Age
+1013826	Retail	Travel	Age
+1066314	Travel	Retail	Age
+1124962	Financial Products & Services Services	Auto	Age
+1140339	Travel	Auto	Household Income
+1194456	Auto	Travel	Age
+1201997	Financial Products & Services Services	Travel	Age
+1300746	Travel	Auto	Age
+1406582	Auto	Auto	Household Income
+1395420	Auto	Auto	Household Income
+1395514	Retail	Travel	Age
+1395625	Travel	Retail	Household Income
+1395784	Retail	Retail	Household Income
+1397044	Travel	Auto	Age
+1397630	Retail	Travel	Household Income
+1397635	Retail	Travel	Age
+1397975	Travel	Retail	Gender
+1398476	Auto	Travel	Age
+1398719	Retail	Retail	Gender
+1398817	Travel	Auto	Household Income
+1399877	Travel	Auto	Gender
+1400304	Retail	Auto	Age
+1401128	Other Vehicles	Auto	Household Income
+1401249	Retail	Retail	Gender
+1401875	Other Vehicles	Auto	Age
+1045968	Travel	Auto	Age
+1052756	Retail	Travel	Age
+1060829	Consumer Packaged Goods (CPG) Education	Auto	Age
+1062462	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1069346	Retail	Travel	Household Income
+1076549	Auto	Auto	Age
+1085096	Retail	Auto	Gender
+1087084	Retail	Retail	Age
+1089327	Auto	Travel	Household Income
+1090403	Other Vehicles	Auto	Age
+1093031	Other Vehicles	Auto	Gender
+1095560	Travel	Travel	Gender
+1096700	Other Vehicles	Auto	Gender
+1100315	Travel	Auto	Household Income
+1100450	Real Estate	Travel	Gender
+1100858	Auto	Retail	Household Income
+1102275	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1102628	Retail	Retail	Age
+1119817	Auto	Retail	Age
+1125308	Other Vehicles	Travel	Household Income
+1127656	Consumer Packaged Goods (CPG) Education	Travel	Age
+1132918	Other Vehicles	Auto	Gender
+1133255	Retail	Auto	Age
+1133967	Retail	Auto	Age
+1376848	Retail	Auto	Age
+1380565	Auto	Auto	Age
+1380893	Real Estate	Travel	Gender
+1380915	Retail	Retail	Age
+1381560	Auto	Travel	Age
+1382234	Auto	Travel	Household Income
+1382801	Consumer Packaged Goods (CPG) Education	Retail	Age
+1383745	Retail	Retail	Household Income
+1384734	Real Estate	Auto	Household Income
+1385405	Consumer Packaged Goods (CPG) Education	Auto	Age
+1385502	Retail	Retail	Household Income
+1386035	Retail	Travel	Household Income
+1386121	Auto	Retail	Household Income
+1386169	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1387109	Financial Products & Services Services	Auto	Household Income
+1295835	Retail	Travel	Household Income
+1046063	Real Estate	Auto	Gender
+1054930	Auto	Auto	Household Income
+1059449	Travel	Travel	Gender
+1370359	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1025378	Retail	Travel	Age
+1039128	Auto	Auto	Household Income
+1038456	Real Estate	Auto	Household Income
+1147040	Auto	Auto	Household Income
+1377063	Auto	Auto	Household Income
+1026776	Financial Products & Services Services	Travel	Age
+1068126	Financial Products & Services Services	Auto	Household Income
+1405827	Retail	Travel	Age
+1406132	Auto	Retail	Age
+1406330	Travel	Travel	Age
+1407731	Real Estate	Auto	Household Income
+1408473	Consumer Packaged Goods (CPG) Education	Auto	Age
+1408561	Travel	Retail	Age
+1409193	Auto	Auto	Age
+1409332	Retail	Auto	Gender
+1409377	Retail	Auto	Age
+1159276	Travel	Auto	Age
+1165145	Financial Products & Services Services	Auto	Gender
+1172404	Real Estate	Auto	Age
+1177877	Other Vehicles	Retail	Age
+1175598	Financial Products & Services Services	Travel	Age
+1171048	Financial Products & Services Services	Travel	Household Income
+1191224	Financial Products & Services Services	Auto	Age
+1214737	Financial Products & Services Services	Travel	Age
+1216500	Travel	Retail	Gender
+1217176	Auto	Auto	Gender
+1238367	Retail	Auto	Gender
+1256386	Other Vehicles	Auto	Household Income
+1263211	Auto	Travel	Household Income
+1274505	Other Vehicles	Retail	Household Income
+1291564	Auto	Auto	Age
+1287786	Retail	Auto	Age
+1281939	Other Vehicles	Retail	Age
+1294141	Travel	Auto	Age
+1310506	Auto	Travel	Age
+1308142	Auto	Travel	Household Income
+1322126	Financial Products & Services Services	Auto	Age
+1335300	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1320642	Retail	Retail	Age
+1344452	Other Vehicles	Travel	Age
+1342672	Auto	Auto	Household Income
+1365781	Auto	Travel	Household Income
+1382621	Auto	Travel	Age
+1369318	Real Estate	Travel	Age
+1378001	Auto	Travel	Household Income
+1369757	Auto	Travel	Gender
+1397133	Travel	Auto	Household Income
+1412108	Financial Products & Services Services	Travel	Gender
+1424534	Retail	Auto	Gender
+1414484	Consumer Packaged Goods (CPG) Education	Travel	Age
+1411326	Consumer Packaged Goods (CPG) Education	Travel	Age
+1053800	Retail	Retail	Age
+1035530	Retail	Retail	Age
+1069672	Real Estate	Auto	Household Income
+1100935	Auto	Travel	Age
+1106521	Auto	Auto	Household Income
+1131258	Retail	Auto	Age
+1141044	Auto	Travel	Age
+1157319	Auto	Travel	Age
+1175323	Travel	Travel	Age
+1310887	Other Vehicles	Travel	Household Income
+1300452	Retail	Travel	Age
+1319235	Auto	Retail	Gender
+1336546	Retail	Auto	Household Income
+1442862	Auto	Travel	Household Income
+1436982	Travel	Auto	Age
+1100648	Real Estate	Auto	Gender
+1274023	Auto	Auto	Age
+1107909	Financial Products & Services Services	Travel	Age
+1136383	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1225435	Real Estate	Auto	Household Income
+1265598	Other Vehicles	Travel	Household Income
+1349072	Retail	Auto	Age
+1376269	Retail	Travel	Household Income
+1412809	Other Vehicles	Retail	Household Income
+1140758	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1144702	Auto	Travel	Age
+1187310	Other Vehicles	Travel	Age
+1070662	Real Estate	Travel	Gender
+1097851	Real Estate	Retail	Gender
+1097947	Auto	Retail	Age
+1098056	Other Vehicles	Retail	Gender
+1098496	Travel	Travel	Household Income
+1099318	Auto	Retail	Gender
+1099332	Financial Products & Services Services	Auto	Gender
+1099717	Travel	Retail	Age
+1099813	Auto	Retail	Age
+1099845	Travel	Retail	Gender
+1100022	Auto	Travel	Gender
+1100099	Real Estate	Retail	Age
+1100199	Auto	Travel	Age
+1100365	Auto	Auto	Age
+1100434	Auto	Travel	Gender
+1100528	Retail	Retail	Household Income
+1101045	Retail	Travel	Age
+1101151	Financial Products & Services Services	Retail	Age
+1101327	Other Vehicles	Retail	Age
+1101356	Other Vehicles	Auto	Household Income
+1101837	Other Vehicles	Auto	Age
+1101938	Auto	Travel	Household Income
+1102668	Auto	Travel	Age
+1103041	Retail	Retail	Age
+1103061	Travel	Retail	Age
+1147389	Other Vehicles	Travel	Household Income
+1147533	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1147556	Financial Products & Services Services	Retail	Age
+1173762	Auto	Retail	Age
+1173819	Real Estate	Auto	Household Income
+1161875	Financial Products & Services Services	Travel	Household Income
+1174045	Consumer Packaged Goods (CPG) Education	Travel	Age
+1174057	Travel	Travel	Household Income
+1174108	Consumer Packaged Goods (CPG) Education	Auto	Age
+1174188	Auto	Travel	Household Income
+1174412	Other Vehicles	Auto	Gender
+1174464	Auto	Auto	Age
+1174742	Retail	Auto	Household Income
+1175203	Travel	Auto	Household Income
+1175413	Retail	Auto	Gender
+1175600	Consumer Packaged Goods (CPG) Education	Travel	Age
+1175649	Auto	Retail	Age
+1175744	Financial Products & Services Services	Travel	Age
+1175827	Travel	Travel	Household Income
+1176127	Other Vehicles	Auto	Age
+1176147	Retail	Auto	Gender
+1176288	Retail	Travel	Age
+1176440	Retail	Retail	Household Income
+1176628	Other Vehicles	Travel	Age
+1176781	Travel	Travel	Household Income
+1176839	Auto	Auto	Household Income
+1176881	Retail	Travel	Household Income
+1176989	Auto	Travel	Household Income
+1177376	Retail	Auto	Gender
+1177438	Retail	Retail	Household Income
+1177583	Retail	Auto	Age
+1177606	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1177687	Retail	Travel	Household Income
+1295449	Auto	Travel	Age
+1295549	Real Estate	Travel	Household Income
+1295715	Travel	Auto	Age
+1295805	Other Vehicles	Travel	Age
+1296019	Travel	Travel	Household Income
+1296212	Auto	Travel	Age
+1297082	Auto	Auto	Household Income
+1297098	Financial Products & Services Services	Retail	Age
+1297165	Financial Products & Services Services	Auto	Age
+1297179	Travel	Auto	Age
+1281992	Retail	Travel	Age
+1297818	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1298101	Travel	Auto	Household Income
+1298247	Travel	Travel	Gender
+1299008	Real Estate	Travel	Gender
+1299092	Other Vehicles	Retail	Age
+1299143	Financial Products & Services Services	Auto	Gender
+1299164	Auto	Travel	Age
+1299190	Other Vehicles	Auto	Household Income
+1299380	Retail	Retail	Household Income
+1299384	Retail	Auto	Age
+1299712	Auto	Auto	Age
+1299841	Real Estate	Travel	Household Income
+1300095	Real Estate	Auto	Gender
+1300772	Consumer Packaged Goods (CPG) Education	Travel	Age
+1301355	Other Vehicles	Travel	Gender
+1301912	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1301942	Retail	Retail	Gender
+1045248	Consumer Packaged Goods (CPG) Education	Auto	Age
+1045434	Travel	Retail	Age
+1045931	Consumer Packaged Goods (CPG) Education	Travel	Age
+1046599	Auto	Travel	Household Income
+1047023	Travel	Retail	Age
+1047318	Auto	Auto	Age
+1047415	Other Vehicles	Retail	Household Income
+1402578	Real Estate	Travel	Gender
+1402987	Financial Products & Services Services	Travel	Age
+1403261	Travel	Auto	Household Income
+1403463	Auto	Auto	Household Income
+1404308	Retail	Auto	Gender
+1404317	Other Vehicles	Retail	Household Income
+1404326	Other Vehicles	Travel	Age
+1405244	Auto	Auto	Household Income
+1405345	Other Vehicles	Auto	Age
+1389701	Auto	Auto	Household Income
+1389982	Travel	Auto	Household Income
+1391909	Real Estate	Retail	Gender
+1364928	Retail	Auto	Gender
+1365525	Travel	Auto	Age
+1366722	Auto	Auto	Household Income
+1367428	Travel	Auto	Age
+1367887	Financial Products & Services Services	Auto	Gender
+1367919	Other Vehicles	Auto	Gender
+1368084	Other Vehicles	Auto	Age
+1368252	Other Vehicles	Auto	Age
+1368889	Financial Products & Services Services	Auto	Household Income
+1369247	Travel	Travel	Age
+1369450	Retail	Travel	Household Income
+1369616	Travel	Retail	Household Income
+1369693	Travel	Auto	Age
+1370250	Financial Products & Services Services	Retail	Gender
+1370381	Financial Products & Services Services	Travel	Household Income
+1370617	Retail	Travel	Household Income
+1370850	Consumer Packaged Goods (CPG) Education	Retail	Age
+1371180	Retail	Retail	Age
+1371225	Retail	Auto	Age
+1371395	Financial Products & Services Services	Travel	Age
+1372482	Other Vehicles	Auto	Age
+1372661	Travel	Retail	Household Income
+1372726	Auto	Auto	Age
+1372771	Retail	Auto	Household Income
+1372919	Real Estate	Travel	Household Income
+1373288	Travel	Auto	Household Income
+1441815	Retail	Retail	Household Income
+1441910	Retail	Travel	Gender
+1442068	Financial Products & Services Services	Auto	Age
+1443070	Auto	Auto	Age
+1443099	Retail	Travel	Household Income
+1443768	Real Estate	Travel	Age
+1444030	Auto	Retail	Age
+1444093	Retail	Auto	Gender
+1444349	Auto	Auto	Age
+1444644	Auto	Auto	Household Income
+1444801	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1446110	Auto	Travel	Gender
+1446414	Retail	Auto	Age
+1446440	Auto	Travel	Gender
+1446627	Other Vehicles	Retail	Gender
+1406225	Travel	Auto	Gender
+1416247	Auto	Auto	Age
+1440216	Consumer Packaged Goods (CPG) Education	Auto	Age
+1444051	Auto	Auto	Household Income
+1062157	Real Estate	Travel	Age
+1077750	Retail	Auto	Household Income
+1132007	Auto	Travel	Age
+1141014	Auto	Auto	Age
+1196039	Retail	Auto	Age
+1238837	Auto	Auto	Gender
+1035793	Financial Products & Services Services	Travel	Household Income
+1128135	Auto	Travel	Gender
+1354665	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1018354	Real Estate	Retail	Household Income
+1069123	Other Vehicles	Auto	Age
+1080339	Other Vehicles	Travel	Gender
+1131100	Consumer Packaged Goods (CPG) Education	Auto	Age
+1134354	Financial Products & Services Services	Travel	Age
+1265099	Consumer Packaged Goods (CPG) Education	Travel	Age
+1306515	Retail	Auto	Gender
+1385060	Other Vehicles	Auto	Age
+1145856	Auto	Auto	Gender
+1191463	Financial Products & Services Services	Auto	Age
+1197213	Financial Products & Services Services	Travel	Gender
+1010164	Real Estate	Retail	Age
+1067311	Auto	Retail	Gender
+1096292	Consumer Packaged Goods (CPG) Education	Auto	Age
+1099651	Auto	Travel	Age
+1373800	Other Vehicles	Travel	Household Income
+1374092	Retail	Auto	Age
+1374108	Real Estate	Auto	Age
+1374275	Other Vehicles	Auto	Gender
+1374331	Retail	Travel	Age
+1374908	Auto	Auto	Age
+1375129	Real Estate	Travel	Age
+1375312	Consumer Packaged Goods (CPG) Education	Retail	Age
+1375757	Real Estate	Travel	Age
+1376091	Travel	Auto	Household Income
+1376181	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1	Consumer Packaged Goods (CPG) Education	Auto	Gender
+2	Other Vehicles	Travel	Age
+3	Auto	Travel	Household Income
+1002290	Real Estate	Travel	Household Income
+1002386	Financial Products & Services Services	Auto	Age
+1002412	Retail	Auto	Household Income
+1002862	Real Estate	Travel	Age
+1003026	Other Vehicles	Travel	Household Income
+1003188	Retail	Auto	Age
+1003204	Auto	Retail	Household Income
+1003389	Travel	Travel	Age
+1003770	Travel	Auto	Household Income
+1004943	Auto	Auto	Gender
+1005520	Other Vehicles	Travel	Age
+1006722	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1006853	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1007191	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1007246	Auto	Travel	Age
+1007407	Auto	Auto	Household Income
+1042174	Travel	Retail	Household Income
+1042326	Retail	Auto	Age
+1042332	Financial Products & Services Services	Auto	Household Income
+1042751	Other Vehicles	Travel	Age
+1043004	Retail	Auto	Gender
+1043050	Retail	Travel	Age
+1043052	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1043204	Auto	Travel	Age
+1043288	Auto	Travel	Household Income
+1044049	Auto	Retail	Household Income
+1044773	Travel	Travel	Age
+1180537	Financial Products & Services Services	Travel	Age
+1180563	Financial Products & Services Services	Auto	Gender
+1180722	Real Estate	Retail	Household Income
+1180874	Travel	Retail	Household Income
+1180886	Real Estate	Auto	Gender
+1180895	Auto	Travel	Age
+1180914	Retail	Auto	Gender
+1181158	Travel	Auto	Household Income
+1181434	Retail	Auto	Household Income
+1181750	Retail	Travel	Gender
+1181838	Real Estate	Auto	Age
+1168710	Retail	Travel	Household Income
+1182029	Real Estate	Retail	Gender
+1302009	Retail	Retail	Age
+1302848	Auto	Retail	Age
+1303139	Real Estate	Travel	Gender
+1304572	Travel	Travel	Age
+1304596	Auto	Auto	Household Income
+1304935	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1304979	Other Vehicles	Auto	Age
+1289969	Travel	Travel	Gender
+1305198	Real Estate	Travel	Household Income
+1306013	Financial Products & Services Services	Travel	Age
+1306022	Real Estate	Auto	Age
+1306054	Retail	Auto	Gender
+1306580	Other Vehicles	Travel	Age
+1306961	Retail	Travel	Age
+1306987	Auto	Travel	Household Income
+1307412	Other Vehicles	Auto	Household Income
+1307597	Retail	Retail	Household Income
+1307696	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1184737	Other Vehicles	Auto	Gender
+1185814	Retail	Auto	Age
+1185818	Travel	Auto	Age
+1185849	Auto	Travel	Age
+1187261	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1187394	Consumer Packaged Goods (CPG) Education	Auto	Age
+1188382	Travel	Travel	Household Income
+1188404	Other Vehicles	Retail	Gender
+1188413	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1189621	Auto	Auto	Household Income
+1189913	Other Vehicles	Auto	Household Income
+1190220	Travel	Retail	Gender
+1190585	Other Vehicles	Auto	Age
+1190665	Real Estate	Retail	Household Income
+1190899	Other Vehicles	Auto	Household Income
+1190970	Financial Products & Services Services	Auto	Age
+1191042	Financial Products & Services Services	Auto	Age
+1191300	Auto	Travel	Gender
+1173856	Travel	Auto	Age
+1191438	Auto	Travel	Age
+1191604	Real Estate	Auto	Gender
+1191718	Retail	Auto	Age
+1191810	Real Estate	Auto	Household Income
+1310505	Auto	Retail	Household Income
+1310516	Auto	Travel	Gender
+1310555	Financial Products & Services Services	Retail	Household Income
+1310816	Retail	Retail	Household Income
+1297712	Travel	Auto	Household Income
+1311276	Auto	Auto	Household Income
+1311415	Consumer Packaged Goods (CPG) Education	Travel	Age
+1311536	Retail	Auto	Household Income
+1311589	Travel	Travel	Household Income
+1311666	Travel	Auto	Age
+1311724	Consumer Packaged Goods (CPG) Education	Travel	Age
+1312072	Retail	Auto	Age
+1312426	Other Vehicles	Travel	Household Income
+1313158	Real Estate	Travel	Household Income
+1313387	Travel	Travel	Household Income
+1313509	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1313545	Auto	Travel	Household Income
+1313599	Financial Products & Services Services	Travel	Age
+1313673	Travel	Auto	Age
+1313745	Financial Products & Services Services	Auto	Gender
+1314193	Auto	Travel	Household Income
+1314207	Other Vehicles	Travel	Age
+1314300	Retail	Auto	Age
+1314398	Retail	Travel	Household Income
+1314750	Other Vehicles	Retail	Age
+1314820	Auto	Auto	Age
+1314864	Retail	Travel	Household Income
+1315893	Financial Products & Services Services	Travel	Gender
+1131876	Retail	Auto	Age
+1132136	Real Estate	Auto	Gender
+1132357	Financial Products & Services Services	Retail	Gender
+1132705	Auto	Auto	Age
+1133025	Other Vehicles	Auto	Age
+1133033	Auto	Travel	Age
+1133324	Travel	Auto	Age
+1133394	Retail	Auto	Household Income
+1133475	Auto	Auto	Gender
+1007939	Financial Products & Services Services	Retail	Age
+1008517	Auto	Auto	Age
+1008548	Retail	Travel	Household Income
+1008632	Other Vehicles	Retail	Age
+1008852	Financial Products & Services Services	Auto	Age
+1009280	Financial Products & Services Services	Retail	Household Income
+1009339	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1009563	Retail	Retail	Household Income
+1009671	Other Vehicles	Retail	Household Income
+1009967	Financial Products & Services Services	Auto	Household Income
+1010010	Other Vehicles	Auto	Age
+1010065	Financial Products & Services Services	Retail	Age
+1010152	Financial Products & Services Services	Auto	Household Income
+1010192	Auto	Retail	Age
+1010688	Retail	Travel	Age
+1010781	Financial Products & Services Services	Travel	Age
+1010804	Auto	Travel	Age
+1010968	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1191875	Travel	Travel	Household Income
+1191894	Other Vehicles	Travel	Gender
+1192014	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1192037	Auto	Travel	Household Income
+1192244	Retail	Retail	Household Income
+1192359	Travel	Auto	Age
+1192521	Financial Products & Services Services	Travel	Household Income
+1192646	Travel	Auto	Gender
+1193074	Other Vehicles	Retail	Age
+1193232	Financial Products & Services Services	Travel	Household Income
+1193381	Retail	Auto	Age
+1193725	Retail	Travel	Age
+1307870	Retail	Travel	Household Income
+1307890	Retail	Auto	Household Income
+1308286	Auto	Travel	Household Income
+1308349	Retail	Auto	Age
+1308515	Consumer Packaged Goods (CPG) Education	Auto	Age
+1308705	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1308733	Travel	Retail	Age
+1308890	Real Estate	Auto	Household Income
+1309672	Other Vehicles	Travel	Household Income
+1310152	Retail	Retail	Gender
+1083967	Auto	Auto	Household Income
+1084113	Travel	Auto	Household Income
+1084217	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1084312	Retail	Travel	Household Income
+1084374	Real Estate	Travel	Age
+1084428	Travel	Travel	Gender
+1084502	Other Vehicles	Auto	Gender
+1084523	Travel	Travel	Age
+1084536	Other Vehicles	Travel	Household Income
+1084942	Financial Products & Services Services	Retail	Household Income
+1128108	Retail	Retail	Household Income
+1128151	Financial Products & Services Services	Auto	Gender
+1128225	Retail	Travel	Age
+1128691	Real Estate	Auto	Gender
+1128923	Retail	Auto	Household Income
+1128941	Retail	Retail	Gender
+1129049	Other Vehicles	Travel	Age
+1129420	Auto	Travel	Age
+1129530	Auto	Travel	Age
+1129579	Auto	Travel	Household Income
+1129699	Financial Products & Services Services	Travel	Age
+1129814	Auto	Auto	Gender
+1129882	Retail	Auto	Gender
+1129896	Travel	Travel	Age
+1130078	Financial Products & Services Services	Auto	Household Income
+1130404	Auto	Travel	Age
+1130697	Auto	Auto	Household Income
+1131685	Retail	Auto	Age
+1131820	Auto	Travel	Household Income
+1025110	Financial Products & Services Services	Auto	Age
+1025461	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1025752	Auto	Retail	Household Income
+1026026	Consumer Packaged Goods (CPG) Education	Auto	Age
+1026319	Consumer Packaged Goods (CPG) Education	Auto	Age
+1026603	Retail	Travel	Household Income
+1026622	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1026785	Consumer Packaged Goods (CPG) Education	Auto	Age
+1026995	Financial Products & Services Services	Retail	Household Income
+1027025	Auto	Retail	Gender
+1027058	Auto	Retail	Gender
+1027326	Retail	Travel	Household Income
+1027518	Auto	Retail	Age
+1027859	Retail	Travel	Age
+1028043	Auto	Travel	Household Income
+1028120	Financial Products & Services Services	Auto	Age
+1028434	Auto	Auto	Household Income
+1029028	Auto	Auto	Age
+1182196	Real Estate	Auto	Age
+1182436	Real Estate	Auto	Household Income
+1183429	Consumer Packaged Goods (CPG) Education	Auto	Age
+1183899	Real Estate	Travel	Household Income
+1047514	Auto	Travel	Gender
+1047606	Retail	Retail	Age
+1048393	Financial Products & Services Services	Travel	Age
+1048521	Real Estate	Travel	Gender
+1048812	Auto	Travel	Age
+1081654	Financial Products & Services Services	Retail	Household Income
+1081803	Other Vehicles	Travel	Household Income
+1082081	Retail	Retail	Age
+1082518	Auto	Retail	Household Income
+1082597	Consumer Packaged Goods (CPG) Education	Travel	Age
+1082773	Retail	Travel	Gender
+1083096	Other Vehicles	Travel	Age
+1083177	Financial Products & Services Services	Travel	Gender
+1083287	Auto	Retail	Age
+1083448	Financial Products & Services Services	Auto	Household Income
+1083461	Auto	Travel	Age
+1083805	Travel	Travel	Age
+1083861	Retail	Auto	Household Income
+1147558	Financial Products & Services Services	Auto	Age
+1147941	Retail	Auto	Gender
+1148014	Other Vehicles	Travel	Household Income
+1148138	Auto	Retail	Household Income
+1148145	Auto	Auto	Gender
+1148290	Auto	Auto	Gender
+1148430	Travel	Auto	Household Income
+1148964	Auto	Travel	Household Income
+1148998	Auto	Travel	Household Income
+1149089	Auto	Travel	Household Income
+1149093	Auto	Travel	Gender
+1149333	Real Estate	Retail	Household Income
+1149384	Auto	Travel	Age
+1149514	Other Vehicles	Travel	Age
+1149706	Real Estate	Travel	Age
+1150066	Real Estate	Travel	Age
+1150281	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1150515	Auto	Travel	Age
+1150648	Consumer Packaged Goods (CPG) Education	Retail	Age
+1150666	Other Vehicles	Travel	Gender
+1150793	Auto	Travel	Household Income
+1150796	Travel	Auto	Gender
+1151122	Retail	Auto	Household Income
+1024712	Auto	Travel	Household Income
+1024762	Retail	Auto	Age
+1025014	Retail	Travel	Household Income
+1025061	Real Estate	Auto	Age
+1164968	Real Estate	Retail	Household Income
+1177771	Retail	Travel	Household Income
+1177865	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1177875	Financial Products & Services Services	Auto	Age
+1177898	Auto	Retail	Household Income
+1178309	Financial Products & Services Services	Auto	Age
+1178498	Retail	Travel	Household Income
+1178516	Retail	Travel	Household Income
+1179109	Real Estate	Travel	Household Income
+1179276	Auto	Auto	Household Income
+1179335	Real Estate	Auto	Household Income
+1180003	Retail	Travel	Age
+1180108	Auto	Auto	Household Income
+1180170	Other Vehicles	Travel	Household Income
+1180524	Travel	Auto	Household Income
+1037932	Auto	Retail	Age
+1038013	Retail	Auto	Age
+1074617	Retail	Auto	Age
+1074790	Financial Products & Services Services	Auto	Household Income
+1074856	Travel	Travel	Household Income
+1075113	Real Estate	Travel	Household Income
+1075268	Auto	Retail	Age
+1075299	Auto	Retail	Household Income
+1075313	Retail	Auto	Age
+1075399	Retail	Retail	Age
+1075600	Financial Products & Services Services	Retail	Gender
+1075948	Auto	Travel	Household Income
+1076062	Financial Products & Services Services	Retail	Household Income
+1076252	Consumer Packaged Goods (CPG) Education	Retail	Age
+1076469	Auto	Auto	Age
+1076558	Other Vehicles	Auto	Gender
+1076661	Consumer Packaged Goods (CPG) Education	Retail	Age
+1076707	Travel	Travel	Age
+1076713	Retail	Travel	Age
+1076891	Retail	Retail	Household Income
+1077735	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1077872	Auto	Travel	Age
+1077953	Other Vehicles	Travel	Gender
+1019898	Consumer Packaged Goods (CPG) Education	Auto	Age
+1020206	Auto	Retail	Age
+1020289	Travel	Auto	Household Income
+1020374	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1020494	Real Estate	Travel	Household Income
+1020542	Consumer Packaged Goods (CPG) Education	Travel	Age
+1069729	Other Vehicles	Auto	Household Income
+1069842	Financial Products & Services Services	Travel	Age
+1069847	Auto	Retail	Age
+1069942	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1070202	Consumer Packaged Goods (CPG) Education	Travel	Age
+1070271	Financial Products & Services Services	Auto	Household Income
+1070615	Retail	Retail	Age
+1168098	Retail	Auto	Age
+1168132	Retail	Auto	Gender
+1168140	Travel	Travel	Age
+1168232	Auto	Auto	Age
+1168677	Auto	Auto	Household Income
+1156497	Auto	Travel	Household Income
+1168720	Retail	Auto	Household Income
+1169122	Real Estate	Travel	Age
+1169598	Travel	Auto	Household Income
+1169870	Retail	Auto	Age
+1170468	Auto	Auto	Age
+1170540	Auto	Retail	Household Income
+1170541	Retail	Travel	Gender
+1170656	Real Estate	Auto	Gender
+1171053	Other Vehicles	Auto	Household Income
+1171091	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1171600	Travel	Travel	Household Income
+1171723	Financial Products & Services Services	Retail	Age
+1171816	Other Vehicles	Auto	Gender
+1172189	Auto	Travel	Household Income
+1172271	Real Estate	Auto	Age
+1172429	Travel	Travel	Household Income
+1172478	Financial Products & Services Services	Auto	Gender
+1172486	Retail	Travel	Household Income
+1172625	Auto	Auto	Gender
+1172645	Financial Products & Services Services	Retail	Age
+1134072	Travel	Travel	Age
+1134203	Real Estate	Travel	Age
+1134454	Auto	Travel	Age
+1134518	Travel	Travel	Age
+1134527	Real Estate	Retail	Household Income
+1134634	Other Vehicles	Auto	Age
+1134707	Retail	Auto	Household Income
+1135283	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1135383	Retail	Retail	Household Income
+1135619	Real Estate	Travel	Gender
+1135743	Auto	Retail	Household Income
+1135798	Auto	Retail	Gender
+1135832	Real Estate	Auto	Age
+1136088	Financial Products & Services Services	Travel	Age
+1136226	Real Estate	Auto	Household Income
+1136404	Retail	Auto	Gender
+1136441	Retail	Auto	Gender
+1136477	Auto	Auto	Household Income
+1136683	Travel	Auto	Household Income
+1136949	Financial Products & Services Services	Auto	Household Income
+1137079	Auto	Auto	Household Income
+1137308	Financial Products & Services Services	Travel	Age
+1137415	Retail	Travel	Gender
+1011935	Other Vehicles	Auto	Household Income
+1217378	Travel	Retail	Household Income
+1217415	Retail	Travel	Household Income
+1217454	Auto	Auto	Age
+1217497	Real Estate	Auto	Age
+1218434	Financial Products & Services Services	Auto	Household Income
+1218503	Auto	Auto	Household Income
+1218719	Real Estate	Retail	Household Income
+1219195	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1020698	Retail	Retail	Household Income
+1020802	Auto	Auto	Household Income
+1020854	Real Estate	Travel	Household Income
+1020888	Financial Products & Services Services	Auto	Household Income
+1021074	Retail	Retail	Age
+1021098	Auto	Travel	Age
+1021180	Travel	Auto	Gender
+1062169	Real Estate	Auto	Household Income
+1062662	Real Estate	Travel	Household Income
+1062681	Auto	Travel	Gender
+1062739	Consumer Packaged Goods (CPG) Education	Travel	Age
+1062886	Other Vehicles	Retail	Gender
+1063306	Auto	Travel	Age
+1063544	Auto	Travel	Household Income
+1063782	Retail	Auto	Gender
+1063819	Consumer Packaged Goods (CPG) Education	Travel	Age
+1064197	Travel	Auto	Household Income
+1064332	Consumer Packaged Goods (CPG) Education	Auto	Age
+1065041	Other Vehicles	Retail	Age
+1066190	Other Vehicles	Auto	Household Income
+1104416	Auto	Retail	Gender
+1104622	Travel	Travel	Age
+1104839	Auto	Auto	Household Income
+1105122	Retail	Auto	Age
+1105234	Retail	Auto	Age
+1105457	Financial Products & Services Services	Auto	Age
+1105536	Financial Products & Services Services	Retail	Age
+1106541	Other Vehicles	Travel	Gender
+1106614	Real Estate	Auto	Age
+1172679	Other Vehicles	Auto	Household Income
+1172886	Auto	Travel	Household Income
+1173060	Auto	Travel	Age
+1173461	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1285065	Real Estate	Auto	Age
+1286078	Travel	Auto	Household Income
+1286593	Real Estate	Travel	Age
+1287219	Retail	Retail	Age
+1287244	Retail	Travel	Age
+1287456	Real Estate	Travel	Age
+1287464	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1287647	Financial Products & Services Services	Retail	Household Income
+1287773	Travel	Auto	Household Income
+1288771	Travel	Auto	Household Income
+1288846	Retail	Travel	Age
+1289746	Retail	Auto	Gender
+1289752	Real Estate	Auto	Household Income
+1273046	Financial Products & Services Services	Auto	Age
+1291267	Real Estate	Travel	Age
+1291422	Other Vehicles	Auto	Household Income
+1291815	Real Estate	Travel	Household Income
+1292337	Consumer Packaged Goods (CPG) Education	Auto	Age
+1292533	Other Vehicles	Retail	Gender
+1292676	Real Estate	Retail	Gender
+1292880	Other Vehicles	Travel	Age
+1292990	Other Vehicles	Travel	Household Income
+1293621	Financial Products & Services Services	Auto	Household Income
+1293804	Travel	Retail	Household Income
+1294773	Auto	Travel	Gender
+1294956	Other Vehicles	Auto	Household Income
+1295211	Retail	Travel	Gender
+1219259	Financial Products & Services Services	Travel	Gender
+1219402	Real Estate	Travel	Household Income
+1219520	Other Vehicles	Auto	Age
+1219624	Consumer Packaged Goods (CPG) Education	Travel	Age
+1195162	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1219659	Real Estate	Auto	Household Income
+1219696	Travel	Auto	Gender
+1219781	Travel	Auto	Household Income
+1219788	Other Vehicles	Travel	Household Income
+1219839	Real Estate	Travel	Household Income
+1220431	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1220753	Financial Products & Services Services	Retail	Household Income
+1220756	Financial Products & Services Services	Auto	Age
+1220780	Financial Products & Services Services	Retail	Household Income
+1220872	Retail	Auto	Household Income
+1220927	Auto	Retail	Household Income
+1221026	Auto	Retail	Gender
+1221515	Auto	Travel	Age
+1337368	Travel	Retail	Household Income
+1337540	Auto	Auto	Gender
+1337597	Financial Products & Services Services	Auto	Age
+1337980	Other Vehicles	Retail	Gender
+1338336	Other Vehicles	Auto	Household Income
+1338795	Auto	Travel	Household Income
+1339095	Auto	Travel	Age
+1339509	Retail	Auto	Gender
+1339803	Other Vehicles	Travel	Age
+1340136	Other Vehicles	Travel	Household Income
+1340200	Auto	Travel	Age
+1340427	Other Vehicles	Retail	Gender
+1107114	Retail	Retail	Age
+1107696	Auto	Auto	Age
+1108329	Financial Products & Services Services	Auto	Household Income
+1108573	Retail	Retail	Household Income
+1108685	Other Vehicles	Travel	Age
+1151456	Retail	Travel	Gender
+1151978	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1152079	Auto	Travel	Age
+1152099	Auto	Retail	Household Income
+1152235	Other Vehicles	Retail	Gender
+1152283	Real Estate	Auto	Household Income
+1152457	Other Vehicles	Travel	Household Income
+1152554	Travel	Auto	Household Income
+1152746	Retail	Auto	Gender
+1152912	Auto	Auto	Household Income
+1152944	Auto	Auto	Age
+1153332	Financial Products & Services Services	Auto	Gender
+1153557	Consumer Packaged Goods (CPG) Education	Travel	Age
+1238285	Auto	Travel	Gender
+1255873	Consumer Packaged Goods (CPG) Education	Auto	Age
+1256635	Retail	Travel	Gender
+1256754	Travel	Retail	Gender
+1256875	Retail	Travel	Age
+1256986	Financial Products & Services Services	Auto	Age
+1257084	Auto	Travel	Age
+1257163	Auto	Travel	Gender
+1257622	Travel	Retail	Household Income
+1257689	Travel	Travel	Household Income
+1257899	Travel	Retail	Household Income
+1257912	Retail	Auto	Age
+1124875	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1125212	Financial Products & Services Services	Retail	Gender
+1125253	Auto	Auto	Age
+1125259	Financial Products & Services Services	Travel	Gender
+1125330	Travel	Auto	Household Income
+1125356	Consumer Packaged Goods (CPG) Education	Auto	Age
+1125433	Retail	Auto	Age
+1125443	Retail	Travel	Household Income
+1126111	Retail	Travel	Age
+1126310	Retail	Auto	Household Income
+1126426	Retail	Auto	Gender
+1126573	Financial Products & Services Services	Auto	Household Income
+1126775	Auto	Auto	Household Income
+1126818	Other Vehicles	Retail	Household Income
+1127305	Financial Products & Services Services	Retail	Household Income
+1127414	Auto	Auto	Gender
+1127693	Retail	Retail	Age
+1127733	Travel	Auto	Household Income
+1127771	Travel	Travel	Gender
+1127825	Retail	Travel	Household Income
+1127999	Real Estate	Retail	Household Income
+1000553	Retail	Travel	Age
+1000679	Retail	Auto	Household Income
+1000817	Auto	Retail	Age
+1001055	Travel	Auto	Age
+1001281	Travel	Travel	Household Income
+1001399	Retail	Travel	Age
+1001548	Travel	Auto	Gender
+1002094	Retail	Auto	Gender
+1341236	Retail	Travel	Gender
+1341765	Auto	Auto	Age
+1342020	Real Estate	Retail	Household Income
+1342551	Travel	Travel	Age
+1352848	Auto	Travel	Household Income
+1353206	Financial Products & Services Services	Auto	Age
+1354325	Retail	Retail	Gender
+1354374	Auto	Travel	Age
+1354546	Auto	Auto	Gender
+1354995	Auto	Retail	Household Income
+1355615	Auto	Retail	Household Income
+1356034	Consumer Packaged Goods (CPG) Education	Auto	Age
+1356505	Retail	Travel	Gender
+1356694	Real Estate	Travel	Age
+1357988	Retail	Travel	Age
+1358116	Consumer Packaged Goods (CPG) Education	Travel	Age
+1012803	Consumer Packaged Goods (CPG) Education	Auto	Age
+1012925	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1013481	Auto	Auto	Age
+1013982	Financial Products & Services Services	Auto	Household Income
+1014926	Financial Products & Services Services	Auto	Household Income
+1014939	Auto	Travel	Age
+1015221	Other Vehicles	Travel	Gender
+1015410	Retail	Travel	Age
+1015438	Auto	Auto	Household Income
+1015470	Other Vehicles	Travel	Age
+1015537	Auto	Retail	Household Income
+1015690	Financial Products & Services Services	Travel	Age
+1015771	Other Vehicles	Auto	Household Income
+1015816	Retail	Auto	Age
+1258167	Other Vehicles	Travel	Gender
+1258170	Auto	Retail	Household Income
+1258278	Travel	Auto	Household Income
+1258925	Financial Products & Services Services	Auto	Household Income
+1259293	Retail	Auto	Gender
+1259298	Retail	Travel	Gender
+1259539	Auto	Travel	Household Income
+1259818	Other Vehicles	Auto	Age
+1259995	Travel	Travel	Gender
+1260282	Retail	Auto	Household Income
+1260313	Auto	Retail	Age
+1260367	Real Estate	Travel	Household Income
+1260597	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1248192	Auto	Auto	Age
+1261065	Travel	Auto	Household Income
+1261125	Retail	Retail	Age
+1078289	Auto	Auto	Age
+1108911	Auto	Travel	Age
+1108965	Consumer Packaged Goods (CPG) Education	Travel	Age
+1109060	Retail	Travel	Age
+1109183	Retail	Travel	Gender
+1109407	Auto	Travel	Gender
+1109429	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1109935	Other Vehicles	Retail	Age
+1110166	Auto	Travel	Household Income
+1111174	Other Vehicles	Travel	Household Income
+1113195	Real Estate	Retail	Household Income
+1113625	Retail	Retail	Age
+1114302	Auto	Auto	Age
+1114358	Other Vehicles	Travel	Age
+1114808	Financial Products & Services Services	Retail	Age
+1115613	Consumer Packaged Goods (CPG) Education	Travel	Age
+1015973	Retail	Auto	Household Income
+1016015	Financial Products & Services Services	Auto	Age
+1016075	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1016302	Other Vehicles	Travel	Household Income
+1016392	Other Vehicles	Travel	Age
+1016587	Financial Products & Services Services	Retail	Age
+1016592	Auto	Travel	Household Income
+1016601	Travel	Auto	Gender
+1054536	Financial Products & Services Services	Retail	Age
+1054997	Real Estate	Travel	Age
+1055204	Auto	Retail	Age
+1415568	Other Vehicles	Travel	Age
+1416615	Real Estate	Auto	Age
+1416664	Consumer Packaged Goods (CPG) Education	Travel	Age
+1416795	Auto	Auto	Gender
+1417211	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1417995	Retail	Travel	Household Income
+1418017	Retail	Travel	Age
+1418243	Real Estate	Auto	Household Income
+1418715	Auto	Travel	Household Income
+1419313	Retail	Auto	Age
+1419508	Financial Products & Services Services	Retail	Age
+1419610	Auto	Auto	Gender
+1419871	Other Vehicles	Auto	Gender
+1420398	Auto	Auto	Age
+1420522	Other Vehicles	Auto	Household Income
+1420559	Auto	Retail	Age
+1420695	Retail	Auto	Gender
+1420847	Auto	Travel	Age
+1421125	Other Vehicles	Travel	Gender
+1115958	Real Estate	Auto	Gender
+1117442	Real Estate	Retail	Household Income
+1118838	Auto	Auto	Age
+1119621	Other Vehicles	Travel	Age
+1120053	Retail	Retail	Household Income
+1120368	Travel	Auto	Household Income
+1120416	Other Vehicles	Auto	Age
+1120428	Auto	Auto	Household Income
+1120543	Travel	Travel	Age
+1120846	Auto	Travel	Age
+1120876	Real Estate	Auto	Age
+1120927	Other Vehicles	Travel	Age
+1120982	Auto	Auto	Gender
+1321998	Auto	Travel	Household Income
+1066281	Auto	Auto	Age
+1066334	Financial Products & Services Services	Travel	Age
+1066390	Financial Products & Services Services	Travel	Household Income
+1066583	Real Estate	Travel	Age
+1066912	Financial Products & Services Services	Travel	Age
+1067262	Retail	Auto	Household Income
+1067308	Other Vehicles	Travel	Household Income
+1067313	Financial Products & Services Services	Retail	Gender
+1067700	Financial Products & Services Services	Auto	Age
+1067871	Auto	Auto	Household Income
+1093223	Retail	Retail	Household Income
+1093334	Other Vehicles	Retail	Household Income
+1093750	Auto	Auto	Household Income
+1093936	Other Vehicles	Retail	Age
+1093976	Other Vehicles	Auto	Age
+1094190	Travel	Auto	Gender
+1094235	Retail	Auto	Age
+1421134	Travel	Travel	Age
+1421317	Retail	Travel	Age
+1422385	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1422391	Consumer Packaged Goods (CPG) Education	Travel	Age
+1422575	Auto	Auto	Gender
+1423113	Other Vehicles	Auto	Age
+1423223	Auto	Retail	Age
+1423808	Other Vehicles	Travel	Age
+1221759	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1221959	Travel	Travel	Age
+1222199	Financial Products & Services Services	Auto	Household Income
+1222311	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1222456	Retail	Retail	Age
+1222572	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1223061	Real Estate	Travel	Household Income
+1224083	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1224227	Retail	Retail	Age
+1224798	Other Vehicles	Auto	Age
+1202868	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1228286	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1228526	Retail	Travel	Household Income
+1228879	Travel	Auto	Age
+1229081	Other Vehicles	Auto	Household Income
+1230984	Retail	Travel	Gender
+1231561	Retail	Travel	Age
+1231610	Auto	Auto	Household Income
+1231678	Other Vehicles	Auto	Age
+1231722	Retail	Auto	Household Income
+1231739	Retail	Travel	Household Income
+1232037	Other Vehicles	Auto	Household Income
+1094294	Other Vehicles	Auto	Age
+1094519	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1094530	Other Vehicles	Auto	Age
+1094759	Auto	Travel	Household Income
+1094831	Auto	Retail	Household Income
+1095489	Other Vehicles	Travel	Age
+1095537	Auto	Auto	Gender
+1095835	Auto	Retail	Age
+1095928	Travel	Retail	Age
+1095929	Auto	Travel	Gender
+1153785	Financial Products & Services Services	Travel	Household Income
+1154105	Retail	Travel	Age
+1154184	Travel	Auto	Gender
+1154358	Auto	Auto	Gender
+1154894	Financial Products & Services Services	Auto	Gender
+1155050	Retail	Auto	Age
+1155210	Auto	Travel	Age
+1155410	Auto	Travel	Gender
+1155529	Other Vehicles	Auto	Age
+1155679	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1155746	Retail	Travel	Gender
+1155779	Auto	Travel	Age
+1156242	Travel	Auto	Household Income
+1034323	Auto	Auto	Household Income
+1156506	Auto	Travel	Household Income
+1156544	Other Vehicles	Retail	Household Income
+1157253	Real Estate	Retail	Age
+1157280	Auto	Auto	Age
+1157364	Auto	Travel	Household Income
+1157558	Other Vehicles	Retail	Age
+1232885	Real Estate	Auto	Household Income
+1232911	Retail	Travel	Age
+1232976	Real Estate	Auto	Age
+1233179	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1233223	Auto	Retail	Household Income
+1358270	Auto	Travel	Age
+1358719	Travel	Auto	Household Income
+1358833	Travel	Travel	Household Income
+1358960	Retail	Travel	Household Income
+1359793	Financial Products & Services Services	Auto	Age
+1360495	Auto	Auto	Age
+1360730	Retail	Travel	Gender
+1361169	Consumer Packaged Goods (CPG) Education	Auto	Age
+1361184	Retail	Travel	Household Income
+1361242	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1361363	Retail	Auto	Household Income
+1362046	Retail	Auto	Age
+1363470	Real Estate	Travel	Gender
+1363797	Auto	Auto	Age
+1364189	Travel	Retail	Age
+1316393	Retail	Retail	Household Income
+1326156	Real Estate	Auto	Household Income
+1326727	Travel	Travel	Age
+1327073	Retail	Auto	Household Income
+1327202	Retail	Travel	Household Income
+1327217	Auto	Travel	Gender
+1327366	Financial Products & Services Services	Travel	Household Income
+1327376	Retail	Auto	Household Income
+1327757	Retail	Travel	Gender
+1328038	Real Estate	Travel	Household Income
+1328471	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1157873	Retail	Retail	Age
+1158155	Retail	Retail	Age
+1158296	Retail	Retail	Gender
+1158362	Financial Products & Services Services	Auto	Age
+1158373	Auto	Travel	Age
+1158493	Other Vehicles	Travel	Age
+1159172	Retail	Retail	Gender
+1261346	Auto	Auto	Household Income
+1262134	Retail	Travel	Age
+1262721	Auto	Retail	Age
+1263759	Financial Products & Services Services	Auto	Age
+1263827	Auto	Auto	Household Income
+1263905	Retail	Auto	Gender
+1264422	Real Estate	Auto	Household Income
+1265435	Real Estate	Retail	Age
+1265649	Auto	Travel	Gender
+1265793	Retail	Travel	Household Income
+1266041	Financial Products & Services Services	Travel	Gender
+1266164	Auto	Travel	Household Income
+1266306	Retail	Travel	Household Income
+1266545	Travel	Auto	Gender
+1266940	Real Estate	Travel	Age
+1267220	Auto	Auto	Household Income
+1267236	Real Estate	Auto	Gender
+1267575	Real Estate	Auto	Household Income
+1267620	Other Vehicles	Auto	Age
+1267648	Real Estate	Retail	Age
+1267695	Financial Products & Services Services	Auto	Age
+1254894	Auto	Travel	Gender
+1268101	Auto	Auto	Household Income
+1328641	Auto	Retail	Age
+1329197	Auto	Retail	Gender
+1055243	Travel	Auto	Gender
+1055506	Auto	Travel	Household Income
+1055980	Travel	Auto	Gender
+1056017	Consumer Packaged Goods (CPG) Education	Retail	Age
+1056183	Travel	Auto	Gender
+1056196	Consumer Packaged Goods (CPG) Education	Retail	Age
+1057137	Real Estate	Retail	Household Income
+1057350	Real Estate	Travel	Age
+1057815	Retail	Travel	Age
+1058055	Real Estate	Travel	Age
+1059387	Other Vehicles	Travel	Gender
+1059654	Other Vehicles	Travel	Age
+1060681	Travel	Auto	Age
+1060719	Real Estate	Auto	Household Income
+1060735	Auto	Auto	Age
+1061093	Retail	Auto	Age
+1061641	Auto	Retail	Household Income
+1061655	Financial Products & Services Services	Travel	Household Income
+1061774	Auto	Travel	Age
+1061969	Real Estate	Travel	Age
+1061998	Auto	Auto	Age
+1088259	Real Estate	Travel	Age
+1088276	Retail	Auto	Household Income
+1088292	Retail	Travel	Age
+1088534	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1088641	Retail	Travel	Age
+1424726	Other Vehicles	Travel	Age
+1268208	Financial Products & Services Services	Travel	Age
+1268565	Travel	Travel	Age
+1268601	Financial Products & Services Services	Travel	Household Income
+1268788	Auto	Travel	Gender
+1368605	Auto	Auto	Gender
+1344346	Other Vehicles	Retail	Age
+1366807	Retail	Travel	Household Income
+1349373	Other Vehicles	Retail	Age
+1379832	Retail	Auto	Household Income
+1370817	Travel	Retail	Age
+1341760	Retail	Auto	Age
+1360175	Financial Products & Services Services	Travel	Household Income
+1383724	Auto	Travel	Gender
+1344451	Financial Products & Services Services	Auto	Household Income
+1361372	Other Vehicles	Travel	Household Income
+1410184	Travel	Travel	Gender
+1422000	Consumer Packaged Goods (CPG) Education	Auto	Age
+1403382	Retail	Travel	Age
+1434611	Other Vehicles	Retail	Gender
+1401185	Financial Products & Services Services	Auto	Household Income
+1408040	Real Estate	Auto	Household Income
+1408592	Real Estate	Retail	Household Income
+1438008	Travel	Retail	Household Income
+1441474	Travel	Auto	Age
+1000050	Auto	Travel	Household Income
+1000186	Retail	Travel	Household Income
+1000299	Retail	Retail	Household Income
+1000386	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1000498	Financial Products & Services Services	Retail	Age
+1038197	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1038312	Other Vehicles	Auto	Age
+1426254	Auto	Retail	Gender
+1426926	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1427128	Financial Products & Services Services	Auto	Household Income
+1427177	Auto	Travel	Household Income
+1427265	Real Estate	Auto	Household Income
+1427400	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1427940	Consumer Packaged Goods (CPG) Education	Auto	Age
+1427959	Retail	Retail	Household Income
+1428264	Real Estate	Auto	Household Income
+1428699	Other Vehicles	Travel	Household Income
+1428780	Auto	Auto	Age
+1428852	Retail	Auto	Age
+1428855	Retail	Auto	Age
+1429054	Retail	Travel	Gender
+1429563	Travel	Travel	Gender
+1430036	Auto	Travel	Gender
+1431232	Travel	Auto	Gender
+1431498	Retail	Travel	Age
+1432023	Consumer Packaged Goods (CPG) Education	Travel	Age
+1029312	Retail	Auto	Age
+1029397	Retail	Travel	Age
+1029726	Retail	Auto	Age
+1029758	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1030064	Consumer Packaged Goods (CPG) Education	Auto	Age
+1030221	Real Estate	Auto	Age
+1030401	Other Vehicles	Travel	Gender
+1233328	Real Estate	Retail	Household Income
+1233743	Other Vehicles	Auto	Household Income
+1233867	Real Estate	Travel	Gender
+1233879	Retail	Retail	Gender
+1233933	Financial Products & Services Services	Retail	Household Income
+1038719	Travel	Travel	Age
+1095970	Other Vehicles	Retail	Age
+1096124	Auto	Travel	Age
+1096315	Financial Products & Services Services	Auto	Gender
+1096500	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1096704	Travel	Travel	Age
+1096844	Real Estate	Auto	Household Income
+1096959	Other Vehicles	Travel	Household Income
+1097363	Other Vehicles	Auto	Age
+1097532	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1141418	Auto	Travel	Age
+1141584	Other Vehicles	Retail	Household Income
+1142141	Auto	Auto	Age
+1142154	Other Vehicles	Retail	Age
+1142179	Real Estate	Auto	Age
+1142240	Other Vehicles	Retail	Age
+1142468	Real Estate	Auto	Gender
+1142711	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1142819	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1143148	Auto	Auto	Household Income
+1143399	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1143539	Auto	Retail	Age
+1143737	Real Estate	Auto	Gender
+1143852	Auto	Travel	Gender
+1143942	Auto	Retail	Age
+1144168	Other Vehicles	Auto	Age
+1144501	Auto	Auto	Gender
+1144736	Real Estate	Auto	Household Income
+1144748	Other Vehicles	Travel	Age
+1159792	Other Vehicles	Travel	Household Income
+1234130	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1234221	Other Vehicles	Retail	Household Income
+1234327	Travel	Auto	Age
+1215017	Auto	Auto	Age
+1234871	Auto	Travel	Gender
+1235109	Financial Products & Services Services	Auto	Age
+1235199	Consumer Packaged Goods (CPG) Education	Retail	Age
+1235438	Retail	Travel	Household Income
+1235469	Travel	Travel	Household Income
+1235737	Consumer Packaged Goods (CPG) Education	Travel	Age
+1235815	Auto	Travel	Age
+1235963	Auto	Auto	Household Income
+1236121	Financial Products & Services Services	Travel	Household Income
+1236127	Auto	Travel	Age
+1236150	Real Estate	Travel	Age
+1236356	Consumer Packaged Goods (CPG) Education	Auto	Age
+1236410	Real Estate	Retail	Age
+1236524	Auto	Retail	Age
+1236570	Other Vehicles	Travel	Age
+1236650	Real Estate	Auto	Age
+1236681	Retail	Retail	Age
+1237142	Retail	Auto	Household Income
+1237249	Travel	Retail	Age
+1237349	Auto	Travel	Household Income
+1329456	Travel	Retail	Household Income
+1330342	Auto	Travel	Age
+1331641	Real Estate	Retail	Household Income
+1332379	Real Estate	Travel	Household Income
+1332462	Auto	Auto	Gender
+1333688	Real Estate	Auto	Household Income
+1333694	Retail	Auto	Age
+1333838	Travel	Auto	Gender
+1160115	Retail	Travel	Age
+1160174	Real Estate	Auto	Gender
+1160780	Retail	Auto	Age
+1160782	Auto	Auto	Household Income
+1160994	Retail	Travel	Age
+1161079	Retail	Retail	Age
+1161136	Real Estate	Travel	Household Income
+1161330	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1161533	Consumer Packaged Goods (CPG) Education	Travel	Age
+1161859	Other Vehicles	Auto	Household Income
+1074590	Other Vehicles	Auto	Age
+1161931	Financial Products & Services Services	Travel	Age
+1162200	Retail	Retail	Age
+1162266	Other Vehicles	Travel	Household Income
+1162529	Retail	Retail	Age
+1162575	Travel	Travel	Age
+1162750	Consumer Packaged Goods (CPG) Education	Auto	Age
+1162814	Real Estate	Auto	Household Income
+1162848	Financial Products & Services Services	Travel	Household Income
+1162933	Retail	Retail	Household Income
+1162993	Retail	Travel	Household Income
+1163071	Auto	Travel	Age
+1163166	Retail	Travel	Gender
+1163344	Auto	Retail	Household Income
+1163508	Retail	Travel	Household Income
+1163685	Real Estate	Auto	Age
+1268915	Other Vehicles	Travel	Household Income
+1269045	Auto	Retail	Age
+1269100	Retail	Travel	Gender
+1269136	Consumer Packaged Goods (CPG) Education	Auto	Age
+1193917	Other Vehicles	Auto	Household Income
+1193925	Retail	Auto	Household Income
+1194248	Other Vehicles	Retail	Household Income
+1194534	Auto	Auto	Age
+1194591	Auto	Retail	Age
+1194688	Retail	Retail	Household Income
+1194788	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1177701	Retail	Auto	Gender
+1195192	Travel	Auto	Age
+1195197	Financial Products & Services Services	Travel	Age
+1195650	Travel	Travel	Household Income
+1195739	Auto	Auto	Gender
+1196113	Other Vehicles	Auto	Gender
+1196506	Other Vehicles	Travel	Household Income
+1196818	Retail	Travel	Household Income
+1315911	Travel	Auto	Gender
+1305075	Financial Products & Services Services	Auto	Age
+1316468	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1317216	Financial Products & Services Services	Auto	Age
+1317234	Real Estate	Retail	Gender
+1317361	Travel	Auto	Gender
+1317449	Retail	Auto	Household Income
+1317717	Retail	Auto	Gender
+1318212	Financial Products & Services Services	Retail	Household Income
+1318555	Other Vehicles	Travel	Age
+1318801	Retail	Auto	Age
+1319628	Retail	Retail	Age
+1319815	Travel	Auto	Age
+1320656	Consumer Packaged Goods (CPG) Education	Retail	Age
+1320936	Real Estate	Auto	Household Income
+1334057	Other Vehicles	Travel	Age
+1334378	Auto	Retail	Household Income
+1334975	Financial Products & Services Services	Auto	Household Income
+1335324	Retail	Travel	Household Income
+1243975	Travel	Travel	Age
+1249069	Travel	Travel	Household Income
+1250260	Real Estate	Auto	Gender
+1260352	Auto	Auto	Household Income
+1274184	Other Vehicles	Auto	Age
+1300613	Consumer Packaged Goods (CPG) Education	Travel	Age
+1276784	Auto	Travel	Gender
+1290526	Retail	Travel	Age
+1292146	Real Estate	Travel	Household Income
+1300127	Other Vehicles	Retail	Age
+1282960	Financial Products & Services Services	Travel	Household Income
+1299599	Auto	Travel	Household Income
+1302926	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1305417	Retail	Auto	Age
+1334743	Financial Products & Services Services	Travel	Age
+1330099	Real Estate	Travel	Age
+1088700	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1089508	Other Vehicles	Travel	Age
+1089522	Retail	Travel	Age
+1089698	Auto	Auto	Household Income
+1089763	Financial Products & Services Services	Travel	Age
+1089787	Retail	Auto	Gender
+1090784	Other Vehicles	Travel	Age
+1091012	Travel	Auto	Household Income
+1091354	Consumer Packaged Goods (CPG) Education	Auto	Age
+1091407	Auto	Auto	Household Income
+1091672	Retail	Auto	Age
+1269403	Retail	Auto	Age
+1270123	Retail	Retail	Gender
+1270598	Retail	Retail	Household Income
+1270951	Other Vehicles	Auto	Age
+1270956	Other Vehicles	Auto	Age
+1271152	Auto	Travel	Age
+1271334	Real Estate	Retail	Household Income
+1271536	Auto	Travel	Gender
+1271592	Financial Products & Services Services	Retail	Age
+1271686	Financial Products & Services Services	Auto	Age
+1272532	Consumer Packaged Goods (CPG) Education	Retail	Age
+1272674	Financial Products & Services Services	Auto	Age
+1272900	Retail	Auto	Household Income
+1272995	Other Vehicles	Auto	Age
+1260757	Retail	Auto	Gender
+1273804	Other Vehicles	Auto	Household Income
+1274359	Auto	Auto	Age
+1275350	Real Estate	Travel	Household Income
+1275501	Consumer Packaged Goods (CPG) Education	Retail	Age
+1275509	Financial Products & Services Services	Auto	Gender
+1275559	Financial Products & Services Services	Auto	Household Income
+1275617	Financial Products & Services Services	Auto	Age
+1276101	Retail	Auto	Age
+1276132	Auto	Retail	Age
+1038733	Financial Products & Services Services	Auto	Age
+1038747	Auto	Travel	Household Income
+1038793	Real Estate	Travel	Household Income
+1039336	Retail	Retail	Age
+1039552	Retail	Travel	Household Income
+1039743	Travel	Auto	Gender
+1321018	Retail	Auto	Age
+1321607	Consumer Packaged Goods (CPG) Education	Auto	Age
+1322013	Retail	Auto	Age
+1322119	Other Vehicles	Auto	Household Income
+1322351	Auto	Retail	Household Income
+1322646	Financial Products & Services Services	Travel	Household Income
+1324029	Consumer Packaged Goods (CPG) Education	Auto	Age
+1324087	Auto	Travel	Age
+1324500	Auto	Auto	Household Income
+1325143	Auto	Travel	Household Income
+1311245	Auto	Travel	Age
+1342664	Retail	Travel	Household Income
+1343065	Real Estate	Auto	Household Income
+1010974	Retail	Auto	Household Income
+1011123	Real Estate	Retail	Household Income
+1011279	Auto	Auto	Age
+1011348	Auto	Auto	Household Income
+1011356	Other Vehicles	Travel	Household Income
+1011698	Financial Products & Services Services	Travel	Gender
+1048860	Other Vehicles	Auto	Household Income
+1049019	Retail	Travel	Household Income
+1049189	Consumer Packaged Goods (CPG) Education	Travel	Age
+1049237	Other Vehicles	Auto	Gender
+1049755	Retail	Auto	Gender
+1049946	Other Vehicles	Auto	Gender
+1050083	Other Vehicles	Retail	Age
+1050201	Auto	Retail	Household Income
+1050424	Other Vehicles	Auto	Age
+1050564	Retail	Travel	Age
+1051271	Real Estate	Retail	Household Income
+1092385	Other Vehicles	Travel	Age
+1092702	Retail	Auto	Household Income
+1092755	Retail	Auto	Gender
+1093001	Travel	Auto	Household Income
+1093008	Auto	Auto	Age
+1093062	Real Estate	Travel	Household Income
+1093146	Retail	Travel	Age
+1093163	Consumer Packaged Goods (CPG) Education	Travel	Age
+1137678	Retail	Travel	Household Income
+1137748	Retail	Travel	Gender
+1137762	Retail	Travel	Age
+1137771	Auto	Travel	Age
+1137874	Financial Products & Services Services	Travel	Household Income
+1138054	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1138282	Auto	Retail	Age
+1138414	Retail	Auto	Gender
+1030738	Auto	Travel	Age
+1030984	Retail	Retail	Gender
+1031499	Travel	Travel	Household Income
+1031508	Other Vehicles	Auto	Household Income
+1031701	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1031841	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1031949	Auto	Retail	Age
+1032428	Auto	Travel	Age
+1032557	Financial Products & Services Services	Travel	Age
+1033275	Retail	Travel	Household Income
+1033361	Auto	Auto	Household Income
+1033426	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1033521	Retail	Retail	Gender
+1033591	Real Estate	Auto	Household Income
+1039752	Retail	Auto	Age
+1039913	Auto	Travel	Household Income
+1040117	Financial Products & Services Services	Auto	Gender
+1040611	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1040620	Financial Products & Services Services	Auto	Gender
+1040635	Real Estate	Travel	Age
+1040646	Auto	Travel	Age
+1040909	Financial Products & Services Services	Auto	Age
+1040931	Travel	Auto	Age
+1041267	Retail	Travel	Household Income
+1041283	Financial Products & Services Services	Auto	Age
+1041404	Real Estate	Auto	Gender
+1041407	Other Vehicles	Travel	Age
+1041424	Retail	Travel	Age
+1041524	Other Vehicles	Travel	Gender
+1042019	Auto	Travel	Age
+1078489	Retail	Auto	Age
+1079160	Retail	Auto	Household Income
+1079173	Auto	Travel	Household Income
+1079228	Travel	Retail	Age
+1144772	Real Estate	Auto	Household Income
+1145931	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1146022	Other Vehicles	Auto	Gender
+1146379	Retail	Retail	Household Income
+1146569	Other Vehicles	Auto	Gender
+1146706	Retail	Auto	Age
+1147367	Travel	Auto	Age
+1021226	Consumer Packaged Goods (CPG) Education	Travel	Age
+1021351	Financial Products & Services Services	Auto	Age
+1051545	Other Vehicles	Travel	Gender
+1052375	Financial Products & Services Services	Travel	Age
+1052833	Retail	Retail	Household Income
+1053204	Real Estate	Retail	Gender
+1053451	Retail	Auto	Age
+1053695	Financial Products & Services Services	Auto	Age
+1053946	Financial Products & Services Services	Travel	Age
+1053994	Other Vehicles	Retail	Household Income
+1054003	Real Estate	Travel	Gender
+1196908	Financial Products & Services Services	Auto	Age
+1196960	Real Estate	Retail	Age
+1197082	Other Vehicles	Auto	Household Income
+1197482	Retail	Travel	Age
+1197567	Retail	Travel	Gender
+1198057	Retail	Retail	Household Income
+1198292	Retail	Auto	Age
+1200152	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1201135	Retail	Travel	Household Income
+1201221	Financial Products & Services Services	Travel	Gender
+1201787	Auto	Auto	Age
+1201908	Auto	Travel	Household Income
+1202014	Auto	Travel	Household Income
+1202092	Auto	Auto	Age
+1202119	Retail	Travel	Age
+1202484	Auto	Auto	Age
+1202669	Auto	Auto	Household Income
+1202830	Auto	Retail	Age
+1181872	Auto	Retail	Household Income
+1204207	Real Estate	Auto	Age
+1204805	Auto	Auto	Gender
+1205179	Consumer Packaged Goods (CPG) Education	Retail	Gender
+1033609	Financial Products & Services Services	Travel	Household Income
+1033619	Real Estate	Travel	Household Income
+1033756	Financial Products & Services Services	Travel	Age
+1070698	Real Estate	Travel	Gender
+1071046	Auto	Auto	Household Income
+1071128	Auto	Retail	Age
+1071484	Retail	Auto	Age
+1071833	Retail	Retail	Age
+1072322	Auto	Travel	Household Income
+1072351	Travel	Travel	Age
+1072453	Financial Products & Services Services	Travel	Age
+1072541	Real Estate	Auto	Household Income
+1237386	Travel	Auto	Age
+1237467	Financial Products & Services Services	Auto	Household Income
+1237747	Travel	Travel	Age
+1237784	Auto	Travel	Age
+1238078	Auto	Travel	Age
+1238197	Auto	Auto	Age
+1238259	Other Vehicles	Auto	Age
+1219643	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1238306	Other Vehicles	Auto	Age
+1238403	Retail	Travel	Age
+1238627	Financial Products & Services Services	Retail	Household Income
+1238745	Retail	Auto	Gender
+1238961	Real Estate	Retail	Gender
+1239398	Financial Products & Services Services	Auto	Household Income
+1239455	Travel	Travel	Age
+1239828	Real Estate	Auto	Age
+1239926	Retail	Auto	Gender
+1239935	Retail	Auto	Age
+1240450	Other Vehicles	Auto	Gender
+1241245	Auto	Auto	Household Income
+1021358	Consumer Packaged Goods (CPG) Education	Travel	Age
+1021426	Financial Products & Services Services	Travel	Age
+1021440	Travel	Travel	Household Income
+1021851	Financial Products & Services Services	Retail	Household Income
+1022079	Travel	Travel	Age
+1022215	Auto	Travel	Gender
+1022259	Retail	Travel	Gender
+1022915	Retail	Travel	Household Income
+1022937	Auto	Auto	Household Income
+1023011	Travel	Travel	Household Income
+1023158	Real Estate	Retail	Household Income
+1023422	Retail	Travel	Gender
+1023432	Auto	Auto	Household Income
+1023442	Financial Products & Services Services	Retail	Age
+1023599	Travel	Auto	Gender
+1023675	Real Estate	Travel	Household Income
+1023853	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1163812	Auto	Retail	Household Income
+1163899	Auto	Auto	Household Income
+1163928	Retail	Auto	Gender
+1164151	Retail	Travel	Age
+1164516	Travel	Auto	Age
+1164684	Travel	Auto	Gender
+1164754	Retail	Retail	Age
+1164946	Financial Products & Services Services	Auto	Household Income
+1108845	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1165091	Retail	Auto	Household Income
+1165597	Auto	Auto	Age
+1165613	Other Vehicles	Auto	Gender
+1165714	Consumer Packaged Goods (CPG) Education	Travel	Age
+1205412	Auto	Retail	Household Income
+1206473	Auto	Travel	Age
+1206819	Consumer Packaged Goods (CPG) Education	Travel	Age
+1206973	Consumer Packaged Goods (CPG) Education	Auto	Age
+1207673	Other Vehicles	Auto	Household Income
+1207807	Other Vehicles	Auto	Household Income
+1207819	Financial Products & Services Services	Auto	Age
+1343275	Other Vehicles	Retail	Household Income
+1343478	Retail	Travel	Age
+1343612	Retail	Travel	Household Income
+1343818	Travel	Retail	Age
+1343897	Financial Products & Services Services	Auto	Age
+1343944	Other Vehicles	Travel	Household Income
+1344968	Financial Products & Services Services	Auto	Household Income
+1345135	Auto	Travel	Age
+1346194	Financial Products & Services Services	Auto	Household Income
+1346667	Auto	Travel	Household Income
+1346719	Travel	Auto	Gender
+1347322	Travel	Retail	Household Income
+1347836	Real Estate	Retail	Age
+1348749	Real Estate	Auto	Household Income
+1348779	Financial Products & Services Services	Retail	Age
+1348931	Travel	Auto	Age
+1349074	Consumer Packaged Goods (CPG) Education	Travel	Age
+1349360	Other Vehicles	Retail	Household Income
+1351243	Financial Products & Services Services	Travel	Gender
+1351570	Retail	Auto	Household Income
+1352189	Retail	Travel	Household Income
+1352377	Financial Products & Services Services	Retail	Gender
+1352435	Financial Products & Services Services	Auto	Household Income
+1352530	Retail	Auto	Age
+1144430	Other Vehicles	Retail	Age
+1241338	Auto	Auto	Household Income
+1241662	Travel	Auto	Household Income
+1242352	Other Vehicles	Retail	Household Income
+1242410	Other Vehicles	Auto	Age
+1244281	Travel	Retail	Household Income
+1244640	Retail	Travel	Age
+1244750	Travel	Retail	Household Income
+1246286	Real Estate	Travel	Gender
+1246610	Real Estate	Travel	Household Income
+1331657	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1310589	Retail	Travel	Household Income
+1324854	Consumer Packaged Goods (CPG) Education	Auto	Age
+1309292	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1306396	Financial Products & Services Services	Auto	Age
+1326697	Financial Products & Services Services	Retail	Household Income
+1304333	Retail	Auto	Household Income
+1310652	Auto	Retail	Age
+1328756	Auto	Auto	Gender
+1034400	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1034623	Retail	Travel	Gender
+1034658	Real Estate	Auto	Age
+1034769	Auto	Retail	Gender
+1034910	Other Vehicles	Auto	Household Income
+1035129	Consumer Packaged Goods (CPG) Education	Auto	Age
+1035255	Other Vehicles	Travel	Household Income
+1035408	Auto	Retail	Age
+1035534	Financial Products & Services Services	Travel	Gender
+1035541	Real Estate	Travel	Household Income
+1035576	Real Estate	Auto	Age
+1035577	Real Estate	Travel	Household Income
+1166203	Real Estate	Retail	Age
+1166242	Auto	Auto	Gender
+1166265	Retail	Travel	Household Income
+1166389	Auto	Auto	Age
+1166493	Real Estate	Auto	Age
+1166637	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1166981	Auto	Retail	Household Income
+1166991	Financial Products & Services Services	Retail	Household Income
+1167019	Auto	Auto	Age
+1167269	Other Vehicles	Auto	Household Income
+1167399	Auto	Travel	Household Income
+1167426	Auto	Travel	Household Income
+1167538	Retail	Travel	Household Income
+1167625	Travel	Auto	Age
+1167825	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1167949	Retail	Travel	Household Income
+1276153	Auto	Auto	Age
+1277096	Retail	Travel	Household Income
+1277190	Other Vehicles	Travel	Gender
+1277450	Other Vehicles	Auto	Age
+1278732	Travel	Auto	Age
+1278737	Travel	Auto	Age
+1278761	Retail	Auto	Gender
+1278802	Other Vehicles	Auto	Age
+1279046	Real Estate	Travel	Age
+1279345	Real Estate	Auto	Household Income
+1279347	Consumer Packaged Goods (CPG) Education	Auto	Age
+1280077	Other Vehicles	Retail	Household Income
+1280170	Other Vehicles	Retail	Age
+1280366	Travel	Retail	Age
+1281901	Retail	Retail	Household Income
+1267982	Travel	Retail	Gender
+1144475	Other Vehicles	Auto	Household Income
+1161941	Retail	Auto	Household Income
+1136157	Travel	Retail	Age
+1145780	Financial Products & Services Services	Auto	Age
+1054190	Retail	Auto	Age
+1054263	Other Vehicles	Travel	Household Income
+1054330	Auto	Auto	Gender
+1054427	Travel	Retail	Age
+1085017	Retail	Travel	Age
+1085045	Travel	Travel	Household Income
+1085681	Auto	Travel	Household Income
+1085835	Travel	Auto	Age
+1085905	Travel	Retail	Age
+1086069	Financial Products & Services Services	Auto	Gender
+1086331	Retail	Auto	Gender
+1086715	Real Estate	Auto	Household Income
+1086867	Auto	Auto	Age
+1086889	Retail	Auto	Household Income
+1086900	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1086940	Consumer Packaged Goods (CPG) Education	Travel	Age
+1086996	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1087401	Consumer Packaged Goods (CPG) Education	Retail	Age
+1087407	Real Estate	Travel	Age
+1087572	Retail	Retail	Age
+1087684	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1087726	Auto	Travel	Household Income
+1087964	Other Vehicles	Auto	Household Income
+1087965	Financial Products & Services Services	Retail	Age
+1035646	Auto	Auto	Age
+1035762	Financial Products & Services Services	Travel	Household Income
+1035985	Travel	Retail	Age
+1036693	Real Estate	Auto	Household Income
+1036720	Retail	Travel	Age
+1036790	Retail	Travel	Household Income
+1138608	Auto	Auto	Age
+1138964	Other Vehicles	Travel	Gender
+1139433	Auto	Auto	Age
+1139483	Consumer Packaged Goods (CPG) Education	Travel	Household Income
+1139519	Retail	Auto	Age
+1139630	Auto	Travel	Household Income
+1139689	Travel	Auto	Age
+1139771	Real Estate	Travel	Age
+1140202	Retail	Travel	Age
+1140274	Real Estate	Auto	Household Income
+1140453	Travel	Auto	Age
+1140829	Financial Products & Services Services	Auto	Household Income
+1140923	Financial Products & Services Services	Travel	Household Income
+1140991	Retail	Travel	Age
+1140994	Retail	Auto	Age
+1141126	Auto	Auto	Age
+1141206	Retail	Retail	Age
+1141257	Retail	Retail	Household Income
+1017264	Real Estate	Retail	Household Income
+1018099	Auto	Auto	Age
+1018658	Travel	Retail	Age
+1018711	Auto	Travel	Age
+1018808	Financial Products & Services Services	Auto	Age
+1019407	Other Vehicles	Retail	Household Income
+1282092	Auto	Retail	Household Income
+1282437	Auto	Travel	Age
+1282634	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1282710	Other Vehicles	Travel	Household Income
+1282991	Travel	Auto	Age
+1283206	Retail	Travel	Age
+1283280	Travel	Auto	Age
+1284091	Travel	Travel	Household Income
+1284334	Travel	Retail	Household Income
+1284359	Travel	Retail	Age
+1284694	Auto	Auto	Age
+1285015	Auto	Auto	Age
+1079242	Other Vehicles	Retail	Household Income
+1079473	Travel	Auto	Gender
+1079650	Travel	Travel	Gender
+1079836	Other Vehicles	Auto	Age
+1079946	Retail	Travel	Gender
+1079992	Consumer Packaged Goods (CPG) Education	Auto	Age
+1079993	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1080057	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1080442	Financial Products & Services Services	Auto	Gender
+1080465	Retail	Travel	Household Income
+1080585	Travel	Auto	Household Income
+1080643	Travel	Travel	Age
+1080717	Travel	Retail	Household Income
+1080955	Auto	Auto	Household Income
+1081106	Retail	Travel	Age
+1081335	Consumer Packaged Goods (CPG) Education	Travel	Age
+1081361	Auto	Travel	Household Income
+1088122	Real Estate	Travel	Gender
+1209018	Other Vehicles	Retail	Household Income
+1209468	Real Estate	Travel	Age
+1211344	Consumer Packaged Goods (CPG) Education	Travel	Age
+1212195	Retail	Retail	Gender
+1212942	Travel	Travel	Age
+1213031	Other Vehicles	Travel	Household Income
+1213079	Financial Products & Services Services	Retail	Age
+1213382	Auto	Auto	Age
+1214163	Travel	Auto	Household Income
+1214242	Auto	Travel	Age
+1214733	Travel	Auto	Gender
+1214763	Other Vehicles	Auto	Gender
+1214881	Travel	Travel	Gender
+1214988	Retail	Travel	Gender
+1191407	Auto	Travel	Age
+1215754	Retail	Retail	Household Income
+1216242	Travel	Auto	Gender
+1216446	Retail	Travel	Household Income
+1216552	Financial Products & Services Services	Retail	Age
+1216612	Retail	Auto	Household Income
+1216717	Auto	Retail	Gender
+1216735	Travel	Auto	Age
+1216748	Financial Products & Services Services	Retail	Household Income
+1216992	Retail	Travel	Household Income
+1217047	Auto	Travel	Household Income
+1217052	Auto	Auto	Age
+1217319	Auto	Auto	Age
+1145783	Auto	Auto	Age
+1145789	Financial Products & Services Services	Travel	Age
+1019481	Retail	Auto	Age
+1019814	Travel	Auto	Age
+1019858	Real Estate	Travel	Household Income
+1072542	Real Estate	Retail	Gender
+1072553	Consumer Packaged Goods (CPG) Education	Travel	Age
+1073045	Real Estate	Auto	Age
+1073468	Financial Products & Services Services	Travel	Age
+1073563	Real Estate	Auto	Age
+1074095	Auto	Auto	Age
+1074099	Consumer Packaged Goods (CPG) Education	Auto	Age
+1074226	Financial Products & Services Services	Travel	Household Income
+1074247	Retail	Auto	Gender
+1074256	Retail	Travel	Household Income
+1074259	Retail	Retail	Household Income
+1074343	Financial Products & Services Services	Auto	Gender
+1074472	Auto	Auto	Household Income
+1074492	Consumer Packaged Goods (CPG) Education	Auto	Household Income
+1074511	Real Estate	Retail	Age
+1103328	Financial Products & Services Services	Auto	Household Income
+1103473	Auto	Retail	Age
+1103575	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1103597	Travel	Auto	Gender
+1103655	Travel	Auto	Household Income
+1103713	Auto	Travel	Age
+1103845	Financial Products & Services Services	Retail	Gender
+1104001	Other Vehicles	Travel	Age
+1104203	Consumer Packaged Goods (CPG) Education	Retail	Age
+1104225	Financial Products & Services Services	Retail	Gender
+1104233	Real Estate	Travel	Age
+1104321	Retail	Auto	Age
+1081420	Financial Products & Services Services	Auto	Age
+1081444	Retail	Auto	Age
+1081631	Retail	Auto	Household Income
+1121907	Financial Products & Services Services	Auto	Household Income
+1123043	Real Estate	Travel	Household Income
+1123445	Travel	Auto	Age
+1123759	Real Estate	Travel	Gender
+1124161	Auto	Travel	Age
+1124245	Retail	Retail	Age
+1124335	Retail	Travel	Household Income
+1024017	Real Estate	Travel	Household Income
+1024034	Retail	Retail	Household Income
+1024119	Other Vehicles	Auto	Household Income
+1024370	Retail	Auto	Household Income
+1067887	Other Vehicles	Auto	Household Income
+1067945	Real Estate	Auto	Household Income
+1068090	Auto	Travel	Age
+1068216	Retail	Auto	Age
+1068448	Real Estate	Auto	Age
+1068509	Financial Products & Services Services	Auto	Household Income
+1068621	Other Vehicles	Retail	Age
+1068659	Travel	Travel	Age
+1068673	Auto	Auto	Household Income
+1069003	Other Vehicles	Auto	Age
+1069017	Retail	Travel	Household Income
+1069041	Real Estate	Travel	Age
+1069064	Auto	Auto	Household Income
+1069370	Financial Products & Services Services	Auto	Age
+1069538	Retail	Travel	Gender
+1144011	Other Vehicles	Retail	Gender
+1151573	Retail	Retail	Household Income
+1121876	Travel	Travel	Age
+1140561	Auto	Auto	Age
+1155169	Financial Products & Services Services	Retail	Gender
+1164580	Other Vehicles	Travel	Age
+1175557	Retail	Retail	Age
+1193802	Other Vehicles	Travel	Age
+1194489	Travel	Travel	Household Income
+1173797	Travel	Auto	Household Income
+1179669	Other Vehicles	Auto	Age
+1181956	Retail	Travel	Gender
+1172030	Financial Products & Services Services	Auto	Age
+1249589	Retail	Auto	Gender
+1254376	Auto	Travel	Household Income
+1219682	Real Estate	Auto	Age
+1217514	Retail	Retail	Age
+1233791	Other Vehicles	Retail	Gender
+1325797	Auto	Travel	Gender
+1335373	Retail	Travel	Age
+1335955	Financial Products & Services Services	Travel	Age
+1336028	Real Estate	Travel	Age
+1336489	Consumer Packaged Goods (CPG) Education	Auto	Gender
+1336597	Retail	Travel	Household Income
+1336745	Auto	Travel	Household Income
+1337250	Auto	Auto	Age
+1088187	Other Vehicles	Auto	Gender
+1088223	Retail	Travel	Household Income
+1133482	Auto	Travel	Gender
+1133612	Other Vehicles	Auto	Household Income
+1133945	Auto	Travel	Age
+1246861	Auto	Auto	Household Income
+1247353	Financial Products & Services Services	Retail	Age
+1247470	Travel	Travel	Age
+1247658	Consumer Packaged Goods (CPG) Education	Retail	Household Income
+1227149	Retail	Travel	Household Income
+1234682	Consumer Packaged Goods (CPG) Education	Travel	Age
+1248300	Consumer Packaged Goods (CPG) Education	Auto	Age
+1248431	Other Vehicles	Travel	Household Income
+1249360	Travel	Travel	Household Income
+1249438	Financial Products & Services Services	Auto	Household Income
+1249488	Travel	Travel	Gender
+1249614	Retail	Auto	Gender
+1249657	Other Vehicles	Travel	Household Income
+1249785	Auto	Retail	Gender
+1250032	Auto	Travel	Age
+1250263	Other Vehicles	Auto	Gender
+1250279	Other Vehicles	Auto	Age
+1250303	Travel	Auto	Household Income
+1250357	Consumer Packaged Goods (CPG) Education	Travel	Age
+1252820	Retail	Travel	Age
+1252881	Auto	Retail	Household Income
+1252964	Auto	Travel	Household Income
+1253117	Other Vehicles	Auto	Age
+1253623	Consumer Packaged Goods (CPG) Education	Travel	Gender
+1254201	Financial Products & Services Services	Travel	Age
+1254229	Financial Products & Services Services	Travel	Age
+1254576	Financial Products & Services Services	Auto	Age
+1037053	Travel	Travel	Age
+1037261	Real Estate	Auto	Age
+1037854	Real Estate	Auto	Age

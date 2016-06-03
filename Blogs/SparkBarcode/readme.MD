@@ -5,11 +5,10 @@ SparkBarcode Blog/Demo
 By David Bayard
 January 21, 2016
 
-Find the blog post here: xxxxxxxxxx
-You can also find a PDF of the blog in the BLOG_spark_barcode.pdf file.
+Find the blog post in the Blog_Html folder.
 Find the github here: https://github.com/oracle/BigDataLite/Blogs/SparkBarcode
 
-This was originally built for Big Data Lite VM 4.3, but has been modified to work on Big Data Lite VM 4.4.
+This was originally built for Big Data Lite VM 4.3, but has been modified to work on Big Data Lite VM 4.5.
 
 ------------------------------
 

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- OrdSimpleFaceReader configuration file -->
+
+<configuration>
+     <property>
+         <name>oracle.ord.hadoop.ordfacereader</name>
+         <value>oracle.ord.hadoop.OrdSimpleFaceReader</value>
+     </property>
+     <property>
+         <name>oracle.ord.hadoop.ordsimplefacereader.imagedir</name>
+         <value>/u01/oracle-spatial-graph/multimedia/example/facetrain/faces/bigdata</value> 
+     </property>
+     <property>
+         <name>oracle.ord.hadoop.ordsimplefacereader.dirmap</name>
+         <value>/u01/oracle-spatial-graph/multimedia/example/facetrain/faces/bigdata/dirmap.txt</value>
+     </property>
+</configuration>

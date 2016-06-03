@@ -17,10 +17,15 @@
  *  @since   1.1
  */
 
+ /* for the latest version of this sample java code, check out:
+ /u01/oracle-spatial-graph/multimedia/example/sample/oracle/ord/hadoop/demo/OrdFaceDetectionSample.java
+ */
+ 
+ 
 import oracle.ord.hadoop.mapreduce.OrdFrameProcessor;
 import oracle.ord.hadoop.mapreduce.OrdImageWritable;
-import static oracle.ord.hadoop.mapreduce.OrdOpenCVObjectRecognizer.BufferedImageToMat;
-import static oracle.ord.hadoop.mapreduce.OrdOpenCVObjectRecognizer.MatToBufferedImage;
+import static oracle.ord.hadoop.mapreduce.OrdUtil.BufferedImageToMat;
+import static oracle.ord.hadoop.mapreduce.OrdUtil.MatToBufferedImage;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.Text;
 import org.opencv.core.CvType;

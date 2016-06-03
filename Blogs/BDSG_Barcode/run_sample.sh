@@ -36,7 +36,7 @@ export MMA_HOME=/opt/oracle/oracle-spatial-graph/multimedia
 
 echo Compiling
 cd OrdFaceDetection
-javac -cp ${MMA_HOME}/lib/ordhadoop-multimedia-analytics.jar:${MMA_HOME}/opencv_3.0.0/opencv-300.jar:/usr/lib/hadoop/* OrdFaceDetectionSample.java
+javac -cp ${MMA_HOME}/lib/ordhadoop-multimedia-analytics.jar:${MMA_HOME}/opencv_3.1.0/opencv-310.jar:/usr/lib/hadoop/* OrdFaceDetectionSample.java
 
 echo Running
 

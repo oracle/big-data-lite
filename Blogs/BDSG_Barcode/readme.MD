@@ -8,7 +8,7 @@ April 11, 2016
 You can also find a html version of the blog in the Blog_Html subdirectory.
 Find the github here: https://github.com/oracle/BigDataLite/Blogs/SparkBarcode
 
-This was originally built for Big Data Lite VM 4.4.
+This was originally built for Big Data Lite VM 4.4 and has been updated for v 4.5
 
 ------------------------------
 
