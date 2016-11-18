@@ -1,0 +1,60 @@
+#!/bin/bash
+# chkconfig: 345 95 15
+# description: Oracle BigData Spatial an Graph consoles init/start script
+#
+### BEGIN INIT INFO
+# Provides:          bdsg
+# Short-Description: BDSG Consoles
+# Default-Start:     3 4 5
+# Default-Stop:      0 1 2 6
+# Required-Start:    $syslog $remote_fs
+# Required-Stop:     $syslog $remote_fs
+# Should-Start:
+# Should-Stop:
+### END INIT INFO
+
+   # Source function library.
+   . /etc/init.d/functions
+   BDSGHOME=/opt/oracle/oracle-spatial-graph/spatial/web-server
+   
+   hostname=`hostname`
+   USER=oracle
+
+   start() {
+      nohup $BDSGHOME/start-server.sh &
+      sleep 10
+   }
+
+   stop() {
+       ps -ef | grep webserver.jar | grep -v grep | awk '{print $2}' | xargs sudo kill
+   }
+   status() {
+      output=`ps -ef | grep webserver.jar | grep -v grep | wc -l`
+      if [ $output -eq 0 ]; then
+         echo "Oracle BigData Spatial and Graph Consoles are stopped"
+         exit 3
+      else
+         echo "Oracle BigData Spatial and Graph Consoles are started"
+         exit 0
+      fi
+   }
+
+   case "$1" in
+    start)
+        start
+        ;;
+	stop)
+        stop
+        ;;
+    retart)
+        stop
+        start
+        ;;
+    status)
+        status
+        ;;
+    *)
+         echo "Usage: $0 {start|stop|restart|status}"
+   esac
+
+   exit 0
