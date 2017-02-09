@@ -21,7 +21,7 @@ genres ARRAY(RECORD( cid String,id integer,name String )),\
 PRIMARY KEY (id) )"
 
 execute "drop index if exists genreIndex on movie"
-execute "create index genreIndex on movie(genres.id)"
+execute "create index genreIndex on movie(genres[].id)"
 execute "create index movieNameIndex on movie (original_title)"
 
 
