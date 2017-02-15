@@ -1,6 +1,341 @@
-<html>  <head>    <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">    <title>Oracle Big Data Lite - Getting Started</title>    <link href="./img/bigdatalite.css" rel="stylesheet" type="text/css">  </head>  <body>    <div class="Container">      <div class="StartedImage"> <img src="img/bigdatalite-header-notext.jpg" alt="Oracle Big Data Platform Header"          height="115"          width="772">      </div>      <div class="StartedText">        <h2><strong>Oracle Big Data Lite</strong> 4.6.0 Virtual Machine </h2>        <h3>Getting Started </h3>      </div>      <div class="ContentBody">        <p><strong>Please note</strong>: This appliance is for testing and          educational purposes only; it is unsupported and not to be used in          production.</p>        <h2>Introduction</h2>        <p>Oracle Big Data Lite Virtual Machine provides an integrated          environment to help you get started with the Oracle Big Data platform.          Many Oracle Big Data platform components have been installed and          configured - allowing you to begin using the system right away. The          following components are included on Oracle Big Data Lite: </p>        <ul>          <li>Oracle Enterprise Linux 6.8</li>          <li>Oracle Database 12c Release 1 Enterprise Edition (12.1.0.2) -            including Oracle Big Data SQL-enabled external tables, Oracle            Multitenant, Oracle Advanced Analytics, Oracle OLAP, Oracle            Partitioning, Oracle Spatial and Graph, and more.</li>          <li>Cloudera Distribution including Apache Hadoop (CDH5.8.0)</li>          <li>Cloudera Manager (5.8.0)</li>          <li>Oracle Big Data Spatial and Graph 2.0</li>          <li>Oracle Big Data Discovery 1.3.2</li>          <li>Oracle Big Data Connectors 4.6            <ul>              <li>Oracle SQL Connector for HDFS 3.6.0</li>              <li>Oracle Loader for Hadoop 3.7.0</li>              <li>Oracle Data Integrator 12c (12.2.1)</li>              <li>Oracle R Advanced Analytics for Hadoop 2.6</li>              <li>Oracle XQuery for Hadoop 4.5.0</li>            </ul>          </li>          <li>Oracle NoSQL Database Enterprise Edition 12cR1 (4.0.9)</li>          <li>Oracle JDeveloper 12c (12.1.3)</li>          <li>Oracle SQL Developer and Data Modeler 4.1.5 with Oracle REST Data            Services 3.0.7</li>          <li>Oracle Data Integrator 12cR1 (12.2.1)</li>          <li>Oracle GoldenGate 12c (12.2.0.1.1)</li>          <li>Oracle R Distribution 3.2.0</li>          <li>Oracle Perfect Balance 2.8.0</li>        </ul>        <p><br>        </p>        <p>Big Data Lite includes software products that are optional on the          Oracle Big Data Appliance (BDA), including Oracle NoSQL Database          Enterprise Edition, Oracle Big Data Discovery, Oracle Big Data SQL,          Oracle Big Data Spatial and Graph and Oracle Big Data Connectors.</p>        <h2>Additional Software </h2>        <p>There is complementary software that you may want to use that is not          included in the VM.&nbsp;</p>        <ul>          <li>For Oracle Big Data Spatial and Graph - install Proj.4            Cartographic Projections Library (libproj.so).&nbsp; See <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_big_data_spatial_and"              title="install image processing"              target="_blank">blog
-              post containing instructions</a>.</li>          <li>Cloudera JDBC drivers enable Hive access in Oracle SQL Developer            and Data Modeler.&nbsp; See <a target="_blank" href="https://blogs.oracle.com/datawarehousing/entry/oracle_sql_developer_data_modeler">install
-              instructions</a>.</li>          <li>R software:&nbsp; Simple scripts are provided in <strong>/home/oracle/scripts</strong>            that facilitate installation. </li>          <ul>            <li>R Studio - install using <strong>install_rstudio.sh</strong> </li>            <li>Numerous R Packages that provide additional analytics and              visualizations.&nbsp; Install using <strong>install_additional_packages.sh</strong>            </li>          </ul>        </ul>        <br>        <h2><a name="access" id="access"></a>Access Information </h2>        <table border="0">          <tbody>            <tr>              <th scope="col">Component</th>              <th scope="col">Details</th>            </tr>            <tr>              <td>Linux</td>              <td>                <p>root/welcome1<br>                  oracle/welcome1</p>              </td>            </tr>            <tr>              <td>Oracle Database 12c </td>              <td>                <p>Oracle Database 12c has been configured with Oracle                  Multitenant.&nbsp; The pluggable database is orcl.</p>                <p>Service: orcl<br>                  Port: 1521<br>                  All passwords: welcome1<br>                  moviedemo is the owner of the movie schema</p>                <p>sqlplus moviedemo@orcl/welcome1</p>              </td>            </tr>            <tr>              <td>Oracle Data Integrator </td>              <td>                <p>ODI is available using the tool bar menu at the top of the                  screen. </p>                <p>ODI user name: SUPERVISOR<br>                  ODI password: welcome1</p>              </td>            </tr>            <tr>              <td>Oracle Big Data Discovery</td>              <td>                <p><span style="text-decoration: underline;">Studio:</span><br>                </p>                <p><a target="_blank" title="Big Data Discovery" href="http://localhost:9003/bdd/web/home/index">http://localhost:9003/bdd/web/home/index</a><br>                  User name: admin@oracle.com<br>                  Password: welcome1</p>                <p><span style="text-decoration: underline;">Weblogic</span>:</p>                <p><a target="_blank" title="Big Data Discovery" href="http://localhost:9003/bdd/web/home/index">http://localhost:9001/console</a><br>                  User name: weblogic<br>                  Password: welcome1</p>              </td>            </tr>            <tr>              <td>Oracle NoSQL Database </td>              <td>                <p>Administration Page:<br>                  <a href="http://bigdatalite:5001" target="_blank">http://localhost:5001</a></p>              </td>            </tr>            <tr>              <td>Hive Metastore (MySQL) </td>              <td>                <p>User name: hive<br>                  Password: welcome1</p>              </td>            </tr>            <tr>              <td>Hue</td>              <td>                <p><a href="http://localhost:8888" target="_blank">http://localhost:8888</a><br>                  User name: oracle<br>                  Password: welcome1</p>              </td>            </tr>            <tr>              <td>WebLogic (movie demo)</td>              <td>                <p><a href="http://localhost:7001/console" target="_blank">http://localhost:7001/console</a><br>                  User name: weblogic<br>                  Password: welcome1 </p>              </td>            </tr>            <tr>              <td>RStudio (not installed) </td>              <td>                <p>Install using the /home/oracle/scripts/install_rstudio.sh</p>                <p><a href="http://localhost:8787/" target="_blank">http://localhost:8787/</a><br>                  User name: oracle<br>                  Password: welcome1</p>              </td>            </tr>            <tr>              <td>Oracle SQL Developer and Data Modeler</td>              <td>                <p>Oracle SQL Developer is available using the tool bar menu at                  the top of the screen.&nbsp; For Hive and Oracle Big Data SQL                  external table support, you need to <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_sql_developer_data_modeler"                    target="_blank">update
-                    your SQL Developer configuration</a>.</p>              </td>            </tr>            <tr>              <td>Oracle MoviePlex Demo </td>              <td>                <p>Start the demo:<br>                  Double-click the Start/Stop Services launcher on the desktop                  (or type services at the linux command line) and select                  Weblogic-MovieDemo.</p>                <p><a href="http://localhost:7001/movieplex/index.jsp" target="_blank">http://localhost:7001/movieplex/index.jsp</a><br>                  User name: guest1<br>                  Password: welcome1</p>              </td>            </tr>            <tr>              <td>Cloudera Manager</td>              <td>                <p>Cloudera Manager is disabled by default.&nbsp; You will need                  at least 10GB memory allocated to the VM in order to run                  Cloudera Manager.&nbsp; It can be enabled using the Start/Stop                  Services application from the desktop - but will only appear                  as an option if the VM is configured with enough memory.&nbsp;</p>                <p><a href="http://localhost:7001/movieplex/index.jsp" target="_blank">http://localhost:7180</a><br>                  User name: admin<br>                  Password: admin&nbsp;&nbsp;&nbsp; </p>              </td>            </tr>            <tr>              <td>Oracle Spatial and Graph</td>              <td>                <p>Before running Oracle Spatial and Graph, please <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_big_data_spatial_and"                    title="blog post"                    target="_blank">read
-                    this blog post</a> on installing and configuring (Proj.4)                  Cartographic Projections Library (libproj.so).&nbsp; <br>                  <br>                  <a href="http://localhost:8045/imageserver" title="image server"                    target="_blank">http://localhost:8045/imageserver</a><br>                  <a href="http://localhost:8045/spatialviewer" title="spatial viewer"                    target="_blank">http://localhost:8045/spatialviewer&nbsp;&nbsp;
-                    <br></a></p>              </td>            </tr>            <tr>              <td>Oracle Application Express</td>              <td>                <p>An APEX sample application is provided that explains Oracle                  Big Data SQL.&nbsp; To view and edit the application: </p>                <p><a target="_blank" href="http://localhost:7070/ords/apex">http://localhost:7070/ords/apex</a></p>                <p>Workspace: moviedemo<br>                  User name: admin<br>                  Password: welcome1&nbsp;&nbsp;&nbsp; </p>                <p>The Workspace admin has the same credentials.</p>                <p>You can also go directly to the application using the                  following URL:</p>                <p><a target="_blank" href="http://localhost:7070/ords/f?p=100:1::::::">http://localhost:7070/ords/f?p=100:1::::::</a></p>              </td>            </tr>            <tr>              <td>Oracle REST Data Services</td>              <td>                <p>Oracle REST Data Services facilitates the development of                  applications against Oracle Database 12c.&nbsp; You can run a                  sample application that uses REST here:</p>                <p><a target="_blank" href="http://localhost:7070/ords_lab/">http://localhost:7070/ords_lab/</a></p>                <p> </p>              </td>            </tr>          </tbody>        </table>        <p>&nbsp;</p>        <h2>Starting and Stopping Services </h2>        <p>A simple dialog is provided to start and stop services. Please keep          in mind that the Virtual Machine is preconfigured with 5GB of memory.          This means that you will not want to run all of the services at the          same time; shutdown services that you are not using to conserve          memory.</p>        <p>Double-click the <strong>Start/Stop Services</strong> desktop icon          to display the services dialog (or type <strong>services</strong> at          the linux prompt):</p>        <p><img title="services" alt="services" src="img/services.png"> </p>        <p>The dialog displays the list of services grouped by role. The [*]          signifies that the role has been started. In addition, individual          services display their current status (i.e. on/off). </p>        <ul>          <li>Use the arrow keys to select services to start. Deselect services            to stop them.</li>          <li>Starting a service will also cause it to start automatically at            system boot.&nbsp; Conversely, stopping a service will disable            startup at system boot (the services application runs chkconfig)</li>          <li>There are dependencies, so be careful when shutting down services.            For example, shutting down HDFS will impact all Hadoop services. </li>        </ul>        <p>&nbsp;</p>        <h3>Enabling Cloudera Manager</h3>        <p>If your VM is configured with at least 10GB memory, you can use          Cloudera Manager in Big Data Lite. Update the memory allocated to the          VM using the VirtualBox Manager. </p>        <p style="border-style:solid; border-color:black; border-width: 1px; padding: 3px 3px;"><strong>Note</strong>:          Using the manual configuration and Cloudera Manager are distinct and          mutually exclusive;&nbsp; you either manage (i.e. start, stop and          configure) Hadoop services manually or thru Cloudera Manager.&nbsp;          Hadoop configuration changes made in Cloudera Manager are not          propagated to the manual configuration (and vice versa).</p>        <p>To enable Cloudera Manager, invoke the <strong>services</strong>          dialog as described in the previous section and stop all Hadoop          services.&nbsp; Invoke services again and you will notice a <strong>ClouderaManager</strong>          services option:</p>        <img src="img/services-enable-cm.png" alt="enable-cm" "="">        <p><br>        </p>        <p>Select the option and then click <strong>OK</strong>.&nbsp; You can          now use Cloudera Manager to manage Hadoop.&nbsp; The next time you          invoke the <strong>services</strong> application, you will no longer          be able to manually start/stop Hadoop services until you shut down          Cloudera Manager:</p>        <img src="img/services-nomanual.png" alt="no manual hadoop services"><br>        <br>        <h3>Enabling Big Data Discovery</h3>        <p>If your VM is configured with at least 12GB memory, you can use Big          Data Discovery in Big Data Lite.&nbsp; </p>        <p style="border-style:solid; border-color:black; border-width: 1px; padding: 3px 3px;"><strong>Note</strong>:          Running Cloudera Manager and Big Data Discovery at the same time is          not supported in the VM.</p>        <p><br>        </p>        <br>        <h2><a name="movieplex" id="movieplex"></a>Oracle MoviePlex Collateral </h2>        <p>Oracle has developed numerous <strong>demonstrations</strong> and <strong>hands-on-labs</strong>          around a fictitious company called "Oracle MoviePlex". Oracle          MoviePlex is an on-line movie streaming company. Customers log into          Oracle MoviePlex - where they are presented with a targeted list of          movies based on their past viewing behavior. Because of this          personalized experience and reliable and fast performance, customers          spend a lot of money with the company and it has become extremely          profitable :). </p>        <p>The Oracle Big Data Platform was used to build this demonstration.          All of the software and data required to run the demo and hands-on          labs are in this virtual machine. Go to the Oracle Technology Network          to access these labs and videos.</p>        <p align="center"><a href="http://www.oracle.com/technetwork/database/bigdata-appliance/oracle-bigdatalite-2104726.html"            target="_blank"><img              src="img/movieplex_on_otn.png"              border="0"              height="97"              width="434"></a>        </p>        <p>&nbsp;</p>        <h2>Acknowledgements</h2>        <p>Oracle would like to acknowledge the data providers for the movie          demo.</p>        <ul>          <li>Movie images are provided by the TMDb API but is not endorsed or            certified by TMDb. Note, these images are not stored or distributed            by Oracle.</li>          <li>Information about movies, including actors, genres, overviews and            crew members were provided by Wikipedia. </li>        </ul>        <h2>&nbsp;</h2>      </div>    </div>  </body></html>
+<html>
+  <head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="content-type">
+    <title>Oracle Big Data Lite - Getting Started</title>
+    <link href="./img/bigdatalite.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="Container">
+      <div class="StartedImage"> <img src="img/bigdatalite-header-notext.jpg" alt="Oracle Big Data Platform Header"
+          height="115"
+          width="772">
+      </div>
+      <div class="StartedText">
+        <h2><strong>Oracle Big Data Lite</strong> 4.7.0 Virtual Machine </h2>
+        <h3>Getting Started </h3>
+      </div>
+      <div class="ContentBody">
+        <p><strong>Please note</strong>: This appliance is for testing and
+          educational purposes only; it is unsupported and not to be used in
+          production.</p>
+        <h2>Introduction</h2>
+        <p>Oracle Big Data Lite Virtual Machine provides an integrated
+          environment to help you get started with the Oracle Big Data platform.
+          Many Oracle Big Data platform components have been installed and
+          configured - allowing you to begin using the system right away. The
+          following components are included on Oracle Big Data Lite: </p>
+        <ul>
+          <li>Oracle Enterprise Linux 6.8</li>
+          <li>Oracle Database 12c Release 1 Enterprise Edition (12.1.0.2) -
+            including Oracle Big Data SQL-enabled external tables, Oracle
+            Multitenant, Oracle Advanced Analytics, Oracle OLAP, Oracle
+            Partitioning, Oracle Spatial and Graph, and more.</li>
+          <li>Cloudera Distribution including Apache Hadoop (CDH5.9.0)</li>
+          <li>Cloudera Manager (5.9.0)</li>
+          <li>Oracle Big Data Spatial and Graph 2.1</li>
+          <li>Oracle Big Data Discovery 1.4.0</li>
+          <li>Oracle Big Data Connectors 4.7
+            <ul>
+              <li>Oracle SQL Connector for HDFS 3.7.0</li>
+              <li>Oracle Loader for Hadoop 3.8.0</li>
+              <li>Oracle Data Integrator 12c (12.2.1.2)</li>
+              <li>Oracle R Advanced Analytics for Hadoop 2.7</li>
+              <li>Oracle XQuery for Hadoop 4.5.1</li>
+            </ul>
+          </li>
+          <li>Oracle NoSQL Database Enterprise Edition 12cR1 (4.2.14)</li>
+          <li>Oracle JDeveloper 12c (12.1.3)</li>
+          <li>Oracle SQL Developer and Data Modeler 4.1.5 with Oracle REST Data
+            Services 3.0.7</li>
+          <li>Oracle Data Integrator 12cR1 (12.2.1.2.6)</li>
+          <li>Oracle GoldenGate 12c (12.2.0.1.1)</li>
+          <li>Oracle R Distribution 3.2.0</li>
+          <li>Oracle Perfect Balance 2.9.0</li>
+        </ul>
+        <p><br>
+        </p>
+        <p>Big Data Lite includes software products that are optional on the
+          Oracle Big Data Appliance (BDA), including Oracle NoSQL Database
+          Enterprise Edition, Oracle Big Data Discovery, Oracle Big Data SQL,
+          Oracle Big Data Spatial and Graph and Oracle Big Data Connectors.</p>
+        <h2>Additional Software </h2>
+        <p>There is complementary software that you may want to use that is not
+          included in the VM.&nbsp;</p>
+        <ul>
+          <li>For Oracle Big Data Spatial and Graph - install Proj.4
+            Cartographic Projections Library (libproj.so).&nbsp; See <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_big_data_spatial_and"
+              title="install image processing"
+              target="_blank">blog
+              post containing instructions</a>.</li>
+          <li>Cloudera JDBC drivers enable Hive access in Oracle SQL Developer
+            and Data Modeler.&nbsp; See <a target="_blank" href="https://blogs.oracle.com/datawarehousing/entry/oracle_sql_developer_data_modeler">install
+              instructions</a>.</li>
+          <li>R software:&nbsp; Simple scripts are provided in <strong>/home/oracle/scripts</strong>
+            that facilitate installation. </li>
+          <ul>
+            <li>R Studio - install using <strong>install_rstudio.sh</strong> </li>
+            <li>Numerous R Packages that provide additional analytics and
+              visualizations.&nbsp; Install using <strong>install_additional_packages.sh</strong>
+            </li>
+          </ul>
+        </ul>
+        <br>
+        <h2><a name="access" id="access"></a>Access Information </h2>
+        <table border="0">
+          <tbody>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">Details</th>
+            </tr>
+            <tr>
+              <td>Linux</td>
+              <td>
+                <p>root/welcome1<br>
+                  oracle/welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle Database 12c </td>
+              <td>
+                <p>Oracle Database 12c has been configured with Oracle
+                  Multitenant.&nbsp; The pluggable database is orcl.</p>
+                <p>Service: orcl<br>
+                  Port: 1521<br>
+                  All passwords: welcome1<br>
+                  moviedemo is the owner of the movie schema</p>
+                <p>sqlplus moviedemo@orcl/welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle Data Integrator </td>
+              <td>
+                <p>ODI is available using the tool bar menu at the top of the
+                  screen. </p>
+                <p>ODI user name: SUPERVISOR<br>
+                  ODI password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle Big Data Discovery</td>
+              <td>
+                <p><span style="text-decoration: underline;">Studio:</span><br>
+                </p>
+                <p><a target="_blank" title="Big Data Discovery" href="http://localhost:9003/bdd/web/home/index">http://localhost:9003/bdd/web/home/index</a><br>
+                  User name: admin@oracle.com<br>
+                  Password: welcome1</p>
+                <p><span style="text-decoration: underline;">Weblogic</span>:</p>
+                <p><a target="_blank" title="Big Data Discovery" href="http://localhost:9003/bdd/web/home/index">http://localhost:9001/console</a><br>
+                  User name: weblogic<br>
+                  Password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle NoSQL Database </td>
+              <td>
+                <p>Administration Page:<br>
+                  <a href="http://bigdatalite:5001" target="_blank">http://localhost:5001</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Hive Metastore (MySQL) </td>
+              <td>
+                <p>User name: hive<br>
+                  Password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Hue</td>
+              <td>
+                <p><a href="http://localhost:8888" target="_blank">http://localhost:8888</a><br>
+                  User name: oracle<br>
+                  Password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>WebLogic (movie demo)</td>
+              <td>
+                <p><a href="http://localhost:7001/console" target="_blank">http://localhost:7001/console</a><br>
+                  User name: weblogic<br>
+                  Password: welcome1 </p>
+              </td>
+            </tr>
+            <tr>
+              <td>RStudio (not installed) </td>
+              <td>
+                <p>Install using the /home/oracle/scripts/install_rstudio.sh</p>
+                <p><a href="http://localhost:8787/" target="_blank">http://localhost:8787/</a><br>
+                  User name: oracle<br>
+                  Password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle SQL Developer and Data Modeler</td>
+              <td>
+                <p>Oracle SQL Developer is available using the tool bar menu at
+                  the top of the screen.&nbsp; For Hive and Oracle Big Data SQL
+                  external table support, you need to <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_sql_developer_data_modeler"
+                    target="_blank">update
+                    your SQL Developer configuration</a>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle MoviePlex Demo </td>
+              <td>
+                <p>Start the demo:<br>
+                  Double-click the Start/Stop Services launcher on the desktop
+                  (or type services at the linux command line) and select
+                  Weblogic-MovieDemo.</p>
+                <p><a href="http://localhost:7001/movieplex/index.jsp" target="_blank">http://localhost:7001/movieplex/index.jsp</a><br>
+                  User name: guest1<br>
+                  Password: welcome1</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Cloudera Manager</td>
+              <td>
+                <p>Cloudera Manager is disabled by default.&nbsp; You will need
+                  at least 10GB memory allocated to the VM in order to run
+                  Cloudera Manager.&nbsp; It can be enabled using the Start/Stop
+                  Services application from the desktop - but will only appear
+                  as an option if the VM is configured with enough memory.&nbsp;</p>
+                <p><a href="http://localhost:7180" target="_blank">http://localhost:7180</a><br>
+                  User name: admin<br>
+                  Password: admin&nbsp;&nbsp;&nbsp; </p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle Spatial and Graph</td>
+              <td>
+                <p>Before running Oracle Spatial and Graph, please <a href="https://blogs.oracle.com/datawarehousing/entry/oracle_big_data_spatial_and"
+                    title="blog post"
+                    target="_blank">read
+                    this blog post</a> on installing and configuring (Proj.4)
+                  Cartographic Projections Library (libproj.so).&nbsp; <br>
+                  <br>
+                  <a href="http://localhost:8045/imageserver" title="image server"
+                    target="_blank">http://localhost:8045/imageserver</a><br>
+                  <a href="http://localhost:8045/spatialviewer" title="spatial viewer"
+                    target="_blank">http://localhost:8045/spatialviewer&nbsp;&nbsp;
+                    <br></a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle Application Express</td>
+              <td>
+                <p>An APEX sample application is provided that explains Oracle
+                  Big Data SQL.&nbsp; To view and edit the application: </p>
+                <p><a target="_blank" href="http://localhost:7070/ords/apex">http://localhost:7070/ords/apex</a></p>
+                <p>Workspace: moviedemo<br>
+                  User name: admin<br>
+                  Password: welcome1&nbsp;&nbsp;&nbsp; </p>
+                <p>The Workspace admin has the same credentials.</p>
+                <p>You can also go directly to the application using the
+                  following URL:</p>
+                <p><a target="_blank" href="http://localhost:7070/ords/f?p=100:1::::::">http://localhost:7070/ords/f?p=100:1::::::</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>Oracle REST Data Services</td>
+              <td>
+                <p>Oracle REST Data Services facilitates the development of
+                  applications against Oracle Database 12c.&nbsp; You can run a
+                  sample application that uses REST here:</p>
+                <p><a target="_blank" href="http://localhost:7070/ords_lab/">http://localhost:7070/ords_lab/</a></p>
+                <p> </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <h2>Starting and Stopping Services </h2>
+        <p>A simple dialog is provided to start and stop services. Please keep
+          in mind that the Virtual Machine is preconfigured with 5GB of memory.
+          This means that you will not want to run all of the services at the
+          same time; shutdown services that you are not using to conserve
+          memory.</p>
+        <p>Double-click the <strong>Start/Stop Services</strong> desktop icon
+          to display the services dialog (or type <strong>services</strong> at
+          the linux prompt):</p>
+        <p><img title="services" alt="services" src="img/services.png"> </p>
+        <p>The dialog displays the list of services grouped by role. The [*]
+          signifies that the role has been started. In addition, individual
+          services display their current status (i.e. on/off). </p>
+        <ul>
+          <li>Use the arrow keys to select services to start. Deselect services
+            to stop them.</li>
+          <li>Starting a service will also cause it to start automatically at
+            system boot.&nbsp; Conversely, stopping a service will disable
+            startup at system boot (the services application runs chkconfig)</li>
+          <li>There are dependencies, so be careful when shutting down services.
+            For example, shutting down HDFS will impact all Hadoop services. </li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Enabling Cloudera Manager</h3>
+        <p>If your VM is configured with at least 10GB memory, you can use
+          Cloudera Manager in Big Data Lite. Update the memory allocated to the
+          VM using the VirtualBox Manager. </p>
+        <p style="border-style:solid; border-color:black; border-width: 1px; padding: 3px 3px;"><strong>Note</strong>:
+          Using the manual configuration and Cloudera Manager are distinct and
+          mutually exclusive;&nbsp; you either manage (i.e. start, stop and
+          configure) Hadoop services manually or thru Cloudera Manager.&nbsp;
+          Hadoop configuration changes made in Cloudera Manager are not
+          propagated to the manual configuration (and vice versa).</p>
+        <p>To enable Cloudera Manager, invoke the <strong>services</strong>
+          dialog as described in the previous section and stop all Hadoop
+          services.&nbsp; Invoke services again and you will notice a <strong>ClouderaManager</strong>
+          services option:</p>
+        <img src="img/services-enable-cm.png" alt="enable-cm" "="">
+        <p><br>
+        </p>
+        <p>Select the option and then click <strong>OK</strong>.&nbsp; You can
+          now use Cloudera Manager to manage Hadoop.&nbsp; The next time you
+          invoke the <strong>services</strong> application, you will no longer
+          be able to manually start/stop Hadoop services until you shut down
+          Cloudera Manager:</p>
+        <img src="img/services-nomanual.png" alt="no manual hadoop services"><br>
+        <br>
+        <h3>Enabling Big Data Discovery</h3>
+        <p>If your VM is configured with at least 12GB memory, you can use Big
+          Data Discovery in Big Data Lite.&nbsp; </p>
+        <p style="border-style:solid; border-color:black; border-width: 1px; padding: 3px 3px;"><strong>Note</strong>:
+          Running Cloudera Manager and Big Data Discovery at the same time is
+          not supported in the VM.</p>
+        <p><br>
+        </p>
+        <br>
+        <h2><a name="movieplex" id="movieplex"></a>Oracle MoviePlex Collateral </h2>
+        <p>Oracle has developed numerous <strong>demonstrations</strong> and <strong>hands-on-labs</strong>
+          around a fictitious company called "Oracle MoviePlex". Oracle
+          MoviePlex is an on-line movie streaming company. Customers log into
+          Oracle MoviePlex - where they are presented with a targeted list of
+          movies based on their past viewing behavior. Because of this
+          personalized experience and reliable and fast performance, customers
+          spend a lot of money with the company and it has become extremely
+          profitable :). </p>
+        <p>The Oracle Big Data Platform was used to build this demonstration.
+          All of the software and data required to run the demo and hands-on
+          labs are in this virtual machine. Go to the Oracle Technology Network
+          to access these labs and videos.</p>
+        <p align="center"><a href="http://www.oracle.com/technetwork/database/bigdata-appliance/oracle-bigdatalite-2104726.html"
+            target="_blank"><img
+              src="img/movieplex_on_otn.png"
+              border="0"
+              height="97"
+              width="434"></a>
+        </p>
+        <p>&nbsp;</p>
+        <h2>Acknowledgements</h2>
+        <p>Oracle would like to acknowledge the data providers for the movie
+          demo.</p>
+        <ul>
+          <li>Movie images are provided by the TMDb API but is not endorsed or
+            certified by TMDb. Note, these images are not stored or distributed
+            by Oracle.</li>
+          <li>Information about movies, including actors, genres, overviews and
+            crew members were provided by Wikipedia. </li>
+        </ul>
+        <h2>&nbsp;</h2>
+      </div>
+    </div>
+  </body>
+</html>
