@@ -14,3 +14,7 @@ Use the samples to learn about Oracle's big data platform.  In addition to gener
  - Oracle GoldenGate
  - Oracle Copy to Hadoop
 ... and more :)
+
+This repository includes scripts to quickly install third-party software that is useful to play with some demos.
+Please see the [README](thirdparty/README.md) in the thirdparty directory.
+
