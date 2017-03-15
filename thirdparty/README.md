@@ -9,4 +9,15 @@ Just run:
 ./zeppelin.sh start
 ./zeppelin.sh stop
 ```
+to install, start, and stop the service, respectively.
+
+## Jupyter (iPython) Notebooks
+Just run:
+```bash
+./jupyter.sh install
+./jupyter.sh start
+./jupyter.sh stop
+```
+to install, start, and stop the service, respectively.
+
 
