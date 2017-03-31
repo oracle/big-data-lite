@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# rstudio  Start/Stop RStudio
+#
+# chkconfig: 5 90 60
 
 # If anything goes wrong, fail
 exit_err () {
@@ -29,6 +33,16 @@ if [ "$1" == "install" ]; then
   (sudo cp $dir/conf/rstudio/rserver.conf /etc/rstudio)
   (sudo cp $dir/conf/rstudio/SessionHelp.R /usr/lib/rstudio-server/R/modules/SessionHelp.R)
   (sudo chmod 644 /usr/lib/rstudio-server/R/modules/SessionHelp.R)
+
+  (
+  echo "Add to system services? (works on Oracle Linux, requires sudo) [Y/n]"
+  read a
+  a=""
+  [ "$a" == "n" ] && exit 0
+  sudo rm -f /etc/init.d/rstudio
+  sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
+  sudo chkconfig --add rstudio
+  )
 
   exit 0
 elif [ "$1" == "uninstall" ]; then

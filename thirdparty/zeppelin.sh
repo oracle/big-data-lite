@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# zeppelin  Start/Stop the Zeppelin notebooks
+#
+# chkconfig: 5 90 60
 
 # If anything goes wrong, fail
 exit_err () {
@@ -81,10 +85,23 @@ EOP
   )
 
   echo "Done; you can run $0 {start | stop} to start / stop the Zeppelin service"
+
+  (
+  echo "Add to system services? (works on Oracle Linux, requires sudo) [Y/n]"
+  read a
+  a=""
+  [ "$a" == "n" ] && exit 0
+  sudo rm -f /etc/init.d/zeppelin
+  sudo ln -s "$(readlink -f $0)" /etc/init.d/zeppelin
+  sudo chkconfig --add zeppelin
+  )
+
   exit 0
 elif [ "$1" == "uninstall" ]; then
   zeppelin_root=$(find . -maxdepth 2 -type d | grep zeppelin-${zeppelin_version}) || echo "Zeppelin not installed!"
   rm -rf $zeppelin_root
+
+  [ -f /etc/init.d/zeppelin ] && (sudo rm -f /etc/init.d/zeppelin)
 
   exit 0
 elif [ "$1" == "start" ]; then

@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# jupyter  Start/Stop the Jupyter notebooks
+#
+# chkconfig: 5 90 60
 
 # If anything goes wrong, fail
 exit_err () {
@@ -21,8 +25,18 @@ if [ "$1" == "install" ]; then
   [ -f $anaconda_inst ] ||
     curl $anaconda_inst_url -o $anaconda_inst
 
-  rm -rf $jupiter_root/anaconda2
+  rm -rf $jupYter_root/anaconda2
   bash $anaconda_inst -b -p$jupyter_root/anaconda2 
+
+  (
+  echo "Add to system services? (works on Oracle Linux, requires sudo) [Y/n]"
+  read a
+  a=""
+  [ "$a" == "n" ] && exit 0
+  sudo rm -f /etc/init.d/jupyter
+  sudo ln -s "$(readlink -f $0)" /etc/init.d/jupyter
+  sudo chkconfig --add jupyter
+  )
 
   exit 0
 elif [ "$1" == "start" ]; then
