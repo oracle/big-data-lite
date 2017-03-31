@@ -107,8 +107,18 @@ elif [ "$1" == "stop" ]; then
 
   exit 0
 
+elif [ "$1" == "status" ]; then
+  trap '' ERR
+  (
+  cd $thirdparty_root
+  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin )
+  unset CLASSPATH
+  $zeppelin_root/bin/zeppelin-daemon.sh status 
+  )
+
+  exit $?
 fi
 
-echo "Usage: $0 {install | uninstall | start | stop}"
+echo "Usage: $0 {install | uninstall | start | stop | status}"
 exit -1
 

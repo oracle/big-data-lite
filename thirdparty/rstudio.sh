@@ -43,8 +43,19 @@ elif [ "$1" == "stop" ]; then
   (sudo /usr/lib/rstudio-server/bin/rstudio-server stop) || echo "Failed to stop RStudio!"
 
   exit 0
+elif [ "$1" == "status" ]; then
+  trap '' ERR
+
+  curr_status="$(sudo /usr/lib/rstudio-server/bin/rstudio-server status)"
+  if [ "$curr_status" == "rstudio-server stop/waiting" ]; then
+   echo "$curr_status"
+   exit 1
+ else
+   echo "$curr_status"
+   exit 0
+ fi
 fi
 
-echo "Usage: $0 {install | start | stop}"
+echo "Usage: $0 {install | uninstall | start | stop | status}"
 exit -1
 

@@ -49,8 +49,18 @@ elif [ "$1" == "stop" ]; then
   rm $jupyter_root/server_pid.txt
 
   exit 0
+elif [ "$1" == "status" ]; then
+  trap '' ERR
+
+  if [ ! -f $jupyter_root/server_pid.txt ]; then
+    echo "Jupyter notebook not running."
+    exit 1
+  else
+    echo "Jupyter notebook running (pid: $(cat $jupyter_root/server_pid.txt))."
+    exit 0
+  fi
 fi
 
-echo "Usage: $0 {install | start | stop}"
+echo "Usage: $0 {install | uninstall | start | stop | status}"
 exit -1
 
