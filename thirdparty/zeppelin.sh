@@ -82,7 +82,11 @@ EOP
 
   echo "Done; you can run $0 {start | stop} to start / stop the Zeppelin service"
   exit 0
+elif [ "$1" == "uninstall" ]; then
+  zeppelin_root=$(find . -maxdepth 2 -type d | grep zeppelin-${zeppelin_version}) || echo "Zeppelin not installed!"
+  rm -rf $zeppelin_root
 
+  exit 0
 elif [ "$1" == "start" ]; then
   (
   cd $thirdparty_root
@@ -105,6 +109,6 @@ elif [ "$1" == "stop" ]; then
 
 fi
 
-echo "Usage: $0 {install | start | stop}"
+echo "Usage: $0 {install | uninstall | start | stop}"
 exit -1
 

@@ -35,6 +35,11 @@ elif [ "$1" == "start" ]; then
   echo $pid > $jupyter_root/server_pid.txt
 
   exit 0
+elif [ "$1" == "uninstall" ]; then
+  rm -rf $thirdparty_root/anaconda
+  rm -rf $thirdparty_root/jupyter
+
+  exit 0
 elif [ "$1" == "stop" ]; then
   if [ ! -f $jupyter_root/server_pid.txt ]; then
     echo "Error: Jupyter notebook not running."
