@@ -16,6 +16,19 @@ thirdparty_root=$dir/inst/
 anaconda_inst_url=https://repo.continuum.io/archive/Anaconda2-4.3.1-Linux-x86_64.sh
 jupyter_root=$thirdparty_root/jupyter
 
+check_running () {
+  if [ ! -f $jupyter_root/server_pid.txt ]; then
+    return 1
+  fi
+
+  if ps $(cat $jupyter_root/server_pid.txt) &> /dev/null; then
+    return 0
+  fi
+
+  rm -rf $jupyter_root/server_pid.txt
+  return 1
+}
+
 cd $dir
 
 if [ "$1" == "install" ]; then
@@ -40,11 +53,14 @@ if [ "$1" == "install" ]; then
 
   exit 0
 elif [ "$1" == "start" ]; then
-  if [ -f $jupyter_root/server_pid.txt ]; then
+  if check_running; then
     echo "Error: Jupyter notebook already running (PID: $(cat $jupyter_root/server_pid.txt), stop it first."
     exit 0
   fi
   $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser &
+
+  sleep 3
+
   pid=$!
   echo $pid > $jupyter_root/server_pid.txt
 
@@ -55,7 +71,7 @@ elif [ "$1" == "uninstall" ]; then
 
   exit 0
 elif [ "$1" == "stop" ]; then
-  if [ ! -f $jupyter_root/server_pid.txt ]; then
+  if ! check_running; then
     echo "Error: Jupyter notebook not running."
     exit 0
   fi
@@ -66,12 +82,12 @@ elif [ "$1" == "stop" ]; then
 elif [ "$1" == "status" ]; then
   trap '' ERR
 
-  if [ ! -f $jupyter_root/server_pid.txt ]; then
-    echo "Jupyter notebook not running."
-    exit 1
-  else
+  if check_running; then
     echo "Jupyter notebook running (pid: $(cat $jupyter_root/server_pid.txt))."
     exit 0
+  else
+    echo "Jupyter notebook not running."
+    exit 1
   fi
 fi
 
