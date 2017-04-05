@@ -15,8 +15,8 @@ dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
 zeppelin_version=0.7.0
 zeppelin_pkg_url=https://archive.apache.org/dist/zeppelin/zeppelin-${zeppelin_version}/zeppelin-${zeppelin_version}-bin-all.tgz
-pgx_interpreter_version=2.3.2
-pgx_interpreter_pkg_url=http://pgx.us.oracle.com/releases/stable/otn/${pg_interpreter_version}/pgx-${pgx_interpreter_version}-zeppelin-interpreter.zip
+pgx_interpreter_version=2.4.1
+pgx_interpreter_pkg_url=/u01/oracle-spatial-graph/property_graph/pgx/client/pgx-${pgx_interpreter_version}-zeppelin-interpreter.zip
 
 cd $dir
 
@@ -35,11 +35,11 @@ if [ "$1" == "install" ]; then
   pgx_interpreter_pkg=$thirdparty_root/$(basename $pgx_interpreter_pkg_url)
   echo "Getting the PGX interpreter version ${pgx_interpreter_version}..."
   [ -f $pgx_interpreter_pkg ] ||
-    curl $pgx_interpreter_pkg_url -o $pgx_interpreter_pkg
+    cp $pgx_interpreter_pkg_url $pgx_interpreter_pkg
   if [ ! -f $pgx_interpreter_pkg ]; then
-    echo "Error: can't download the PGX interpreter; you need to be connected to the Oracle Network (or on VPN)."
-    echo "Please connect to the Oracle VPN and run this script again."
-    echo "In alternative, download $pgx_interpreter_pkg_url from the Oracle Network and save this archive to $pgx_interpreter_pkg."
+    echo "Error: can't find the PGX interpreter package (pgx-${pgx_interpreter_version}-zeppelin-interpreter.zip)."
+    echo "Download it from the Oracle Technology Network (http://www.oracle.com/technetwork/oracle-labs/parallel-graph-analytics/downloads/index.html)"
+    echo "and save the zip archive archive to $pgx_interpreter_pkg."
     exit 1
   fi
   echo "Unpacking the PGX interpreter.."
