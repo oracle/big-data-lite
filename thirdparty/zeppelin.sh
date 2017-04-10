@@ -87,9 +87,11 @@ EOP
   echo "Done; you can run $0 {start | stop} to start / stop the Zeppelin service"
 
   (
-  echo "Add to system services? (works on Oracle Linux, requires sudo) [Y/n]"
-  read a
   a=""
+  while [ "$a" != "y" ] && [ "$a" != "n" ]; do
+    echo "Add to system services? (works on Oracle Linux, requires sudo) [y/n]"
+    read a
+  done
   [ "$a" == "n" ] && exit 0
   sudo rm -f /etc/init.d/zeppelin
   sudo ln -s "$(readlink -f $0)" /etc/init.d/zeppelin

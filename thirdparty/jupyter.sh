@@ -42,9 +42,11 @@ if [ "$1" == "install" ]; then
   bash $anaconda_inst -b -p$jupyter_root/anaconda2 
 
   (
-  echo "Add to system services? (works on Oracle Linux, requires sudo) [Y/n]"
-  read a
   a=""
+  while [ "$a" != "y" ] && [ "$a" != "n" ]; do
+    echo "Add to system services? (works on Oracle Linux, requires sudo) [y/n]"
+    read a
+  done
   [ "$a" == "n" ] && exit 0
   sudo rm -f /etc/init.d/jupyter
   sudo ln -s "$(readlink -f $0)" /etc/init.d/jupyter
