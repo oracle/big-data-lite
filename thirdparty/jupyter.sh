@@ -61,10 +61,10 @@ elif [ "$1" == "start" ]; then
   fi
   $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser &
 
-  sleep 3
-
   pid=$!
   echo $pid > $jupyter_root/server_pid.txt
+
+  sleep 3
 
   exit 0
 elif [ "$1" == "uninstall" ]; then
