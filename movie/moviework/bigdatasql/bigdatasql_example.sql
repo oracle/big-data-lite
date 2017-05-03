@@ -45,7 +45,7 @@ ORGANIZATION EXTERNAL
   DEFAULT DIRECTORY DEFAULT_DIR 
   ACCESS PARAMETERS 
   ( 
-    com.oracle.bigdata.tablename: moviework.movieapp_log_avro 
+    com.oracle.bigdata.tablename=moviework.movieapp_log_avro 
   ) 
 ) 
 REJECT LIMIT UNLIMITED;
@@ -68,7 +68,7 @@ ORGANIZATION EXTERNAL
   DEFAULT DIRECTORY DEFAULT_DIR 
   ACCESS PARAMETERS 
   ( 
-    com.oracle.bigdata.tablename: moviework.recommendation 
+    com.oracle.bigdata.tablename=moviework.recommendation 
   ) 
 ) 
 REJECT LIMIT UNLIMITED;
