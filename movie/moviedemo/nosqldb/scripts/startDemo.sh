@@ -8,4 +8,3 @@ unzip /u02/kvroot*.zip -d /u02/
 
 echo "*** Start Oracle NoSQL Server ***"
 nohup java -jar $KVHOME/lib/kvstore.jar kvlite -root $KVROOT > /u01/nosql/kvstd.out &
-
