@@ -96,6 +96,9 @@ EOP
   sudo rm -f /etc/init.d/zeppelin
   sudo ln -s "$(readlink -f $0)" /etc/init.d/zeppelin
   sudo chkconfig --add zeppelin
+  if ! grep -q 'Zeppelin,zeppelin,Zeppelin Notebooks,1' /opt/bin/services.prop; then
+    sudo echo 'Zeppelin,zeppelin,Zeppelin Notebooks,1' >> /opt/bin/services.prop
+  fi
   )
 
   exit 0
