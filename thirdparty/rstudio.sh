@@ -40,11 +40,34 @@ if [ "$1" == "install" ]; then
     echo "Add to system services? (works on Oracle Linux, requires sudo) [y/n]"
     read a
   done
-  [ "$a" == "n" ] && exit 0
-  sudo rm -f /etc/init.d/rstudio
-  sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
-  sudo chkconfig --add rstudio
+  if [ "$a" == "y" ]; then
+    sudo rm -f /etc/init.d/rstudio
+    sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
+    sudo chkconfig --add rstudio
+
+    if ! grep -q 'RStudio,rstudio,RStudio server,1' /opt/bin/services.prop; then
+      sudo echo 'RStudio,rstudio,RStudio server,1' >> /opt/bin/services.prop
+    fi
+  fi
   )
+
+  echo "Done. You can run $0 install_extra to grab extra R packages."
+
+  exit 0
+elif [ "$1" == "install_extra" ]; then
+
+  echo "Installing extra R packages.."
+  Rscript --verbose <(cat <<EOC
+# List of packages
+pkgs <-c("DBI", "gtools", "gdata", "whisker", "xtable", "digest", "doParallel", "gridBase", "pkgmaker", "rngtools", "registry", "stringi", "magrittr", "stringr", "irlba", "scatterplot3d", "lmtest", "vcd", "TSP", "qap", "gclus", "dendextend", "bitops", "caTools", "gplots", "seriation", "quadprog", "zoo", "reshape2", "gtable", "dichromat", "plyr", "munsell", "labeling", "scales", "ggplot2", "RColorBrewer", "NMF", "igraph", "arulesViz", "arules", "tseries", "fracdiff", "nnet", "colorspace", "timeDate", "sandwich")
+install.packages(pkgs, dependencies=TRUE, repos="http://cran.fhcrc.org", lib="/u01/app/oracle/product/12.1.0.2/dbhome_1/R/library", type="source")
+
+# RcppArmadillo requires gcc 4.6 or greater and Big Data Lite contains gcc 4.4-7. Install an older version of RcppArmadillo  as workaround.
+install.packages("http://cran.fhcrc.org/src/contrib/Archive/RcppArmadillo/RcppArmadillo_0.6.200.2.0.tar.gz", repos=NULL, lib="/u01/app/oracle/product/12.1.0.2/dbhome_1/R/library", type="source") 
+
+# forecast depends on RcppArmadillo
+install.packages("forecast", repos="http://cran.fhcrc.org")
+EOC)
 
   exit 0
 elif [ "$1" == "uninstall" ]; then
@@ -72,6 +95,6 @@ elif [ "$1" == "status" ]; then
  fi
 fi
 
-echo "Usage: $0 {install | uninstall | start | stop | status}"
+echo "Usage: $0 {install | install_extra | uninstall | start | stop | status}"
 exit -1
 

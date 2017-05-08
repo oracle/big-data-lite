@@ -38,7 +38,7 @@ if [ "$1" == "install" ]; then
   [ -f $anaconda_inst ] ||
     curl $anaconda_inst_url -o $anaconda_inst
 
-  rm -rf $jupYter_root/anaconda2
+  rm -rf $jupyter_root/anaconda2
   bash $anaconda_inst -b -p$jupyter_root/anaconda2 
 
   (
@@ -51,6 +51,9 @@ if [ "$1" == "install" ]; then
   sudo rm -f /etc/init.d/jupyter
   sudo ln -s "$(readlink -f $0)" /etc/init.d/jupyter
   sudo chkconfig --add jupyter
+  if ! grep -q 'Jupyter,jupyter,Jupyter Notebooks,1' /opt/bin/services.prop; then
+    sudo echo 'Jupyter,jupyter,Jupyter Notebooks,1' >> /opt/bin/services.prop
+  fi
   )
 
   exit 0
