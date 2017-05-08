@@ -7,6 +7,10 @@
 # If anything goes wrong, fail
 exit_err () {
   echo "There was an error, please review the output above and, if appropriate, report a bug on https://github.com/oracle/big-data-lite with the full output of the script."
+  echo ""
+  echo "If you are having connection difficulties, ensure you set the https_proxy before running this script."
+  echo "  Example:"
+  echo "  export https_proxy=myproxy.company.com:80"
   exit 1
 }
 trap 'exit_err' ERR
