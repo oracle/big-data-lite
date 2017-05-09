@@ -17,7 +17,7 @@ trap 'exit_err' ERR
 
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
-zeppelin_version=0.7.0
+zeppelin_version=0.7.1
 zeppelin_pkg_url=https://archive.apache.org/dist/zeppelin/zeppelin-${zeppelin_version}/zeppelin-${zeppelin_version}-bin-all.tgz
 pgx_interpreter_version=2.4.1
 pgx_interpreter_pkg_url=/u01/oracle-spatial-graph/property_graph/pgx/client/pgx-${pgx_interpreter_version}-zeppelin-interpreter.zip
@@ -118,7 +118,7 @@ elif [ "$1" == "start" ]; then
   cd $thirdparty_root
   zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin )
   unset CLASSPATH
-  $zeppelin_root/bin/zeppelin-daemon.sh start 
+  JAVA_HOME=$JAVA7_HOME ZEPPELIN_PORT=8090 $zeppelin_root/bin/zeppelin-daemon.sh start 
   echo "Remember to start the PGX server in order to be able to use the %pgx interpreter"
   )
   exit 0
