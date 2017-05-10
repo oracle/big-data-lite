@@ -116,7 +116,7 @@ elif [ "$1" == "uninstall" ]; then
 elif [ "$1" == "start" ]; then
   (
   cd $thirdparty_root
-  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin )
+  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unset CLASSPATH
   JAVA_HOME=$JAVA7_HOME ZEPPELIN_PORT=8090 $zeppelin_root/bin/zeppelin-daemon.sh start 
   echo "Remember to start the PGX server in order to be able to use the %pgx interpreter"
@@ -126,7 +126,7 @@ elif [ "$1" == "start" ]; then
 elif [ "$1" == "stop" ]; then
   (
   cd $thirdparty_root
-  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin )
+  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unset CLASSPATH
   $zeppelin_root/bin/zeppelin-daemon.sh stop 
   )
@@ -137,7 +137,7 @@ elif [ "$1" == "status" ]; then
   trap '' ERR
   (
   cd $thirdparty_root
-  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin )
+  zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unset CLASSPATH
   $zeppelin_root/bin/zeppelin-daemon.sh status 
   )
