@@ -15,6 +15,13 @@ exit_err () {
 }
 trap 'exit_err' ERR
 
+# If run as root or as service, rerun as owner
+owner=$(stat -c '%U' $0)
+if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); then
+  sudo -E -u $owner bash -c "$0 $*"
+  exit $?
+fi
+
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
 anaconda_inst_url=https://repo.continuum.io/archive/Anaconda2-4.3.1-Linux-x86_64.sh
@@ -66,7 +73,7 @@ elif [ "$1" == "start" ]; then
     echo "Error: Jupyter notebook already running (PID: $(cat $jupyter_root/server_pid.txt), stop it first."
     exit 0
   fi
-  sudo -u oracle $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser &
+  $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser &
 
   pid=$!
   echo $pid > $jupyter_root/server_pid.txt

@@ -15,6 +15,13 @@ exit_err () {
 }
 trap 'exit_err' ERR
 
+# If run as root or as service, rerun as owner
+owner=$(stat -c '%U' $0)
+if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); then
+  sudo -E -u $owner bash -c "$0 $*"
+  exit $?
+fi
+
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
 zeppelin_version=0.7.0
@@ -118,7 +125,7 @@ elif [ "$1" == "start" ]; then
   cd $thirdparty_root
   zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unset CLASSPATH
-  ZEPPELIN_PORT=8090 sudo -u oracle $zeppelin_root/bin/zeppelin-daemon.sh start 
+  ZEPPELIN_PORT=8090 $zeppelin_root/bin/zeppelin-daemon.sh start
   echo "Remember to start the PGX server in order to be able to use the %pgx interpreter"
   )
   exit 0

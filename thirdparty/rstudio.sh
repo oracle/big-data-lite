@@ -15,6 +15,13 @@ exit_err () {
 }
 trap 'exit_err' ERR
 
+# If run as root or as service, rerun as owner
+owner=$(stat -c '%U' $0)
+if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); then
+  sudo -E -u $owner bash -c "$0 $*"
+  exit $?
+fi
+
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
 rstudio_root=$thirdparty_root/rstudio
