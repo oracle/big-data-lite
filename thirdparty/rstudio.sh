@@ -86,7 +86,7 @@ elif [ "$1" == "uninstall" ]; then
 
   exit 0
 elif [ "$1" == "start" ]; then
-  (sudo /usr/lib/rstudio-server/bin/rstudio-server start) || echo "Failed to start RStudio!"
+  (sudo setsid /usr/lib/rstudio-server/bin/rstudio-server start) || echo "Failed to start RStudio!"
 
   exit 0
 elif [ "$1" == "stop" ]; then
