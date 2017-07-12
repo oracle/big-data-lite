@@ -73,7 +73,7 @@ elif [ "$1" == "start" ]; then
     echo "Error: Jupyter notebook already running (PID: $(cat $jupyter_root/server_pid.txt), stop it first."
     exit 0
   fi
-  $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser &
+  (setsid $jupyter_root/anaconda2/bin/jupyter-notebook --no-browser) &
 
   pid=$!
   echo $pid > $jupyter_root/server_pid.txt
