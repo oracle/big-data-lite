@@ -54,7 +54,9 @@ if [ "$1" == "install" ]; then
   done
   if [ "$a" == "y" ]; then
     sudo rm -f /etc/init.d/rstudio
-    sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
+    sudo cp "$(readlink -f $0)" /etc/init.d/rstudio
+    sudo chmod 755 /etc/init.d/rstudio
+    # sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
     sudo chkconfig --add rstudio
 
     if ! grep -q 'RStudio,rstudio,RStudio server,1' /opt/bin/services.prop; then
