@@ -33,7 +33,7 @@ cd $dir
 if [ "$1" == "install" ]; then
   echo "Setting up RStudio..."
   sudo mkdir -p $rstudio_root
-  sudo chmod 755 $rstudio_root
+  sudo chmod 777 $rstudio_root
   rstudio_pkg=$rstudio_root/$(basename $rstudio_pkg_url)
   [ -f $rstudio_pkg ] ||
     curl $rstudio_pkg_url -o $rstudio_pkg
