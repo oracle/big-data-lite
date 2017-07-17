@@ -24,7 +24,7 @@ fi
 
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=$dir/inst/
-rstudio_root=$thirdparty_root/rstudio
+rstudio_root=/opt/rstudio
 rstudio_inst_name=rstudio-server-1.0.136-1.x86_64
 rstudio_pkg_url=https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
 
@@ -32,7 +32,8 @@ cd $dir
 
 if [ "$1" == "install" ]; then
   echo "Setting up RStudio..."
-  mkdir -p $rstudio_root
+  sudo mkdir -p $rstudio_root
+  sudo chmod 755 $rstudio_root
   rstudio_pkg=$rstudio_root/$(basename $rstudio_pkg_url)
   [ -f $rstudio_pkg ] ||
     curl $rstudio_pkg_url -o $rstudio_pkg
