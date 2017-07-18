@@ -23,7 +23,7 @@ if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); th
 fi
 
 dir=$(dirname "$(readlink -f $0)")
-thirdparty_root=$dir/inst/
+thirdparty_root=/opt/thirdparty
 anaconda_inst_url=https://repo.continuum.io/archive/Anaconda2-4.3.1-Linux-x86_64.sh
 jupyter_root=$thirdparty_root/jupyter
 
@@ -44,6 +44,8 @@ cd $dir
 
 if [ "$1" == "install" ]; then
   echo "Setting up Anaconda..."
+  sudo mkdir -p $thirdparty_root
+  sudo chmod 777 $thirdparty_root
   mkdir -p $jupyter_root
   anaconda_inst=$jupyter_root/$(basename $anaconda_inst_url)
   [ -f $anaconda_inst ] ||
