@@ -23,8 +23,8 @@ if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); th
 fi
 
 dir=$(dirname "$(readlink -f $0)")
-thirdparty_root=$dir/inst/
-rstudio_root=/opt/rstudio
+thirdparty_root=/opt/thirdparty
+rstudio_root=$thirdparty_root/rstudio
 rstudio_inst_name=rstudio-server-1.0.136-1.x86_64
 rstudio_pkg_url=https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
 
@@ -32,8 +32,9 @@ cd $dir
 
 if [ "$1" == "install" ]; then
   echo "Setting up RStudio..."
-  sudo mkdir -p $rstudio_root
-  sudo chmod 777 $rstudio_root
+  sudo mkdir -p $thirdparty_root
+  sudo chmod 777 $thirdparty_root
+  mkdir -p $rstudio_root
   rstudio_pkg=$rstudio_root/$(basename $rstudio_pkg_url)
   [ -f $rstudio_pkg ] ||
     curl $rstudio_pkg_url -o $rstudio_pkg
@@ -86,6 +87,7 @@ EOC)
   exit 0
 elif [ "$1" == "uninstall" ]; then
   sudo yum  --disablerepo='*' --disableplugin='*' remove ${rstudio_inst_name}
+  [ -d $rstudio_root ] && rm -r $rstudio_root
 
   exit 0
 elif [ "$1" == "start" ]; then

@@ -23,7 +23,7 @@ if [ "$USER" != "$owner" ] && ( [ "$USER" == "root" ] || [ "$USER" == "" ] ); th
 fi
 
 dir=$(dirname "$(readlink -f $0)")
-thirdparty_root=$dir/inst/
+thirdparty_root=/opt/thirdparty
 zeppelin_version=0.7.0
 zeppelin_pkg_url=https://archive.apache.org/dist/zeppelin/zeppelin-${zeppelin_version}/zeppelin-${zeppelin_version}-bin-all.tgz
 pgx_interpreter_version=2.4.1
@@ -32,7 +32,8 @@ pgx_interpreter_pkg_url=/u01/oracle-spatial-graph/property_graph/pgx/client/pgx-
 cd $dir
 
 if [ "$1" == "install" ]; then
-  mkdir -p $thirdparty_root
+  sudo mkdir -p $thirdparty_root
+  sudo chmod 777 $thirdparty_root
   zeppelin_pkg=$thirdparty_root/$(basename $zeppelin_pkg_url)
   echo "Setting up Zeppelin, including the PGX interpreter..."
 
@@ -54,12 +55,12 @@ if [ "$1" == "install" ]; then
     exit 1
   fi
   echo "Unpacking the PGX interpreter.."
-  zeppelin_root=$(find . -maxdepth 2 -type d | grep zeppelin-${zeppelin_version} )
+  zeppelin_root=$(find $thirdparty_root -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unzip $pgx_interpreter_pkg -d $zeppelin_root/interpreter/pgx
   # Do not use https to conect to the PGX server; NB: may need to update the patch
   # when updating the PGX interpreter version
   (
-  cd $dir/$zeppelin_root/interpreter/pgx
+  cd $zeppelin_root/interpreter/pgx
   patch -p0 <<EOP
 --- interpreter-setting.json    2017-03-06 11:58:48.000000000 -0500
 +++ interpreter-setting.json.http       2017-03-07 08:05:20.683000001 -0500
@@ -114,9 +115,8 @@ EOP
 
   exit 0
 elif [ "$1" == "uninstall" ]; then
-  zeppelin_root=$(find . -maxdepth 2 -type d | grep zeppelin-${zeppelin_version}) || echo "Zeppelin not installed!"
-  rm -rf $zeppelin_root
-
+  zeppelin_root=$(find $thirdparty_root -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} ) || echo "Zeppelin not installed!"
+  [ -d $zeppelin_root ] && rm -rf $zeppelin_root
   [ -f /etc/init.d/zeppelin ] && (sudo rm -f /etc/init.d/zeppelin)
 
   exit 0
