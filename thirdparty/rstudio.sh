@@ -54,14 +54,16 @@ if [ "$1" == "install" ]; then
     read a
   done
   if [ "$a" == "y" ]; then
-    sudo rm -f /etc/init.d/rstudio
-    sudo cp "$(readlink -f $0)" /etc/init.d/rstudio
-    sudo chmod 755 /etc/init.d/rstudio
-    # sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
-    sudo chkconfig --add rstudio
+#    sudo rm -f /etc/init.d/rstudio
+#    sudo cp "$(readlink -f $0)" /etc/init.d/rstudio
+#    sudo chmod 755 /etc/init.d/rstudio
+#    sudo ln -s "$(readlink -f $0)" /etc/init.d/rstudio
+    sudo cp $dir/conf/rstudio/rstudio-server /etc/init.d/
+    sudo chmod 755 /etc/init.d/rstudio-server
+    sudo chkconfig --add rstudio-server
 
-    if ! grep -q 'RStudio,rstudio,RStudio server,1' /opt/bin/services.prop; then
-      sudo echo 'RStudio,rstudio,RStudio server,1' >> /opt/bin/services.prop
+    if ! grep -q 'RStudio,rstudio-server,RStudio server,1' /opt/bin/services.prop; then
+      sudo echo 'RStudio,rstudio-server,RStudio server,1' >> /opt/bin/services.prop
     fi
   fi
   )
@@ -86,6 +88,7 @@ EOC)
 
   exit 0
 elif [ "$1" == "uninstall" ]; then
+  sudo rm /etc/init.d/rstudio-server
   sudo yum  --disablerepo='*' --disableplugin='*' remove ${rstudio_inst_name}
   [ -d $rstudio_root ] && rm -r $rstudio_root
 

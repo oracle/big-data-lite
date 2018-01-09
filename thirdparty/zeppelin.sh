@@ -24,9 +24,9 @@ fi
 
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=/opt/thirdparty
-zeppelin_version=0.7.0
+zeppelin_version=0.7.3
 zeppelin_pkg_url=https://archive.apache.org/dist/zeppelin/zeppelin-${zeppelin_version}/zeppelin-${zeppelin_version}-bin-all.tgz
-pgx_interpreter_version=2.4.1
+pgx_interpreter_version=2.5.0
 pgx_interpreter_pkg_url=/u01/oracle-spatial-graph/property_graph/pgx/client/pgx-${pgx_interpreter_version}-zeppelin-interpreter.zip
 
 cd $dir
@@ -154,4 +154,3 @@ fi
 
 echo "Usage: $0 {install | uninstall | start | stop | status}"
 exit -1
-

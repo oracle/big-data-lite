@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# rstudio-server  Start/Stop RStudio-Server
+#
+# chkconfig: 5 90 60
+
+
+# rstudio-server status always returns 0.  Need to figure out if it's running
+
+retval=$(/usr/sbin/rstudio-server "$@")
+echo $retval
+
+if [ $1 = "status" ]
+then
+  if [[ $retval = *stop* ]]
+  then
+     exit 1
+  fi
+fi
