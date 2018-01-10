@@ -25,8 +25,12 @@ fi
 dir=$(dirname "$(readlink -f $0)")
 thirdparty_root=/opt/thirdparty
 rstudio_root=$thirdparty_root/rstudio
-rstudio_inst_name=rstudio-server-1.0.136-1.x86_64
-rstudio_pkg_url=https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
+# rstudio_inst_name=rstudio-server-1.0.136-1.x86_64
+# rstudio_pkg_url=https://download2.rstudio.org/rstudio-server-rhel-1.0.136-x86_64.rpm
+rstudio_inst_name=rstudio-server-rhel-1.1.383-x86_64.rpm
+rstudio_pkg_url=https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm
+rstudio_uninst_name=rstudio-server.x86_64
+
 
 cd $dir
 
@@ -48,11 +52,11 @@ if [ "$1" == "install" ]; then
   (sudo chmod 644 /usr/lib/rstudio-server/R/modules/SessionHelp.R)
 
   (
-  a=""
-  while [ "$a" != "y" ] && [ "$a" != "n" ]; do
-    echo "Add to system services? (works on Oracle Linux, requires sudo) [y/n]"
-    read a
-  done
+  a="y"  # automatically install instead of prompt.  saving code if we decide to change
+#  while [ "$a" != "y" ] && [ "$a" != "n" ]; do
+#    echo "Add to system services? (works on Oracle Linux, requires sudo) [y/n]"
+#    read a
+#  done
   if [ "$a" == "y" ]; then
 #    sudo rm -f /etc/init.d/rstudio
 #    sudo cp "$(readlink -f $0)" /etc/init.d/rstudio
@@ -88,8 +92,10 @@ EOC)
 
   exit 0
 elif [ "$1" == "uninstall" ]; then
-  sudo rm /etc/init.d/rstudio-server
-  sudo yum  --disablerepo='*' --disableplugin='*' remove ${rstudio_inst_name}
+  echo "Shut down rstudio-server"
+  ( if service rstudio-server status; then sudo service rstudio-server stop; fi )
+  sudo rm -f -- /etc/init.d/rstudio-server
+  sudo yum  --disablerepo='*' --disableplugin='*' remove -y ${rstudio_uninst_name}
   [ -d $rstudio_root ] && rm -r $rstudio_root
 
   exit 0
