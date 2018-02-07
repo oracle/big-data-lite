@@ -1,9 +1,9 @@
 Rem
-Rem $Header: hadoop/demo/osh/sql/CreateEmployeeData.sql ratiwary_osh_newsplitters_outputformat/1 2016/01/19 05:23:49 ratiwary Exp $
+Rem $Header: hadoop/demo/od4h_samples/od4h_basic_demos/sql/CreateEmployeeData.sql ratiwary_od4h_demos/1 2018/01/11 01:40:05 ratiwary Exp $
 Rem
 Rem CreateEmployeeData.sql
 Rem
-Rem Copyright (c) 2015, 2016, Oracle and/or its affiliates. 
+Rem Copyright (c) 2015, 2018, Oracle and/or its affiliates. 
 Rem All rights reserved.
 Rem
 Rem    NAME

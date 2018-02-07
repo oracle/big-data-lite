@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# $Header: hadoop/demo/osh/shell/partitionQuery.sh ratiwary_osh_newsplitters_outputformat/1 2016/03/05 06:41:50 ratiwary Exp $
+# $Header: hadoop/demo/od4h_samples/od4h_basic_demos/shell/partitionQuery.sh ratiwary_od4h_demos/2 2018/01/11 01:45:07 ratiwary Exp $
 #
 # partitionQueryHive.sh
 #
-# Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2015, 2018, Oracle and/or its affiliates. All rights reserved.
 #
 #    NAME
 #      partitionQueryHive.sh
@@ -38,7 +38,7 @@ if [ $choice -eq 1 ]; then
   hive -i hive_init.hql -e "${QUERY}"
 elif [ $choice -eq 2 ]; then
   echo "sqlContext.sql(\""${QUERY}"\").show();System.exit(0);" > query.scala
-  spark-shell --jars /opt/oracle/od4h/jlib/osh.jar,/opt/oracle/od4h/jlib/ojdbc7.jar,/opt/oracle/od4h/jlib/ucp.jar -i query.scala
+  spark-shell --jars /opt/oracle/od4h/jlib/osh.jar,/opt/oracle/od4h/jlib/ojdbc8.jar,/opt/oracle/od4h/jlib/ucp.jar -i query.scala
   rm query.scala
 else
   echo "Invalid Input"
