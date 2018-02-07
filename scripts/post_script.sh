@@ -1,14 +1,15 @@
 #!/bin/bash
 
 OD4H_PATCH_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+OD4H_PATCH="od4h-1.2.1.0.zip"
 echo "Patching Big Data Lite"
 echo ""
 echo "Updating OD4H...."
-echo "Dropping current OD4H - /u01/od4h
+echo "Dropping current OD4H - /u01/od4h"
 sudo rm -rf /u01/od4h
 
 echo "Installing new OD4H into same location"
-sudo unzip -d /u01 $OD4H_PATCH_DIR/od4h.zip 
+sudo unzip -d /u01 $OD4H_PATCH_DIR/$OD4H_PATCH 
 sudo chown -R oracle:oinstall /u01/od4h
 
 echo "Finished updating OD4H"
