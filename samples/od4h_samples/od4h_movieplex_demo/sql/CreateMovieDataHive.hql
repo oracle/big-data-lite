@@ -1,9 +1,9 @@
 --
--- $Header: hadoop/demo/osh/sql/CreateMovieDataHive.hql ratiwary_osh_newsplitters_outputformat/2 2016/01/19 05:57:36 ratiwary Exp $
+-- $Header: hadoop/demo/od4h_samples/od4h_movieplex_demo/sql/CreateMovieDataHive.hql ratiwary_od4h_demos/1 2018/01/11 01:40:05 ratiwary Exp $
 --
 -- CreateMovieDataHive.hql
 --
--- Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
+-- Copyright (c) 2015, 2018, Oracle and/or its affiliates. All rights reserved.
 --
 --    NAME
 --      CreateMovieDataHive.hql
