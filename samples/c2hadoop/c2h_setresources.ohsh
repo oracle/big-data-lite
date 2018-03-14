@@ -1,0 +1,27 @@
+# Create a hive resource for hive database MOVIEDEMO
+create hive resource hive_moviedemo connectionurl="jdbc:hive2:///moviedemo";
+
+# Create a SQL resource for Oracle Database user MOVIEDEMO
+create sqlplus resource sql connectid="bigdatalite.localdomain:1521/orcl";
+
+# Create a JDBC resource to connect to Oracle Database
+create oracle jdbc resource moviedemo connectid="bigdatalite.localdomain:1521/orcl";
+
+# Create directories for staging data pump files and log files 
+# Ignore the error if the directory already exists
+%bash0 mkdir /home/oracle/src/samples/c2hadoop/dmpfiles
+%bash0 mkdir /home/oracle/src/samples/c2hadoop/logs
+
+# Create database directories for these directories
+
+# Temporary database directory for staging data pump files
+%sql create or replace directory C2H_DP_DIR as \
+'/home/oracle/src/samples/c2hadoop/dmpfiles';
+
+# Database directory for log files
+%sql create or replace directory C2H_LOG_DIR as \
+'/home/oracle/src/samples/c2hadoop/logs';
+
+# set OHSH resources for database directories
+set locationdirectory C2H_DP_DIR
+set defaultdirectory C2H_LOG_DIR
