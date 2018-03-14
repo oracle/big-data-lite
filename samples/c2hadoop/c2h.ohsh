@@ -1,7 +1,7 @@
 # copy the table movie_sessions_tab in Oracle Database schema MOVIEDEMO
 # to Hive schema MOVIEDEMO
 
-create hive table hive_moviedemo:movie_sessions_tab from oracle table moviedemo:movie_sessions_tab using stage;
+create hive table hive_moviedemo:movie_sessions_tab from oracle table moviedemo:movie_sessions_tab;
 
 # Verify the results of the load by comparing with the number of rows
 # in the database table
@@ -9,7 +9,7 @@ create hive table hive_moviedemo:movie_sessions_tab from oracle table moviedemo:
 %hive_moviedemo select count(*) from movie_sessions_tab;
 
 # Append additional rows to the table
-load hive table hive_moviedemo:movie_sessions_tab from oracle table moviedemo:movie_sessions_tab using stage where "(cust_id = 1446522)";
+load hive table hive_moviedemo:movie_sessions_tab from oracle table moviedemo:movie_sessions_tab where "(cust_id = 1446522)";
 
 # Verify the results again - you will have four more rows
 %hive_moviedemo select count(*) from movie_sessions_tab;
