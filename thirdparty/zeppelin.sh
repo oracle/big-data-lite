@@ -125,7 +125,9 @@ elif [ "$1" == "start" ]; then
   cd $thirdparty_root
   zeppelin_root=$(find . -maxdepth 1 -type d | grep zeppelin-${zeppelin_version} )
   unset CLASSPATH
-  ZEPPELIN_PORT=8090 $zeppelin_root/bin/zeppelin-daemon.sh start
+  export ZEPPELIN_PORT=8090
+  $zeppelin_root/bin/zeppelin-daemon.sh start
+  echo "Zeppelin is starting, it will be available on port ${ZEPPELIN_PORT}"
   echo "Remember to start the PGX server in order to be able to use the %pgx interpreter"
   )
   exit 0
